@@ -230,7 +230,7 @@ WaveSchedule
 		{
 			Class Medic
 			Skill Expert
-			ClassIcon medic_shield_qf
+			ClassIcon medic_shield
 			
 			Attributes ProjectileShield
 			Attributes SpawnWithFullCharge
@@ -269,7 +269,7 @@ WaveSchedule
 		{
 			Class Medic
 			Skill Expert
-			ClassIcon medic_shield_qf
+			ClassIcon medic_shield
 			
 			Attributes ProjectileShield
 			Attributes SpawnWithFullCharge
