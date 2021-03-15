@@ -2804,7 +2804,7 @@ WaveSchedule
 			Tank
 			{
 				Health 11111
-				Classicon tank_lite
+				Classicon tank
 				Speed 75
 				Skin 0
 				Name "tankboss"
@@ -10359,7 +10359,7 @@ WaveSchedule
 				Health 11111
 				Speed 150
 				Skin 0
-				Classicon tank_lite
+				Classicon tank
 				DisableSmokestack 1 [$SIGSEGV]
 				Name "tankboss"
 				StartingPathTrackNode "tank_path_a"

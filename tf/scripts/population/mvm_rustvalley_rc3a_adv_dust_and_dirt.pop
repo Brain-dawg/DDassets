@@ -124,7 +124,7 @@ population
 		}
 		TFBot
 				{
-					ClassIcon 	medic_shield_lite
+					ClassIcon 	medic_shield
 					Name 		"Shield Medic"
 					Class 		Medic
 					Skill 		Expert
@@ -216,7 +216,7 @@ population
 	{
 		shield
 				{
-					ClassIcon 	medic_shield_lite
+					ClassIcon 	medic_shield
 					Name 		"Shield Medic"
 					Class 		Medic
 					Skill 		Expert

@@ -2,20 +2,26 @@
 
 population
 {
+	ExtraSpawnPoint [$SIGSEGV]  //Don't wanna use sigmod but whatever
+    {
+        Name "whatever"
+        TeamNum 3 
+        X	"-145"                     
+        Y	"-36"                  
+        Z	"180"        
+    }
+	ExtraSpawnPoint [$SIGSEGV]  //Don't wanna use sigmod but whatever
+    {
+        Name "whatever2"
+        TeamNum 3 
+        X	"832"                     
+        Y	"-176"                  
+        Z	"2616"        
+    }
 	StartingCurrency	800
 	RespawnWaveTime	6
 	CanBotsAttackWhileInSpawnRoom	no
 	Advanced	1
-	
-	ExtraSpawnPoint [$SIGSEGV]
-    {
-        Name whatever
-        TeamNum 3 // 2 - Red team 3 - Robots
-        X	1409.118408            
-        Y	1066.290894                
-        Z	8.972481      
-    }
-	
 	//Wave  1 - 800
 	//spy support
 	Templates
@@ -182,7 +188,6 @@ population
         TFBot
         {
             Template        T_TFBot_SentryBuster
-			Name "Oye Como Va Mi Ritmo"
         }
     }
 	Mission
@@ -373,14 +378,12 @@ population
 				TFBot
 				{
 					Template	T_TFBot_ScorchShot_FastShot
-					ClassIcon pyro_flare
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
 				TFBot
 				{
 					Template	T_TFBot_ScorchShot_FastShot
-					ClassIcon pyro_flare
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -442,7 +445,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_ScorchShot_FastShot
-					ClassIcon pyro_flare
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -996,7 +998,6 @@ population
 			TFBot
 			{
 				Template	T_TFBot_Heavyweapons_gnome
-				Health 300
 				Item "The Grand Duchess Fair"
 				Name "Fast Playful Fairy"
 			}
@@ -1032,7 +1033,7 @@ population
 			TFBot
 			{
 				Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
-				ClassIcon pyro_flare
+				ClassIcon pyro_flare_giant
 				Attributes	AlwaysCrit
 				Name "Exiled Wizard"
 				Item "All Hallows' Hatte"
@@ -1091,7 +1092,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1109,7 +1109,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1127,7 +1126,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1145,7 +1143,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Battalion
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1163,7 +1160,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1181,7 +1177,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1213,7 +1208,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
-					ClassIcon pyro_flare
+					Classicon pyro_flare_giant
 					Attributes	AlwaysCrit
 					Name "Exiled Wizard"
 					Item "All Hallows' Hatte"
@@ -1319,15 +1314,14 @@ population
 			MaxActive	7
 			SpawnCount	1
 			Where	spawnbot_lower
-			WaitBetweenSpawns	2.75
-			WaitBeforeStarting	24
+			WaitBetweenSpawns	1.5
+			WaitBeforeStarting	20
 			Support 1
 			RandomChoice
 			{
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1345,7 +1339,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1363,7 +1356,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1381,7 +1373,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Battalion
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1399,7 +1390,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1417,7 +1407,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					ClassIcon soldier_banner_trio
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1749,9 +1738,36 @@ population
 			WaitBetweenSpawns	2
 			Where	spawnbot_lower
 			Support 1
-			TFBot
+			RandomChoice
 			{
-				Template	T_TFBot_Soldier_Extended_Concheror
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Concheror
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Battalion
+				}
+				TFBot
+				{
+					Template	T_TFBot_Soldier_Extended_Battalion
+				}
 			}
 		}
 		WaveSpawn
@@ -1806,10 +1822,11 @@ population
 		WaveSpawn
 		{
 			Name	BossSpy
+			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
 			WaitBeforeStarting	12
-			WaitBetweenSpawnsAfterDeath	23
+			WaitBetweenSpawnsAfterDeath	20
 			Where	spawnbot_left
 			Support 1
 			TFBot
@@ -2077,6 +2094,7 @@ population
 		{
 			Name	5D
 			WaitForAllDead	5C
+			TotalCount	100
 			MaxActive	12
 			SpawnCount	1
 			Where	spawnbot_right
@@ -2343,7 +2361,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Heavyweapons_Deflector
-					ClassIcon	heavy_deflectoR
+					ClassIcon	heavy_deflector_giant
 					Item "The Siberian Sophisticate"
 					Name "Super Minigun Butler"
 				}
@@ -2353,7 +2371,7 @@ population
 					Name "Super Spring Bringer"
 					ItemAttributes
 					{
-						ItemName "TF_WEAPON_MEDIGUN"
+						Itemname "TF_WEAPON_MEDIGUN"
 						"uber duration bonus"	2.5
 					}
 				}
@@ -2413,7 +2431,7 @@ population
 				Name "Scarlet Vampire Bat"
 				Scale	0.4
 				Health	90
-				Skill	Normal
+				Skill	Easy
 				WeaponRestrictions	MeleeOnly
 				ItemAttributes
 				{
@@ -2446,7 +2464,7 @@ population
 			TFBot
 			{
 				Class	Demoman
-				Health	45000
+				Health	42000
 				Attributes	MiniBoss
 				WeaponRestrictions PrimaryOnly
 				Attributes	UseBossHealthBar
@@ -2461,16 +2479,16 @@ population
 				ItemAttributes
 				{
 					ItemName	"Upgradeable TF_WEAPON_GRENADELAUNCHER"
-					"heal on hit for rapidfire"	50
+					"heal on hit for rapidfire"	70
 					"projectile penetration"	1
-					"faster reload rate"	0.45
+					"faster reload rate"	0.9
 					"fire rate bonus"	0.001
 					"Projectile speed increased" 1.2
 					"override projectile type"	8
 					"projectile spread angle penalty"	7
-					"clip size bonus"	2
+					"clip size bonus"	1.5
 					"bleeding duration" 7
-					"heal on kill" 3000
+					"heal on kill" 4000
 				}
 				CharacterAttributes
 				{
@@ -2490,7 +2508,7 @@ population
 			TotalCount	3
 			MaxActive	3
 			SpawnCount	3
-			WaitBetweenSpawns	13
+			WaitBetweenSpawnsAfterDeath	5
 			Where	spawnbot_right
 			Support 1
 			TFBot
@@ -2506,7 +2524,7 @@ population
 			TotalCount	2
 			MaxActive	2
 			SpawnCount	2
-			WaitBetweenSpawns	15
+			WaitBetweenSpawnsAfterDeath	12
 			Where	spawnbot_right
 			Support 1
 			TFBot
@@ -2536,10 +2554,10 @@ population
 		{
 			Name	BossSpy
 			WaitForAllDead	6C
-			TotalCount	4
-			MaxActive	4
-			SpawnCount	4
-			WaitBetweenSpawns 35
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBetweenSpawnsAfterDeath	25
 			Where	spawnbot_right
 			Support 1
 			TFBot
