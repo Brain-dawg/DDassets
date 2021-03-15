@@ -173,7 +173,7 @@ WaveSchedule
 			Class Medic
 			Name "Shield Medic"
 			Skill Expert
-			ClassIcon medic_shield_lite
+			ClassIcon medic_shield
 			WeaponRestrictions SecondaryOnly
 			Attributes SpawnWithFullCharge
 			Attributes IgnoreEnemies

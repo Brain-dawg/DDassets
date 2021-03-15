@@ -1494,7 +1494,7 @@ WaveSchedule
 		{
 			Name "Giant Shield Medic"
 			Class Medic
-			ClassIcon medic_shield_lite_giant
+			ClassIcon medic_shield_giant
 			Skill Expert
 			Health 4000
 			Attributes SpawnWithFullCharge
@@ -1574,7 +1574,7 @@ WaveSchedule
 		{
 			Name "Armored Shield Medic"
 			Class Medic
-			ClassIcon medic_shield_lite
+			ClassIcon medic_shield
 			Attributes SpawnWithFullCharge
 			Attributes ProjectileShield
 			Health 175
@@ -1645,7 +1645,7 @@ WaveSchedule
 		{
 			Name "Armored Shield Medic"
 			Class Medic
-			ClassIcon medic_shield_lite
+			ClassIcon medic_shield
 			Health 175
 			Scale 1.2
 			Attributes SpawnWithFullCharge
@@ -1718,7 +1718,7 @@ WaveSchedule
 		{
 			Name "Armored Shield Medic"
 			Class Medic
-			ClassIcon medic_shield_lite
+			ClassIcon medic_shield
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes ProjectileShield

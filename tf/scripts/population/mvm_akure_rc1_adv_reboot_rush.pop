@@ -975,7 +975,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Shield Medic"
-			ClassIcon medic_shield_lite
+			ClassIcon medic_shield
 			Skill Hard
 			Item "Quick-Fix Medic"
 			Item "Battery Canteens"
@@ -1007,7 +1007,7 @@ WaveSchedule
 		{
 			Name "Shield Medic"
             Class Medic
-            ClassIcon medic_shield_lite
+            ClassIcon medic_shield
             Skill Expert
             Attributes SpawnWithFullCharge
             Attributes IgnoreEnemies

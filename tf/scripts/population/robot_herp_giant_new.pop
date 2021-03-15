@@ -1653,7 +1653,7 @@ WaveSchedule
 		}
 		T_TFBot_Giant_Demo_Scatter_Clusterbomb
 		{
-			ClassIcon	demo_burst_scatter_giant
+			ClassIcon	demo_clusterbomb_scatter_giant
 			Health	3300
 			Name	"Giant Scatter Bomb Demo"
 			Class	Demoman
@@ -1684,7 +1684,7 @@ WaveSchedule
 		}
 		T_TFBot_Giant_Demo_Herp_SteelBomber
 		{
-			ClassIcon	demo_burst_scatter_giant
+			ClassIcon	demo_clusterbomb_scatter_giant
 			Health	4200
 			Name	"Corporal Steel Bomber"
 			Class	Demoman
@@ -2039,7 +2039,7 @@ WaveSchedule
 		}
 		T_TFBot_Giant_Heavyweapons_RocketShot
 		{
-			ClassIcon	soldier_burstfire
+			ClassIcon	heavy_rocketshot
 			Health	5000
 			Name	"Giant Rocket Shotgun Heavy"
 			Class	HeavyWeapons
