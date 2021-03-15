@@ -2621,7 +2621,7 @@ WaveSchedule
 		{
 			Class Medic
 			Skill Expert
-			ClassIcon medic_shield_qf
+			ClassIcon medic_shield_lite
 			Health	15000
 			Attributes ProjectileShield
 			Attributes SpawnWithFullCharge
@@ -2854,7 +2854,7 @@ WaveSchedule
 		//Demoman
 		T_TFBot_demo_delay_burstfire
 		{
-			ClassIcon	demo_clusterbomb	//placeholder
+			ClassIcon	demo_burst	//placeholder
 			Health	175
 			Skill	Expert
 			Name	"Minefield Demoman"
@@ -3365,7 +3365,7 @@ WaveSchedule
 		//Demoman
 		T_TFGateBot_demo_delay_burstfire_giant
 		{
-			ClassIcon	demo_clusterbomb	
+			ClassIcon	demo_burst	
 			Health	3300
 			Name	"Giant Minefield Demoman"
 			Class	Demoman
@@ -3437,7 +3437,7 @@ WaveSchedule
 		}
 		T_TFBot_demo_delay_burstfire_giant
 		{
-			ClassIcon	demo_clusterbomb_delay_giant	
+			ClassIcon	demo_burst_delay_giant	
 			Health	3300
 			Skill	Expert
 			Name	"Giant Minefield Demoman"
@@ -9970,7 +9970,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Shield Medic"
-			ClassIcon medic_shield_qf
+			ClassIcon medic_shield_lite
 			Skill Normal
 			Attributes SpawnWithFullCharge
 			Attributes ProjectileShield
@@ -10002,7 +10002,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Quick-Fix Shield Medic"
-			ClassIcon medic_shield_qf
+			ClassIcon medic_shield_lite
 			Skill Normal
 			Attributes SpawnWithFullCharge
 			Attributes ProjectileShield

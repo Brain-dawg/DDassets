@@ -198,7 +198,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Protective Honeycomb Bee"
-			ClassIcon medic_shield
+			ClassIcon medic_shield_lite
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes IgnoreEnemies

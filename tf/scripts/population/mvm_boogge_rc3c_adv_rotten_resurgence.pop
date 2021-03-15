@@ -515,7 +515,7 @@ WaveSchedule
         T_TFBot_Medic_Shield
         {
             Class Medic
-            ClassIcon medic_shield
+            ClassIcon medic_shield_lite
             Name "Shield Medic"
             Skill Expert
             WeaponRestrictions SecondaryOnly

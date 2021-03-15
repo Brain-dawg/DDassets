@@ -578,7 +578,7 @@ WaveSchedule
 		}
 		T_TFBot_Demo_Herp_SteelBomber
 		{
-			ClassIcon	demo_clusterbomb_scatter
+			ClassIcon	demo_burst_scatter
 			Health	650
 			Scale	1.3
 			Name	"Rookie Iron Bomber"
@@ -910,7 +910,7 @@ WaveSchedule
 		}
 		T_TFBot_Heavyweapons_RocketShot
 		{
-			ClassIcon	heavy_rocketshot
+			ClassIcon	soldier_burstfire
 			Health	300
 			Name	"Rocket Shotgun Heavy"
 			Class	HeavyWeapons

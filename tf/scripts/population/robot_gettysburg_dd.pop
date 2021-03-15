@@ -1578,7 +1578,7 @@ WaveSchedule
 		{
 			Name "Giant Backburner Pyro"
 			Class Pyro
-			ClassIcon pyro_backburner_nys_giant
+			ClassIcon pyro_giant
 			Health 3300
 			Skill Expert
 			Item "Pyro Helm"
@@ -4083,7 +4083,7 @@ WaveSchedule
 		{
 			Name "Shield Medic"
 			Class Medic
-			ClassIcon medic_shield
+			ClassIcon medic_shield_lite
 			Skill Expert
 			Attributes SpawnWithFullCharge
 			Attributes ProjectileShield
@@ -4110,7 +4110,7 @@ WaveSchedule
 		{
 			Name "Giant Shield Medic"
 			Class Medic
-			ClassIcon medic_shield_giant
+			ClassIcon medic_shield_lite_giant
 			Health 4500
 			Skill Expert
 			Attributes SpawnWithFullCharge
