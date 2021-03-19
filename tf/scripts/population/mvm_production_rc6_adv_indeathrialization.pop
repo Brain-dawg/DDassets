@@ -10,6 +10,7 @@ population
 	SniperHideLasers 1
 	RespecEnabled 0
 	SandmanStun 1
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	ExtraSpawnPoint [$SIGSEGV] //Adds spawn points on specified location
     {
         Name "spawnredbot"
@@ -181,6 +182,7 @@ population
 			Health 3000
 			Skill expert
 			name "Giant Sniper"
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			CharacterAttributes
 			{
 			"move speed bonus" 0.5
@@ -205,6 +207,7 @@ population
 			Health 3000
 			Skill expert
 			name "Giant Sniper"
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			CharacterAttributes
 			{
 			"move speed bonus" 0.5
@@ -1620,6 +1623,7 @@ population
 					Health 3000
 					classicon heavy_crit
 					Attributes AlwaysFireWeapon
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 					Template	T_TFBot_Sniper
 					ItemAttributes
 					{
@@ -1681,6 +1685,7 @@ population
 					Skill Expert
 					Health 3000
 					Attributes MiniBoss
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 					ItemAttributes
 					{
 						ItemName	"the sydney sleeper"
@@ -1735,6 +1740,7 @@ population
 					WeaponRestrictions MeleeOnly
 					classicon sniper_bushwacka
 					Attributes  MiniBoss
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 					ItemAttributes
 					{
 						ItemName	"the bushwacka"

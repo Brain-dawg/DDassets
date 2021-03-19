@@ -2900,10 +2900,8 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName	"The Huntsman"
-				"damage bonus"	1.25
-				"fire rate bonus"	0.5
-				"faster reload rate"	-0.8
-				"projectile penetration"	1
+				"faster reload rate" 0.3
+				"fire rate bonus" 0.3
 			}
 			CharacterAttributes
 			{

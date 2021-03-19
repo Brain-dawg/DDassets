@@ -10,6 +10,7 @@ WaveSchedule
 	CanBotsAttackWhileInSpawnRoom No
 	RespawnWaveTime 6
 	Advanced 1
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 
     Mission
 	{
@@ -869,6 +870,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Sniper_Cleaners_Carbine
+				UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			}
 		}
 		WaveSpawn
@@ -1347,6 +1349,7 @@ WaveSchedule
 					Item "The Cleaner's Carbine"
 					Scale 1.9
 					Health 50000
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 
 					ItemAttributes
 					{

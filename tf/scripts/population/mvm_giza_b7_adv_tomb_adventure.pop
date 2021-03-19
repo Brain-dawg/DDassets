@@ -14,6 +14,7 @@ WaveSchedule
 	BuybacksPerWave 3 // maximum buybacks allowed for each waves
 	RespecEnabled 1 //Set to 0 to disable refunds
 	RespecLimit 2 //How many times the player can use refunds
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	Templates
 	{
 		
@@ -2118,6 +2119,7 @@ WaveSchedule
 			MaxVisionRange 1200
 			Item "The Bare Necessities"
 			Item "The AWPer Hand"
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 		
 			ItemAttributes
 			{
@@ -2150,6 +2152,7 @@ WaveSchedule
 			Attributes MiniBoss
 			Skill Expert
 			Tag bot_giant
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			Item "The Dread Hiding Hood"
 			Item "The Fortified Compound"
 			Item "The Razorback"

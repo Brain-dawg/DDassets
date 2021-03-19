@@ -1957,6 +1957,7 @@ WaveSchedule
 		    	Name "Point Runner"
 		    	Skill Easy
 		    	Health 15000
+				Fastupdate 1 [$SIGSEGV]
 		    	EventChangeAttributes
 		    	{
 		    		Default
