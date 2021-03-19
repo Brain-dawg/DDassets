@@ -42,6 +42,7 @@ gettysburg
     ImprovedAirblast 1              [$SIGSEGV]
     FixedBuybacks 1                 [$SIGSEGV]
     TextPrintTime 0
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
     CustomUpgradesFile "mvm_upgrades_gettysburg_final.txt"                  [$SIGSEGV]
 
     ClassLimit [$SIGSEGV]
@@ -282,6 +283,7 @@ gettysburg
             Item "Letch's LED"
 			Item "The Triggerman's Tacticals"
             Attributes MiniBoss
+			PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
             Attributes SpawnWithFullCharge
 
             AlwaysGlow 1 [$SIGSEGV]
@@ -306,7 +308,7 @@ gettysburg
                 "airblast vulnerability multiplier" 0.35
                 "airblast vertical vulnerability multiplier" 0.35
                 "override footstep sound set" 7
-                "head scale" 0.7
+                //"head scale" 0.7
                 "rage giving scale" 0.5
             }
 
@@ -533,6 +535,7 @@ gettysburg
                     Attributes AlwaysFireWeapon
                     Attributes MiniBoss
                     Attributes AlwaysCrit
+					PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
                     WeaponRestrictions SecondaryOnly
                     Item "The Self-Aware Beauty Mark"
                     Item "Trophy Belt"
@@ -557,7 +560,7 @@ gettysburg
                         "damage force reduction" 0.35
                         "airblast vulnerability multiplier" 0.35
                         "override footstep sound set" 7
-                        "head scale" 0.7
+                        //"head scale" 0.7
                         "deploy time decreased" 0.25
                         "rage giving scale" 0.5
                     }

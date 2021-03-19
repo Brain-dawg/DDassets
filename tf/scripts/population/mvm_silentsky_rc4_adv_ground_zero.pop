@@ -12,6 +12,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 	StartingCurrency	250
 	RespawnWaveTime		4
 	CanBotsAttackWhileInSpawnRoom	no
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl" [$SIGSEGV]
@@ -766,6 +767,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Attributes	MiniBoss
 			WeaponRestrictions	PrimaryOnly
 			Tag	giant
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			CharacterAttributes
 			{
 				"move speed bonus"	0.5
@@ -1066,6 +1068,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		TFBot
 		{
 			Template	T_TFBot_Giant_Sniper
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 		}
 	}
 	Mission

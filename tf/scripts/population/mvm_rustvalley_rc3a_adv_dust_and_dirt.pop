@@ -8,6 +8,7 @@ population
 	RespawnWaveTime	6
 	CanBotsAttackWhileInSpawnRoom	yes
 	FlagCarrierMovementPenalty 0.75
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl" [$SIGSEGV]
@@ -94,6 +95,7 @@ population
 			Health 3000
 			Skill expert
 			name "Giant Sniper"
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			CharacterAttributes
 			{
 			"move speed bonus" 0.6
@@ -890,6 +892,7 @@ population
 					classicon sniper_bow_bleed
 					Template	T_TFBot_Sniper_Huntsman
 					Attributes	"MiniBoss"
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 					ItemAttributes
 					{
 						ItemName	"the huntsman"

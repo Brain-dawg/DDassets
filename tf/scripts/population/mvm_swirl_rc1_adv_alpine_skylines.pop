@@ -346,6 +346,7 @@ population
 			Health	2000
 			Name	"Giant Gear Grinder"
 			Class	Sniper
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			EventChangeAttributes
 			{
 				Default
@@ -360,7 +361,6 @@ population
 					Attributes	"MiniBoss"
 					Attributes	"IgnoreFlag"
 					Item	"MvM Gatebot Light Sniper"
-					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 					ItemAttributes
 					{
 						ItemName	"TF_WEAPON_CLUB"
@@ -423,7 +423,7 @@ population
 			AimTrackingInterval 0.001 [$SIGSEGV]
 			AimLeadProjectileSpeed 1017 [$SIGSEGV] 
 			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
-			UseHumanAnimations 1 [$SIGSEGV]
+			//UseHumanAnimations 1 [$SIGSEGV]
 			FastUpdate 1 [$SIGSEGV]
 			//Action default [$SIGSEGV]
 			//StripItemSlot 0 [$SIGSEGV]

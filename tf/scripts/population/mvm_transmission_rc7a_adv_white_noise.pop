@@ -58,6 +58,7 @@ WaveSchedule
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom Yes //As per a "standard" of sorts
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	
 	ItemAttributes [$SIGSEGV]
 	{
@@ -989,6 +990,7 @@ WaveSchedule
 			Health 3000
 			Skill Expert
 			Attributes MiniBoss
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			ClassIcon sniper_bow_multi
 			Tag bot_giant
 			ItemAttributes
@@ -3211,6 +3213,7 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Sniper_Huntsman_RapidFire
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 				}
 				TFBot
 				{
