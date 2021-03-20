@@ -25,16 +25,16 @@ population
 	ExtraTankPath [$SIGSEGV]
 	{
 		Name	"path_blimp1"
-		Node	"512.56 -584.54 430.73"
-		Node	"523.39 -179.29 430.73"
-		Node	"74.64 677.28 457.53"
-		Node	"622.58 2207.75 691.38"
-		Node	"92.83 2862.48 834.29"
-		Node	"-1587.58 2844.51 860.56"
-		Node	"-2471.29 2191.9 844.61"
-		Node	"-2246 958.3 954.62"
-		Node	"-2252.11 58.7 934.46"
-		Node	"-2775 -174 922.3"
+		Node	"512.56 -584.54 704.62"
+		Node	"523.39 -179.29 704.62"
+		Node	"74.64 677.28 704.62"
+		Node	"622.58 2207.75 704.62"
+		Node	"92.83 2862.48 704.62"
+		Node	"-1587.58 2844.51 704.62"
+		Node	"-2471.29 2191.9 704.62"
+		Node	"-2246 958.3 704.62"
+		Node	"-2252.11 58.7 704.62"
+		Node	"-2775 -174 704.62"
 	}
 	ExtraTankPath [$SIGSEGV]
 	{
@@ -1357,7 +1357,7 @@ population
                 MaxTurnRate 50 [$SIGSEGV]
                 Model "models/bots/boss_bot/boss_blimp.mdl" 
 				ReplaceModelCollisions 1 [$SIGSEGV]
-                Gravity -0.145 [$SIGSEGV]
+                Gravity -0.00000000000000000001 [$SIGSEGV]
                 DisableTracks 1 [$SIGSEGV]
 				DisableChildModels 1 [$SIGSEGV]
 				ReplaceModelCollisions 1 [$SIGSEGV]
