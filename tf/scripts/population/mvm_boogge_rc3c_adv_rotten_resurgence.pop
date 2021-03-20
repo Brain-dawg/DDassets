@@ -2292,7 +2292,7 @@ WaveSchedule
 			{
                 Name "Unholy Mackerel"
                 Template	T_TFBot_Scout_Fish
-                ClassIcon scout_giant
+                ClassIcon scout_bat
                 Skill Expert
                 Attributes AlwaysCrit
                 Item "the milkman"
