@@ -41,6 +41,7 @@ gettysburg
     ImprovedAirblast 1                  [$SIGSEGV]
     NoHolidayPickups 1                  [$SIGSEGV]
     TextPrintTime 0                     [$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl"	       [$SIGSEGV]
     PrecacheModel models/bots/skeleton_sniper/skeleton_sniper.mdl      [$SIGSEGV]
     PrecacheModel models/bots/boss_bot/boss_tank_color.mdl             [$SIGSEGV]
     PrecacheModel "models/bots/boss_bot/boss_blimp.mdl"				   [$SIGSEGV]
@@ -867,6 +868,8 @@ gettysburg
                     Attributes AlwaysFireWeapon
 					MaxVisionRange 1200
                     WeaponRestrictions SecondaryOnly
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+					UseHumanAnimations 1 [$SIGSEGV]
 
 					Action Mobber
                     UseMeleeThreatPrioritization 1
@@ -925,6 +928,8 @@ gettysburg
                     Attributes AlwaysFireWeapon
 					MaxVisionRange 1200
                     WeaponRestrictions SecondaryOnly
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+					UseHumanAnimations 1 [$SIGSEGV]
 
 					Action Mobber
                     UseMeleeThreatPrioritization 1
@@ -983,6 +988,8 @@ gettysburg
                     Attributes AlwaysFireWeapon
 					MaxVisionRange 1200
                     WeaponRestrictions SecondaryOnly
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+					UseHumanAnimations 1 [$SIGSEGV]
 
 					//Action Mobber
                     UseMeleeThreatPrioritization 1
@@ -2264,6 +2271,7 @@ gettysburg
 			    Item "The Triggerman's Tacticals"
                 Attributes MiniBoss
                 Action Sniper [$SIGSEGV]
+				UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 
                 AlwaysGlow 1 [$SIGSEGV]
                 DropWeapon 1
@@ -2288,7 +2296,7 @@ gettysburg
                     "airblast vulnerability multiplier" 0.35
                     "airblast vertical vulnerability multiplier" 0.35
                     "override footstep sound set" 7
-                    "head scale" 0.7
+                    //"head scale" 0.7
                     "rage giving scale" 0.5
                     "force distribute currency on death" 1
                 }
@@ -4277,6 +4285,7 @@ gettysburg
                     Item "The Triggerman's Tacticals"
                     Item "The Fortified Compound"
                     Attributes MiniBoss
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
                     Tag bot_giant
                     DropWeapon 1
 
@@ -4303,7 +4312,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.35
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 7
-                        "head scale" 0.7
+                        //"head scale" 0.7
                         "hand scale" 2
                         "rage giving scale" 0.5
                     }
