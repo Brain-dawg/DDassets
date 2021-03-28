@@ -1,10 +1,8 @@
 // ADVANCED MISSION FOR MVM_HANAMI_RC1
 // MADE BY PEALOVER
 // V7
-
 #base robot_giant.pop
 #base robot_standard.pop
-
 WaveSchedule
 {
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
@@ -254,13 +252,13 @@ WaveSchedule
 			Item "The Battalion's Backup"
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.4
 				"airblast vulnerability multiplier" 0.4
 				"override footstep sound set" 3
 				"increase buff duration" 9.0
 				"airblast vertical vulnerability multiplier" 0.1
-				"rage giving scale"	0.1
+				"rage giving scale" 0.1
 			}
 		}
 		T_TFBot_Soldier_Samurai_Concheror
@@ -311,7 +309,7 @@ WaveSchedule
 				"charge time increased" 6
 				"charge recharge rate increased" 7
 				"increased jump height" 2.3
-				"bot custom jump particle"	1
+				"bot custom jump particle" 1
 			}
 		}
 		T_TFBot_Chief_Soldier_RocketPush_Leaper_SlowBarrage_Spammer
@@ -349,15 +347,16 @@ WaveSchedule
 			{
 				"increased jump height" 3
 				"cancel falling damage" 1
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"override footstep sound set" 3
 				"damage force reduction" 0.4
 				"airblast vulnerability multiplier" 0.4
 				"airblast vertical vulnerability multiplier" 0.1
-				"rage giving scale"	0.15
+				"rage giving scale" 0.15
 			}
 		}
-		T_TFBot_Giant_Heavyweapons_HealOnKill_Fix // actually wields the deflector and has a proper name
+		// actually wields the deflector and has a proper name
+		T_TFBot_Giant_Heavyweapons_HealOnKill_Fix
 		{
 			Class Heavyweapons
 			Name "Giant Heal-on-Kill Heavy"
@@ -378,7 +377,7 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"override footstep sound set" 2
@@ -408,7 +407,7 @@ WaveSchedule
 		Where spawnbot_mission_sentrybuster
 		BeginAtWave 1
 		RunForThisManyWaves 9
-		CooldownTime 40           
+		CooldownTime 40
 		TFBot
 		{
 			Template T_TFBot_SentryBuster
@@ -563,7 +562,8 @@ WaveSchedule
 			TeleportWhere spawnbot_flank
 		}
 	}
-	Wave // WAVE 1
+	// WAVE 1
+	Wave
 	{
 		StartWaveOutput
 		{
@@ -630,7 +630,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "tank_start_main"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -662,14 +662,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -757,14 +772,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 2
+	// WAVE 2
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_1bomb_classic_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -928,14 +944,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 3
+	// WAVE 3
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_2bomb_classic_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1157,14 +1174,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 4
+	// WAVE 4
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_2bomb_classic_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1195,14 +1213,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1243,14 +1276,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1308,14 +1356,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1338,7 +1401,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "tank_start_main"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1406,14 +1469,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1446,7 +1524,8 @@ WaveSchedule
 				Target boss_spawn_relay
 				Action Trigger
 			}
-			Tank // mvm blimp concept designed by hell-met
+			// mvm blimp concept designed by hell-met
+			Tank
 			{
 				Health 20000
 				Speed 125
@@ -1476,14 +1555,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 5
+	// WAVE 5
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_2bomb_classic_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1557,7 +1637,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "tank_start_main"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1668,14 +1748,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 6
+	// WAVE 6
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_3bomb_classic_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1789,6 +1870,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1813,6 +1899,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}

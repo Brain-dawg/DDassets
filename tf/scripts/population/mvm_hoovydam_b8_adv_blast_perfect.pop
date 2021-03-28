@@ -1,11 +1,9 @@
 // ADVANCED MISSION FOR MVM_HOOVYDAM_B8
 // MADE BY PEALOVER
 // V9
-
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
-
 WaveSchedule
 {
 	StartingCurrency 1000
@@ -27,11 +25,10 @@ WaveSchedule
 			{
 				Default
 				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Scout"
 					Tag bot_giant
 					Skill Easy
@@ -40,7 +37,7 @@ WaveSchedule
 					Attributes MiniBoss
 					CharacterAttributes
 					{
-						"move speed bonus"	2
+						"move speed bonus" 2
 						"damage force reduction" 0.7
 						"airblast vulnerability multiplier" 0.7
 						"override footstep sound set" 5
@@ -49,7 +46,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Scout"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Scout"
 						"item style override" 1
@@ -63,7 +61,7 @@ WaveSchedule
 					Attributes MiniBoss
 					CharacterAttributes
 					{
-						"move speed bonus"	2
+						"move speed bonus" 2
 						"damage force reduction" 0.7
 						"airblast vulnerability multiplier" 0.7
 						"override footstep sound set" 5
@@ -77,16 +75,14 @@ WaveSchedule
 			Name "Giant Burst Fire Soldier"
 			ClassIcon soldier_burstfire
 			Health 4000
-
 			EventChangeAttributes
 			{
 				Default
 				{
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
-
+					Tag bot_gatebot // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Soldier"
 					Skill Expert
 					WeaponRestrictions PrimaryOnly
@@ -97,7 +93,7 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "TF_WEAPON_ROCKETLAUNCHER"
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"faster reload rate" 0.6
 						"fire rate bonus" 0.1
 						"clip size upgrade atomic" 5.0
@@ -113,12 +109,13 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Soldier"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Soldier"
 						"item style override" 1
 					}
-										Skill Expert
+					Skill Expert
 					WeaponRestrictions PrimaryOnly
 					Attributes MiniBoss
 					Attributes HoldFireUntilFullReload
@@ -127,7 +124,7 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "TF_WEAPON_ROCKETLAUNCHER"
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"faster reload rate" 0.6
 						"fire rate bonus" 0.1
 						"clip size upgrade atomic" 5.0
@@ -174,12 +171,12 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"override footstep sound set" 3
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
-				"rage giving scale"	0.15
+				"rage giving scale" 0.15
 				"cancel falling damage" 1
 			}
 		}
@@ -190,11 +187,10 @@ WaveSchedule
 			{
 				Default
 				{
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank		// having these will cause bots to run towards gates
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag 			// having these will cause bots to run towards gates
-
+					Tag bot_gatebot // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Pyro"
 					Skill Easy
 					Attributes AlwaysFireWeapon
@@ -204,7 +200,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Pyro"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Pyro"
 						"item style override" 1
@@ -242,7 +239,6 @@ WaveSchedule
 		}
 		T_TFGateBot_Giant_Pyro
 		{
-
 			Class Pyro
 			Name "Giant Pyro"
 			ClassIcon pyro_giant
@@ -251,11 +247,10 @@ WaveSchedule
 			{
 				Default
 				{
-					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
-					Tag bot_gatebot				// having these will cause bots to run towards gates
-					BehaviorModifiers push		// having these will cause bots to run towards gates
-					Attributes IgnoreFlag		// having these will cause bots to run towards gates
-
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Pyro"
 					Skill Expert
 					WeaponRestrictions PrimaryOnly
@@ -263,7 +258,7 @@ WaveSchedule
 					Tag bot_giant
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.6
 						"airblast vulnerability multiplier" 0.6
 						"override footstep sound set" 6
@@ -272,7 +267,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Pyro"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Pyro"
 						"item style override" 1
@@ -283,7 +279,7 @@ WaveSchedule
 					Tag bot_giant
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.6
 						"airblast vulnerability multiplier" 0.6
 						"override footstep sound set" 6
@@ -297,16 +293,14 @@ WaveSchedule
 			Name "Giant Flare Pyro"
 			ClassIcon pyro_flare_giant
 			Health 3000
-			
 			EventChangeAttributes
 			{
 				Default
 				{
-					Tag nav_prefer_gate1_flank	// having these will cause bots to run towards gates
-					Tag bot_gatebot				// having these will cause bots to run towards gates
-					BehaviorModifiers push		// having these will cause bots to run towards gates
-					Attributes IgnoreFlag		// having these will cause bots to run towards gates
-
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Pyro"
 					Tag bot_giant
 					Skill Expert
@@ -321,7 +315,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.6
 						"airblast vulnerability multiplier" 0.6
 						"override footstep sound set" 6
@@ -330,7 +324,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Pyro"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Pyro"
 						"item style override" 1
@@ -348,7 +343,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.6
 						"airblast vulnerability multiplier" 0.6
 						"override footstep sound set" 6
@@ -362,15 +357,15 @@ WaveSchedule
 			ClassIcon demoknight
 			Name "Persian Demoknight"
 			Skill Hard
-			Item "Sultan's Ceremonial"	
+			Item "Sultan's Ceremonial"
 			Item "Ali Baba's Wee Booties"
 			Item "The Persian Persuader"
-			Item "The Splendid Screen"	
+			Item "The Splendid Screen"
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
 				"Attack not cancel charge" 1
-			}		
+			}
 			WeaponRestrictions MeleeOnly
 			CharacterAttributes
 			{
@@ -384,18 +379,18 @@ WaveSchedule
 			{
 				Default
 				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Demoman"
 					Skill Expert
 				}
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Demoman"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Demoman"
 						"item style override" 1
@@ -410,16 +405,14 @@ WaveSchedule
 			Name "Giant Rapid Fire Demoman"
 			ClassIcon demo_giant
 			Health 3300
-			
 			EventChangeAttributes
 			{
 				Default
 				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Demoman"
 					Tag bot_giant
 					Skill Expert
@@ -433,7 +426,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.5
 						"airblast vulnerability multiplier" 0.5
 						"override footstep sound set" 4
@@ -442,7 +435,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Demoman"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Demoman"
 						"item style override" 1
@@ -459,7 +453,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.5
 						"airblast vulnerability multiplier" 0.5
 						"override footstep sound set" 4
@@ -491,11 +485,10 @@ WaveSchedule
 			{
 				Default
 				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Heavy"
 					Skill Expert
 					Attributes MiniBoss
@@ -507,7 +500,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.3
 						"airblast vulnerability multiplier" 0.3
 						"override footstep sound set" 2
@@ -516,7 +509,8 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Item "MvM GateBot Light Heavy"
-					ItemAttributes               // turn off light hat
+					// turn off light hat
+					ItemAttributes
 					{
 						ItemName "MvM GateBot Light Heavy"
 						"item style override" 1
@@ -531,7 +525,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0.3
 						"airblast vulnerability multiplier" 0.3
 						"override footstep sound set" 2
@@ -550,11 +544,10 @@ WaveSchedule
 			{
 				Default
 				{
-					BehaviorModifiers push			// having these will cause bots to run towards gates
-					Attributes IgnoreFlag			// having these will cause bots to run towards gates
-					Tag nav_prefer_gate1_flank 		// having these will cause bots to run towards gates
-					Tag bot_gatebot 				// having these will cause bots to run towards gates
-
+					BehaviorModifiers push // having these will cause bots to run towards gates
+					Attributes IgnoreFlag // having these will cause bots to run towards gates
+					Tag nav_prefer_gate1_flank // having these will cause bots to run towards gates
+					Tag bot_gatebot // having these will cause bots to run towards gates
 					Item "MvM GateBot Light Heavy"
 					Skill expert
 					Tag bot_giant
@@ -598,7 +591,7 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.5
+						"move speed bonus" 0.5
 						"damage force reduction" 0
 						"airblast vulnerability multiplier" 0
 						"airblast vertical vulnerability multiplier" 0
@@ -641,7 +634,7 @@ WaveSchedule
 			MaxVisionRange 4000
 			Tag bot_sniper
 		}
-	}	
+	}
 	Mission
 	{
 		Objective Spy
@@ -659,7 +652,7 @@ WaveSchedule
 			Skill Expert
 			Name Spy
 		}
-	}	
+	}
 	Mission
 	{
 		Objective Engineer
@@ -675,8 +668,9 @@ WaveSchedule
 		{
 			Template T_TFBot_Engineer_Sentry_Battle
 		}
-	}	
-	Wave // WAVE 1
+	}
+	// WAVE 1
+	Wave
 	{
 		WaitWhenDone 60
 		Sound "Announcer.IncomingMob"
@@ -694,8 +688,8 @@ WaveSchedule
 		{
 			Target initMain_roadside
 			Action Trigger
-		}	
-		DoneOutput					
+		}
+		DoneOutput
 		{
 			Target pickfast
 			Action PickRandomShuffle
@@ -708,7 +702,7 @@ WaveSchedule
 			{
 				Target changeMain_setAB
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -718,7 +712,7 @@ WaveSchedule
 			{
 				Target initA_setRandomMix
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -794,11 +788,21 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -847,7 +851,7 @@ WaveSchedule
 			{
 				Target changeMain_cliffside
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -932,7 +936,7 @@ WaveSchedule
 			{
 				Target changeMain_sides
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1027,7 +1031,7 @@ WaveSchedule
 			{
 				Target changeMain_pit
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1056,6 +1060,11 @@ WaveSchedule
 					Tag bot_squad_member
 					Attributes Parachute
 					Item "The B.A.S.E. Jumper"
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
@@ -1063,6 +1072,11 @@ WaveSchedule
 					Tag bot_squad_member
 					Attributes Parachute
 					Item "The B.A.S.E. Jumper"
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
@@ -1070,6 +1084,11 @@ WaveSchedule
 					Tag bot_squad_member
 					Attributes Parachute
 					Item "The B.A.S.E. Jumper"
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1089,8 +1108,9 @@ WaveSchedule
 				Template T_TFBot_Sniper_Huntsman
 			}
 		}
-	}		
-	Wave // WAVE 2
+	}
+	// WAVE 2
+	Wave
 	{
 		WaitWhenDone 60
 		Sound "Announcer.IncomingMob"
@@ -1104,8 +1124,8 @@ WaveSchedule
 		{
 			Target initMain_sides
 			Action Trigger
-		}	
-		DoneOutput					
+		}
+		DoneOutput
 		{
 			Target pickfast
 			Action PickRandomShuffle
@@ -1118,7 +1138,7 @@ WaveSchedule
 			{
 				Target changeMain_setAB
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1128,7 +1148,7 @@ WaveSchedule
 			{
 				Target initA_setRandomMix
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1151,16 +1171,31 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1185,16 +1220,31 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1218,16 +1268,31 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1251,16 +1316,31 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1336,7 +1416,7 @@ WaveSchedule
 			{
 				Target changeMain_roadside
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1442,7 +1522,7 @@ WaveSchedule
 			{
 				Target changeMain_sides
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1523,7 +1603,7 @@ WaveSchedule
 			{
 				Target changeMain_roadside
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1579,11 +1659,21 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1609,11 +1699,21 @@ WaveSchedule
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1642,7 +1742,7 @@ WaveSchedule
 			{
 				Target changeMain_sides
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1726,7 +1826,8 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 3
+	// WAVE 3
+	Wave
 	{
 		WaitWhenDone 60
 		Sound "Announcer.IncomingMob"
@@ -1740,8 +1841,8 @@ WaveSchedule
 		{
 			Target initMain_sides
 			Action Trigger
-		}	
-		DoneOutput					
+		}
+		DoneOutput
 		{
 			Target pickfast
 			Action PickRandomShuffle
@@ -1754,7 +1855,7 @@ WaveSchedule
 			{
 				Target changeMain_setAB
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1764,7 +1865,7 @@ WaveSchedule
 			{
 				Target initA_setRandomMix
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1842,7 +1943,7 @@ WaveSchedule
 			{
 				Target changeMain_roadside
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -1864,7 +1965,7 @@ WaveSchedule
 				Name "tankboss"
 				Skin 1
 				StartingPathTrackNode "tank_path_a_10"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1951,7 +2052,7 @@ WaveSchedule
 			{
 				Target changeMain_cliffside
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -2040,7 +2141,7 @@ WaveSchedule
 			{
 				Target changeMain_sides
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -2174,7 +2275,7 @@ WaveSchedule
 			{
 				Target changeMain_pit
 				Action Trigger
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -2185,7 +2286,7 @@ WaveSchedule
 			{
 				Target intel
 				Action ForceResetSilent
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -2196,7 +2297,7 @@ WaveSchedule
 			{
 				Target intel2
 				Action ForceResetSilent
-			}		
+			}
 		}
 		WaveSpawn
 		{
@@ -2207,7 +2308,7 @@ WaveSchedule
 			{
 				Target intel3
 				Action ForceResetSilent
-			}		
+			}
 		}
 		WaveSpawn
 		{

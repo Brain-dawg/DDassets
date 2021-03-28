@@ -1,7 +1,7 @@
 WaveSchedule
 {
-    Templates
-    {
+	Templates
+	{
 		G_Scout_Fan
 		{
 			Name "Fan o'War Scout"
@@ -12,7 +12,6 @@ WaveSchedule
 			Item "The Fan o'War"
 			Item "Mangnanimous Monarch"
 		}
-
 		G_Scout_Bonk
 		{
 			Name "Bonk Scout"
@@ -23,19 +22,16 @@ WaveSchedule
 			Item "The Soda Popper"
 			Item "Bonk! Atomic Punch"
 			Item "The Atomizer"
-
 			ItemAttributes
 			{
 				ItemName "Bonk Helm"
 				"set item tint rgb" 15185211
 			}
-
 			CharacterAttributes
 			{
-				"deploy time decreased" 0.5 
+				"deploy time decreased" 0.5
 			}
 		}
-
 		G_Scout_Bonk_Giant
 		{
 			Name "Giant Bonk Scout"
@@ -49,27 +45,23 @@ WaveSchedule
 			Item "The Atomizer"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Soda Popper"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Atomizer"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Bonk Helm"
 				"set item tint rgb" 15185211
 			}
-
 			CharacterAttributes
 			{
 				"effect bar recharge rate increased" 0.35
@@ -80,7 +72,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Cola
 		{
 			Name "Crit-a-Cola Scout"
@@ -91,20 +82,17 @@ WaveSchedule
 			Item "The Soda Popper"
 			Item "Crit-a-Cola"
 			Item "The Atomizer"
-
 			ItemAttributes
 			{
 				ItemName "Bonk Helm"
 				"set item tint rgb" 5322826
 			}
-
 			CharacterAttributes
 			{
 				"effect bar recharge rate increased" 0.5
 				"deploy time increased" 0.5
 			}
 		}
-
 		G_Scout_Cola_Giant
 		{
 			Name "Giant Cola Scout"
@@ -118,27 +106,23 @@ WaveSchedule
 			Item "The Atomizer"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Soda Popper"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Atomizer"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Bonk Helm"
 				"set item tint rgb" 5322826
 			}
-
 			CharacterAttributes
 			{
 				"effect bar recharge rate increased" 0
@@ -149,7 +133,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Cleaver_Burst_Giant
 		{
 			Name "Giant Burst Cleaver Scout"
@@ -163,7 +146,6 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
 			MaxVisionRange 800
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_SCATTERGUN
@@ -171,7 +153,6 @@ WaveSchedule
 				"fire rate bonus" 0.3
 				"reload time decreased" 0.67
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Flying Guillotine"
@@ -180,7 +161,6 @@ WaveSchedule
 				is_passive_weapon 1
 				"damage penalty" 0.6
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -190,7 +170,6 @@ WaveSchedule
 				"hand scale" 0
 			}
 		}
-
 		G_Scout_PocketPistol_Giant
 		{
 			Name "Giant Pocket Pistol Scout"
@@ -205,7 +184,6 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Pretty Boy's Pocket Pistol"
@@ -214,7 +192,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -223,8 +200,7 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
-        G_Scout_Giant
+		G_Scout_Giant
 		{
 			Name "Giant Scout"
 			Class Scout
@@ -239,7 +215,6 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
 			MaxVisionRange 1200
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "pyroland_scattergun_shottohell"
@@ -249,29 +224,25 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "TTG Max Pistol"
 				"damage bonus" 1.2
-                "weapon spread bonus" 0.5
+				"weapon spread bonus" 0.5
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_BAT"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Backwards Ballcap"
 				"set item tint rgb" 2960676
 			}
-			
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -280,7 +251,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Super_Giant
 		{
 			Name "Super Scout"
@@ -293,14 +263,12 @@ WaveSchedule
 			Item "Unarmed Combat"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Unarmed Combat"
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 2
@@ -310,7 +278,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Milk_Giant
 		{
 			Name "Giant Milk Scout"
@@ -325,7 +292,6 @@ WaveSchedule
 			Attributes AlwaysFireWeapon
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Mad Milk"
@@ -334,7 +300,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -343,7 +308,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Blaster_Giant
 		{
 			Name "Giant Blaster Scout"
@@ -357,7 +321,6 @@ WaveSchedule
 			Attributes MiniBoss
 			MaxVisionRange 1200
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Baby Face's Blaster"
@@ -365,7 +328,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -374,50 +336,45 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
-        G_Scout_Shortstop
-        {
-            Name "Shortstop Scout"
-            Class Scout
-            ClassIcon scout_shortstop
-            Skill Normal
-            Item "The Delinquent's Down Vest"
-            Item "The Shortstop"
-            MaxVisionRange 1000
-        }
-
-        G_Scout_Shortstop_Giant
-        {
-            Name "Giant Shortstop Scout"
-            Class Scout
-            ClassIcon scout_shortstop_giant
-            Skill Expert
-            Health 1600
-            Item "The Delinquent's Down Vest"
-            Item "The Shortstop"
-            MaxVisionRange 1600
-            Attributes MiniBoss
-            Tag bot_giant
-
-            ItemAttributes
-            {
-                ItemName "The Shortstop"
+		G_Scout_Shortstop
+		{
+			Name "Shortstop Scout"
+			Class Scout
+			ClassIcon scout_shortstop
+			Skill Normal
+			Item "The Delinquent's Down Vest"
+			Item "The Shortstop"
+			MaxVisionRange 1000
+		}
+		G_Scout_Shortstop_Giant
+		{
+			Name "Giant Shortstop Scout"
+			Class Scout
+			ClassIcon scout_shortstop_giant
+			Skill Expert
+			Health 1600
+			Item "The Delinquent's Down Vest"
+			Item "The Shortstop"
+			MaxVisionRange 1600
+			Attributes MiniBoss
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "The Shortstop"
 				"damage bonus" 1.2
-                "weapon spread bonus" 0.67
-                "killstreak tier" 2
-                "killstreak idleeffect" 1
-            }
-
-            CharacterAttributes
-            {
-                "damage force reduction" 0.35
+				"weapon spread bonus" 0.67
+				"killstreak tier" 2
+				"killstreak idleeffect" 1
+			}
+			CharacterAttributes
+			{
+				"damage force reduction" 0.35
 				"airblast vulnerability multiplier" 0.35
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 5
 			}
-        }
-
-        G_Scout_Sandman_Giant
+		}
+		G_Scout_Sandman_Giant
 		{
 			Name "Major League Scout"
 			Class Scout
@@ -429,7 +386,6 @@ WaveSchedule
 			Item "The Sandman"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Sandman"
@@ -438,7 +394,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
 				"damage force reduction" 0.35
@@ -447,7 +402,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Sandman_Armored_Giant
 		{
 			Name "Armored Major League Scout"
@@ -461,7 +415,6 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Sandman"
@@ -471,7 +424,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.8
@@ -481,7 +433,6 @@ WaveSchedule
 				"override footstep sound set" 5
 			}
 		}
-
 		G_Scout_Sandman_Boss_Air
 		{
 			Name "Home Frickin' Run"
@@ -497,7 +448,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes UseBossHealthBar
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Sandman"
@@ -508,7 +458,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.8
@@ -521,7 +470,6 @@ WaveSchedule
 				"voice pitch scale" 1.25
 			}
 		}
-
 		G_Scout_Sandman_Boss_Fall
 		{
 			Name "Battin' a Thousand"
@@ -537,7 +485,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes UseBossHealthBar
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Sandman"
@@ -548,7 +495,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.8
@@ -561,8 +507,7 @@ WaveSchedule
 				"voice pitch scale" 1.25
 			}
 		}
-
-        G_Soldier_Giant
+		G_Soldier_Giant
 		{
 			Name "Giant Soldier"
 			Class Soldier
@@ -576,7 +521,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName gentlemanne_rocketlauncher_coffinnail
@@ -584,7 +528,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 0
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -594,7 +537,6 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_Rapid_Giant
 		{
 			Name "Giant Rapid Fire Soldier"
@@ -607,7 +549,6 @@ WaveSchedule
 			Item "Exquisite Rack"
 			Item "Merc's Pride Scarf"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName gentlemanne_rocketlauncher_coffinnail
@@ -618,7 +559,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 0
 			}
-		
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -628,7 +568,6 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_Pocket_Giant
 		{
 			Name "Giant Pocket Soldier"
@@ -642,7 +581,6 @@ WaveSchedule
 			Item "Panic Attack Shotgun"
 			Item "Stahlhelm"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Original"
@@ -651,7 +589,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Panic Attack Shotgun"
@@ -661,7 +598,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -671,7 +607,6 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_Bazooka
 		{
 			Name "Bazooka Soldier"
@@ -680,7 +615,6 @@ WaveSchedule
 			Skill Hard
 			Item "The Beggar's Bazooka"
 			Item "Merc's Pride Scarf"
-			
 			ItemAttributes
 			{
 				ItemName "The Beggar's Bazooka"
@@ -688,7 +622,6 @@ WaveSchedule
 				"can overload" 0
 			}
 		}
-
 		G_Soldier_Direct_Hit
 		{
 			Name "Direct Hit Soldier"
@@ -698,7 +631,6 @@ WaveSchedule
 			Item "Defiant Spartan"
 			Attributes HoldFireUntilFullReload
 		}
-
 		G_Soldier_Direct_Hit_Giant
 		{
 			Name "Giant Direct Soldier"
@@ -711,7 +643,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Direct Hit"
@@ -720,17 +651,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_Volley_Giant
 		{
 			Name "Giant Volley Fire Soldier"
@@ -743,33 +672,29 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName gentlemanne_rocketlauncher_coffinnail
-				"fire rate bonus" 0.25 
+				"fire rate bonus" 0.25
 				"reload time decreased" 0.25
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Full Metal Drill Hat"
 				"set item tint rgb" 2960676
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_BurstFire_Spammer_Giant
 		{
 			Name "Giant Burst Fire Soldier"
@@ -780,9 +705,8 @@ WaveSchedule
 			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
 			Item "The Doe-Boy"
 			Attributes MiniBoss
-            Attributes HoldFireUntilFullReload
+			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -791,50 +715,7 @@ WaveSchedule
 				"clip size upgrade atomic" 5
 				"projectile speed decreased" 0.65
 			}
-
 			CharacterAttributes
-			{
-				"move speed bonus"	0.5
-				"damage force reduction" 0.2
-				"airblast vulnerability multiplier" 0.2
-				"airblast vertical vulnerability multiplier" 0.5
-				"override footstep sound set" 3
-			}
-		}
-
-        G_Soldier_BurstFire_Giant
-        {
-            Name "Giant Burst Fire Soldier"
-            Class Soldier
-            ClassIcon soldier_burstfire_giant
-            Skill Expert
-            Health 4200
-            Item gentlemanne_rocketlauncher_highrollers
-            Item "Tyrantium Helmet"
-            Attributes MiniBoss
-            Attributes HoldFireUntilFullReload
-			Tag bot_giant
-            
-            ItemAttributes
-            {
-                ItemName gentlemanne_rocketlauncher_highrollers
-                "damage bonus" 2
-                "faster reload rate" 0.4
-                "fire rate bonus" 0.2
-                "clip size upgrade atomic" 5
-                "projectile speed decreased" 0.9
-				"killstreak tier" 2
-				"killstreak idleeffect" 1
-				"set_item_texture_wear" 0
-            }
-
-            ItemAttributes
-            {
-                ItemName "Tyrantium Helmet"
-                "set item tint rgb" 2960676
-            }
-
-            CharacterAttributes
 			{
 				"move speed bonus" 0.5
 				"damage force reduction" 0.2
@@ -842,8 +723,45 @@ WaveSchedule
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 3
 			}
-        }
-
+		}
+		G_Soldier_BurstFire_Giant
+		{
+			Name "Giant Burst Fire Soldier"
+			Class Soldier
+			ClassIcon soldier_burstfire_giant
+			Skill Expert
+			Health 4200
+			Item gentlemanne_rocketlauncher_highrollers
+			Item "Tyrantium Helmet"
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName gentlemanne_rocketlauncher_highrollers
+				"damage bonus" 2
+				"faster reload rate" 0.4
+				"fire rate bonus" 0.2
+				"clip size upgrade atomic" 5
+				"projectile speed decreased" 0.9
+				"killstreak tier" 2
+				"killstreak idleeffect" 1
+				"set_item_texture_wear" 0
+			}
+			ItemAttributes
+			{
+				ItemName "Tyrantium Helmet"
+				"set item tint rgb" 2960676
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.2
+				"airblast vulnerability multiplier" 0.2
+				"airblast vertical vulnerability multiplier" 0.5
+				"override footstep sound set" 3
+			}
+		}
 		G_Soldier_Tank
 		{
 			Name "Tank"
@@ -858,7 +776,6 @@ WaveSchedule
 			Attributes UseBossHealthBar
 			Attributes DisableDodge
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName concealedkiller_rocketlauncher_woodlandwarrior
@@ -871,7 +788,6 @@ WaveSchedule
 				"mini rockets" 1
 				"set_item_texture_wear" 1
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0
@@ -891,7 +807,6 @@ WaveSchedule
 				"rage giving scale" 0.1
 			}
 		}
-
 		G_Soldier_Grapple_Bomber
 		{
 			Name "The Grapple Bomber"
@@ -906,13 +821,12 @@ WaveSchedule
 			Item TF_WEAPON_GRAPPLINGHOOK
 			Attributes MiniBoss
 			Attributes AutoJump
-				AutoJumpMin 6
-				AutoJumpMax 6
+			AutoJumpMin 6
+			AutoJumpMax 6
 			Attributes AlwaysCrit
 			Attributes UseBossHealthBar
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Direct Hit"
@@ -926,13 +840,11 @@ WaveSchedule
 				"no self blast dmg" 2
 				"damage causes airblast" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_GRAPPLINGHOOK
 				"is_passive_weapon" 1
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.25
@@ -946,8 +858,7 @@ WaveSchedule
 				"move speed bonus" 0.55
 			}
 		}
-
-        G_Soldier_Charged
+		G_Soldier_Charged
 		{
 			Name "Charged Soldier"
 			Class Soldier
@@ -957,7 +868,6 @@ WaveSchedule
 			Item "Exquisite Rack"
 			Item "The Gunboats"
 			Attributes AlwaysCrit
-			
 			ItemAttributes
 			{
 				ItemName "The Original"
@@ -966,7 +876,6 @@ WaveSchedule
 				"faster reload rate" 0.05
 			}
 		}
-		
 		G_Soldier_Charged_Giant
 		{
 			Name "Giant Charged Soldier"
@@ -980,7 +889,6 @@ WaveSchedule
 			Attributes AlwaysCrit
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Original"
@@ -990,17 +898,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Soldier_Supercharged_Giant
 		{
 			Name "Giant Supercharged Soldier"
@@ -1014,7 +920,6 @@ WaveSchedule
 			Attributes AlwaysCrit
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -1026,10 +931,9 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"attach particle effect" 704
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1037,7 +941,6 @@ WaveSchedule
 				"hand scale" 1.1
 			}
 		}
-
 		G_Soldier_Barrage_Giant
 		{
 			Name "Giant Barrage Soldier"
@@ -1050,7 +953,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName warbird_rocketlauncher_warhawk
@@ -1062,13 +964,11 @@ WaveSchedule
 				"projectile speed decreased" 0.45
 				"set_item_texture_wear" 0
 			}
-
 			ItemAttributes
 			{
 				ItemName "Steel Shako"
 				"set item tint rgb" 2960676
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1078,8 +978,7 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-
-        G_Soldier_Conch_Giant
+		G_Soldier_Conch_Giant
 		{
 			Name "Giant Concheror Soldier"
 			Class Soldier
@@ -1093,7 +992,6 @@ WaveSchedule
 			Item "Jumper's Jeepcap"
 			Item "The Concheror"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName craftsmann_rocketlauncher_americanpastoral
@@ -1101,10 +999,9 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 0
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1113,7 +1010,6 @@ WaveSchedule
 				"increase buff duration" 900
 			}
 		}
-		
 		G_Soldier_Buff_Giant
 		{
 			Name "Giant Buff Banner Soldier"
@@ -1128,7 +1024,6 @@ WaveSchedule
 			Item "Defiant Spartan"
 			Item "The Buff Banner"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName craftsmann_rocketlauncher_americanpastoral
@@ -1136,10 +1031,9 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 0.6
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1148,8 +1042,7 @@ WaveSchedule
 				"increase buff duration" 900
 			}
 		}
-
-        G_Soldier_Battalion_Giant
+		G_Soldier_Battalion_Giant
 		{
 			Name "Giant Battalion Soldier"
 			Class Soldier
@@ -1163,7 +1056,6 @@ WaveSchedule
 			Item "The Grenadier's Softcap"
 			Item "The Battalion's Backup"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName craftsmann_rocketlauncher_americanpastoral
@@ -1171,10 +1063,9 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.2
 				"airblast vulnerability multiplier" 0.2
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1183,7 +1074,6 @@ WaveSchedule
 				"increase buff duration" 900
 			}
 		}
-
 		G_Soldier_Booster
 		{
 			Name "Booster Soldier"
@@ -1193,7 +1083,6 @@ WaveSchedule
 			Item powerhouse_rocketlauncher_shellshocker
 			Item "Exquisite Rack"
 			Attributes HoldFireUntilFullReload
-
 			ItemAttributes
 			{
 				ItemName powerhouse_rocketlauncher_shellshocker
@@ -1202,8 +1091,7 @@ WaveSchedule
 				"set_item_texture_wear" 1
 			}
 		}
-
-        G_Soldier_Booster_Giant
+		G_Soldier_Booster_Giant
 		{
 			Name "Giant Booster Soldier"
 			Class Soldier
@@ -1216,7 +1104,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName powerhouse_rocketlauncher_shellshocker
@@ -1227,7 +1114,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"set_item_texture_wear" 0
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1237,7 +1123,6 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-
 		G_Pyro_Afterburn
 		{
 			Name "Afterburn Pyro"
@@ -1245,7 +1130,6 @@ WaveSchedule
 			Skill Hard
 			Item "Firewall Helmet"
 			Item "The Nostromo Napalmer"
-
 			ItemAttributes
 			{
 				ItemName "The Nostromo Napalmer"
@@ -1257,7 +1141,6 @@ WaveSchedule
 				"weapon burn dmg increased" 2.5
 			}
 		}
-
 		G_Pyro_Airblast
 		{
 			Name "Airblast Pyro"
@@ -1266,7 +1149,6 @@ WaveSchedule
 			Skill Expert
 			Item "Traffic Cone"
 			Item "The Degreaser"
-
 			ItemAttributes
 			{
 				ItemName "The Degreaser"
@@ -1276,7 +1158,6 @@ WaveSchedule
 				"airblast_give_teammate_speed_boost" 1
 			}
 		}
-
 		G_Pyro_Deflect
 		{
 			Name "Deflector Pyro"
@@ -1285,7 +1166,6 @@ WaveSchedule
 			Skill Expert
 			Item "The U-clank-a"
 			Item "The Degreaser"
-
 			ItemAttributes
 			{
 				ItemName "The Degreaser"
@@ -1296,7 +1176,6 @@ WaveSchedule
 				"airblast_destroy_projectile" 1
 			}
 		}
-
 		G_Pyro_Powerjack_Giant
 		{
 			Name "Giant Heal-on-Hit Pyro"
@@ -1309,7 +1188,6 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Powerjack"
@@ -1317,7 +1195,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1327,7 +1204,6 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Airblast_Giant
 		{
 			Name "Giant Airblast Pyro"
@@ -1339,7 +1215,6 @@ WaveSchedule
 			Item "The Degreaser"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Degreaser"
@@ -1349,7 +1224,6 @@ WaveSchedule
 				"mult airblast refire time" 0.33
 				"flame_drag" 4
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1359,8 +1233,7 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
-        G_Pyro_Flare
+		G_Pyro_Flare
 		{
 			Name "Flare Pyro"
 			Class Pyro
@@ -1370,8 +1243,7 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Item "Pyro's Boron Beanie"
 		}
-
-        G_Pyro_Flare_Giant
+		G_Pyro_Flare_Giant
 		{
 			Name "Giant Flare Pyro"
 			Class Pyro
@@ -1383,7 +1255,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Flare Gun"
@@ -1391,7 +1262,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -1401,7 +1271,6 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Scorch_Giant
 		{
 			Name "Giant Scorch Pyro"
@@ -1414,7 +1283,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Scorch Shot"
@@ -1423,7 +1291,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 				"projectile speed increased" 1.25
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -1433,7 +1300,6 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Gas_Afterburn_Giant
 		{
 			Name "Giant Afterburn Pyro"
@@ -1447,7 +1313,6 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Gas Passer"
@@ -1457,7 +1322,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1467,7 +1331,6 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Detonator
 		{
 			Name "Detonator Pyro"
@@ -1477,51 +1340,45 @@ WaveSchedule
 			Item "The Detonator"
 			Item "KF Pyro Mask"
 			WeaponRestrictions SecondaryOnly
-
 			ItemAttributes
 			{
 				ItemName "The Detonator"
 				"weapon burn dmg increased" 2
 				"projectile speed increased" 1.5
 			}
-
 			ItemAttributes
-            {
-                ItemName "KF Pyro Mask"
-                "set item tint rgb" 2452877
-            }
+			{
+				ItemName "KF Pyro Mask"
+				"set item tint rgb" 2452877
+			}
 		}
-
-        G_Pyro_Detonator_Giant
-        {
-            Name "Giant Detonator Pyro"
-            Class Pyro
-            ClassIcon pyro_flare_giant
-            Skill Expert
-            Health 3300
-            Item "The Detonator"
-            Item "KF Pyro Mask"
-            WeaponRestrictions SecondaryOnly
-            Attributes MiniBoss
-            Tag bot_giant
-
-            ItemAttributes
-            {
-                ItemName "The Detonator"
-                "fire rate bonus" 0.5
-                "weapon burn dmg increased" 3.5
-                "killstreak tier" 2
-                "killstreak idleeffect" 1
-                "projectile speed increased" 1.5
-            }
-
-            ItemAttributes
-            {
-                ItemName "KF Pyro Mask"
-                "set item tint rgb" 2452877
-            }
-
-            CharacterAttributes
+		G_Pyro_Detonator_Giant
+		{
+			Name "Giant Detonator Pyro"
+			Class Pyro
+			ClassIcon pyro_flare_giant
+			Skill Expert
+			Health 3300
+			Item "The Detonator"
+			Item "KF Pyro Mask"
+			WeaponRestrictions SecondaryOnly
+			Attributes MiniBoss
+			Tag bot_giant
+			ItemAttributes
+			{
+				ItemName "The Detonator"
+				"fire rate bonus" 0.5
+				"weapon burn dmg increased" 3.5
+				"killstreak tier" 2
+				"killstreak idleeffect" 1
+				"projectile speed increased" 1.5
+			}
+			ItemAttributes
+			{
+				ItemName "KF Pyro Mask"
+				"set item tint rgb" 2452877
+			}
+			CharacterAttributes
 			{
 				"move speed bonus" 0.5
 				"damage force reduction" 0.25
@@ -1529,9 +1386,8 @@ WaveSchedule
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 6
 			}
-        }
-
-        G_Pyro_Fury
+		}
+		G_Pyro_Fury
 		{
 			Name "Furious Pyro"
 			Class Pyro
@@ -1541,8 +1397,7 @@ WaveSchedule
 			Item "The Dragon's Fury"
 			Item "The Sengoku Scorcher"
 		}
-
-        G_Pyro_Fury_Giant
+		G_Pyro_Fury_Giant
 		{
 			Name "Furious Giant Pyro"
 			Class Pyro
@@ -1555,7 +1410,6 @@ WaveSchedule
 			Item "The Sengoku Scorcher"
 			Item "The Combustible Kabuto"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Dragon's Fury"
@@ -1563,7 +1417,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -1573,7 +1426,6 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Backburner_Giant
 		{
 			Name "Giant Backburner Pyro"
@@ -1587,7 +1439,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes AlwaysFireWeapon
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Backburner"
@@ -1596,17 +1447,15 @@ WaveSchedule
 				"lunchbox adds minicrits" 2
 				"flame_drag" 3.75
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 6
 			}
 		}
-		
 		G_Pyro_Giant
 		{
 			Name "Giant Pyro"
@@ -1618,7 +1467,6 @@ WaveSchedule
 			Item "Pyro Helm"
 			Item warbird_flamethrower_warhawk
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName warbird_flamethrower_warhawk
@@ -1629,17 +1477,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 6
 			}
 		}
-
 		G_Pyro_Phlog_Giant
 		{
 			Name "Giant Phlog Pyro"
@@ -1652,7 +1498,6 @@ WaveSchedule
 			Item "The Phlogistinator"
 			Attributes SpawnWithFullCharge
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Phlogistinator"
@@ -1663,10 +1508,9 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1675,8 +1519,7 @@ WaveSchedule
 				//"mult airblast refire time" 0.1
 			}
 		}
-
-        G_Demo_Giant
+		G_Demo_Giant
 		{
 			Class Demoman
 			Name "Giant Demoman"
@@ -1689,7 +1532,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Iron Bomber"
@@ -1697,18 +1539,16 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
-        G_Demo_Rapid_Giant
+		G_Demo_Rapid_Giant
 		{
 			Name "Giant Rapid Fire Demo"
 			Class Demoman
@@ -1720,7 +1560,6 @@ WaveSchedule
 			Item "The Hurt Locher"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Iron Bomber"
@@ -1729,17 +1568,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demo_Charged_Giant
 		{
 			Name "Giant Charged Demo"
@@ -1753,17 +1590,15 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes AlwaysCrit
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Iron Bomber"
 				"fire rate penalty" 2
 				"reload time decreased" 0.05
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
@@ -1771,7 +1606,6 @@ WaveSchedule
 				"gesture speed increase" 20
 			}
 		}
-
 		G_Demo_Burst_Cannon_Giant
 		{
 			Name "Giant Burst Fire Demo"
@@ -1784,7 +1618,6 @@ WaveSchedule
 			Item "The Loose Cannon"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Loose Cannon"
@@ -1797,17 +1630,15 @@ WaveSchedule
 				"projectile speed increased" 1.6
 				"projectile spread angle penalty" 4
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demo_Spook
 		{
 			Name "Sir Spook"
@@ -1824,11 +1655,10 @@ WaveSchedule
 			Attributes UseBossHealthBar
 			Attributes HoldFireUntilFullReload
 			Attributes AutoJump
-				AutoJumpMin 5
-				AutoJumpMax 5
+			AutoJumpMin 5
+			AutoJumpMax 5
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Stickybomb Jumper"
@@ -1841,14 +1671,13 @@ WaveSchedule
 				"stickybomb charge rate" 0
 				"max pipebombs decreased" 0
 				"max pipebombs increased" 16
-				"custom projectile model" models/props_halloween/ghost.mdl
+				"custom projectile model" models/props_hallowee  // n/ghost.mdl
 				"mod stun waist high airborne" 3
 				"projectile spread angle penalty" 14
 				"self dmg push force decreased" 0
 				"no self blast dmg" 2
 				"blast radius increased" 1.5
 			}
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -1856,7 +1685,6 @@ WaveSchedule
 				"override projectile type" 27
 				"fire rate penalty" 2000
 			}
-
 			CharacterAttributes
 			{
 				"move speed penalty" 0.67
@@ -1874,7 +1702,6 @@ WaveSchedule
 				"air dash count" 2
 			}
 		}
-
 		G_Demo_BurstFire_Giant
 		{
 			Name "Giant Burst Fire Demo"
@@ -1889,29 +1716,26 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Iron Bomber"
 				"damage bonus" 2
 				"clip size upgrade atomic" 5
 				"faster reload rate" 0.4
-                "fire rate bonus" 0.2
+				"fire rate bonus" 0.2
 				"projectile speed increased" 1.1
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demo_Charge
 		{
 			Name "Charging Demo"
@@ -1922,7 +1746,6 @@ WaveSchedule
 			Item "The Frag Proof Fragger"
 			Item "The Loch-n-Load"
 			Item "The Splendid Screen"
-			
 			ItemAttributes
 			{
 				ItemName "The Loch-n-Load"
@@ -1932,14 +1755,12 @@ WaveSchedule
 				"charge recharge rate increased" 4
 				"charge impact damage increased" 1.4
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
 				"item style override" 2
 			}
 		}
-
 		G_Demo_Charge_Giant
 		{
 			Name "Giant Charging Demo"
@@ -1953,7 +1774,6 @@ WaveSchedule
 			Item "The Splendid Screen"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Loch-n-Load"
@@ -1964,23 +1784,20 @@ WaveSchedule
 				"charge impact damage increased" 11
 				"charge time increased" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
 				"item style override" 2
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.6
+				"move speed bonus" 0.6
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.1
 				"airblast vertical vulnerability multiplier" 0.1
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demoknight_Caber
 		{
 			Name "Caberknight"
@@ -1992,7 +1809,6 @@ WaveSchedule
 			Item "Ali Baba's Wee Booties"
 			Item "The Tide Turner"
 			Item "The Ullapool Caber"
-
 			ItemAttributes
 			{
 				ItemName "The Tide Turner"
@@ -2000,7 +1816,6 @@ WaveSchedule
 				"charge recharge rate increased" 2
 			}
 		}
-
 		G_Demoknight_Caber_Giant
 		{
 			Name "Giant Caberknight"
@@ -2013,7 +1828,6 @@ WaveSchedule
 			Item "The Splendid Screen"
 			Item "The Ullapool Caber"
 			Attributes MiniBoss
-
 			ItemAttributes
 			{
 				ItemName "The Ullapool Caber"
@@ -2023,7 +1837,6 @@ WaveSchedule
 				"melee range multiplier" 1.25
 				"melee bounds multiplier" 1.25
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
@@ -2031,18 +1844,16 @@ WaveSchedule
 				"charge recharge rate increased" 5
 				"charge time increased" 2
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
-        G_Demoknight_Persian
+		G_Demoknight_Persian
 		{
 			Name "Persian Demoknight"
 			Class Demoman
@@ -2054,14 +1865,12 @@ WaveSchedule
 			Item "Ali Baba's Wee Booties"
 			Item "The Persian Persuader"
 			Item "The Splendid Screen"
-			
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
 				"attack not cancel charge" 1
 			}
 		}
-
 		G_Demoknight_Persian_Giant
 		{
 			Name "Giant Persian Demoknight"
@@ -2076,7 +1885,6 @@ WaveSchedule
 			Item "The Splendid Screen"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
@@ -2084,17 +1892,15 @@ WaveSchedule
 				"charge time increased" 1
 				"charge recharge rate increased" 4
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demoknight_Samurai_Giant
 		{
 			Name "Giant Samurai Demo"
@@ -2110,25 +1916,22 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes AirChargeOnly
 			Attributes AutoJump
-				AutoJumpMin 6
-				AutoJumpMax 7
+			AutoJumpMin 6
+			AutoJumpMax 7
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Splendid Screen"
 				"attack not cancel charge" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Half-Zatoichi"
 				"honorbound" 0
 				"charge time increased" 2
 				"charge recharge rate increased" 7
-                "restore health on kill" 10
+				"restore health on kill" 10
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -2140,7 +1943,6 @@ WaveSchedule
 				"cancel falling damage" 1
 			}
 		}
-
 		G_Demo_Stickybomb_Giant_Chief
 		{
 			Name "Steve's Cousin"
@@ -2156,7 +1958,6 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
 			Attributes UseBossHealthBar
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -2164,7 +1965,7 @@ WaveSchedule
 				"fire rate penalty" 10
 				"damage bonus" 5
 				"grenade no spin" 1
-				"grenade no bounce" 1 
+				"grenade no bounce" 1
 				"custom projectile model" "models/props_td/atom_bomb.mdl"
 				"blast radius increased" 3
 				"faster reload rate" .01
@@ -2174,7 +1975,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
@@ -2188,10 +1988,9 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"override footstep sound set" 4
@@ -2202,7 +2001,6 @@ WaveSchedule
 				"health regen" 100
 			}
 		}
-
 		G_Demo_Quickiebomb
 		{
 			Name "Quickiebomb Demo"
@@ -2214,7 +2012,6 @@ WaveSchedule
 			Item "The Quickiebomb Launcher"
 			WeaponRestrictions SecondaryOnly
 			Attributes HoldFireUntilFullReload
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -2222,7 +2019,6 @@ WaveSchedule
 				"override projectile type" 27
 				"fire rate penalty" 2000
 			}
-			
 			ItemAttributes
 			{
 				ItemName "The Quickiebomb Launcher"
@@ -2233,8 +2029,7 @@ WaveSchedule
 				"max pipebombs decreased" -7
 			}
 		}
-
-        G_Demo_Stickybomb
+		G_Demo_Stickybomb
 		{
 			Name "Stickybomb Demo"
 			Class Demoman
@@ -2245,7 +2040,6 @@ WaveSchedule
 			Item "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
 			WeaponRestrictions SecondaryOnly
 			Attributes HoldFireUntilFullReload
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -2253,7 +2047,6 @@ WaveSchedule
 				"override projectile type" 27
 				"fire rate penalty" 2000
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
@@ -2261,10 +2054,9 @@ WaveSchedule
 				"stickybomb charge rate" 0.1
 				"projectile range decreased" 0.45
 				"no self blast dmg" 2
-                "max pipebombs decreased" -7
+				"max pipebombs decreased" -7
 			}
 		}
-
 		G_Demo_Stickybomb_Giant
 		{
 			Name "Giant Stickybomb Demo"
@@ -2278,7 +2070,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -2286,7 +2077,6 @@ WaveSchedule
 				"override projectile type" 27
 				"fire rate penalty" 2000
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
@@ -2299,7 +2089,6 @@ WaveSchedule
 				"fire rate bonus" 0.75
 				"no self blast dmg" 2
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -2309,7 +2098,6 @@ WaveSchedule
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Demo_Quickiebomb_Giant
 		{
 			Name "Giant Quickiebomb Demo"
@@ -2324,7 +2112,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -2332,7 +2119,6 @@ WaveSchedule
 				"override projectile type" 27
 				"fire rate penalty" 2000
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Quickiebomb Launcher"
@@ -2346,7 +2132,6 @@ WaveSchedule
 				"clip size penalty" 0.4
 				"stickybomb_charge_damage_increase" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -2356,7 +2141,6 @@ WaveSchedule
 				"override footstep sound set" 4
 			}
 		}
-
 		G_Heavy_Natascha
 		{
 			Name "Natascha Heavy"
@@ -2366,7 +2150,6 @@ WaveSchedule
 			Item "Officer's Ushanka"
 			Item "Natascha"
 		}
-
 		G_Heavy_Featherweight
 		{
 			Name "Featherweight Champ"
@@ -2377,14 +2160,12 @@ WaveSchedule
 			Item "The Heavy-Weight Champ"
 			Item "Gloves of Running Urgently MvM"
 			WeaponRestrictions MeleeOnly
-
 			ItemAttributes
 			{
 				ItemName "Gloves of Running Urgently MvM"
 				"mark for death" 1
 			}
 		}
-
 		G_Heavy_Featherweight_Giant
 		{
 			Name "Super Featherweight Champ"
@@ -2397,23 +2178,20 @@ WaveSchedule
 			Item "The Heavy-Weight Champ"
 			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
-			
 			ItemAttributes
 			{
 				ItemName "Gloves of Running Urgently MvM"
 				"mark for death" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Mittens
 		{
 			Name "Heavy Mittens"
@@ -2426,7 +2204,6 @@ WaveSchedule
 			Attributes AlwaysCrit
 			WeaponRestrictions MeleeOnly
 		}
-
 		G_Heavy_Fist
 		{
 			Name "Fists Heavy"
@@ -2437,7 +2214,6 @@ WaveSchedule
 			Item "Upgradeable TF_WEAPON_FISTS"
 			WeaponRestrictions MeleeOnly
 		}
-
 		G_Heavy_Radial_Buff
 		{
 			Name "Radial Buff Heavy"
@@ -2447,20 +2223,17 @@ WaveSchedule
 			Item "Pugilist's Protector"
 			Item "The Killing Gloves of Boxing"
 			WeaponRestrictions MeleeOnly
-
 			ItemAttributes
 			{
 				ItemName "The Killing Gloves of Boxing"
 				"fists have radial buff" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "Pugilist's Protector"
 				"set item tint rgb" 15787660
 			}
 		}
-
 		G_Heavy_Apocofist
 		{
 			Name "Apocalypse Champ"
@@ -2470,21 +2243,18 @@ WaveSchedule
 			Item "The Gridiron Guardian"
 			Item "Apoco-fists"
 			WeaponRestrictions MeleeOnly
-
 			ItemAttributes
 			{
 				ItemName "Apoco-fists"
 				"damage causes airblast" 1
 				"apply z velocity on damage" 275
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Gridiron Guardian"
 				"set item tint rgb" 2960676
 			}
 		}
-
 		G_Heavy_Apocofist_Giant
 		{
 			Name "Giant Apocalypse Champ"
@@ -2496,7 +2266,6 @@ WaveSchedule
 			Item "Apoco-fists"
 			WeaponRestrictions MeleeOnly
 			Attributes MiniBoss
-
 			ItemAttributes
 			{
 				ItemName "Apoco-fists"
@@ -2506,24 +2275,21 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Gridiron Guardian"
 				"set item tint rgb" 2960676
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
-        G_Heavy_Shotgun_Giant
+		G_Heavy_Shotgun_Giant
 		{
 			Name "Giant Shotgun Heavy"
 			Class Heavyweapons
@@ -2534,7 +2300,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Item "The Team Captain"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_SHOTGUN_HWG
@@ -2545,17 +2310,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.7
+				"move speed bonus" 0.7
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Giant_Shotgun_Burst
 		{
 			Name "Giant Burst Shotgun Heavy"
@@ -2568,7 +2331,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			Item "The Team Captain"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_SHOTGUN_HWG
@@ -2581,17 +2343,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.7
+				"move speed bonus" 0.7
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"override footstep sound set" 2
 			}
 		}
-
-        G_Heavy_Giant
+		G_Heavy_Giant
 		{
 			Name "Giant Heavy"
 			Class Heavyweapons
@@ -2600,10 +2360,9 @@ WaveSchedule
 			Skill Expert
 			MaxVisionRange 1200
 			Item "Iron Curtain"
-            Item "Mad Mask"
+			Item "Mad Mask"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "Iron Curtain"
@@ -2611,17 +2370,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Natascha_Giant
 		{
 			Name "Giant Natascha Heavy"
@@ -2634,7 +2391,6 @@ WaveSchedule
 			Item "Officer's Ushanka"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName Natascha
@@ -2642,17 +2398,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Tomislav_Giant
 		{
 			Name "Giant Tomislav Heavy"
@@ -2665,7 +2419,6 @@ WaveSchedule
 			Item "The War Goggles"
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "Tomislav"
@@ -2674,17 +2427,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Enrage_Giant
 		{
 			Name "Giant Enraging Heavy"
@@ -2697,7 +2448,6 @@ WaveSchedule
 			Item "Der Maschinensoldaten-Helm"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Blood Botkiller MiniGun MK.I"
@@ -2706,17 +2456,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Chocolate_Giant
 		{
 			Name "Giant Dalokohs Heavy"
@@ -2732,7 +2480,6 @@ WaveSchedule
 			Attributes UseBossHealthBar
 			Attributes AlwaysFireWeapon
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_MINIGUN"
@@ -2741,7 +2488,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Dalokohs Bar"
@@ -2750,16 +2496,14 @@ WaveSchedule
 				"item_meter_charge_rate" 15
 				"hidden maxhealth non buffed" 7650
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Sinner's Shade"
 				"set item tint rgb" 6901050
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
@@ -2768,7 +2512,6 @@ WaveSchedule
 				"deploy time decreased" 0
 			}
 		}
-
 		G_Heavy_Rage
 		{
 			Name "Rage Heavy"
@@ -2776,7 +2519,6 @@ WaveSchedule
 			Skill Hard
 			Item "Upgradeable TF_WEAPON_MINIGUN"
 			Attributes SpawnWithFullCharge
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_MINIGUN"
@@ -2784,7 +2526,6 @@ WaveSchedule
 				"increase buff duration" 3
 			}
 		}
-
 		G_Heavy_Deflector
 		{
 			Name "Deflector Heavy"
@@ -2794,15 +2535,13 @@ WaveSchedule
 			Item "The U-clank-a"
 			Item Deflector
 			MaxVisionRange 1200
-			
 			ItemAttributes
 			{
 				ItemName Deflector
 				"attack projectiles" 1
 			}
 		}
-
-        G_Heavy_Deflector_Giant
+		G_Heavy_Deflector_Giant
 		{
 			Name "Giant Deflector Heavy"
 			Class Heavyweapons
@@ -2814,7 +2553,6 @@ WaveSchedule
 			Item Deflector
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName Deflector
@@ -2823,17 +2561,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Rage_Giant
 		{
 			Name "Giant Rage Heavy"
@@ -2848,7 +2584,6 @@ WaveSchedule
 			Attributes SpawnWithFullCharge
 			MaxVisionRange 1200
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_MINIGUN"
@@ -2859,17 +2594,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
 		G_Heavy_Brass_Giant
 		{
 			Name "Giant Brass Heavy"
@@ -2882,7 +2615,6 @@ WaveSchedule
 			MaxVisionRange 1200
 			Attributes MiniBoss
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Brass Beast"
@@ -2890,18 +2622,16 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"override footstep sound set" 2
 				"random drop line item 2" 0
 			}
 		}
-
-        G_Heavy_Heater
+		G_Heavy_Heater
 		{
 			Name "Heater Heavy"
 			Class Heavyweapons
@@ -2910,8 +2640,7 @@ WaveSchedule
 			Item "The Huo Long Heatmaker"
 			Item "The Bunsen Brave"
 		}
-
-        G_Heavy_Heater_Giant
+		G_Heavy_Heater_Giant
 		{
 			Name "Giant Heater Heavy"
 			Class Heavyweapons
@@ -2923,7 +2652,6 @@ WaveSchedule
 			Item "The Huo Long Heatmaker"
 			Item "The Bunsen Brave"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Huo Long Heatmaker"
@@ -2932,58 +2660,52 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
-
-        G_Heavy_Heater_Deflector_Giant
-        {
-            Name "Giant Deflector Heater Heavy"
-            Class Heavyweapons
-            ClassIcon heavy_deflector
-            Skill Expert
-            Health 5000
-            Attributes MiniBoss
-            MaxVisionRange 1200
-            Item "The Huo Long Heatmaker"
-            Item "The U-clank-a"
+		G_Heavy_Heater_Deflector_Giant
+		{
+			Name "Giant Deflector Heater Heavy"
+			Class Heavyweapons
+			ClassIcon heavy_deflector
+			Skill Expert
+			Health 5000
+			Attributes MiniBoss
+			MaxVisionRange 1200
+			Item "The Huo Long Heatmaker"
+			Item "The U-clank-a"
 			Tag bot_giant
-
-            ItemAttributes
-            {
-                ItemName "The Huo Long Heatmaker"
-                "damage bonus vs burning" 1.5
+			ItemAttributes
+			{
+				ItemName "The Huo Long Heatmaker"
+				"damage bonus vs burning" 1.5
 				"damage penalty" 1
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
-                "attack projectiles" 2
-            }
-
-            ItemAttributes
-            {
-                ItemName "The U-clank-a"
-                "set item tint rgb" 12073019
-            }
-
-            CharacterAttributes
+				"attack projectiles" 2
+			}
+			ItemAttributes
 			{
-				"move speed bonus"	0.5
+				ItemName "The U-clank-a"
+				"set item tint rgb" 12073019
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 				"random drop line item 2" 0
 			}
-        }
-
-        G_Engineer
+		}
+		G_Engineer
 		{
 			Class Engineer
 			Skill Expert
@@ -2992,21 +2714,18 @@ WaveSchedule
 			Item "The Data Mining Light"
 			Item "The Texas Half-Pants"
 			Item "Merc's Pride Scarf"
-			
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
 				"killstreak tier" 1
-                "damage bonus" 20
+				"damage bonus" 20
 			}
-			
 			CharacterAttributes
 			{
 				"rocket specialist" 1
 				"kill forces attacker to laugh" 1
 			}
 		}
-
 		G_Engineer_Teleporter
 		{
 			Name "Teleporter Engineer"
@@ -3020,19 +2739,17 @@ WaveSchedule
 			Item "The Lucky Shot"
 			Item "The Texas Half-Pants"
 			Item "Merc's Pride Scarf"
-			
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
 				"killstreak tier" 1
-                "damage bonus" 20
+				"damage bonus" 20
 				"construction rate decreased" 0.01
 				"engy sentry radius increased" 0.1
 				"engy building health bonus" 2
 				"engineer teleporter build rate multiplier" 2.5
 				"engineer sentry build rate multiplier" 0.01
 			}
-			
 			CharacterAttributes
 			{
 				"damage force reduction" 0.5
@@ -3044,7 +2761,6 @@ WaveSchedule
 				"health regen" 50
 			}
 		}
-
 		G_Engineer_Ranger
 		{
 			Name "Ranger"
@@ -3056,19 +2772,16 @@ WaveSchedule
 			Item "The Data Mining Light"
 			Item "The Texas Half-Pants"
 			Item "El Muchacho"
-
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
 				"damage bonus" 2
 			}
-
 			CharacterAttributes
 			{
 				"voice pitch scale" 1.25
 			}
 		}
-
 		G_Engineer_Giant
 		{
 			Name "Giant Engineer"
@@ -3084,13 +2797,11 @@ WaveSchedule
 			Item "Golden Wrench"
 			Attributes MiniBoss
 			Scale 1.5
-
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
 				"damage bonus" 21
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.67
@@ -3106,7 +2817,6 @@ WaveSchedule
 				"hand scale" 1.2
 			}
 		}
-
 		G_Engineer_Giant_Snipe
 		{
 			Name "Giant Laser"
@@ -3126,7 +2836,6 @@ WaveSchedule
 			WeaponRestrictions SecondaryOnly
 			MaxVisionRange 2500
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Frontier Justice"
@@ -3138,7 +2847,6 @@ WaveSchedule
 				"reload time decreased" 0
 				"gesture speed increase" 100
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Giger Counter"
@@ -3149,7 +2857,6 @@ WaveSchedule
 				"dmg bonus vs buildings" 4.5
 				"killstreak tier" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -3163,7 +2870,6 @@ WaveSchedule
 				"dmg pierces resists absorbs" 1
 			}
 		}
-
 		G_Engineer_Combo_Boss
 		{
 			Name "Yee_Haw"
@@ -3180,7 +2886,6 @@ WaveSchedule
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_GRAPPLINGHOOK"
@@ -3188,7 +2893,6 @@ WaveSchedule
 				"damage causes airblast" 1
 				"apply z velocity on damage" 500
 			}
-
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
@@ -3197,7 +2901,6 @@ WaveSchedule
 				"melee range multiplier" 1.25
 				"melee bounds multiplier" 1.25
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -3210,8 +2913,7 @@ WaveSchedule
 				"rage giving scale" 0.1
 			}
 		}
-
-        G_Engineer_Tele_In
+		G_Engineer_Tele_In
 		{
 			Class Engineer
 			Skill Expert
@@ -3221,21 +2923,18 @@ WaveSchedule
 			Item "Merc's Pride Scarf"
 			Item "Golden Wrench"
 			Attributes TeleportToHint
-			
 			ItemAttributes
 			{
 				ItemName "Golden Wrench"
 				"killstreak tier" 1
-                "damage bonus" 20
+				"damage bonus" 20
 			}
-			
 			CharacterAttributes
 			{
 				"rocket specialist" 1
 				"kill forces attacker to laugh" 1
 			}
 		}
-
 		G_Sniper_Silent
 		{
 			Name "Silent Sniper"
@@ -3245,21 +2944,18 @@ WaveSchedule
 			Item "The Tribalman's Shiv"
 			Item "Letch's LED"
 			Item "The Triggerman's Tacticals"
-
 			ItemAttributes
 			{
 				ItemName "The Hitman's Heatmaker"
 				"silent killer" 1
 				"voice pitch scale" 0
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Tribalman's Shiv"
 				"silent killer" 1
 			}
 		}
-
 		G_Sniper_Headshot
 		{
 			Name "Headhunter"
@@ -3270,7 +2966,6 @@ WaveSchedule
 			Item "Letch's LED"
 			Item "The Triggerman's Tacticals"
 			Attributes AlwaysCrit
-
 			ItemAttributes
 			{
 				ItemName "The Hitman's Heatmaker"
@@ -3279,33 +2974,29 @@ WaveSchedule
 				"headshot damage increase" 4
 				"voice pitch scale" 0
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Tribalman's Shiv"
 				"silent killer" 1
 			}
 		}
-
 		G_Sniper_Jarate
-        {
+		{
 			Name "Jarate Master"
 			Class Sniper
 			ClassIcon sniper_jarate
-			Skill Hard 
+			Skill Hard
 			WeaponRestrictions SecondaryOnly
 			Attributes AlwaysFireWeapon
 			Item "Jarate"
 			Item "The Bushwacka"
 			Item "Trophy Belt"
-			
 			ItemAttributes
 			{
 				ItemName "Jarate"
 				"effect bar recharge rate increased" 0.15
 			}
 		}
-
 		G_Sniper_Jarate_Snare_Giant
 		{
 			Name "Giant Jarate Sniper"
@@ -3321,7 +3012,6 @@ WaveSchedule
 			Item "The Bushwacka"
 			Item "Trophy Belt"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Self-Aware Beauty Mark"
@@ -3330,14 +3020,12 @@ WaveSchedule
 				"jarate backstabber" 1
 				"applies snare effect" 0.4
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Bushwacka"
 				"damage bonus" 1.25
 				"melee range multiplier" 1.25
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -3349,7 +3037,6 @@ WaveSchedule
 				"deploy time decreased" 0.25
 			}
 		}
-		
 		G_Sniper_Jarate_Bomber
 		{
 			Name "Jarate Bomber"
@@ -3362,7 +3049,6 @@ WaveSchedule
 			Item "The Triggerman's Tacticals"
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions PrimaryOnly
-
 			ItemAttributes
 			{
 				ItemName "The Self-Aware Beauty Mark"
@@ -3372,7 +3058,6 @@ WaveSchedule
 				"hand scale" 0
 				"voice pitch scale" 0.85
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Hitman's Heatmaker"
@@ -3384,7 +3069,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 			}
 		}
-
 		G_Sniper_Jarate_Bomber_Giant
 		{
 			Name "Jarate Bomber"
@@ -3399,7 +3083,6 @@ WaveSchedule
 			Attributes MiniBoss
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions PrimaryOnly
-
 			ItemAttributes
 			{
 				ItemName "The Self-Aware Beauty Mark"
@@ -3407,7 +3090,6 @@ WaveSchedule
 				"effect bar recharge rate increased" 0
 				"fire rate penalty" 2
 			}
-
 			ItemAttributes
 			{
 				ItemName "The Hitman's Heatmaker"
@@ -3419,7 +3101,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -3432,7 +3113,6 @@ WaveSchedule
 				"gesture speed increase" 1.35
 			}
 		}
-
 		G_Sniper_Huntsman_9
 		{
 			Name "Pincushion Bowman"
@@ -3442,7 +3122,6 @@ WaveSchedule
 			Item "The Huntsman"
 			Item "The Fruit Shoot"
 			Item "The Triggerman's Tacticals"
-			
 			ItemAttributes
 			{
 				ItemName "The Huntsman"
@@ -3454,7 +3133,6 @@ WaveSchedule
 				"killstreak idleeffect" 1
 			}
 		}
-
 		G_Sniper_Huntsman_Ignite
 		{
 			Name "Flame-tipped Bowman"
@@ -3465,7 +3143,6 @@ WaveSchedule
 			Item "The Fruit Shoot"
 			Item "Summer Shades"
 			Item "The Triggerman's Tacticals"
-
 			ItemAttributes
 			{
 				ItemName "The Huntsman"
@@ -3475,7 +3152,6 @@ WaveSchedule
 				"set damagetype ignite" 1
 			}
 		}
-
 		G_Sniper_Huntsman_Bleed
 		{
 			Name "Barbed Bowman"
@@ -3486,7 +3162,6 @@ WaveSchedule
 			Item "The Smissmas Caribou"
 			Item "Summer Shades"
 			Item "The Triggerman's Tacticals"
-
 			ItemAttributes
 			{
 				ItemName "The Fortified Compound"
@@ -3495,7 +3170,6 @@ WaveSchedule
 				"bleeding duration" 2
 			}
 		}
-
 		G_Sniper_Huntsman_Pierce
 		{
 			Name "Penetrating Bowman"
@@ -3504,7 +3178,6 @@ WaveSchedule
 			Skill Expert
 			Item "The Fortified Compound"
 			Item "The Fruit Shoot"
-
 			ItemAttributes
 			{
 				ItemName "The Fortified Compound"
@@ -3513,68 +3186,61 @@ WaveSchedule
 				"dmg penalty vs buildings" 0.5
 			}
 		}
-
 		G_Sniper_Huntsman_Rapid_Large
 		{
 			Name "Rapid Fire Bowman"
 			Class Sniper
 			ClassIcon sniper_bow_multi_giant
-            Skill Hard
+			Skill Hard
 			Health 1200
 			Scale 1.5
 			Item "The Huntsman"
 			Item "The Fruit Shoot"
 			Item "The Triggerman's Tacticals"
-			
 			ItemAttributes
 			{
 				ItemName "The Huntsman"
 				"fire rate bonus" 0.7
 			}
-			
 			CharacterAttributes
 			{
 				"damage force reduction" 0.5
 				"airblast vulnerability multiplier" 0.5
 				"move speed bonus" 0.85
-                "head scale" 0.7
-                "voice pitch scale" 1.25
+				"head scale" 0.7
+				"voice pitch scale" 1.25
 			}
 		}
-
 		G_Sniper_Huntsman_Rapid_Giant
-        {
-            Name "Giant Rapid Fire Bowman"
-            Health 3000
-            Class Sniper
-            ClassIcon sniper_bow_multi
-            Skill Expert
-            Item "The Fruit Shoot"
-            Item "The Triggerman's Tacticals"
-            Item "The Huntsman"
-            Attributes MiniBoss
+		{
+			Name "Giant Rapid Fire Bowman"
+			Health 3000
+			Class Sniper
+			ClassIcon sniper_bow_multi
+			Skill Expert
+			Item "The Fruit Shoot"
+			Item "The Triggerman's Tacticals"
+			Item "The Huntsman"
+			Attributes MiniBoss
 			Tag bot_giant
-
-            ItemAttributes
-            {
-                ItemName "The Huntsman"
-                "fire rate bonus" 0.5
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.5
 				"projectile penetration" 1
-                "killstreak tier" 2
-                "killstreak idleeffect" 1
-            }
-
-            CharacterAttributes
-            {
-                "move speed bonus" 0.5
-                "damage force reduction" 0.35
-                "airblast vulnerability multiplier" 0.35
+				"killstreak tier" 2
+				"killstreak idleeffect" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.35
+				"airblast vulnerability multiplier" 0.35
 				"airblast vertical vulnerability multiplier" 0.5
-                "override footstep sound set" 7
-                "head scale" 0.7
-            }
-        }
-
+				"override footstep sound set" 7
+				"head scale" 0.7
+			}
+		}
 		G_Sniper_Huntsman_Barbed_Giant
 		{
 			Name "Giant Barbed Bowman"
@@ -3586,7 +3252,6 @@ WaveSchedule
 			Tag bot_giant
 			Item "The Fortified Compound"
 			Item "Randolph the Blood-Nosed Caribou"
-			
 			ItemAttributes
 			{
 				ItemName "The Fortified Compound"
@@ -3597,13 +3262,11 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
-            {
-                ItemName "Randolph the Blood-Nosed Caribou"
-                "attach particle effect" 43
-            }
-			
+			{
+				ItemName "Randolph the Blood-Nosed Caribou"
+				"attach particle effect" 43
+			}
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -3614,7 +3277,6 @@ WaveSchedule
 				"head scale" 0.8
 			}
 		}
-
 		G_Sniper_Huntsman_Ignite_Giant
 		{
 			Name "Giant Flame-tipped Bowman"
@@ -3628,7 +3290,6 @@ WaveSchedule
 			Item "Summer Shades"
 			Item "The Triggerman's Tacticals"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Huntsman"
@@ -3640,7 +3301,6 @@ WaveSchedule
 				"weapon burn dmg increased" 2.5
 				//"projectile penetration" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -3651,7 +3311,6 @@ WaveSchedule
 				"head scale" 0.8
 			}
 		}
-
 		G_Sniper_Carbine
 		{
 			Name "Minicrit-on-Kill Sniper"
@@ -3661,14 +3320,12 @@ WaveSchedule
 			Item "Letch's LED"
 			Item "The Cleaner's Carbine"
 			WeaponRestrictions SecondaryOnly
-
 			ItemAttributes
 			{
 				ItemName "The Cleaner's Carbine"
 				"minicritboost on kill" 10
 			}
 		}
-
 		G_Sniper_Rifle_Burst
 		{
 			Name "Burst Fire Sniper"
@@ -3679,7 +3336,6 @@ WaveSchedule
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions PrimaryOnly
 			MaxVisionRange 1500
-
 			ItemAttributes
 			{
 				ItemName "The AWPer Hand"
@@ -3688,7 +3344,6 @@ WaveSchedule
 				"sniper fires tracer hidden" 1
 				"lunchbox adds minicrits" 3
 			}
-
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_SMG
@@ -3700,7 +3355,6 @@ WaveSchedule
 				"hand scale" 0.75
 			}
 		}
-
 		G_Sniper_Rifle_Burst_Giant
 		{
 			Name "Giant Burst Fire Sniper"
@@ -3714,7 +3368,6 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions PrimaryOnly
 			MaxVisionRange 1500
-
 			ItemAttributes
 			{
 				ItemName "The AWPer Hand"
@@ -3725,7 +3378,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			ItemAttributes
 			{
 				ItemName TF_WEAPON_SMG
@@ -3737,7 +3389,6 @@ WaveSchedule
 				"hand scale" 0.75
 				"head scale" 0.7
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -3747,7 +3398,6 @@ WaveSchedule
 				"override footstep sound set" 7
 			}
 		}
-
 		G_Sniper_SMG
 		{
 			Name "SMG Sniper"
@@ -3755,11 +3405,10 @@ WaveSchedule
 			ClassICon sniper_smg_tind
 			Skill Normal
 			Item teufort_smg_teamsprayer
-            Item "Graybanns"
+			Item "Graybanns"
 			Item "The Triggerman's Tacticals"
 			WeaponRestrictions SecondaryOnly
 		}
-
 		G_Sniper_SMG_Heavy
 		{
 			Name "Heavy SMG Sniper"
@@ -3771,7 +3420,6 @@ WaveSchedule
 			Item "Flak Jack"
 			Item "The Triggerman's Tacticals"
 			WeaponRestrictions SecondaryOnly
-
 			ItemAttributes
 			{
 				ItemName concealedkiller_smg_woodsywidowmaker
@@ -3780,7 +3428,6 @@ WaveSchedule
 				"hand scale" 1.75
 			}
 		}
-
 		G_Sniper_SMG_Large
 		{
 			Name "SMG Sniper"
@@ -3790,10 +3437,9 @@ WaveSchedule
 			Health 1200
 			Scale 1.5
 			Item teufort_smg_teamsprayer
-            Item "Graybanns"
+			Item "Graybanns"
 			Item "The Triggerman's Tacticals"
 			WeaponRestrictions SecondaryOnly
-			
 			ItemAttributes
 			{
 				ItemName "teufort_smg_teamsprayer"
@@ -3801,7 +3447,6 @@ WaveSchedule
 				"killstreak tier" 1
 				"set_item_texture_wear" .2
 			}
-			
 			CharacterAttributes
 			{
 				"damage force reduction" 0.5
@@ -3810,7 +3455,6 @@ WaveSchedule
 				"voice pitch scale" 1.25
 			}
 		}
-
 		G_Medic_BigHeal
 		{
 			Name "Big Heal Medic"
@@ -3821,22 +3465,19 @@ WaveSchedule
 			Item "The Quick-Fix"
 			Item "The Surgeon's Stahlhelm"
 			Item "Das Metalmeatencasen"
-
 			ItemAttributes
 			{
 				ItemName "The Quick-Fix"
 				"heal rate bonus" 10
 				"ubercharge rate bonus" 0.5
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage bonus" 1.5
 			}
 		}
-
-        G_Medic_Kritz
+		G_Medic_Kritz
 		{
 			Name "Kritzkrieg Medic"
 			Class Medic
@@ -3848,21 +3489,18 @@ WaveSchedule
 			Item "The Virus Doctor"
 			Item "The Overdose"
 			Item "Das Metalmeatencasen"
-			
 			ItemAttributes
 			{
 				ItemName "The Kritzkrieg"
 				"ubercharge rate bonus" 100
 				"uber duration bonus" 92
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber health threshold" 225
 			}
 		}
-
-        G_Medic_Kritz_Giant
+		G_Medic_Kritz_Giant
 		{
 			Name "Giant Kritzkrieg Medic"
 			Class Medic
@@ -3875,7 +3513,6 @@ WaveSchedule
 			Item "The Virus Doctor"
 			Item "The Overdose"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Overdose"
@@ -3886,7 +3523,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-			
 			ItemAttributes
 			{
 				ItemName "The Kritzkrieg"
@@ -3894,10 +3530,9 @@ WaveSchedule
 				"uber duration bonus" 92
 				"heal rate bonus" 50
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -3905,8 +3540,7 @@ WaveSchedule
 				"health regen" 10
 			}
 		}
-
-        G_Medic_Overheal
+		G_Medic_Overheal
 		{
 			Name "Overheal Medic"
 			Class Medic
@@ -3916,13 +3550,11 @@ WaveSchedule
 			Item "Das Metalmeatencasen"
 			Item gentlemanne_medigun_coffinnail
 			Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage bonus" 1.5
 			}
-
 			ItemAttributes
 			{
 				ItemName gentlemanne_medigun_coffinnail
@@ -3931,7 +3563,6 @@ WaveSchedule
 				"set_item_texture_wear" 0
 			}
 		}
-
 		G_Medic_Overheal_Giant
 		{
 			Name "Giant Overheal Medic"
@@ -3945,7 +3576,6 @@ WaveSchedule
 			Item "Das Naggenvatcher"
 			Item "Das Metalmeatencasen"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName gentlemanne_medigun_coffinnail
@@ -3954,17 +3584,15 @@ WaveSchedule
 				//"overheal expert" 154 - base for double health 4000hp bots
 				"set_item_texture_wear" 0
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 				"health regen" 17
 			}
 		}
-
 		G_Medic_Hemorrhage
 		{
 			Name "Hemorrhage"
@@ -3979,7 +3607,6 @@ WaveSchedule
 			Attributes UseBossHealthBar
 			MaxVisionRange 2000
 			WeaponRestrictions PrimaryOnly
-
 			ItemAttributes
 			{
 				ItemName "The Crusader's Crossbow"
@@ -3996,10 +3623,9 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.375
+				"move speed bonus" 0.375
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -4008,7 +3634,6 @@ WaveSchedule
 				"dmg bonus vs buildings" 250
 			}
 		}
-
 		G_Medic_Uber
 		{
 			Name "Uber Medic"
@@ -4020,13 +3645,11 @@ WaveSchedule
 			Item "Field Practice"
 			Item "Upgradeable TF_WEAPON_MEDIGUN"
 			Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage bonus" 1.5
 			}
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_MEDIGUN"
@@ -4034,7 +3657,6 @@ WaveSchedule
 				"ubercharge rate bonus" 2
 			}
 		}
-
 		G_Medic_QuickUber
 		{
 			Name "Quick Uber Medic"
@@ -4047,13 +3669,11 @@ WaveSchedule
 			Item "Das Metalmeatencasen"
 			Item "Upgradeable TF_WEAPON_MEDIGUN"
 			Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage bonus" 1.5
 			}
-			
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_MEDIGUN"
@@ -4062,7 +3682,6 @@ WaveSchedule
 				"heal rate penalty" 0.5
 			}
 		}
-		
 		G_Medic_QuickFix
 		{
 			Name "Quick-Fix Medic"
@@ -4070,15 +3689,13 @@ WaveSchedule
 			Skill Expert
 			Item "Das Metalmeatencasen"
 			Item "The Quick-Fix"
-            Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-
+			Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
 				"damage bonus" 1.5
 			}
 		}
-
 		G_Medic_Shield
 		{
 			Name "Shield Medic"
@@ -4091,21 +3708,23 @@ WaveSchedule
 			Item "Halogen Head Lamp"
 			Item "Mecha-Medes"
 			WeaponRestrictions SecondaryOnly
-			
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_MEDIGUN"
 				"generate rage on heal" 1
 				"increase buff duration" 2
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber deploy delay duration" 500
 				"voice pitch scale" 0
 			}
+			// Prevent medics from ubering each other
+			CharacterAttributes
+			{
+				"mod weapon blocks healing" 1
+			}
 		}
-
 		G_Medic_Shield_Giant
 		{
 			Name "Giant Shield Medic"
@@ -4121,7 +3740,6 @@ WaveSchedule
 			Item "Mecha-Medes"
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_MEDIGUN"
@@ -4129,18 +3747,21 @@ WaveSchedule
 				"increase buff duration" 100
 				"heal rate bonus" 200
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber deploy delay duration" 500
-				"move speed bonus"	0.67
+				"move speed bonus" 0.67
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 				"mod weapon blocks healing" 1
 			}
+			// Prevent medics from ubering each other
+			CharacterAttributes
+			{
+				"mod weapon blocks healing" 1
+			}
 		}
-		
 		G_Medic_Uber_Giant
 		{
 			Name "Giant Uber Medic"
@@ -4155,7 +3776,6 @@ WaveSchedule
 			Item "The Overdose"
 			Item gentlemanne_medigun_dressedtokill
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Overdose"
@@ -4165,17 +3785,15 @@ WaveSchedule
 				"clip size bonus" 1.5
 				"projectile spread angle penalty" 3
 			}
-			
 			ItemAttributes
 			{
 				ItemName gentlemanne_medigun_dressedtokill
 				"ubercharge rate bonus" 5
 				"set_item_texture_wear" 0.2
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -4186,7 +3804,6 @@ WaveSchedule
 				"mod weapon blocks healing" 1
 			}
 		}
-
 		G_Medic_QuickFix_Giant
 		{
 			Name "Giant Medic"
@@ -4202,23 +3819,20 @@ WaveSchedule
 			Item "The Warsworn Helmet"
 			Item "Das Metalmeatencasen"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Quick-Fix"
 				"heal rate bonus" 201
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 				"mod weapon blocks healing" 1
 			}
 		}
-		
 		G_Medic_QuickFix_Regen_Giant
 		{
 			Name "Giant Regen Medic"
@@ -4232,17 +3846,15 @@ WaveSchedule
 			Item "The Quick-Fix"
 			Item "The Surgeon's Stahlhelm"
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Quick-Fix"
 				"heal rate bonus" 201
 				"ubercharge rate bonus" 0.01
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -4250,7 +3862,6 @@ WaveSchedule
 				"mod weapon blocks healing" 1
 			}
 		}
-
 		G_Medic_Syringe
 		{
 			Name "Syringe Medic"
@@ -4263,7 +3874,6 @@ WaveSchedule
 			Item "Practitioner's Processing Mask"
 			Item "The Virus Doctor"
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Blutsauger"
@@ -4272,7 +3882,6 @@ WaveSchedule
 				"mad milk syringes" 1
 				"heal on hit for rapidfire" 6
 			}
-
 			CharacterAttributes
 			{
 				"damage force reduction" 0.5
@@ -4280,7 +3889,6 @@ WaveSchedule
 				"move speed bonus" 0.85
 			}
 		}
-
 		G_Medic_Syringe_Giant
 		{
 			Name "Giant Blutsauger Medic"
@@ -4294,7 +3902,6 @@ WaveSchedule
 			Item "The Chronoscarf"
 			WeaponRestrictions PrimaryOnly
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "The Blutsauger"
@@ -4305,17 +3912,15 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
-				"move speed bonus"	0.6
+				"move speed bonus" 0.6
 				"damage force reduction" 0.25
 				"airblast vulnerability multiplier" 0.25
 				"airblast vertical vulnerability multiplier" 0.5
 				"dmg bonus vs buildings" 1.33
 			}
 		}
-
 		G_Medic_Vac_Cycle_Giant
 		{
 			Name "Giant Vaccinator Medic"
@@ -4331,7 +3936,6 @@ WaveSchedule
 			Item "The Chronoscarf"
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4342,18 +3946,16 @@ WaveSchedule
 				"heal rate bonus" 200
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"bot medic uber health threshold" 25
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 			}
 		}
-		
-        G_Medic_Vac_Bullet_Giant
+		G_Medic_Vac_Bullet_Giant
 		{
 			Name "Giant Bullet Medic"
 			Class Medic
@@ -4368,7 +3970,6 @@ WaveSchedule
 			Item "The Chronoscarf"
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4379,17 +3980,15 @@ WaveSchedule
 				"heal rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"bot medic uber health threshold" 4501
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 			}
 		}
-		
 		G_Medic_Vac_Blast_Giant
 		{
 			Name "Giant Blast Medic"
@@ -4405,7 +4004,6 @@ WaveSchedule
 			Item "The Chronoscarf"
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4416,7 +4014,6 @@ WaveSchedule
 				"heal rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
 				"move speed bonus" 0.66
@@ -4426,7 +4023,6 @@ WaveSchedule
 				"airblast vertical vulnerability multiplier" 0
 			}
 		}
-		
 		G_Medic_Vac_Fire_Giant
 		{
 			Name "Giant Fire Medic"
@@ -4442,7 +4038,6 @@ WaveSchedule
 			Item "The Chronoscarf"
 			WeaponRestrictions SecondaryOnly
 			Tag bot_giant
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4453,17 +4048,15 @@ WaveSchedule
 				"heal rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
-				"move speed bonus"	0.66
+				"move speed bonus" 0.66
 				"bot medic uber health threshold" 4501
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 			}
 		}
-
 		G_Medic_Vac_Bullet
 		{
 			Name "Bullet Medic"
@@ -4476,7 +4069,6 @@ WaveSchedule
 			Item "Das Metalmeatencasen"
 			Item "Das Ubersternmann"
 			WeaponRestrictions SecondaryOnly
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4486,14 +4078,12 @@ WaveSchedule
 				"ubercharge rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber health threshold" 225
 				"voice pitch scale" 0
 			}
 		}
-		
 		G_Medic_Vac_Fire
 		{
 			Name "Fire Medic"
@@ -4506,7 +4096,6 @@ WaveSchedule
 			Item "Das Metalmeatencasen"
 			Item "Das Ubersternmann"
 			WeaponRestrictions SecondaryOnly
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4516,14 +4105,12 @@ WaveSchedule
 				"ubercharge rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber health threshold" 225
 				"voice pitch scale" 0
 			}
 		}
-		
 		G_Medic_Vac_Blast
 		{
 			Name "Blast Medic"
@@ -4536,7 +4123,6 @@ WaveSchedule
 			Item "Das Metalmeatencasen"
 			Item "Das Ubersternmann"
 			WeaponRestrictions SecondaryOnly
-			
 			ItemAttributes
 			{
 				ItemName "The Vaccinator"
@@ -4546,14 +4132,12 @@ WaveSchedule
 				"ubercharge rate bonus" 50
 				"mod weapon blocks healing" 1
 			}
-			
 			CharacterAttributes
 			{
 				"bot medic uber health threshold" 225
 				"voice pitch scale" 0
 			}
 		}
-
 		G_Spy
 		{
 			Class Spy
@@ -4563,7 +4147,6 @@ WaveSchedule
 			Item "Graybanns"
 			Item "The Rogue's Brogues"
 			Item "Backbiter's Billycock"
-
 			ItemAttributes
 			{
 				ItemName "Upgradeable TF_WEAPON_REVOLVER"
@@ -4572,7 +4155,6 @@ WaveSchedule
 				"reload time increased" 1.5
 			}
 		}
-
 		G_Spy_Giant
 		{
 			Name "Giant Spy"
@@ -4583,7 +4165,6 @@ WaveSchedule
 			Item "The Rogue's Brogues"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -4596,7 +4177,6 @@ WaveSchedule
 				"cannot disguise" 1
 			}
 		}
-
 		G_Spy_Revolver_Giant
 		{
 			Name "Big Kill"
@@ -4609,7 +4189,6 @@ WaveSchedule
 			Item "The Rogue's Brogues"
 			Attributes MiniBoss
 			Tag bot_giant
-
 			ItemAttributes
 			{
 				ItemName "TTG Sam Revolver"
@@ -4618,7 +4197,6 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
 			{
 				"move speed bonus" 0.6
@@ -4631,7 +4209,6 @@ WaveSchedule
 				"cannot disguise" 1
 			}
 		}
-
 		G_Spy_YER
 		{
 			Name "Saharan Spy"
@@ -4641,7 +4218,6 @@ WaveSchedule
 			Item "Your Eternal Reward"
 			Item "The Familiar Fez"
 			Item "The Rogue's Brogues"
-
 			CharacterAttributes
 			{
 				"sapper damage penalty" 0
@@ -4649,7 +4225,6 @@ WaveSchedule
 				"voice pitch scale" 0
 			}
 		}
-
 		G_Spy_Enforcer
 		{
 			Name "Man of Honor"
@@ -4660,14 +4235,12 @@ WaveSchedule
 			Item "Cosa Nostra Cap"
 			Item "The Made Man"
 			Item "The Rogue's Brogues"
-
 			ItemAttributes
 			{
 				ItemName "The Enforcer"
 				"cannot disguise" 1
 			}
 		}
-
 		G_Spy_Enforcer_Giant
 		{
 			Name "Giant Enforcer Spy"
@@ -4680,7 +4253,6 @@ WaveSchedule
 			Item "The Made Man"
 			Item "The Rogue's Brogues"
 			Attributes MiniBoss
-
 			ItemAttributes
 			{
 				ItemName "The Enforcer"
@@ -4689,19 +4261,17 @@ WaveSchedule
 				"killstreak tier" 2
 				"killstreak idleeffect" 1
 			}
-
 			CharacterAttributes
-            {
+			{
 				"cannot disguise" 1
-                "move speed bonus" 0.5
-                "damage force reduction" 0.35
-                "airblast vulnerability multiplier" 0.35
+				"move speed bonus" 0.5
+				"damage force reduction" 0.35
+				"airblast vulnerability multiplier" 0.35
 				"airblast vertical vulnerability multiplier" 0.5
-                "override footstep sound set" 7
-                "head scale" 0.75
-            }
+				"override footstep sound set" 7
+				"head scale" 0.75
+			}
 		}
-
 		G_Spy_Shinobi_Shanker
 		{
 			Name "The Shinobi Shanker"
@@ -4717,7 +4287,6 @@ WaveSchedule
 			Attributes UseBossHealthBar
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
-
 			ItemAttributes
 			{
 				ItemName "Conniver's Kunai"
@@ -4726,7 +4295,6 @@ WaveSchedule
 				"damage bonus" 1.5
 				"heal on kill" 5000
 			}
-
 			CharacterAttributes
 			{
 				"cannot disguise" 1
@@ -4739,5 +4307,5 @@ WaveSchedule
 				"override footstep sound set" 7
 			}
 		}
-    }
+	}
 }
