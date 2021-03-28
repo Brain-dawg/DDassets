@@ -2,21 +2,16 @@
 //Advanced difficulty
 //Mission by Seelpit
 //Map by Herple Nerp
-
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_transmission.pop
-
 #base robot_radiobot_lower.pop //Valve gatebots with some improvements and
 // shorter template name, includes valve gatebots that never had a template
 // and custom gatebots as well.
-
 #base robot_radiobot_upper.pop //Same as robot_radiobot_lower but now every robot
 // has _U at the end of their template name, to take upper gatebot path.
-
 //Red Spawn:
 //red_spawn
-
 //Front spawns:
 //spawnbot_main0 -tank carrier spawn
 //spawnbot_flank0 -cargo crate spawn
@@ -24,34 +19,26 @@
 //spawnbot_invasion0 -spawnbot_main0, spawnbot_upper0, spawnbot_flank0 all in one.
 //spawnbot_boss_flank -spawns from the tank door, this doesn't get disabled by gate cap
 //spawnbot_teletank -for bots that want to be spawned from the teletank
-
 //Gate A spawn:
 //spawnbot_main1 -spawns from gate A
 //spawnbot_upper1 -spawns from the upper door with lift.
 //spawnbot_invasion1 -spawnbot_main1 and spawnbot_upper1 combined.
 //spawnbot_chief1 -spawnbot_main1, meant to be used for bots/bosses
 //you don't want to get teled in by engies with teles.
-
 //Tags: 
 //Tag "bot_gatebot" -tag to give to Gatebots
 //Tag "nav_prefer_gate1_flank" -Makes gatebots take the ground gate path.
 //Tag "nav_prefer_gate1_upper" -Makes gatebots take the upper gate path.
-
 //Wave Relays
-
 //wave_start_relay
-
 //wave_start_relay_bomb //starts wave with a non resettable bomb rather than a resettable bomb. Give every first bot that spawns in the wave atleast a 1 second spawn delay.
-
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
-
 //CHANGELOG LATEST EDITS 19-01
 //- GateBeebot_MultStinger health increased to 1200 to bee consistent
 //- Added small health regen to minigiants to show hp on hover-over
 //- GateBot_Soldier_Burst damage penalty reduced from 0.55 to 0.75 (consistent w normal)
 //- Giant Flare Rain Pyros aim at the head now
 //- Queen Bee Soldier's rockets home in for 3 secs max now
-
 WaveSchedule
 {
 	StartingCurrency 600
@@ -59,10 +46,9 @@ WaveSchedule
 	CanBotsAttackWhileInSpawnRoom Yes //As per a "standard" of sorts
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
-	
 	ItemAttributes [$SIGSEGV]
 	{
-		ItemName	"The Southern Hospitality"
+		ItemName "The Southern Hospitality"
 		"mult dispenser rate" 2
 		"engy sentry damage bonus" 0.8
 		"bleeding duration" 0
@@ -71,7 +57,6 @@ WaveSchedule
 	}
 	Templates
 	{
-		
 		///////////////////////////////////////////////////////////////////////
 		//Bee designs
 		//- Fast Killer Bee (normal KBS)
@@ -84,11 +69,9 @@ WaveSchedule
 		//- Giant Burst Stinger Bee (Giant Burst Solly w "mini rockets")
 		//- Giant Multi Stinger Bee (Giant WS Heavy w crit-on-kill+bleed)
 		///////////////////////////////////////////////////////////////////////
-		
 		///////////////////////////////////////////////////////////////////
 		///////////////////////		Bee-bots		///////////////////////
 		///////////////////////////////////////////////////////////////////
-		
 		//A Speedy Scatter Scout!
 		//Fast fire rate, but slower reload; "semi"-burst
 		Beebot_KillerBee
@@ -267,9 +250,7 @@ WaveSchedule
 				"move speed penalty" 0.8
 			}
 		}
-		
 		//Big bees!
-		
 		//speed.
 		Beebot_Giant_SuperStinger
 		{
@@ -326,9 +307,7 @@ WaveSchedule
 				"override footstep sound set" 3
 			}
 		}
-		
 		//And of course...GateBeeBots!
-		
 		GateBeebot_ExploStinger
 		{
 			Name "Explosive Stinger Bee"
@@ -414,8 +393,8 @@ WaveSchedule
 					}
 					ItemAttributes
 					{
-						ItemName	"MvM Gatebot Light Spy"
-						"item style override"	1
+						ItemName "MvM Gatebot Light Spy"
+						"item style override" 1
 					}
 				}
 			}
@@ -423,7 +402,8 @@ WaveSchedule
 		//Big momma Beehemoth
 		//Again, no more bleed, just healing and normal damage
 		//But more range and faster swing speed!
-		GateBeebot_Giant_MultiStinger //This one has crits!!
+		//This one has crits!!
+		GateBeebot_Giant_MultiStinger
 		{
 			ClassIcon heavy_champ_giant
 			Class Heavyweapons
@@ -489,19 +469,15 @@ WaveSchedule
 					}
 					ItemAttributes
 					{
-						ItemName	"MvM GateBot Light Spy"
-						"item style override"	1
+						ItemName "MvM GateBot Light Spy"
+						"item style override" 1
 					}
 				}
 			}
 		}
-		
 		///////////////////////////////////////////////////////////////////
 		///////////////////////		Gatebots		///////////////////////
 		///////////////////////////////////////////////////////////////////
-		
-		
-		
 		//Gatebot version of a Burst Soldier. Ain't complicated.
 		GateBot_Soldier_Burst
 		{
@@ -512,10 +488,10 @@ WaveSchedule
 			{
 				Default
 				{
-					BehaviorModifiers	Push
-					Tag	"bot_gatebot"
-					Tag	"nav_prefer_gate1_flank"
-					Attributes	IgnoreFlag
+					BehaviorModifiers Push
+					Tag "bot_gatebot"
+					Tag "nav_prefer_gate1_flank"
+					Attributes IgnoreFlag
 					Attributes HoldFireUntilFullReload
 					Skill Normal
 					Item "MvM Gatebot Light Soldier"
@@ -549,8 +525,8 @@ WaveSchedule
 					}
 					ItemAttributes
 					{
-						ItemName	"MvM Gatebot Light Soldier"
-						"item style override"	1
+						ItemName "MvM Gatebot Light Soldier"
+						"item style override" 1
 					}
 				}
 			}
@@ -558,33 +534,33 @@ WaveSchedule
 		//Just a Heater Heavy.
 		GateBot_Heavy_Heater
 		{
-			ClassIcon	heavy_heater //_nys Fiiine, Herp
-			Health	300
-			Name	"Heater Heavy"
-			Class	HeavyWeapons
+			ClassIcon heavy_heater //_nys Fiiine, Herp
+			Health 300
+			Name "Heater Heavy"
+			Class HeavyWeapons
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Normal
-					BehaviorModifiers	Push
-					WeaponRestrictions	PrimaryOnly
-					Tag	"bot_gatebot"
-					Tag	"nav_prefer_gate1_flank"
-					Attributes	"IgnoreFlag"
+					Skill Normal
+					BehaviorModifiers Push
+					WeaponRestrictions PrimaryOnly
+					Tag "bot_gatebot"
+					Tag "nav_prefer_gate1_flank"
+					Attributes "IgnoreFlag"
 					Item "The Huo Long Heatmaker"
-					Item	"MvM GateBot Light Heavy"
+					Item "MvM GateBot Light Heavy"
 				}
 				RevertGateBotsBehavior
 				{
-					Skill	Normal
-					WeaponRestrictions	PrimaryOnly
+					Skill Normal
+					WeaponRestrictions PrimaryOnly
 					Item "The Huo Long Heatmaker"
-					Item	"MvM GateBot Light Spy"
+					Item "MvM GateBot Light Spy"
 					ItemAttributes
 					{
-						ItemName	"MvM GateBot Light Spy"
-						"item style override"	1
+						ItemName "MvM GateBot Light Spy"
+						"item style override" 1
 					}
 				}
 			}
@@ -592,112 +568,108 @@ WaveSchedule
 		//A Heavy with a regular shotgun, that takes the upper path.
 		GateBot_Heavyweapons_Shotgun_SP
 		{
-			ClassIcon	heavy_shotgun
-			Health	300
-			Name	"Shotgun Heavy"
-			Class	HeavyWeapons
+			ClassIcon heavy_shotgun
+			Health 300
+			Name "Shotgun Heavy"
+			Class HeavyWeapons
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Hard
-					BehaviorModifiers	Push
-					WeaponRestrictions	SecondaryOnly
-					Tag	"nav_prefer_gate1_upper"
-					Tag	"bot_gatebot"
-					Attributes	"IgnoreFlag"
-					Item	"MvM GateBot Light Heavy"
+					Skill Hard
+					BehaviorModifiers Push
+					WeaponRestrictions SecondaryOnly
+					Tag "nav_prefer_gate1_upper"
+					Tag "bot_gatebot"
+					Attributes "IgnoreFlag"
+					Item "MvM GateBot Light Heavy"
 				}
 				RevertGateBotsBehavior
 				{
-					Skill	Hard
-					WeaponRestrictions	SecondaryOnly
-					Item	"MvM GateBot Light Heavy"
+					Skill Hard
+					WeaponRestrictions SecondaryOnly
+					Item "MvM GateBot Light Heavy"
 					ItemAttributes
 					{
-						ItemName	"MvM GateBot Light Heavy"
-						"item style override"	1
+						ItemName "MvM GateBot Light Heavy"
+						"item style override" 1
 					}
 				}
 			}
 		}
-		
 		//A better hatty Deflector Gatebot.
 		GateBot_Heavy_Deflector_Hat
 		{
-			ClassIcon	heavy_deflector
-			Health	300
-			Name	"Deflector Heavy"
-			Class	HeavyWeapons
+			ClassIcon heavy_deflector
+			Health 300
+			Name "Deflector Heavy"
+			Class HeavyWeapons
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Hard
-					MaxVisionRange	1200
-					BehaviorModifiers	Push
-					WeaponRestrictions	PrimaryOnly
-					Tag	"bot_gatebot"
-					Tag	"nav_prefer_gate1_flank"
-					Attributes	"IgnoreFlag"
-					Item	"Deflector"
-					Item	"The U-clank-a"
-					Item	"MvM GateBot Light Spy" //Might look better?
+					Skill Hard
+					MaxVisionRange 1200
+					BehaviorModifiers Push
+					WeaponRestrictions PrimaryOnly
+					Tag "bot_gatebot"
+					Tag "nav_prefer_gate1_flank"
+					Attributes "IgnoreFlag"
+					Item "Deflector"
+					Item "The U-clank-a"
+					Item "MvM GateBot Light Spy" //Might look better?
 					ItemAttributes
 					{
-						ItemName	"Deflector"
-						"attack projectiles"	1
+						ItemName "Deflector"
+						"attack projectiles" 1
 					}
 				}
 				RevertGateBotsBehavior
 				{
-					Skill	Hard
-					MaxVisionRange	1200
-					WeaponRestrictions	PrimaryOnly
-					Item	"Deflector"
-					Item	"The U-clank-a"
-					Item	"MvM GateBot Light Spy"
+					Skill Hard
+					MaxVisionRange 1200
+					WeaponRestrictions PrimaryOnly
+					Item "Deflector"
+					Item "The U-clank-a"
+					Item "MvM GateBot Light Spy"
 					ItemAttributes
 					{
-						ItemName	"Deflector"
-						"attack projectiles"	1
+						ItemName "Deflector"
+						"attack projectiles" 1
 					}
 					ItemAttributes
 					{
-						ItemName	"MvM GateBot Light Spy"
-						"item style override"	1
+						ItemName "MvM GateBot Light Spy"
+						"item style override" 1
 					}
 				}
 			}
 		}
-		
 		///////////////////////////////////////////////////////////////////
 		///////////////////////		Normal Bots		///////////////////////
 		///////////////////////////////////////////////////////////////////
 		//Some of these are from the referenced template files
 		//Just here so I can easily remember their name :3
-		
 		T_TFBot_Scout_Herp_Popper
 		{
-			Class	Scout
-			Skill	Expert
-			Health	125
-			MaxVisionRange	900
-			ClassIcon	scout_pop
-			Name	"Soda Popper Scout"
-			Item	"the soda popper"
-			Item	"The Lightning Lid"
-			WeaponRestrictions	PrimaryOnly
+			Class Scout
+			Skill Expert
+			Health 125
+			MaxVisionRange 900
+			ClassIcon scout_pop
+			Name "Soda Popper Scout"
+			Item "the soda popper"
+			Item "The Lightning Lid"
+			WeaponRestrictions PrimaryOnly
 			ItemAttributes
 			{
-				ItemName	"the soda popper"
-				"damage bonus"	0.45
-				"bullets per shot bonus"	3
-				"faster reload rate"	1.5
-				"fire rate bonus"	1.5
+				ItemName "the soda popper"
+				"damage bonus" 0.45
+				"bullets per shot bonus" 3
+				"faster reload rate" 1.5
+				"fire rate bonus" 1.5
 			}
 		}
-		
 		//A burst fire soldier. Simple as that.
 		T_TFBot_Soldier_Burst
 		{
@@ -733,7 +705,7 @@ WaveSchedule
 				"faster reload rate" 0.01
 				"fire rate bonus" 0.625
 				"projectile speed decreased" 0.83
-			}				
+			}
 			CharacterAttributes
 			{
 				"increase buff duration" 19
@@ -741,32 +713,31 @@ WaveSchedule
 		}
 		//Clover's mini-barrage template :3
 		T_TFBot_Soldier_Barrage
-        {
-            Name "Lieutenant Barrage"
-            Class Soldier
-            Skill Hard
-            Health 650
-            Scale 1.4
-            Attributes HoldFireUntilFullReload
-            ClassIcon soldier_barrage
-            Item "The Grenadier's Softcap"
+		{
+			Name "Lieutenant Barrage"
+			Class Soldier
+			Skill Hard
+			Health 650
+			Scale 1.4
+			Attributes HoldFireUntilFullReload
+			ClassIcon soldier_barrage
+			Item "The Grenadier's Softcap"
 			Tag bot_giant
-            ItemAttributes
-            {
-                ItemName "tf_weapon_rocketlauncher"
-                "faster reload rate" 0.2
-                "fire rate bonus" 0.25
-                "clip size upgrade atomic" 8.0
-                "Projectile speed increased" 0.7
-                "projectile spread angle penalty" 5
-            }
-            CharacterAttributes
-            {
-                "move speed bonus" 0.8
+			ItemAttributes
+			{
+				ItemName "tf_weapon_rocketlauncher"
+				"faster reload rate" 0.2
+				"fire rate bonus" 0.25
+				"clip size upgrade atomic" 8.0
+				"Projectile speed increased" 0.7
+				"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.8
 				"health regen" 5
-            }
-        }
-		
+			}
+		}
 		//A minigiant pyro that rains down flares!
 		T_TFBot_Pyro_Flare_Rain
 		{
@@ -790,7 +761,6 @@ WaveSchedule
 				"health regen" 5
 			}
 		}
-		
 		//A Demo variant of the standard Blast Soldier.
 		T_TFBot_Demo_Blast_SP
 		{
@@ -810,7 +780,6 @@ WaveSchedule
 				"damage blast push" 6
 			}
 		}
-		
 		//Based on the Giant Regen Heavy.
 		//Lotsa health regen going on here
 		T_TFBot_Heavyweapons_Regen
@@ -829,7 +798,6 @@ WaveSchedule
 				"heal on kill" 150
 			}
 		}
-			
 		//Just a Kritzkrieg Medic. Pretty standard.
 		T_TFBot_Medic_Krit
 		{
@@ -849,12 +817,9 @@ WaveSchedule
 				"heal rate bonus" 5
 			}
 		}
-		
 		///////////////////////////////////////////////////////////////////
 		///////////////////////		Giant Bots		///////////////////////
 		///////////////////////////////////////////////////////////////////
-		
-		
 		//Basically the Beekeeper, except as a non-boss!
 		T_TFBot_Giant_Pyro_Slowdown
 		{
@@ -913,7 +878,6 @@ WaveSchedule
 				"projectile speed decreased" 0.4
 			}
 		}
-		
 		//A big, bad Samurai Demo!
 		//Doesn't leap, how'd you expect it to?
 		T_TFBot_Giant_Demoman_Samurai
@@ -947,7 +911,6 @@ WaveSchedule
 				"move speed bonus" 0.5
 			}
 		}
-		
 		//A bigger, badder Uber Medic. Not as tough as a Giant Medic,
 		//but you can't take it down even with 14 crit stickies during its ubercharge!
 		//Doubled uber rate, halved wait, hp regen compared to the Wringout version.
@@ -1008,9 +971,7 @@ WaveSchedule
 				"override footstep sound set" 6
 			}
 		}
-		
 	}
-	
 	//Spies wave 1
 	Mission
 	{
@@ -1190,13 +1151,10 @@ WaveSchedule
 			Template T_TFBot_Giant_Demoman_Buster_Improved
 		}
 	}
-	
-
 	////////////////////////////////////////////////////////////////////////////////
-	
-	Wave //Wave 1 - Payout: $750 + $100 bonus
+	//Wave 1 - Payout: $750 + $100 bonus
+	Wave
 	{
-	
 		Explanation [$SIGSEGV]
 		{
 			Line "{blue}Be wary! Sentry Busters will not hurt their fellow robots!"
@@ -1204,7 +1162,6 @@ WaveSchedule
 			Line "{red}Additionally, bots can attack from their spawn!"
 			Line "{red}Keep a safe distance or be overwhelmed!"
 		}
-
 		StartWaveOutput
 		{
 			Target wave_start_relay
@@ -1266,7 +1223,6 @@ WaveSchedule
 				}
 			}
 		}
-		
 		WaveSpawn
 		{
 			Name "wave1a2"
@@ -1340,12 +1296,22 @@ WaveSchedule
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1373,18 +1339,33 @@ WaveSchedule
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1420,7 +1401,6 @@ WaveSchedule
 				Template T_TFBot_Scout_Herp_Popper
 			}
 		}
-		
 		WaveSpawn
 		{
 			Name "wave1c"
@@ -1445,24 +1425,44 @@ WaveSchedule
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1531,10 +1531,9 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
-	
-	Wave //Wave 2 - Payout: $800 + $100 bonus
+	//Wave 2 - Payout: $800 + $100 bonus
+	Wave
 	{
 		StartWaveOutput
 		{
@@ -1546,7 +1545,6 @@ WaveSchedule
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "wave2a"
@@ -1778,12 +1776,22 @@ WaveSchedule
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1822,10 +1830,9 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
-	
-	Wave //Wave 3 - Payout: $550 + $100 bonus
+	//Wave 3 - Payout: $550 + $100 bonus
+	Wave
 	{
 		StartWaveOutput
 		{
@@ -1837,7 +1844,6 @@ WaveSchedule
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "wave3a"
@@ -1876,10 +1882,20 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1952,10 +1968,20 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -2118,10 +2144,20 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -2215,10 +2251,9 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
-	
-	Wave //Wave 4 - Payout: $800 + $100 bonus
+	//Wave 4 - Payout: $800 + $100 bonus
+	Wave
 	{
 		StartWaveOutput
 		{
@@ -2230,7 +2265,6 @@ WaveSchedule
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "wave4a"
@@ -2328,7 +2362,6 @@ WaveSchedule
 				}
 			}
 		}
-		
 		WaveSpawn
 		{
 			Name "wave4b"
@@ -2349,10 +2382,20 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -2427,7 +2470,6 @@ WaveSchedule
 				}
 			}
 		}
-		
 		WaveSpawn
 		{
 			Name "wave4c"
@@ -2462,7 +2504,6 @@ WaveSchedule
 				}
 			}
 		}
-		
 		WaveSpawn
 		{
 			Name "wave4a3"
@@ -2562,9 +2603,7 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
-	
 	/////////////////////////////////////////////
 	//Bee designs
 	//- Fast Killer Bee (normal KBS)
@@ -2576,7 +2615,6 @@ WaveSchedule
 	//- Giant Burst Stinger Bee (Giant Burst Solly w "mini rockets")
 	//- Giant Beehemoth (Warrior's Spirit Heavy w crit on kill+bleed)
 	/////////////////////////////////////////////
-	
 	//Wave 5 - Payout: $750 + $100 bonus
 	Wave
 	{
@@ -2584,7 +2622,6 @@ WaveSchedule
 		{
 			Line "{yellow}bees."
 		}
-		
 		StartWaveOutput
 		{
 			Target wave_start_relay
@@ -2595,7 +2632,6 @@ WaveSchedule
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "wave5a"
@@ -2845,8 +2881,9 @@ WaveSchedule
 					Attributes HoldFireUntilFullReload
 					Item "harvest_rocketlauncher_autumn"
 					Item "Bumble Beenie"
+					//Maybe slightly nerf damage and turn rate?
 					ItemAttributes
-					{ //Maybe slightly nerf damage and turn rate?
+					{
 						ItemName "harvest_rocketlauncher_autumn"
 						"dmg bonus vs buildings" 1.5
 						"dmg penalty vs players" 1.5 //6 dmg bleed
@@ -3007,9 +3044,7 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
-	
 	//Giants used in earlier waves:
 	//- Giant Slowing Pyro
 	//- Giant Samurai Demo
@@ -3042,20 +3077,17 @@ WaveSchedule
 	//- Major League Scout 1st
 	//- Giant Soda Popper Scout 2nd
 	//- Giant FaN Scout 3rd
-	
 	//- Giant Regen Heavy 1st/4th
 	//- Giant Rapid Fire Bowman 2nd
 	//- Giant Heater Deflector Heavy 3rd
 	////////////////////////////////////////////////////////////////////////////////
-	
-	
-	Wave //Wave 6, final wave - Payout: $751 (+ $100 bonus) Obvs the final bot gives $1!
+	//Wave 6, final wave - Payout: $751 (+ $100 bonus) Obvs the final bot gives $1!
+	Wave
 	{
 		Explanation [$SIGSEGV]
 		{
 			Line "{blue}Stay cautious! These Giant Heavies have a trick up their sleeve!"
 		}
-		
 		StartWaveOutput
 		{
 			Target wave_start_relay
@@ -3066,7 +3098,6 @@ WaveSchedule
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "wave6a"
@@ -3093,9 +3124,10 @@ WaveSchedule
 					Attributes UseBossHealthBar
 					Attributes AlwaysCrit
 					//Changes to shotgun when health is low
-					WeaponSwitch [$SIGSEGV] //Periodically switches weapon
+					//Periodically switches weapon
+					WeaponSwitch [$SIGSEGV]
 					{
-						Delay 0 
+						Delay 0
 						Cooldown 1
 						Repeats 1
 						Type "Secondary"
@@ -3400,9 +3432,10 @@ WaveSchedule
 					Attributes UseBossHealthBar
 					Attributes AlwaysCrit
 					//Changes to shotgun when health is low
-					WeaponSwitch [$SIGSEGV] //Periodically switches weapon
+					//Periodically switches weapon
+					WeaponSwitch [$SIGSEGV]
 					{
-						Delay 0 
+						Delay 0
 						Cooldown 1
 						Repeats 1
 						Type "Secondary"
@@ -3517,7 +3550,6 @@ WaveSchedule
 			}
 		}
 	}
-	
 	////////////////////////////////////////////////////////////////////////////////
 	// :crab: Emergent White Noise is gone :crab:
 }

@@ -1,10 +1,8 @@
 // ADVANCED MISSION FOR MVM_HIDEOUT_B3
 // MADE BY PEALOVER
 // V9
-
 #base robot_giant.pop
 #base robot_standard.pop
-
 WaveSchedule
 {
 	Templates
@@ -32,12 +30,12 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"override footstep sound set" 3
 				"damage force reduction" 0.4
 				"airblast vulnerability multiplier" 0.4
 				"airblast vertical vulnerability multiplier" 0.1
-				"rage giving scale"	0.15
+				"rage giving scale" 0.15
 			}
 		}
 		T_TFBot_Giant_Medic_Kritzkrieg
@@ -61,7 +59,7 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"move speed bonus"	0.5
+				"move speed bonus" 0.5
 				"damage force reduction" 0.6
 				"airblast vulnerability multiplier" 0.6
 				"bot medic uber health threshold" 7500
@@ -120,7 +118,7 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"move speed bonus"	0.4
+				"move speed bonus" 0.4
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"override footstep sound set" 2
@@ -164,7 +162,7 @@ WaveSchedule
 		Where spawnbot_mission_sentrybuster
 		BeginAtWave 1
 		RunForThisManyWaves 9
-		CooldownTime 40           
+		CooldownTime 40
 		TFBot
 		{
 			Template T_TFBot_SentryBuster
@@ -310,7 +308,8 @@ WaveSchedule
 			Template T_TFBot_Sniper
 		}
 	}
-	Wave // WAVE 1
+	// WAVE 1
+	Wave
 	{
 		StartWaveOutput
 		{
@@ -386,6 +385,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -513,14 +517,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 2
+	// WAVE 2
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -727,7 +732,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -777,14 +782,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 3
+	// WAVE 3
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -860,7 +866,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -910,37 +916,57 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
-					ItemAttributes 
+					ItemAttributes
 					{
 						ItemName "TF_WEAPON_MEDIGUN"
 						"uber duration bonus" 4
+					}
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
 					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
-					ItemAttributes 
+					ItemAttributes
 					{
 						ItemName "TF_WEAPON_MEDIGUN"
 						"uber duration bonus" 4
+					}
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
 					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
-					ItemAttributes 
+					ItemAttributes
 					{
 						ItemName "TF_WEAPON_MEDIGUN"
 						"uber duration bonus" 4
+					}
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
 					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
-					ItemAttributes 
+					ItemAttributes
 					{
 						ItemName "TF_WEAPON_MEDIGUN"
 						"uber duration bonus" 4
+					}
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
 					}
 				}
 			}
@@ -1023,7 +1049,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1056,18 +1082,38 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1091,30 +1137,51 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
 	}
-	Wave // WAVE 4
+	// WAVE 4
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1175,6 +1242,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1234,14 +1306,29 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1287,14 +1374,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 5
+	// WAVE 5
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1404,6 +1492,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic_QuickUber
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1451,6 +1544,11 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
+					// Prevent medics from ubering each other
+					CharacterAttributes
+					{
+						"mod weapon blocks healing" 1
+					}
 				}
 			}
 		}
@@ -1471,14 +1569,15 @@ WaveSchedule
 			}
 		}
 	}
-	Wave // WAVE 6
+	// WAVE 6
+	Wave
 	{
 		StartWaveOutput
 		{
 			Target wave_start_relay
 			Action Trigger
 		}
-		DoneOutput					
+		DoneOutput
 		{
 			Target wave_finished_relay
 			Action trigger
@@ -1528,7 +1627,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1607,7 +1706,7 @@ WaveSchedule
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
@@ -1682,7 +1781,7 @@ WaveSchedule
 				Skin 1
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_1"
-				OnKilledOutput                        
+				OnKilledOutput
 				{
 					Target boss_dead_relay
 					Action Trigger
