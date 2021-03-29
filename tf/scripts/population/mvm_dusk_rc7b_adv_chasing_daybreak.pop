@@ -564,7 +564,7 @@ WaveSchedule
 			Name "Warlock Gauntlet"
 			Class Heavyweapons
 			Skill Expert
-			Health 25000
+			Health 30000
 			Scale 1.9
 			Item "TF_WEAPON_SPELLBOOK"
 			Item "Fists of Steel"
@@ -680,7 +680,7 @@ WaveSchedule
 			Skill Expert
 			Class Medic
 			ClassIcon medic_giant
-			Health 40000
+			Health 45000
 			Tag bot_giant
 			Item "TF_WEAPON_SPELLBOOK"
 			Item "Medimedes"
