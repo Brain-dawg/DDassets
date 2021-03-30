@@ -1,28 +1,27 @@
 #base robot_remilia_addicted_madness.pop
+
 population
 {
-	//Don't wanna use sigmod but whatever
-	ExtraSpawnPoint [$SIGSEGV]
-	{
-		Name "whatever"
-		TeamNum 3
-		X "-145"
-		Y "-36"
-		Z "180"
-	}
-	//Don't wanna use sigmod but whatever
-	ExtraSpawnPoint [$SIGSEGV]
-	{
-		Name "whatever2"
-		TeamNum 3
-		X "832"
-		Y "-176"
-		Z "2616"
-	}
-	StartingCurrency 800
-	RespawnWaveTime 6
-	CanBotsAttackWhileInSpawnRoom no
-	Advanced 1
+	ExtraSpawnPoint [$SIGSEGV]  //Don't wanna use sigmod but whatever
+    {
+        Name "whatever"
+        TeamNum 3 
+        X	"-145"                     
+        Y	"-36"                  
+        Z	"180"        
+    }
+	ExtraSpawnPoint [$SIGSEGV]  //Don't wanna use sigmod but whatever
+    {
+        Name "whatever2"
+        TeamNum 3 
+        X	"832"                     
+        Y	"-176"                  
+        Z	"2616"        
+    }
+	StartingCurrency	800
+	RespawnWaveTime	6
+	CanBotsAttackWhileInSpawnRoom	no
+	Advanced	1
 	//Wave  1 - 800
 	//spy support
 	Templates
@@ -30,25 +29,25 @@ population
 		T_TFBot_Giant_inf_krit_FPS
 		{
 			Class Medic
-			Health 4500
-			Name "Giant Kritzkrieg Medic"
-			ClassIcon medic_kritz_giant
-			Skill Easy
-			Item "The Kritzkrieg"
-			Item "Titanium Tyrolean"
+			Health	4500
+			Name	"Giant Kritzkrieg Medic"
+			ClassIcon	medic_kritz_giant
+			Skill	Easy
+			Item	"The Kritzkrieg"
+			Item	"Titanium Tyrolean"
 			Attributes SpawnWithFullCharge
-			Tag bot_giant
-			Attributes MiniBoss
+			Tag	bot_giant
+			Attributes	MiniBoss
 			ItemAttributes
 			{
-				ItemName "The Kritzkrieg"
+				ItemName	"The Kritzkrieg"
 				"ubercharge rate bonus" 3
 				"bot medic uber health threshold" 10000
 				"uber duration bonus" -200
 			}
 			CharacterAttributes
 			{
-				"move speed penalty" 0.4
+				"move speed penalty"	0.4
 				"heal rate bonus" 5
 				"damage force reduction" 0.6
 				"airblast vulnerability multiplier" 0.05
@@ -102,10 +101,10 @@ population
 				"critboost on kill" 3
 			}
 			ItemAttributes
-			{
-				ItemName "Ali Baba's Wee Booties"
-				"max health additive bonus" 0
-			}
+            {
+                ItemName "Ali Baba's Wee Booties"
+                "max health additive bonus" 0
+            }
 			CharacterAttributes
 			{
 				"move speed penalty" 0.5
@@ -139,8 +138,8 @@ population
 			}
 			CharacterAttributes
 			{
-				"health regen" 40
-				"move speed bonus" 0.5
+				"health regen"	40
+				"move speed bonus"	0.5
 				"damage bonus" 1.5
 				"damage force reduction" 0.4
 				"airblast vulnerability multiplier" 0.4
@@ -164,44 +163,45 @@ population
 			ItemAttributes
 			{
 				ItemName "Deflector"
-				"damage bonus" 1.5 // copied from base mighty heavy
-				"attack projectiles" 1 // force ability to shoot down projectiles
+				"damage bonus"	1.5 // copied from base mighty heavy
+				"attack projectiles" 1	// force ability to shoot down projectiles
 			}
 			CharacterAttributes
 			{
-				"move speed penalty" 0.5
+				"move speed penalty"	0.5
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.1
 				"airblast vertical vulnerability multiplier" 0.5
 				"override footstep sound set" 2
 			}
 		}
+
 	}
 	Mission
-	{
-		Objective DestroySentries
-		Where spawnbot_right
-		BeginAtWave 1
-		RunForThisManyWaves 6
-		InitialCooldown 30
-		CooldownTime 40
-		TFBot
-		{
-			Template T_TFBot_SentryBuster
-		}
-	}
+    {
+        Objective        DestroySentries
+        Where        spawnbot_right
+        BeginAtWave        1
+        RunForThisManyWaves        6
+        InitialCooldown        30
+        CooldownTime        40
+        TFBot
+        {
+            Template        T_TFBot_SentryBuster
+        }
+    }
 	Mission
 	{
-		Objective Spy
-		Where spawnbot_right
-		BeginAtWave 1
-		RunForThisManyWaves 1
-		InitialCooldown 55
-		CooldownTime 40
-		DesiredCount 1
+		Objective	Spy
+		Where	spawnbot_right
+		BeginAtWave	 1
+		RunForThisManyWaves	1
+		InitialCooldown	55
+		CooldownTime	40
+		DesiredCount	1
 		TFBot
 		{
-			Template T_TFBot_Spy
+			Template	T_TFBot_Spy
 			Name "Hartmann's Youkai"
 			Item "Madame Dixie"
 			ItemAttributes
@@ -209,122 +209,122 @@ population
 				ItemName "Madame Dixie"
 				"set item tint rgb" 1315860
 			}
-			Skill Hard
+			Skill	Hard
 		}
 	}
 	Mission
 	{
-		Objective Sniper
-		Where spawnbot_left
-		BeginAtWave 2
-		RunForThisManyWaves 1
-		InitialCooldown 50
-		CooldownTime 35
-		DesiredCount 2
+		Objective	Sniper
+		Where	spawnbot_left
+		BeginAtWave	2
+		RunForThisManyWaves	1
+		InitialCooldown	50
+		CooldownTime	35
+		DesiredCount	2
 		TFBot
 		{
-			Template T_TFBot_Sniper
+			Template	T_TFBot_Sniper
 			Item "The Grand Duchess Fairy Wings"
 			Name "Sniper Fairy"
 		}
 	}
 	Mission
 	{
-		Objective Sniper
-		Where spawnbot_left
-		BeginAtWave 4
-		RunForThisManyWaves 1
-		InitialCooldown 120
-		CooldownTime 60
-		DesiredCount 1
+		Objective	Sniper
+		Where	spawnbot_left
+		BeginAtWave	4
+		RunForThisManyWaves	1
+		InitialCooldown	120 
+		CooldownTime	60
+		DesiredCount	1
 		TFBot
 		{
-			Template T_TFBot_Sniper_Sydney_Sleeper
-			Name "Patchouli Sleeper"
-			Health 20000
-			Attributes UseBossHealthBar
-			Attributes MiniBoss
+			Template	T_TFBot_Sniper_Sydney_Sleeper
+			Name	"Patchouli Sleeper"
+			Health	20000
+			Attributes	UseBossHealthBar
+			Attributes	MiniBoss
 			tag bot_giant
-			Scale 1.3
-			Skill Expert
+			Scale	1.3
+			Skill	Expert
 			ItemAttributes
 			{
-				ItemName "The Sydney Sleeper"
-				"sniper charge per sec" 1000
-				"damage bonus" 0.5
-				"Reload time increased" 0.2
-				"minicrits become crits" 1
+				ItemName	"The Sydney Sleeper"
+				"sniper charge per sec"	1000
+				"damage bonus"	0.5
+				"Reload time increased"	0.2
+				"minicrits become crits"	1
 			}
 		}
 	}
 	Mission
 	{
-		Objective Sniper
-		Where spawnbot_left
-		BeginAtWave 6
-		RunForThisManyWaves 1
-		InitialCooldown 50
-		CooldownTime 50
-		DesiredCount 1
+		Objective	Sniper
+		Where	spawnbot_left
+		BeginAtWave	6
+		RunForThisManyWaves	1
+		InitialCooldown	50
+		CooldownTime	50
+		DesiredCount	1
 		TFBot
 		{
-			Template T_TFBot_Sniper_Sydney_Sleeper
-			Name "Weaker Patchouli Sleeper"
-			Skill Expert
+			Template	T_TFBot_Sniper_Sydney_Sleeper
+			Name	"Weaker Patchouli Sleeper"
+			Skill	Expert
 			ItemAttributes
 			{
-				ItemName "The Sydney Sleeper"
-				"sniper charge per sec" 100
-				"damage bonus" 0.2
-				"Reload time increased" 0.5
+				ItemName	"The Sydney Sleeper"
+				"sniper charge per sec"	100
+				"damage bonus"	0.2
+				"Reload time increased"	0.5
 			}
 		}
 	}
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name 1A
-			TotalCurrency 100
-			TotalCount 40
-			MaxActive 10
-			SpawnCount 5
-			WaitBetweenSpawns 5
-			Where spawnbot_right
+			Name	1A
+			TotalCurrency	100
+			TotalCount	40
+			MaxActive	10
+			SpawnCount	5
+			WaitBetweenSpawns	5
+			Where	spawnbot_right
 			TFBot
 			{
-				Class Scout
+				Class	Scout
 				Name "Special Delievery Oni"
 				Item "Messenger's Mail Bag"
 				Item "Handsome Devil"
-				Skill Hard
+				Skill	Hard
 			}
 		}
 		WaveSpawn
 		{
-			Name 1A
-			TotalCurrency 100
-			TotalCount 4
-			MaxActive 4
-			SpawnCount 4
-			Where spawnbot_left
+			Name	1A
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	4
+			Where	spawnbot_left
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier
+					Template	T_TFBot_Giant_Soldier
 					Name "Dangerous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 					CharacterAttributes
@@ -334,19 +334,19 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Class Soldier
+					Class	Soldier
 					Item "The Grand Duchess Fairy Wings"
 					Item "The Cow Mangler 5000"
 				}
 				TFBot
 				{
-					Class Soldier
+					Class	Soldier
 					Item "The Grand Duchess Fairy Wings"
 					Item "The Cow Mangler 5000"
 				}
@@ -354,36 +354,36 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1A
-			TotalCurrency 100
-			TotalCount 4
-			MaxActive 4
-			SpawnCount 4
-			WaitBeforeStarting 17
-			Where spawnbot_lower
+			Name	1A
+			TotalCurrency	100
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	4
+			WaitBeforeStarting	17
+			Where	spawnbot_lower
 			Squad
 			{
 				TFBot
 				{
 					Name "Exiled Wizard"
-					Template T_TFBot_Giant_Pyro
+					Template	T_TFBot_Giant_Pyro
 					Item "The Seared Sorcerer"
 				}
 				TFBot
 				{
-					Template T_TFBot_Pyro_Flaregun
+					Template	T_TFBot_Pyro_Flaregun
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
 				TFBot
 				{
-					Template T_TFBot_ScorchShot_FastShot
+					Template	T_TFBot_ScorchShot_FastShot
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
 				TFBot
 				{
-					Template T_TFBot_ScorchShot_FastShot
+					Template	T_TFBot_ScorchShot_FastShot
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -392,14 +392,14 @@ population
 		//Normal Bot (400)
 		WaveSpawn
 		{
-			Name 1B
+			Name	1B
 			WaitForAllDead 1A
-			TotalCurrency 100
-			TotalCount 18
-			MaxActive 5
-			SpawnCount 1
-			WaitBetweenSpawns 2.5
-			Where spawnbot_lower
+			TotalCurrency	100
+			TotalCount	18
+			MaxActive	5
+			SpawnCount	1
+			WaitBetweenSpawns	2.5
+			Where	spawnbot_lower
 			TFBot
 			{
 				Class Pyro
@@ -409,14 +409,14 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1B
+			Name	1B
 			WaitForAllDead 1A
-			TotalCurrency 50
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCurrency	50
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
 			WaitBeforeStarting 12
-			Where spawnbot_upper
+			Where	spawnbot_upper
 			TFBot
 			{
 				Template T_TFBot_Giant_DemoMan_PrinceTavish_No_Hat
@@ -426,25 +426,25 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1B
+			Name	1B
 			WaitForAllDead 1A
-			TotalCurrency 50
-			TotalCount 10
-			MaxActive 3
-			SpawnCount 1
-			WaitBetweenSpawns 3
-			Where spawnbot_right
+			TotalCurrency	50
+			TotalCount	10
+			MaxActive	3
+			SpawnCount	1
+			WaitBetweenSpawns	3
+			Where	spawnbot_right
 			RandomChoice
 			{
 				TFBot
 				{
-					Template T_TFBot_Pyro_Flaregun
+					Template	T_TFBot_Pyro_Flaregun
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
 				TFBot
 				{
-					Template T_TFBot_ScorchShot_FastShot
+					Template	T_TFBot_ScorchShot_FastShot
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -452,17 +452,17 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1B
+			Name	1B
 			WaitForAllDead 1A
-			TotalCurrency 100
-			TotalCount 10
-			MaxActive 5
-			SpawnCount 1
-			WaitBetweenSpawns 3
-			Where spawnbot_lower
+			TotalCurrency	100
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	1
+			WaitBetweenSpawns	3
+			Where	spawnbot_lower
 			TFBot
 			{
-				Class Soldier
+				Class	Soldier
 				Item "The Spellbinder's Bonnet"
 				Name "Kappa-Tech Wizard(?)"
 				Item "Packable Provisions"
@@ -470,82 +470,77 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1B
+			Name	1B
 			WaitForAllDead 1A
-			TotalCurrency 100
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
-			WaitBetweenSpawns 3
-			Where spawnbot_left
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	2
+			WaitBetweenSpawns	3
+			Where	spawnbot_left
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic
+					Template	T_TFBot_Medic
 					Name "Spring Fairy"
 					Item "The Grand Duchess Fairy Wings"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 1C
+			Name	1C
 			WaitForAllDead 1B
-			TotalCurrency 50
-			TotalCount 9
-			MaxActive 4
-			SpawnCount 1
-			WaitBetweenSpawns 3
-			Where spawnbot_lower
+			TotalCurrency	50
+			TotalCount	9
+			MaxActive	4
+			SpawnCount	1
+			WaitBetweenSpawns	3
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Demo_Burst
+				Template	T_TFBot_Demo_Burst
 				Name "Mischievous Fairy"
 				Item "The Grand Duchess Fairy Wings"
 			}
 		}
 		WaveSpawn
 		{
-			Name 1C
+			Name	1C
 			WaitForAllDead 1B
-			TotalCurrency 25
-			TotalCount 5
-			MaxActive 3
-			SpawnCount 1
-			WaitBetweenSpawns 8
-			Where spawnbot_lower
+			TotalCurrency	25
+			TotalCount	5
+			MaxActive	3
+			SpawnCount	1
+			WaitBetweenSpawns	8
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_Fist
+				Template	T_TFBot_Heavyweapons_Fist
 				Item "Handsome Devil"
 				Name "Oni"
 			}
 		}
 		WaveSpawn
 		{
-			Name 1C
+			Name	1C
 			WaitForAllDead 1B
-			TotalCurrency 25
-			TotalCount 27
-			MaxActive 9
-			SpawnCount 3
-			WaitBetweenSpawns 2.5
-			Where spawnbot_lower
+			TotalCurrency	25
+			TotalCount	27
+			MaxActive	9
+			SpawnCount	3
+			WaitBetweenSpawns	2.5
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Scout_Sandman
+				Template	T_TFBot_Scout_Sandman
 				ClassIcon scout_stun
 				Name "Ball Throwing Tengu"
 				Item "Dillinger's Duffel"
@@ -554,21 +549,21 @@ population
 		//Final Giant
 		WaveSpawn
 		{
-			Name 1D
+			Name	1D
 			WaitForAllSpawned 1C
-			TotalCurrency 50
-			TotalCount 6
-			MaxActive 6
-			SpawnCount 6
-			WaitBetweenSpawns 3
-			Where spawnbot_left
+			TotalCurrency	50
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	6
+			WaitBetweenSpawns	3
+			Where	spawnbot_left
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer_Reload
-					Name "Rapid Fire Ice Fairy"
-					Item "The Grand Duchess Fair"
+					Template	T_TFBot_Giant_Soldier_Spammer_Reload
+					Name	"Rapid Fire Ice Fairy"
+					Item	"The Grand Duchess Fair"
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -576,7 +571,7 @@ population
 						"reload time increased hidden" -0.1
 						"mod no reload DISPLAY ONLY" 1
 						"Projectile speed decreased" 0.65
-						"slow enemy on hit" 8
+						"slow enemy on hit"	8
 					}
 					CharacterAttributes
 					{
@@ -585,39 +580,29 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
@@ -625,21 +610,21 @@ population
 		}
 		WaveSpawn
 		{
-			Name 1D
+			Name	1D
 			WaitForAllSpawned 1C
-			TotalCurrency 50
-			TotalCount 6
-			MaxActive 6
-			SpawnCount 6
-			WaitBeforeStarting 7
-			Where spawnbot_right
+			TotalCurrency	50
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	6
+			WaitBeforeStarting	7
+			Where	spawnbot_right
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer_Reload
-					Name "Rapid Fire Ice Fairy"
-					Item "The Grand Duchess Fair"
+					Template	T_TFBot_Giant_Soldier_Spammer_Reload
+					Name	"Rapid Fire Ice Fairy"
+					Item	"The Grand Duchess Fair"
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -647,7 +632,7 @@ population
 						"reload time increased hidden" -0.1
 						"mod no reload DISPLAY ONLY" 1
 						"Projectile speed decreased" 0.65
-						"slow enemy on hit" 8
+						"slow enemy on hit"	8
 					}
 					CharacterAttributes
 					{
@@ -656,39 +641,29 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
 				TFBot
 				{
-					Template T_TFBot_Demo_Burst
+					Template	T_TFBot_Demo_Burst
 					Name "Mischievous Fairy"
 					Item "The Grand Duchess Fairy Wings"
 				}
@@ -699,55 +674,55 @@ population
 	//Sniper support
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name Tank
-			TotalCurrency 200
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			Name	Tank
+			TotalCurrency	200
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
 			Tank
 			{
-				Health 20000
-				Name Tank
-				Speed 75
-				StartingPathTrackNode "tank_path_1"
+				Health	20000
+				Name	Tank
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 2A
-			TotalCurrency 100
-			TotalCount 24
-			MaxActive 8
-			SpawnCount 2
-			WaitBetweenSpawns 3.2
-			Where spawnbot_left
+			Name	2A
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	2
+			WaitBetweenSpawns	3.2
+			Where	spawnbot_left
 			TFBot
 			{
-				Class Soldier
+				Class	Soldier
 				Item "The Spellbinder's Bonnet"
 				Name "Kappa-Tech Wizard(?)"
 				Item "Packable Provisions"
@@ -755,16 +730,16 @@ population
 		}
 		WaveSpawn
 		{
-			Name 2A
-			TotalCurrency 100
-			TotalCount 24
-			MaxActive 8
-			SpawnCount 2
-			WaitBetweenSpawns 3.2
-			Where spawnbot_right
+			Name	2A
+			TotalCurrency	100
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	2
+			WaitBetweenSpawns	3.2
+			Where	spawnbot_right
 			TFBot
 			{
-				Class Demoman
+				Class	Demoman
 				Item "Bomb Beanie"
 				Name "Kappa-Tech DemoMan"
 				Item "Packable Provisions"
@@ -772,20 +747,20 @@ population
 		}
 		WaveSpawn
 		{
-			Name 2A
-			TotalCurrency 50
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
-			WaitBetweenSpawns 10
-			Where spawnbot_Upper
+			Name	2A
+			TotalCurrency	50
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	2
+			WaitBetweenSpawns	10
+			Where	spawnbot_Upper
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Sniper_Huntsman_Spammer
-					Attributes AlwaysCrit
-					Name "Sharp Shot Fairy"
+					Template	T_TFBot_Sniper_Huntsman_Spammer
+					Attributes	AlwaysCrit
+					Name	"Sharp Shot Fairy"
 					Item "Dread Hiding Hood"
 					Item "The Grand Duchess Fairy Wings"
 				}
@@ -798,31 +773,31 @@ population
 		}
 		WaveSpawn
 		{
-			Name 2BScout
-			WaitForAllDead 2A
-			TotalCurrency 50
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
-			WaitBetweenSpawns 13
-			Where spawnbot_lower
+			Name	2BScout
+			WaitForAllDead	2A
+			TotalCurrency	50
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBetweenSpawns	13
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Giant_Scout_FAN
+				Template	T_TFBot_Giant_Scout_FAN
 				Name "Blitz Fairy"
 				Item "The Grand Duchess Fairy Wings"
 			}
 		}
 		WaveSpawn
 		{
-			Name 2B
-			WaitForAllDead 2A
-			TotalCurrency 50
-			TotalCount 25
-			MaxActive 8
-			SpawnCount 1
-			WaitBetweenSpawns 0.5
-			Where spawnbot_upper
+			Name	2B
+			WaitForAllDead	2A
+			TotalCurrency	50
+			TotalCount	25
+			MaxActive	8
+			SpawnCount	1
+			WaitBetweenSpawns	0.5
+			Where	spawnbot_upper
 			TFBot
 			{
 				Class Heavy
@@ -832,38 +807,38 @@ population
 		}
 		WaveSpawn
 		{
-			Name 2B
-			WaitForAllDead 2A
-			TotalCurrency 50
-			TotalCount 24
-			MaxActive 6
-			SpawnCount 2
-			WaitBetweenSpawns 1.5
-			Where spawnbot_right
+			Name	2B
+			WaitForAllDead	2A
+			TotalCurrency	50
+			TotalCount	24
+			MaxActive	6
+			SpawnCount	2
+			WaitBetweenSpawns	1.5
+			Where	spawnbot_right
 			TFBot
 			{
 				Class Pyro
-				Skill Expert
+				Skill	Expert
 				Name "Exiled Junior Wizard"
 				Item "Point and Shoot"
 			}
 		}
 		WaveSpawn
 		{
-			Name 2C
-			WaitForAllDead 2BScout
-			TotalCurrency 50
-			TotalCount 7
-			MaxActive 7
-			SpawnCount 7
-			Where spawnbot_left
+			Name	2C
+			WaitForAllDead	2BScout
+			TotalCurrency	50
+			TotalCount	7
+			MaxActive	7
+			SpawnCount	7
+			Where	spawnbot_left
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer
-					Name "Rapid Fire Ice Fairy"
-					Item "The Grand Duchess Fair"
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Name	"Rapid Fire Ice Fairy"
+					Item	"The Grand Duchess Fair"
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -871,7 +846,7 @@ population
 						"reload time increased hidden" -0.1
 						"mod no reload DISPLAY ONLY" 1
 						"Projectile speed decreased" 0.65
-						"slow enemy on hit" 8
+						"slow enemy on hit"	8
 					}
 					CharacterAttributes
 					{
@@ -880,111 +855,82 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
+				}
+				
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+					Name "Spring Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
-					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
-				}
-				TFBot
-				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 2C
-			WaitForAllSpawned 2BScout
-			TotalCurrency 50
-			TotalCount 7
-			MaxActive 7
-			SpawnCount 7
-			Where spawnbot_upper
+			Name	2C
+			WaitForAllSpawned	2BScout
+			TotalCurrency	50
+			TotalCount	7
+			MaxActive	7
+			SpawnCount	7
+			Where	spawnbot_upper
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Demoman
+					Template	T_TFBot_Giant_Demoman
 					Name "Greater Fairy"
-					Item "The Grand Duchess Fair"
+					Item	"The Grand Duchess Fair"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_inf_krit
+					Template	T_TFBot_inf_krit
 					Name "Hell Bringer"
 				}
 			}
@@ -994,46 +940,46 @@ population
 	//Sniper Support
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name 3A
-			TotalCurrency 50
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 1
-			WaitBetweenSpawns 12.5
-			Where spawnbot_left
+			Name	3A
+			TotalCurrency	50
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBetweenSpawns	12.5
+			Where	spawnbot_left
 			TFBot
 			{
-				Template T_TFBot_Giant_Scout_Baseball_Armored
+				Template	T_TFBot_Giant_Scout_Baseball_Armored
 				Name "Daitengu"
 			}
 		}
 		WaveSpawn
 		{
-			Name 3A
-			TotalCurrency 50
-			TotalCount 24
-			MaxActive 8
-			SpawnCount 2
-			WaitBeforeStarting 1
-			WaitBetweenSpawns 2.75
-			Where spawnbot_right
+			Name	3A
+			TotalCurrency	50
+			TotalCount	24
+			MaxActive	8
+			SpawnCount	2
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	2.75
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Soldier_Extended_Buff_Banner
+				Template	T_TFBot_Soldier_Extended_Buff_Banner
 				Name "Gate Guarding Fairy"
 				Item "The Grand Duchess Fair"
 				Skill Expert
@@ -1041,31 +987,31 @@ population
 		}
 		WaveSpawn
 		{
-			Name 3B
-			WaitForAllDead 3A
-			TotalCurrency 50
-			TotalCount 10
-			MaxActive 10
-			SpawnCount 10
-			WaitBeforeStarting 4
-			Where whatever
+			Name	3B
+			WaitForAllDead	3A
+			TotalCurrency	50
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	10
+			WaitBeforeStarting	4
+			Where	whatever
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_gnome
+				Template	T_TFBot_Heavyweapons_gnome
 				Item "The Grand Duchess Fair"
 				Name "Fast Playful Fairy"
 			}
 		}
 		WaveSpawn
 		{
-			Name 3B
-			WaitForAllDead 3A
-			TotalCurrency 50
-			TotalCount 37
-			MaxActive 6
-			SpawnCount 1
-			WaitBetweenSpawns 0.5
-			Where spawnbot_right
+			Name	3B
+			WaitForAllDead	3A
+			TotalCurrency	50
+			TotalCount	37
+			MaxActive	6
+			SpawnCount	1
+			WaitBetweenSpawns	0.5
+			Where	spawnbot_right
 			TFBot
 			{
 				Class Pyro
@@ -1076,40 +1022,40 @@ population
 		}
 		WaveSpawn
 		{
-			Name 3B
-			WaitForAllDead 3A
-			TotalCurrency 100
-			TotalCount 3
-			MaxActive 2
-			SpawnCount 1
-			Where spawnbot_lower
-			WaitBetweenSpawns 7.5
+			Name	3B
+			WaitForAllDead	3A
+			TotalCurrency	100
+			TotalCount	3
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot_lower
+			WaitBetweenSpawns	7.5
 			TFBot
 			{
-				Template T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
+				Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
 				ClassIcon pyro_flare_giant
-				Attributes AlwaysCrit
+				Attributes	AlwaysCrit
 				Name "Exiled Wizard"
 				Item "All Hallows' Hatte"
 			}
 		}
 		WaveSpawn
 		{
-			Name 3C
-			WaitForAllSpawned 3A
-			TotalCurrency 100
-			TotalCount 8
-			MaxActive 8
-			SpawnCount 8
-			Where spawnbot_upper
-			WaitBeforeStarting 32
+			Name	3C
+			WaitForAllSpawned	3A
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	8
+			Where	spawnbot_upper
+			WaitBeforeStarting	32
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer
-					Name "Rapid Fire Ice Fairy"
-					Item "The Grand Duchess Fair"
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Name	"Rapid Fire Ice Fairy"
+					Item	"The Grand Duchess Fair"
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -1117,7 +1063,7 @@ population
 						"reload time increased hidden" -0.1
 						"mod no reload DISPLAY ONLY" 1
 						"Projectile speed decreased" 0.65
-						"slow enemy on hit" 8
+						"slow enemy on hit"	8
 					}
 					CharacterAttributes
 					{
@@ -1126,9 +1072,9 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Giant_Soldier_Spammer
-					Name "Rapid Fire Ice Fairy"
-					Item "The Grand Duchess Fair"
+					Template	T_TFBot_Giant_Soldier_Spammer
+					Name	"Rapid Fire Ice Fairy"
+					Item	"The Grand Duchess Fair"
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -1136,7 +1082,7 @@ population
 						"reload time increased hidden" -0.1
 						"mod no reload DISPLAY ONLY" 1
 						"Projectile speed decreased" 0.65
-						"slow enemy on hit" 8
+						"slow enemy on hit"	8
 					}
 					CharacterAttributes
 					{
@@ -1145,7 +1091,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1162,7 +1108,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1179,7 +1125,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1196,7 +1142,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Battalion
+					Template	T_TFBot_Soldier_Extended_Battalion
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1213,7 +1159,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Buff_Banner
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1230,7 +1176,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Buff_Banner
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1249,21 +1195,21 @@ population
 		}
 		WaveSpawn
 		{
-			Name 3D
-			WaitForAllDead 3C
-			TotalCurrency 75
-			TotalCount 12
-			MaxActive 8
-			SpawnCount 4
-			Where spawnbot_left
-			WaitBetweenSpawns 15
+			Name	3D
+			WaitForAllDead	3C
+			TotalCurrency	75
+			TotalCount	12
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_left
+			WaitBetweenSpawns	15
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
+					Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
 					Classicon pyro_flare_giant
-					Attributes AlwaysCrit
+					Attributes	AlwaysCrit
 					Name "Exiled Wizard"
 					Item "All Hallows' Hatte"
 				}
@@ -1272,39 +1218,40 @@ population
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
+
 			}
 		}
 		WaveSpawn
 		{
-			Name 3D
-			WaitForAllDead 3C
-			TotalCurrency 75
-			TotalCount 12
-			MaxActive 8
-			SpawnCount 4
-			Where spawnbot_right
-			WaitBetweenSpawns 15
+			Name	3D
+			WaitForAllDead	3C
+			TotalCurrency	75
+			TotalCount	12
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_right
+			WaitBetweenSpawns	15
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Pyro
+					Template	T_TFBot_Giant_Pyro
 					Item "The Seared Sorcerer"
 					Name "Exiled Wizard"
 				}
@@ -1313,68 +1260,68 @@ population
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill Hard
+					Skill	Hard
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 3D
-			WaitForAllDead 3C
-			TotalCurrency 50
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 20
+			Name	3D
+			WaitForAllDead	3C
+			TotalCurrency	50
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	20
 			Tank
 			{
-				Health 22500
-				Name Tank
-				Speed 75
-				StartingPathTrackNode "tank_path_1"
+				Health	22500
+				Name	Tank
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 3E
-			WaitForAllDead 3C
-			TotalCurrency 100
-			TotalCount 40
-			MaxActive 7
-			SpawnCount 1
-			Where spawnbot_lower
-			WaitBetweenSpawns 1.5
-			WaitBeforeStarting 20
+			Name	3E
+			WaitForAllDead	3C
+			TotalCurrency	100
+			TotalCount	40
+			MaxActive	7
+			SpawnCount	1
+			Where	spawnbot_lower
+			WaitBetweenSpawns	1.5
+			WaitBeforeStarting	20
 			Support 1
 			RandomChoice
 			{
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1391,7 +1338,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1408,7 +1355,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1425,7 +1372,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Battalion
+					Template	T_TFBot_Soldier_Extended_Battalion
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1442,7 +1389,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Buff_Banner
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1459,7 +1406,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Buff_Banner
+					Template	T_TFBot_Soldier_Extended_Buff_Banner
 					Item "The Cow Mangler 5000"
 					Item "Stout Shako"
 					Name "Colorful Gate Keeper"
@@ -1481,104 +1428,104 @@ population
 	//Spy + Piss support
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name 4A
-			TotalCurrency 100
-			TotalCount 17
-			MaxActive 7
-			SpawnCount 1
-			WaitBetweenSpawns 1.5
-			Where spawnbot_left
+			Name	4A
+			TotalCurrency	100
+			TotalCount	17
+			MaxActive	7
+			SpawnCount	1
+			WaitBetweenSpawns	1.5
+			Where	spawnbot_left
 			TFBot
 			{
-				Class Soldier
+				Class	Soldier
 				Name "Explosive Wizard"
 				Item "Point and Shoot"
-				Attributes AlwaysCrit
+				Attributes	AlwaysCrit
 			}
 		}
 		WaveSpawn
 		{
-			Name 4A
-			TotalCurrency 50
-			TotalCount 17
-			MaxActive 7
-			SpawnCount 1
-			WaitBetweenSpawns 1.5
-			Where spawnbot_lower
+			Name	4A
+			TotalCurrency	50
+			TotalCount	17
+			MaxActive	7
+			SpawnCount	1
+			WaitBetweenSpawns	1.5
+			Where	spawnbot_lower
 			TFBot
 			{
-				Class Demoman
+				Class	Demoman
 				Name "Explosive Wizard"
 				Item "Point and Shoot"
-				Attributes AlwaysCrit
+				Attributes	AlwaysCrit
 			}
 		}
 		WaveSpawn
 		{
-			Name 4A
-			TotalCurrency 50
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
-			WaitBetweenSpawns 9
-			Where spawnbot_lower
+			Name	4A
+			TotalCurrency	50
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBetweenSpawns	9
+			Where	spawnbot_lower
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_SlowCritBarrage_No_Hat
-				Name "Magic Barrage"
+				Name "Magic Barrage" 
 				Item "The Seared Sorcerer"
 			}
 		}
 		WaveSpawn
 		{
-			Name 4B
-			WaitForAllDead 4A
-			TotalCurrency 100
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
-			WaitBetweenSpawns 12
-			Where spawnbot_right
+			Name	4B
+			WaitForAllDead	4A
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBetweenSpawns	12
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Giant_Heavyweapons_Deflector_No_Hat
+				Template	T_TFBot_Giant_Heavyweapons_Deflector_No_Hat
 				Name "Wizard that use minigun"
 				Item "The Seared Sorcerer"
 			}
 		}
 		WaveSpawn
 		{
-			Name 4B
-			WaitForAllDead 4A
-			TotalCurrency 50
-			TotalCount 6
-			MaxActive 6
-			SpawnCount 1
-			WaitBetweenSpawns 3
-			Where spawnbot_right
+			Name	4B
+			WaitForAllDead	4A
+			TotalCurrency	50
+			TotalCount	6
+			MaxActive	6
+			SpawnCount	1
+			WaitBetweenSpawns	3
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_Fist
+				Template	T_TFBot_Heavyweapons_Fist
 				Name "Fist Wizard"
 				Item "Point and Shoot"
 				ItemAttributes
 				{
 					ItemName "Fists of Steel"
-					"damage bonus" 0.8
+					"damage bonus"	0.8
 					"Set DamageType Ignite" 1
 					"damage causes airblast" 1
 					"attach particle effect" 3
@@ -1587,86 +1534,86 @@ population
 		}
 		WaveSpawn
 		{
-			Name 4D
-			WaitForAllDead 4C
-			TotalCurrency 50
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 1
-			WaitBeforeStarting 10
-			WaitBetweenSpawns 8
-			Where spawnbot_right
+			Name	4D
+			WaitForAllDead	4C
+			TotalCurrency	50
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	8
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Giant_Scout_Bonk_No_Hat
+				Template	T_TFBot_Giant_Scout_Bonk_No_Hat
 				Name "Potion Addicted Wizard"
 				Item "The Crone's Dome"
 			}
 		}
 		WaveSpawn
 		{
-			Name 4C
-			WaitForAllDead 4B
-			TotalCurrency 50
-			TotalCount 25
-			MaxActive 8
-			SpawnCount 2
-			WaitBetweenSpawns 2.1
-			Where spawnbot_right
+			Name	4C
+			WaitForAllDead	4B
+			TotalCurrency	50
+			TotalCount	25
+			MaxActive	8
+			SpawnCount	2
+			WaitBetweenSpawns	2.1
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Demo_Burst
+				Template	T_TFBot_Demo_Burst
 				Name "Burst Explosive Wizard"
 				Item "Point and Shoot"
 			}
 		}
 		WaveSpawn
 		{
-			Name 4C
-			WaitForAllDead 4B
-			TotalCurrency 50
-			TotalCount 25
-			MaxActive 8
-			SpawnCount 2
-			WaitBetweenSpawns 2.1
-			Where spawnbot_right
+			Name	4C
+			WaitForAllDead	4B
+			TotalCurrency	50
+			TotalCount	25
+			MaxActive	8
+			SpawnCount	2
+			WaitBetweenSpawns	2.1
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_pyro_dragon
+				Template	T_TFBot_pyro_dragon
 				Item "The Seared Sorcerer"
 				Name "Fire Ball Wizard"
 			}
 		}
 		WaveSpawn
-		{
-			Name 4D
-			WaitForAllDead 4C
-			TotalCurrency 50
-			TotalCount 8
-			MaxActive 4
-			Where spawnbot_Upper
-			SpawnCount 4
-			WaitBetweenSpawns 16
+        {
+            Name         4D
+            WaitForAllDead        4C
+            TotalCurrency        50
+            TotalCount        8
+            MaxActive        4
+            Where        spawnbot_Upper
+            SpawnCount        4
+            WaitBetweenSpawns        16
 			Squad
 			{
 				TFBot
 				{
 					Template T_TFBot_Giant_Soldier_SlowBarrage
 					ClassIcon soldier_barrage_giant
-					Name "Magic Barrage"
+					Name "Magic Barrage" 
 					Item "The Seared Sorcerer"
 				}
 				TFBot
 				{
-					Class Soldier
-					Name "Senior Wizard"
+					Class        Soldier
+					Name        "Senior Wizard"
 					Item "Point and Shoot"
-					ClassIcon soldier_blackbox
-					Health 600
+					ClassIcon        soldier_blackbox
+					Health        600
 					Item "The Black Box"
-					Skill Hard
+					Skill        Hard
 					Attributes SpawnWithFullCharge
-					Scale 1.4
+					Scale        1.4
 					Attributes HoldFireUntilFullReload
 					ItemAttributes
 					{
@@ -1688,20 +1635,20 @@ population
 					}
 					CharacterAttributes
 					{
-						"increase buff duration" 9.0
+						"increase buff duration"        9.0
 					}
 				}
 				TFBot
 				{
-					Class Soldier
-					Name "Senior Wizard"
+					Class        Soldier
+					Name        "Senior Wizard"
 					Item "Point and Shoot"
-					ClassIcon soldier_blackbox
-					Health 600
+					ClassIcon        soldier_blackbox
+					Health        600
 					Item "The Black Box"
-					Skill Hard
+					Skill        Hard
 					Attributes SpawnWithFullCharge
-					Scale 1.4
+					Scale        1.4
 					Attributes HoldFireUntilFullReload
 					ItemAttributes
 					{
@@ -1723,20 +1670,20 @@ population
 					}
 					CharacterAttributes
 					{
-						"increase buff duration" 9.0
+						"increase buff duration"        9.0
 					}
 				}
 				TFBot
 				{
-					Class Soldier
-					Name "Senior Wizard"
+					Class        Soldier
+					Name        "Senior Wizard"
 					Item "Point and Shoot"
-					ClassIcon soldier_blackbox
-					Health 600
+					ClassIcon        soldier_blackbox
+					Health        600
 					Item "The Black Box"
-					Skill Hard
+					Skill        Hard
 					Attributes SpawnWithFullCharge
-					Scale 1.4
+					Scale        1.4
 					Attributes HoldFireUntilFullReload
 					ItemAttributes
 					{
@@ -1758,99 +1705,99 @@ population
 					}
 					CharacterAttributes
 					{
-						"increase buff duration" 9.0
+						"increase buff duration"        9.0
 					}
 				}
 			}
-		}
+        }
 		WaveSpawn
 		{
-			Name 4D
-			WaitForAllSpawned 4C
-			TotalCurrency 50
-			TotalCount 35
-			MaxActive 10
-			SpawnCount 5
-			WaitBetweenSpawns 5
-			Where spawnbot_lower
+			Name	4D
+			WaitForAllSpawned	4C
+			TotalCurrency	50
+			TotalCount	35
+			MaxActive	10
+			SpawnCount	5
+			WaitBetweenSpawns	5
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Demo_Burst
+				Template	T_TFBot_Demo_Burst
 				Name "Burst Explosive Wizard"
 				Item "Point and Shoot"
 			}
 		}
 		WaveSpawn
 		{
-			Name Boss
-			WaitForAllDead 4D
-			TotalCurrency 50
-			TotalCount 12
-			MaxActive 6
-			SpawnCount 2
-			WaitBetweenSpawns 2
-			Where spawnbot_lower
+			Name	Boss
+			WaitForAllDead	4D
+			TotalCurrency	50
+			TotalCount	12
+			MaxActive	6
+			SpawnCount	2
+			WaitBetweenSpawns	2
+			Where	spawnbot_lower
 			Support 1
 			RandomChoice
 			{
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Concheror
+					Template	T_TFBot_Soldier_Extended_Concheror
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Battalion
+					Template	T_TFBot_Soldier_Extended_Battalion
 				}
 				TFBot
 				{
-					Template T_TFBot_Soldier_Extended_Battalion
+					Template	T_TFBot_Soldier_Extended_Battalion
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name Boss
-			WaitForAllDead 4D
-			TotalCurrency 250
-			TotalCount 3
-			SpawnCount 3
-			WaitBeforeStarting 7
-			Where spawnbot_lower
+			Name	Boss
+			WaitForAllDead	4D
+			TotalCurrency	250
+			TotalCount	3
+			SpawnCount	3
+			WaitBeforeStarting	7
+			Where	spawnbot_lower
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Heavyweapons_Deflector_No_Hat
+					Template	T_TFBot_Giant_Heavyweapons_Deflector_No_Hat
 					Item "The Crone's Dome"
 					Name "Library Keeper"
 					Health 10000
-					Attributes UseBossHealthBar
+					Attributes	UseBossHealthBar
 				}
 				TFBot
 				{
-					Template T_TFBot_Giant_Medic
+					Template	T_TFBot_Giant_Medic
 					Name "Caring Wizard"
 					Item "The Crone's Dome"
 				}
 				TFBot
 				{
-					Template T_TFBot_Giant_inf_krit_FPS
+					Template	T_TFBot_Giant_inf_krit_FPS
 					Name "Mad Wizard"
 					Item "The Crone's Dome"
 				}
@@ -1860,43 +1807,43 @@ population
 	//Wave 5
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name BossSpy
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 12
-			WaitBetweenSpawnsAfterDeath 20
-			Where spawnbot_left
+			Name	BossSpy
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	12
+			WaitBetweenSpawnsAfterDeath	20
+			Where	spawnbot_left
 			Support 1
 			TFBot
 			{
-				Class Soldier
-				Health 1700
-				Attributes MiniBoss
-				Skill Expert
-				Scale 1.4
-				Name "Clownpiece Fairy of Hell"
+				Class	Soldier
+				Health	1700
+				Attributes	MiniBoss
+				Skill	Expert
+				Scale	1.4
+				Name	"Clownpiece Fairy of Hell"
 				Item "Pestering Jester"
-				Attributes SpawnWithFullCharge
-				WeaponRestrictions PrimaryOnly
-				Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				Attributes	SpawnWithFullCharge
+				WeaponRestrictions	PrimaryOnly
+				Item	"Upgradeable TF_WEAPON_ROCKETLAUNCHER"
 				ItemAttributes
 				{
-					ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+					ItemName	"Upgradeable TF_WEAPON_ROCKETLAUNCHER"
 					"fire rate bonus" 0.8
 					"heal on kill" 700
 					"clip size upgrade atomic" 4
@@ -1906,7 +1853,7 @@ population
 					"damage bonus" 0.6
 					"Projectile speed decreased" 0.4
 				}
-				Item "The Concheror"
+				Item	"The Concheror"
 				ItemAttributes
 				{
 					ItemName "The Concheror"
@@ -1914,71 +1861,71 @@ population
 				}
 				CharacterAttributes
 				{
-					"move speed bonus" 0.5
+					"move speed bonus"	0.5
 					"rage giving scale" 0.3
-					"increase buff duration" 1001
+					"increase buff duration"	1001
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name Support
-			TotalCurrency 100
-			TotalCount 100
-			MaxActive 3
-			SpawnCount 1
+			Name	Support
+			TotalCurrency	100
+			TotalCount	100
+			MaxActive	3
+			SpawnCount	1
 			Support 1
-			Where spawnbot_right
-			WaitBeforeStarting 30
-			WaitBetweenSpawns 2.5
+			Where	spawnbot_right
+			WaitBeforeStarting	30
+			WaitBetweenSpawns	2.5
 			RandomChoice
 			{
 				TFBot
 				{
-					Class Soldier
+					Class	Soldier
 					Name "Explosive Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Hard
+					Item	"The Grand Duchess Fair"
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Demoman
+					Class	Demoman
 					Name "Bombing Wizard"
 					Item "Point and Shoot"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Hard
+					Item	"The Grand Duchess Fair"
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Normal
+					Item	"The Grand Duchess Fair"
+					Skill	Normal
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Easy
+					Item	"The Grand Duchess Fair"
+					Skill	Easy
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name LimitedSupport
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
+			Name	LimitedSupport
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	2
 			Support Limited
-			Where spawnbot_right
-			WaitBetweenSpawns 4
+			Where	spawnbot_right
+			WaitBetweenSpawns	4
 			TFBot
 			{
 				Template T_TFBot_Medic_QuickFix_Shield
@@ -1987,43 +1934,43 @@ population
 		}
 		WaveSpawn
 		{
-			Name Tank_1
-			TotalCurrency 200
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			Name	Tank_1
+			TotalCurrency	200
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
 			Tank
 			{
-				Health 27500
-				Name Tank
-				Speed 75
-				StartingPathTrackNode "tank_path_1"
+				Health	27500
+				Name	Tank
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"	
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 5A
-			TotalCurrency 100
-			TotalCount 3
-			MaxActive 2
-			SpawnCount 1
-			Where spawnbot_left
-			WaitBetweenSpawns 6
+			Name	5A
+			TotalCurrency	100
+			TotalCount	3
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot_left
+			WaitBetweenSpawns	6
 			TFBot
 			{
-				Template T_TFBot_Giant_Soldier_Spammer
-				Name "Rapid Fire Ice Fairy"
-				Item "The Grand Duchess Fair"
+				Template	T_TFBot_Giant_Soldier_Spammer
+				Name	"Rapid Fire Ice Fairy"
+				Item	"The Grand Duchess Fair"
 				ItemAttributes
 				{
 					ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
@@ -2031,7 +1978,7 @@ population
 					"reload time increased hidden" -0.1
 					"mod no reload DISPLAY ONLY" 1
 					"Projectile speed decreased" 0.65
-					"slow enemy on hit" 8
+					"slow enemy on hit"	8
 				}
 				CharacterAttributes
 				{
@@ -2041,16 +1988,16 @@ population
 		}
 		WaveSpawn
 		{
-			Name 5A
-			TotalCurrency 100
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
-			Where spawnbot_right
-			WaitBetweenSpawns 14
+			Name	5A
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot_right
+			WaitBetweenSpawns	14
 			TFBot
 			{
-				Template T_TFBot_Giant_Heavyweapons
+				Template	T_TFBot_Giant_Heavyweapons
 				Name "Wizard that use gun"
 				Item "Point and Shoot"
 			}
@@ -2058,175 +2005,170 @@ population
 		WaveSpawn
 		{
 			Name 5B
-			WaitForAllDead 5A
-			TotalCurrency 100
-			TotalCount 30
-			MaxActive 6
-			SpawnCount 6
-			Where spawnbot_lower
+			WaitForAllDead	5A
+			TotalCurrency	100
+			TotalCount	30
+			MaxActive	6
+			SpawnCount	6
+			Where	spawnbot_lower
 			TFBot
 			{
-				Class Pyro
-				ClassIcon Pyro
-				Skill Hard
+				Class	Pyro
+				ClassIcon	Pyro
+				Skill		Hard
 				Item "The Crone's Dome"
 				Name "Fire Wizard"
 			}
 		}
 		WaveSpawn
 		{
-			Name 5B
-			WaitForAllDead 5A
-			TotalCurrency 100
-			TotalCount 3
-			MaxActive 2
-			SpawnCount 1
-			Where spawnbot_left
-			WaitBetweenSpawns 14
+			Name	5B
+			WaitForAllDead	5A
+			TotalCurrency	100
+			TotalCount	3
+			MaxActive	2
+			SpawnCount	1
+			Where	spawnbot_left
+			WaitBetweenSpawns	14
 			TFBot
 			{
-				Template T_TFBot_Giant_Heavyweapons_Heater
+				Template	T_TFBot_Giant_Heavyweapons_Heater
 				Name "Great Wanyudo"
 			}
 		}
 		WaveSpawn
 		{
-			Name Tank_2
-			WaitForAllDead Tank_1
-			TotalCurrency 200
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 1
-			WaitBeforeStarting 30
-			WaitBetweenSpawns 15
+			Name	Tank_2
+			WaitForAllDead	Tank_1
+			TotalCurrency	200
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	30
+			WaitBetweenSpawns	15
 			Tank
 			{
-				Health 22500
-				Name Tank
-				Speed 75
-				StartingPathTrackNode "tank_path_1"
+				Health	22500
+				Name	Tank
+				Speed	75
+				StartingPathTrackNode	"tank_path_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 5C
-			WaitForAllDead 5B
-			TotalCurrency 200
-			TotalCount 20
-			MaxActive 16
-			SpawnCount 4
-			Where spawnbot_right
-			WaitBetweenSpawns 2
+			Name	5C
+			WaitForAllDead	5B
+			TotalCurrency	200
+			TotalCount	20
+			MaxActive	16
+			SpawnCount	4
+			Where	spawnbot_right
+			WaitBetweenSpawns	2
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Heavyweapons_Fist
+					Template	T_TFBot_Heavyweapons_Fist
 					Name "Great Oni"
 					Item "Handsome Devil"
-					Attributes AlwaysCrit
+					Attributes	AlwaysCrit
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Spring Bringer"
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 5D
-			WaitForAllDead 5C
-			TotalCount 100
-			MaxActive 12
-			SpawnCount 1
-			Where spawnbot_right
-			Where spawnbot_left
-			WaitBetweenSpawns 1
+			Name	5D
+			WaitForAllDead	5C
+			TotalCount	100
+			MaxActive	12
+			SpawnCount	1
+			Where	spawnbot_right
+			Where	spawnbot_left
+			WaitBetweenSpawns	1
 			Support 1
 			RandomChoice
 			{
 				TFBot
 				{
-					Class Soldier
+					Class	Soldier
 					Name "Explosive Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Hard
+					Item	"The Grand Duchess Fair"
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Demoman
+					Class	Demoman
 					Name "Bombing Wizard"
 					Item "Point and Shoot"
-					Skill Hard
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Hard
+					Item	"The Grand Duchess Fair"
+					Skill	Hard
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Normal
+					Item	"The Grand Duchess Fair"
+					Skill	Normal
 				}
 				TFBot
 				{
-					Class Pyro
+					Class	Pyro
 					Name "Fire Fairy"
-					Item "The Grand Duchess Fair"
-					Skill Easy
+					Item	"The Grand Duchess Fair"
+					Skill	Easy
 				}
 			}
 		}
 	}
 	Wave
 	{
-		WaitWhenDone 65
-		Checkpoint Yes
+		WaitWhenDone	65
+		Checkpoint	Yes
 		StartWaveOutput
 		{
-			Target wave_start_relay_classic
-			Action Trigger
+			Target	wave_start_relay_classic
+			Action	Trigger
 		}
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
-			Name 6A
-			TotalCount 16
-			TotalCurrency 200
-			MaxActive 16
-			SpawnCount 8
-			WaitBeforeStarting 6
-			Where spawnbot_upper
+			Name	6A
+			TotalCount	16
+			TotalCurrency	200
+			MaxActive	16
+			SpawnCount	8
+			WaitBeforeStarting	6
+			Where	spawnbot_upper
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Soldier_BurstFire
+					Template	T_TFBot_Soldier_BurstFire
 					Name "Hell Oni"
 					Item "Spy Oni Mask"
 					ItemAttributes
@@ -2237,7 +2179,7 @@ population
 				}
 				TFBot
 				{
-					Template T_TFBot_Giant_Medic
+					Template	T_TFBot_Giant_Medic
 					Name "Hell Oni"
 					Item "Spy Oni Mask"
 				}
@@ -2251,7 +2193,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2268,7 +2210,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2285,7 +2227,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2302,7 +2244,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2319,7 +2261,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2336,7 +2278,7 @@ population
 					WeaponRestrictions PrimaryOnly
 					MaxVisionRange 1200
 					ClassIcon heavy_deflector
-					Name "Bullet Hell Butler"
+					Name	"Bullet Hell Butler"
 					ItemAttributes
 					{
 						ItemName "Deflector"
@@ -2347,135 +2289,130 @@ population
 		}
 		WaveSpawn
 		{
-			Name 6B
-			WaitForAllDead 6A
-			TotalCount 36
-			TotalCurrency 200
-			MaxActive 12
-			SpawnCount 4
-			WaitBetweenSpawns 2.5
-			Where spawnbot_lower
+			Name	6B
+			WaitForAllDead	6A
+			TotalCount	36
+			TotalCurrency	200
+			MaxActive	12 
+			SpawnCount	4
+			WaitBetweenSpawns	2.5
+			Where	spawnbot_lower
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Bleed_on_hit_bow
-					Health 750
+					Template	T_TFBot_Bleed_on_hit_bow
+					Health	750
 					Item "The Lone Star"
-					Scale 1.3
-					Name "Scarlet Bowman"
-					Attributes AlwaysCrit
+					Scale	1.3
+					Name	"Scarlet Bowman"
+					Attributes	AlwaysCrit
 					ItemAttributes
 					{
-						ItemName "The Huntsman"
-						"bleeding duration" 8
+						ItemName	"The Huntsman"
+						"bleeding duration"	8
 						"fire rate bonus" 0.8
-						"damage bonus" 1.2
+						"damage bonus"	1.2
 					}
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickFix_Shield
+					Template	T_TFBot_Medic_QuickFix_Shield
 					Name "Spring Bringer"
 				}
 				TFBot
 				{
-					Template T_TFBot_Bleed_on_hit_bow
-					Health 750
+					Template	T_TFBot_Bleed_on_hit_bow
+					Health	750
 					Item "The Lone Star"
-					Scale 1.3
-					Name "Scarlet Bowman"
-					Attributes AlwaysCrit
+					Scale	1.3
+					Name	"Scarlet Bowman"
+					Attributes	AlwaysCrit
 					ItemAttributes
 					{
-						ItemName "The Huntsman"
-						"bleeding duration" 8
+						ItemName	"The Huntsman"
+						"bleeding duration"	8
 						"fire rate bonus" 0.8
-						"damage bonus" 1.2
+						"damage bonus"	1.2
 					}
 				}
 				TFBot
 				{
-					Class Pyro
-					Attributes AlwaysFireWeapon
+					Class	Pyro
+					Attributes	AlwaysFireWeapon
 					Item "The Soot Suit"
 					Name "Fire Red Devil Butler"
-					skill Easy
+					skill	Easy
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 6B
-			WaitForAllDead 6A
-			TotalCount 6
-			TotalCurrency 200
-			MaxActive 6
-			SpawnCount 2
-			WaitBetweenSpawns 14
-			Where spawnbot_left
+			Name	6B
+			WaitForAllDead	6A
+			TotalCount	6
+			TotalCurrency	200
+			MaxActive	6
+			SpawnCount	2
+			WaitBetweenSpawns	14
+			Where	spawnbot_left
 			Squad
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Heavyweapons_Deflector
-					ClassIcon heavy_deflector_giant
+					Template	T_TFBot_Giant_Heavyweapons_Deflector
+					ClassIcon	heavy_deflector_giant
 					Item "The Siberian Sophisticate"
 					Name "Super Minigun Butler"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template	T_TFBot_Medic_QuickUber
 					Name "Super Spring Bringer"
 					ItemAttributes
 					{
 						Itemname "TF_WEAPON_MEDIGUN"
-						"uber duration bonus" 2.5
-					}
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
+						"uber duration bonus"	2.5
 					}
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name 6C
-			WaitForAllDead 6B
-			TotalCount 7
-			TotalCurrency 200
-			MaxActive 7
-			SpawnCount 7
-			WaitBeforeStarting 18
-			Where spawnbot_lower
+			Name	6C
+			WaitForAllDead	6B
+			TotalCount	7
+			TotalCurrency	200
+			MaxActive	7
+			SpawnCount	7
+			WaitBeforeStarting	18
+			Where	spawnbot_lower
 			TFBot
 			{
-				Template T_TFBot_Giant_Scout_Fast
-				Name "Fast Red Devil Butler"
+				Template	T_TFBot_Giant_Scout_Fast
+				Name	"Fast Red Devil Butler"
 				Item "The Ticket Boy"
 			}
 		}
 		WaveSpawn
 		{
-			Name 6C
-			WaitForAllSpawned 6B
-			TotalCount 25
-			TotalCurrency 200
-			MaxActive 10
-			SpawnCount 2
-			WaitBetweenSpawns 0.8
+			Name	6C
+			WaitForAllSpawned	6B
+			TotalCount	25
+			TotalCurrency	200
+			MaxActive	10
+			SpawnCount	2
+			WaitBetweenSpawns	0.8
 			LastSpawnOutput
 			{
-				Target Classic_Mode_Intel
-				Action ForceReset
-			}
-			Where spawnbot_right
+                Target Classic_Mode_Intel
+                Action ForceReset
+            }
+			Where	spawnbot_right
 			TFBot
 			{
-				Template T_TFBot_Demo_Burst
-				Attributes AlwaysCrit
+				Template	T_TFBot_Demo_Burst
+				Attributes	AlwaysCrit
 				Name "Mischievous Fairy"
 				Item "The Grand Duchess Fairy Wings"
 			}
@@ -2483,79 +2420,79 @@ population
 		WaveSpawn
 		{
 			Name BossSupport
-			WaitForAllSpawned 6C
-			MaxActive 12
-			SpawnCount 12
-			WaitBetweenSpawns 13
+			WaitForAllSpawned	6C
+			MaxActive	12
+			SpawnCount	12
+			WaitBetweenSpawns	13
 			Where whatever
 			TFBot
 			{
 				Class Scout
 				Name "Scarlet Vampire Bat"
-				Scale 0.4
-				Health 90
-				Skill Easy
-				WeaponRestrictions MeleeOnly
+				Scale	0.4
+				Health	90
+				Skill	Easy
+				WeaponRestrictions	MeleeOnly
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_BAT"
-					"damage bonus" 0.4
-					"fire rate bonus" 0.6
+					"damage bonus"	0.4
+					"fire rate bonus"	0.6
 					"crit forces victim to laugh" 1
 				}
-				Attributes AlwaysCrit
+				Attributes	AlwaysCrit
 				CharacterAttributes
 				{
-					"dmg taken from blast reduced" 0.3
-					"dmg taken from fire reduced" 0.4
-					"dmg taken from crit increased" 100
-					"dmg taken from bullets reduced" 0.7
-					"move speed bonus" 1.4
+					"dmg taken from blast reduced"	0.3
+					"dmg taken from fire reduced"	0.4
+					"dmg taken from crit increased"	100
+					"dmg taken from bullets reduced"	0.7
+					"move speed bonus"	1.4
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name Boss
-			WaitForAllDead 6C
-			TotalCount 1
-			TotalCurrency 500
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 14
-			Where spawnbot_right
+			Name	Boss
+			WaitForAllDead	6C
+			TotalCount	1
+			TotalCurrency	500
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	14
+			Where	spawnbot_right
 			TFBot
 			{
-				Class Demoman
-				Health 42000
-				Attributes MiniBoss
+				Class	Demoman
+				Health	42000
+				Attributes	MiniBoss
 				WeaponRestrictions PrimaryOnly
-				Attributes UseBossHealthBar
+				Attributes	UseBossHealthBar
 				Item "Hazard Headgear"
-				Skill Expert
-				Scale 1.9
-				ClassIcon demo_burst_healonkill
-				Attributes HoldFireUntilFullReload
-				Attributes AlwaysCrit
+				Skill	Expert
+				Scale	1.9
+				ClassIcon	demo_burst_healonkill
+				Attributes	HoldFireUntilFullReload
+				Attributes	AlwaysCrit
 				Item "Upgradeable TF_WEAPON_GRENADELAUNCHER"
-				Name "Scarlet Vampire"
+				Name	"Scarlet Vampire"
 				ItemAttributes
 				{
-					ItemName "Upgradeable TF_WEAPON_GRENADELAUNCHER"
-					"heal on hit for rapidfire" 70
-					"projectile penetration" 1
-					"faster reload rate" 0.9
-					"fire rate bonus" 0.001
+					ItemName	"Upgradeable TF_WEAPON_GRENADELAUNCHER"
+					"heal on hit for rapidfire"	70
+					"projectile penetration"	1
+					"faster reload rate"	0.9
+					"fire rate bonus"	0.001
 					"Projectile speed increased" 1.2
-					"override projectile type" 8
-					"projectile spread angle penalty" 7
-					"clip size bonus" 1.5
+					"override projectile type"	8
+					"projectile spread angle penalty"	7
+					"clip size bonus"	1.5
 					"bleeding duration" 7
 					"heal on kill" 4000
 				}
 				CharacterAttributes
 				{
-					"move speed bonus" 0.4
+					"move speed bonus"	0.4
 					"damage force reduction" 0.4
 					"airblast vulnerability multiplier" 0.00
 					"override footstep sound set" 3
@@ -2566,73 +2503,68 @@ population
 		}
 		WaveSpawn
 		{
-			Name BossSpy
-			WaitForAllDead 6C
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 3
-			WaitBetweenSpawnsAfterDeath 5
-			Where spawnbot_right
+			Name	BossSpy
+			WaitForAllDead	6C
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBetweenSpawnsAfterDeath	5
+			Where	spawnbot_right
 			Support 1
 			TFBot
 			{
-				Template T_TFBot_Medic_QuickUber
+				Template	T_TFBot_Medic_QuickUber
 				Name "Spring Bringer"
-				// Prevent medics from ubering each other
-				CharacterAttributes
-				{
-					"mod weapon blocks healing" 1
-				}
 			}
 		}
 		WaveSpawn
 		{
-			Name BossSpy
-			WaitForAllDead 6C
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 2
-			WaitBetweenSpawnsAfterDeath 12
-			Where spawnbot_right
+			Name	BossSpy
+			WaitForAllDead	6C
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	2
+			WaitBetweenSpawnsAfterDeath	12
+			Where	spawnbot_right
 			Support 1
 			TFBot
 			{
 				Template T_TFBot_Pyro_Smoke
-				Health 1500
-				Attributes MiniBoss
-				Skill Expert
-				Scale 1.01
-				Name "Eternal Meek"
-				Attributes AlwaysFireWeapon
+				Health	1500
+				Attributes	MiniBoss
+				Skill	Expert
+				Scale	1.01
+				Name	"Eternal Meek"
+				Attributes	AlwaysFireWeapon
 				ItemAttributes
 				{
-					ItemName "The Dragon's Fury"
-					"damage penalty" 0.66
-					"weapon burn dmg reduced" 0.75
-					"mult_item_meter_charge_rate" 0.7
+					ItemName	"The Dragon's Fury"
+					"damage penalty"	0.66
+					"weapon burn dmg reduced"	0.75
+					"mult_item_meter_charge_rate"	0.7
 				}
 				CharacterAttributes
 				{
-					"move speed bonus" 0.6
+					"move speed bonus"	0.6
 					"rage giving scale" 0.3
 				}
 			}
 		}
 		WaveSpawn
 		{
-			Name BossSpy
-			WaitForAllDead 6C
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 3
-			WaitBetweenSpawnsAfterDeath 25
-			Where spawnbot_right
+			Name	BossSpy
+			WaitForAllDead	6C
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	3
+			WaitBetweenSpawnsAfterDeath	25
+			Where	spawnbot_right
 			Support 1
 			TFBot
 			{
-				Template T_TFBot_Spy
-				Skill Hard
-				Attributes IgnoreFlag
+				Template	T_TFBot_Spy
+				Skill	Hard
+				Attributes	IgnoreFlag
 				Name "Hartmann's Youkai"
 				Item "Madame Dixie"
 				ItemAttributes
