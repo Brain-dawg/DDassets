@@ -314,15 +314,16 @@ population
 		T_TFBot_Giant_Sniper_Melee
 		{
 			ClassIcon	sniper_kukri_giant
-			Health	2000
+			Health	1600 //2000
 			Name	"Giant Gear Grinder"
 			Class	Sniper
 			Skill	Expert
 			WeaponRestrictions	MeleeOnly
 			Tag	"bot_giant"
-			Attributes	"AlwaysCrit"
+			//Attributes	"AlwaysCrit"
 			Attributes	"MiniBoss"
 			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+			UseHumanAnimations 1 [$SIGSEGV]
 			ItemAttributes
 			{
 				ItemName	"TF_WEAPON_CLUB"
@@ -411,7 +412,7 @@ population
 		T_TFBot_Giant_Sniper_Brick
 		{
 			ClassIcon	sniper_brick_lite_giant
-			Health	2000
+			Health	2500
 			Name	"Giant Brick Bruiser"
 			Class	Sniper
 			Skill	Expert
@@ -956,12 +957,12 @@ population
 			Target wave_init_lower_relay
 			Action Trigger
 		}
-		Explanation [$SIGSEGV] //Dispayed once the wave is initialized
-		{
-			Line "{red}This wave, Ambush Bots will be attacking you from behind."
-			Line "{blue}Listen closely for the audio cues."
-			Line "{yellow}Later waves will have ambush bots."
-		}
+		//Explanation [$SIGSEGV] //Dispayed once the wave is initialized
+		//{
+			//Line "{red}This wave, Ambush Bots will be attacking you from behind."
+			//Line "{blue}Listen closely for the audio cues."
+			//Line "{yellow}Later waves will have ambush bots."
+		//}
 		WaveSpawn
 		{
 			Name	w2_primary
@@ -1347,7 +1348,7 @@ population
 			WaitBetweenSpawns	10
 			Tank
 			{
-				Health	18000 //20000 //30000
+				Health	22000 //30000
 				Name	tank_disp
 				Speed	85
 				StartingPathTrackNode "path_blimp1_1"
@@ -3575,18 +3576,13 @@ population
 				Name	"Major Salt"
 				Class	Soldier
 				Skill	Expert
-				//AutoJumpMin	6
-				//AutoJumpMax	6
 				MaxVisionRange 1
 				WeaponRestrictions	PrimaryOnly
 				Tag	"bot_giant"
 				Attributes	"HoldFireUntilFullReload"
-				Attributes	"SuppressFire"
 				Attributes	"MiniBoss"
 				Attributes	"UseBossHealthBar"
-				//Attributes	"AutoJump"
 				RocketCustomParticle eyeboss_projectile [$SIGSEGV]
-				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Item	"warbird_rocketlauncher_warhawk"
 				Item	"The Mantreads"
 				Item	"Full Metal Drill Hat"
@@ -3596,30 +3592,19 @@ population
 				{
 					IgnoreDisguisedSpies 1
 					IgnoreStealthedSpies 1
-					RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
-					TurnPower 500
-					MaxAimError 250
-					Acceleration 25
-					AccelerationTime 4
-					//TurnPower 80 //How fast should the rocket rotate to face the target
-					//MaxAimError 80 //Max angle between rocket and the target
-				}
-				FireWeapon [$SIGSEGV]  
-				{
-					Delay 6 //6.7
-					Cooldown 6 //6.7
-					Duration 1 
-					Type "Primary" 
+					RocketSpeed 0.45 // Multiplier of rocket speed. 1 for default speed
+					TurnPower 90 //How fast should the rocket rotate to face the target
+					MaxAimError 90 //Max angle between rocket and the target
 				}
 				ItemAttributes
 				{
 					ItemName	"warbird_rocketlauncher_warhawk"
 					"set_item_texture_wear" 0
-					//"damage penalty" 0.75
-					"fire rate bonus"	0.00001
+					"damage penalty" 0.75
+					"fire rate bonus"	0.1
 					"faster reload rate"	0.1
 					"projectile spread angle penalty" 50
-					"clip size upgrade atomic"	4
+					"clip size upgrade atomic"	14
 				}
 				ItemAttributes
 				{
@@ -3676,25 +3661,25 @@ population
 				}
 			}
 		}
-		//WaveSpawn
-		//{
-			//Name	w7_support
-			//WaitForAllDead	w7_finale3
-			//TotalCurrency	0
-			//TotalCount	10
-			//MaxActive	1
-			//SpawnCount	1
-			//WaitBeforeStarting	5
-			//WaitBetweenSpawnsAfterDeath	30
-			//Support	1
-			//Where	spawnbot_main
-			//Where	spawnbot_upper
-			//TFBot
-			//{
-				//Template	T_TFBot_Giant_Sniper_Melee
-				//Skill Easy
-			//}
-		//}
+		WaveSpawn
+		{
+			Name	w7_support
+			WaitForAllDead	w7_finale3
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawnsAfterDeath	30
+			Support	1
+			Where	spawnbot_main
+			Where	spawnbot_upper
+			TFBot
+			{
+				Template	T_TFBot_Giant_Sniper_Melee
+				Skill Easy
+			}
+		}
 		WaveSpawn
 		{
 			Name	w7_redsupport
