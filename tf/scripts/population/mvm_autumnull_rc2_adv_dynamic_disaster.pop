@@ -2076,7 +2076,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Festive Ambassador"
-						"crit_dmg_falloff 0"
+						"crit_dmg_falloff" 0
 						"headshot damage increase" 2.5
 						"fire rate penalty" 3.5
 						"crit on hard hit" 1
