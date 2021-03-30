@@ -3135,7 +3135,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Sun-on-a-Stick"
-						"attack_minicrits_and_consumes_burning 1"
+						"attack_minicrits_and_consumes_burning" 1
 						"damage bonus vs burning" 1.75
 						"set damagetype ignite" 1
 					}
@@ -3155,7 +3155,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Sun-on-a-Stick"
-						"attack_minicrits_and_consumes_burning 1"
+						"attack_minicrits_and_consumes_burning" 1
 						"damage bonus vs burning" 1.75
 						"set damagetype ignite" 1
 					}
