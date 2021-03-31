@@ -161,7 +161,7 @@ WaveSchedule {
 		Count 8
 		MinimumSeparation 500
 		NavAreaFilter SNIPER_SPOT
-		SentryGun {Level 1}
+		SentryGun { Level 1 }
 	}
 	Templates {
 	
