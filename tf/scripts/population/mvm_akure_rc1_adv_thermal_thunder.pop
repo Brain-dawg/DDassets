@@ -1,7 +1,9 @@
 //Written by Startacker! https://steamcommunity.com/id/startacker/
+
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_akure.pop
+
 WaveSchedule
 {
 	StartingCurrency 600
@@ -9,17 +11,19 @@ WaveSchedule
 	RespawnWaveTime 6
 	Advanced 1
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
-	Mission
+
+    Mission
 	{
-		Objective DestroySentries
-		Where spawnbot
-		BeginAtWave 1
-		InitialCooldown 30
-		CooldownTime 40
-		DesiredCount 1
+		Objective	DestroySentries
+		Where	spawnbot
+		BeginAtWave	1
+		InitialCooldown	30
+		CooldownTime	40
+		DesiredCount	1
+		
 		TFBot
 		{
-			Template T_TFBot_SentryBuster
+			Template	T_TFBot_SentryBuster
 		}
 	}
 	Mission
@@ -31,6 +35,7 @@ WaveSchedule
 		InitialCooldown 45
 		CooldownTime 30
 		DesiredCount 2
+
 		TFBot
 		{
 			Template T_TFBot_Sniper
@@ -45,6 +50,7 @@ WaveSchedule
 		InitialCooldown 45
 		CooldownTime 30
 		DesiredCount 2
+
 		TFBot
 		{
 			Template T_TFBot_Sniper
@@ -59,6 +65,7 @@ WaveSchedule
 		InitialCooldown 30
 		CooldownTime 40
 		DesiredCount 8
+
 		TFBot
 		{
 			Template T_TFBot_Sniper_Sydney_Sleeper
@@ -73,6 +80,7 @@ WaveSchedule
 		InitialCooldown 30
 		CooldownTime 30
 		DesiredCount 2
+
 		TFBot
 		{
 			Template T_TFBot_Spy
@@ -87,6 +95,7 @@ WaveSchedule
 		InitialCooldown 30
 		CooldownTime 30
 		DesiredCount 2
+
 		TFBot
 		{
 			Template T_TFBot_Spy
@@ -94,13 +103,15 @@ WaveSchedule
 	}
 	Mission
 	{
-		Objective Engineer
+		Objective Engineer  
+
 		InitialCooldown 45
 		Where spawnbot
 		BeginAtWave 1
 		RunForThisManyWaves 1
 		CooldownTime 45
 		DesiredCount 1
+
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Tele_Battle
@@ -110,13 +121,15 @@ WaveSchedule
 	}
 	Mission
 	{
-		Objective Engineer
+		Objective Engineer  
+
 		InitialCooldown 45
 		Where spawnbot
 		BeginAtWave 2
 		RunForThisManyWaves 1
 		CooldownTime 45
 		DesiredCount 1
+
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Teleporter
@@ -126,13 +139,15 @@ WaveSchedule
 	}
 	Mission
 	{
-		Objective Engineer
+		Objective Engineer  
+
 		InitialCooldown 45
 		Where spawnbot
 		BeginAtWave 6
 		RunForThisManyWaves 1
 		CooldownTime 45
 		DesiredCount 1
+
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Teleporter
@@ -142,30 +157,35 @@ WaveSchedule
 	}
 	Mission
 	{
-		Objective Engineer
+		Objective Engineer  
+
 		InitialCooldown 45
 		Where spawnbot
 		BeginAtWave 7
 		RunForThisManyWaves 1
 		CooldownTime 45
 		DesiredCount 1
+
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Battle_TeleIn
 		}
 	}
+
 	Wave
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave01_a"
@@ -173,6 +193,7 @@ WaveSchedule
 			SpawnCount 20
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_Shotgun
@@ -188,6 +209,7 @@ WaveSchedule
 			WaitBetweenSpawns 15
 			Where spawnbot_flank
 			TotalCurrency 200
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Boxing_Heavy
@@ -204,6 +226,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Pyro_GeoThermal
@@ -220,6 +243,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Demoman_Knight
@@ -236,6 +260,7 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			Where spawnbot_building
 			TotalCurrency 50
+
 			TFBot
 			{
 				Class Scout
@@ -253,6 +278,7 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			Where spawnbot_building
 			TotalCurrency 50
+
 			TFBot
 			{
 				Class Scout
@@ -269,6 +295,7 @@ WaveSchedule
 			WaitForAllDead "wave01_d"
 			Where spawnbot_flank
 			TotalCurrency 50
+
 			Squad
 			{
 				TFBot
@@ -286,14 +313,16 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave02_a"
@@ -303,6 +332,7 @@ WaveSchedule
 			Where spawnbot
 			WaitBetweenSpawns 10
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Heavyweapons
@@ -318,11 +348,12 @@ WaveSchedule
 			Where spawnbot_building
 			WaitBetweenSpawns 1
 			TotalCurrency 100
-			TFBot
-			{
-				Class Scout
-				Skill Normal
-			}
+
+				TFBot
+				{
+					Class Scout
+					Skill Normal
+				}
 		}
 		WaveSpawn
 		{
@@ -335,6 +366,7 @@ WaveSchedule
 			WaitForAllSpawned "wave02_a"
 			WaitBetweenSpawns 12
 			TotalCurrency 100
+			
 			TFBot
 			{
 				Template T_TFBot_Giant_Demoman
@@ -351,6 +383,7 @@ WaveSchedule
 			WaitForAllSpawned "wave02_b"
 			WaitBetweenSpawns 6
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_GeoThermal
@@ -364,6 +397,7 @@ WaveSchedule
 			WaitBeforeStarting 6
 			WaitForAllDead "wave02_c"
 			TotalCurrency 200
+
 			Tank
 			{
 				Name tankboss
@@ -372,13 +406,13 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_left_b_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
@@ -393,6 +427,7 @@ WaveSchedule
 			WaitForAllSpawned "wave02_tank"
 			WaitBetweenSpawns 8
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Pyro_GeoThermal
@@ -409,6 +444,7 @@ WaveSchedule
 			WaitForAllSpawned "wave02_tank"
 			WaitBetweenSpawns 6
 			TotalCurrency 50
+
 			TFBot
 			{
 				Class Demoman
@@ -420,14 +456,16 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave03_a"
@@ -437,6 +475,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 75
+
 			TFBot
 			{
 				Template T_TFBot_Demoman_Steel_Sulfur
@@ -452,6 +491,7 @@ WaveSchedule
 			WaitBetweenSpawns 10
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Pyro_Flare_GeoThermal
@@ -468,6 +508,7 @@ WaveSchedule
 			WaitBetweenSpawns 3
 			Where spawnbot
 			TotalCurrency 100
+
 			Squad
 			{
 				TFBot
@@ -478,11 +519,6 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
@@ -498,6 +534,7 @@ WaveSchedule
 			Where spawnbot_building
 			TotalCurrency 100
 			Support 1
+
 			TFBot
 			{
 				Template T_TFBot_Scout_Pistol
@@ -514,6 +551,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot_flank
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Sniper_Cleaners_Carbine
@@ -530,6 +568,7 @@ WaveSchedule
 			WaitBetweenSpawns 12
 			Where spawnbot
 			TotalCurrency 100
+
 			Squad
 			{
 				TFBot
@@ -539,11 +578,6 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
@@ -555,6 +589,7 @@ WaveSchedule
 			WaitBeforeStarting 6
 			WaitForAllDead "wave03_e"
 			TotalCurrency 100
+
 			Tank
 			{
 				Name tankboss
@@ -563,13 +598,13 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_left_a_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
@@ -584,6 +619,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot_building
 			Support 1
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_Shotgun
@@ -594,14 +630,16 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave04_a"
@@ -611,6 +649,7 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			Where spawnbot
 			TotalCurrency 150
+			
 			Squad
 			{
 				TFBot
@@ -621,20 +660,10 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
@@ -648,6 +677,7 @@ WaveSchedule
 			Where spawnbot_building
 			WaitBetweenSpawns 8
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_GeoThermal
@@ -663,6 +693,7 @@ WaveSchedule
 			Where spawnbot_flank
 			WaitBetweenSpawns 8
 			TotalCurrency 50
+
 			TFBot
 			{
 				Class Heavyweapons
@@ -680,6 +711,7 @@ WaveSchedule
 			WaitForAllDead "wave04_a"
 			WaitBetweenSpawns 8
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_Extended_Buff_Banner
@@ -696,6 +728,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 150
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_Spammer
@@ -712,6 +745,7 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			Where spawnbot_flank
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Pyro_GeoThermal
@@ -727,6 +761,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Fast
@@ -744,6 +779,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot_flank
 			TotalCurrency 100
+
 			Squad
 			{
 				TFBot
@@ -772,6 +808,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot_flank
 			Support 1
+
 			TFBot
 			{
 				Class Scout
@@ -783,14 +820,16 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave05_tank1"
@@ -798,6 +837,7 @@ WaveSchedule
 			SpawnCount 1
 			WaitBeforeStarting 0
 			TotalCurrency 100
+
 			Tank
 			{
 				Name tankboss
@@ -806,13 +846,13 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_left_a_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
@@ -826,6 +866,7 @@ WaveSchedule
 			Where spawnbot_right
 			WaitBetweenSpawns 6
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Sniper_Cleaners_Carbine
@@ -842,6 +883,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_Extended_Buff_Banner
@@ -858,6 +900,7 @@ WaveSchedule
 			WaitBetweenSpawns 12
 			Where spawnbot
 			TotalCurrency 100
+
 			Squad
 			{
 				TFBot
@@ -881,6 +924,7 @@ WaveSchedule
 			WaitBetweenSpawns 2
 			Where spawnbot_flank
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Pyro_Flaregun_GeoThermal
@@ -895,6 +939,7 @@ WaveSchedule
 			WaitBeforeStarting 30
 			WaitForAllSpawned "wave05_c"
 			TotalCurrency 200
+
 			Tank
 			{
 				Name tankboss
@@ -903,13 +948,13 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_left_b_1"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
@@ -924,6 +969,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot_building
 			TotalCurrency 100
+
 			TFBot
 			{
 				Class Demoman
@@ -943,6 +989,7 @@ WaveSchedule
 			Where spawnbot_flank
 			Where spawnbot_building
 			Support 1
+
 			TFBot
 			{
 				Class Scout
@@ -960,6 +1007,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_Extended_Battalion
@@ -976,6 +1024,7 @@ WaveSchedule
 			WaitbetweenSpawns 12
 			Where spawnbot_flank
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Heavyweapons_Deflector
@@ -986,13 +1035,14 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
 		WaveSpawn
 		{
@@ -1002,12 +1052,14 @@ WaveSchedule
 			MaxActive 1
 			Where spawnbot
 			TotalCurrency 20
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Fast
 				Tag front_right
 			}
 		}
+
 		WaveSpawn
 		{
 			Name "wave06_a"
@@ -1017,6 +1069,7 @@ WaveSchedule
 			MaxActive 2
 			Where spawnbot_flank
 			TotalCurrency 50
+
 			Squad
 			{
 				TFBot
@@ -1039,6 +1092,7 @@ WaveSchedule
 			Where spawnbot
 			WaitBeforeStarting 1
 			TotalCurrency 50
+
 			Squad
 			{
 				TFBot
@@ -1060,6 +1114,7 @@ WaveSchedule
 			WaitBeforeStarting 1
 			Where spawnbot_right
 			TotalCurrency 50
+
 			Squad
 			{
 				TFBot
@@ -1081,6 +1136,7 @@ WaveSchedule
 			WaitBeforeStarting 1
 			Where spawnbot
 			TotalCurrency 50
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_Extended_Buff_Banner
@@ -1096,6 +1152,7 @@ WaveSchedule
 			WaitBetweenSpawns 2
 			Where spawnbot
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Scout_Pistol
@@ -1111,6 +1168,7 @@ WaveSchedule
 			WaitBetweenSpawns 8
 			Where spawnbot_flank
 			TotalCurrency 80
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Fast
@@ -1128,6 +1186,7 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot
 			TotalCurrency 100
+			
 			Squad
 			{
 				TFBot
@@ -1137,29 +1196,14 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic
-					// Prevent medics from ubering each other
-					CharacterAttributes
-					{
-						"mod weapon blocks healing" 1
-					}
 				}
 			}
 		}
@@ -1174,6 +1218,7 @@ WaveSchedule
 			WaitBetweenSpawns 4
 			Where spawnbot_flank
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Fast
@@ -1191,13 +1236,14 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			Where spawnbot_right
 			TotalCurrency 100
+
 			TFBot
 			{
 				Template T_TFBot_Demoman_Steel_Sulfur
 				Attributes AlwaysCrit
 				ClassIcon demo_loosecannon_giant
-				AimAt Head [$SIGSEGV]
-				AimLeadProjectileSpeed 1450 [$SIGSEGV]
+				AimAt Head	[$SIGSEGV]
+				AimLeadProjectileSpeed 1450	[$SIGSEGV]
 			}
 		}
 		WaveSpawn
@@ -1211,6 +1257,7 @@ WaveSchedule
 			WaitBetweenSpawns 10
 			Where spawnbot
 			TotalCurrency 50
+
 			Squad
 			{
 				TFBot
@@ -1235,6 +1282,7 @@ WaveSchedule
 			WaitBetweenSpawns 4
 			Where spawnbot_building
 			Support 1
+
 			TFBot
 			{
 				Class Pyro
@@ -1253,12 +1301,13 @@ WaveSchedule
 			WaitBetweenSpawns 6
 			Where spawnbot_right
 			Support 1
+
 			TFBot
 			{
 				Template T_TFBot_Demoman_Steel_Sulfur
 				Attributes AlwaysCrit
-				AimAt Head [$SIGSEGV]
-				AimLeadProjectileSpeed 1450 [$SIGSEGV]
+				AimAt Head	[$SIGSEGV]
+				AimLeadProjectileSpeed 1450	[$SIGSEGV]
 			}
 		}
 	}
@@ -1266,14 +1315,16 @@ WaveSchedule
 	{
 		StartWaveOutput
 		{
-			Target wave_start_relay
-			Action Trigger
+			Target	wave_start_relay
+			Action	Trigger
 		}
+		
 		DoneOutput
 		{
-			Target wave_finished_relay
-			Action Trigger
+			Target	wave_finished_relay
+			Action	Trigger
 		}
+
 		WaveSpawn
 		{
 			Name "wave07_a"
@@ -1282,6 +1333,7 @@ WaveSchedule
 			Where spawnbot
 			WaitBeforeStarting 6
 			FirstSpawnWarningSound "ambient\energy\whiteflash.wav"
+
 			Squad
 			{
 				TFBot
@@ -1298,6 +1350,7 @@ WaveSchedule
 					Scale 1.9
 					Health 50000
 					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+
 					ItemAttributes
 					{
 						ItemName "The Cleaner's Carbine"
@@ -1327,6 +1380,7 @@ WaveSchedule
 					Attributes VaccinatorBlast
 					Attributes UseBossHealthBar
 					Health 10000
+					
 					ItemAttributes
 					{
 						ItemName "The Vaccinator"
@@ -1340,10 +1394,10 @@ WaveSchedule
 					CharacterAttributes
 					{
 						"bot medic uber health threshold" 10000
-						"move speed bonus" 0.5
+						"move speed bonus"	0.5
 						"damage force reduction" 0.1
 						"airblast vulnerability multiplier" 0.1
-						"health regen" 40
+						"health regen"	40
 						"rage giving scale" 0.1
 					}
 				}
@@ -1360,6 +1414,7 @@ WaveSchedule
 					Attributes VaccinatorBullets
 					Attributes UseBossHealthBar
 					Health 10000
+					
 					ItemAttributes
 					{
 						ItemName "The Vaccinator"
@@ -1373,10 +1428,10 @@ WaveSchedule
 					CharacterAttributes
 					{
 						"bot medic uber health threshold" 10000
-						"move speed bonus" 0.5
+						"move speed bonus"	0.5
 						"damage force reduction" 0.1
 						"airblast vulnerability multiplier" 0.1
-						"health regen" 40
+						"health regen"	40
 						"rage giving scale" 0.1
 					}
 				}
@@ -1393,6 +1448,7 @@ WaveSchedule
 					Attributes VaccinatorFire
 					Attributes UseBossHealthBar
 					Health 10000
+					
 					ItemAttributes
 					{
 						ItemName "The Vaccinator"
@@ -1406,10 +1462,10 @@ WaveSchedule
 					CharacterAttributes
 					{
 						"bot medic uber health threshold" 10000
-						"move speed bonus" 0.5
+						"move speed bonus"	0.5
 						"damage force reduction" 0.1
 						"airblast vulnerability multiplier" 0.1
-						"health regen" 40
+						"health regen"	40
 						"rage giving scale" 0.1
 					}
 				}
@@ -1420,6 +1476,7 @@ WaveSchedule
 			Name "wave07_tank"
 			TotalCount 1
 			SpawnCount 1
+
 			Tank
 			{
 				Name tankboss_melee
@@ -1428,13 +1485,13 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_melee_start"
 				OnKilledOutput
 				{
-					Target boss_dead_relay
-					Action Trigger
+					Target	boss_dead_relay
+					Action	Trigger
 				}
 				OnBombDroppedOutput
 				{
-					Target boss_deploy_relay
-					Action Trigger
+					Target	boss_deploy_relay
+					Action	Trigger
 				}
 			}
 		}
@@ -1450,6 +1507,7 @@ WaveSchedule
 			Where spawnbot_building
 			Where spawnbot_flank
 			Support 1
+
 			TFBot
 			{
 				Template T_TFBot_Scout_Pistol
