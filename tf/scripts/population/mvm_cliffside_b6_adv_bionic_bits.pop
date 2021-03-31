@@ -452,7 +452,7 @@ WaveSchedule
 			Item "Lollichop Licker"
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
-			UseCustomModel models/playe  // r/pyro.mdl [$SIGSEGV]
+			UseCustomModel models/player/pyro.mdl [$SIGSEGV]
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 2
@@ -492,7 +492,7 @@ WaveSchedule
 			Item "Lollichop Licker"
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
-			UseCustomModel models/playe  // r/pyro.mdl [$SIGSEGV]
+			UseCustomModel models/player/pyro.mdl [$SIGSEGV]
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 2
