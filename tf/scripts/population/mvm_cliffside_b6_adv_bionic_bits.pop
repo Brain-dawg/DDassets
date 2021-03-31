@@ -1803,7 +1803,7 @@ WaveSchedule
 					"rage giving scale" 0.1
 					"charge time increased" -0.25
 					"charge recharge rate increased" 100
-				//	"bot custom jump particle" 1 immense lag
+					//"bot custom jump particle"	1
 				}
 			}
 		
@@ -2754,7 +2754,7 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"backstab shield" 1
-					"damage force reduction" 0.5
+					"damage force reduction" 0.75
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"cancel falling damage" 1
