@@ -1618,7 +1618,7 @@ WaveSchedule
 					"rage giving scale" 0.1
 					"charge time increased" -0.25
 					"charge recharge rate increased" 100
-					"bot custom jump particle" 1
+				//	"bot custom jump particle" 1 immense lag
 				}
 			}
 		}
