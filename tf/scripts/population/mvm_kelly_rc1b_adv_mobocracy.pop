@@ -1775,7 +1775,7 @@ WaveSchedule
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 1
-				Model models/weapons/c_models/c_gamma_gazer/c_gamma_gazer.mdl
+				Model models/weapons/c_models/c_gamma_gazer/c_gamma_gazer_1.mdl
 			}
 			//SIG
 		}
