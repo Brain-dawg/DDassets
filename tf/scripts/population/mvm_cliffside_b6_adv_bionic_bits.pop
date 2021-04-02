@@ -1877,7 +1877,7 @@ WaveSchedule
 
 				OnKilledOutput                                  
 				{
-					Target ST_kill_relay
+					Target ST_kill_relay 
 					Action Trigger                         
 				}
 				
