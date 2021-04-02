@@ -1101,6 +1101,7 @@ WaveSchedule
 				Name   "Sticky Tank"
 				Health 20000
 				Speed  75
+				ClassIcon tank_sticky_hellmet
 				StartingPathTrackNode "boss_path_1"
 
 				OnBombDroppedOutput

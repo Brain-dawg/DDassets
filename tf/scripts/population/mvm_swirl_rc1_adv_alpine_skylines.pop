@@ -155,10 +155,9 @@ population
 			Tag bot_giant
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
-			Item "the beggar's bazooka"
 			ItemAttributes
 			{
-				ItemName	"the beggar's bazooka"
+				ItemName	tf_weapon_rocketlauncher
 				"auto fires full clip"	0
 				"can overload"	0
 				"damage bonus" 2.0
@@ -167,6 +166,7 @@ population
 				"clip size upgrade atomic" 6.0
 				"Projectile speed increased" 0.9
 				"projectile spread angle penalty" 0
+				"blast radius decreased" 1
 			}
 			CharacterAttributes
 			{
@@ -1228,6 +1228,11 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Sniper_SMG_Tactical
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+					CharacterAttributes
+					{
+						"head scale" 1
+					}
 				}
 				TFBot
 				{
@@ -1427,7 +1432,7 @@ population
 			TotalCount	4
 			MaxActive	4
 			SpawnCount	2
-			WaitBeforeStarting	0
+			WaitBeforeStarting	8
 			WaitBetweenSpawns	20
 			Where	spawnbot_main
 			Squad
@@ -1457,7 +1462,7 @@ population
 			TotalCount	18
 			MaxActive	9
 			SpawnCount	3
-			WaitBeforeStarting	0
+			WaitBeforeStarting	8
 			WaitBetweenSpawns	10
 			Where	spawnbot_left
 			Where	spawnbot_main
@@ -1479,7 +1484,7 @@ population
 						Item	"MvM Gatebot Light Pyro"
 						ItemAttributes
 						{
-							ItemName	"The Flare Gun"	//"The Detonator"
+							ItemName	"The Detonator"
 							"fire rate bonus"	0.4
 							"Reload time decreased"	0.2
 						}
@@ -1513,7 +1518,7 @@ population
 			TotalCount	18
 			MaxActive	9
 			SpawnCount	3
-			WaitBeforeStarting	0
+			WaitBeforeStarting	8
 			WaitBetweenSpawns	10
 			Where	spawnbot_main
 			TFBot
@@ -2068,7 +2073,7 @@ population
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.6 //0.5
+						"move speed bonus"	0.65 //0.5
 						"damage force reduction"	0.6
 						"airblast vulnerability multiplier"	0.25
 						"override footstep sound set"	7
@@ -2159,7 +2164,7 @@ population
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.6 //0.5
+						"move speed bonus"	0.65 //0.5
 						"damage force reduction"	0.6
 						"airblast vulnerability multiplier"	0.25
 						"override footstep sound set"	7
@@ -2229,7 +2234,7 @@ population
 					}
 					CharacterAttributes
 					{
-						"move speed bonus"	0.6 //0.5
+						"move speed bonus"	0.65 //0.5
 						"damage force reduction"	0.6
 						"airblast vulnerability multiplier"	0.25
 						"override footstep sound set"	7
@@ -2261,7 +2266,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Demo_WideBurst
-					ClassIcon demo_burst_giant
+					ClassIcon demo_burst_crit
 				}
 				TFBot
 				{
@@ -2331,8 +2336,8 @@ population
 		{
 			Name	w5_money
 			TotalCurrency	100
-			TotalCount	12
-			MaxActive	12
+			TotalCount	15
+			MaxActive	15
 			SpawnCount	3
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	6 //8
@@ -2429,6 +2434,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Sniper_Brick
+					Name "(16)TFBot"
 				}
 				TFBot
 				{
@@ -2583,10 +2589,12 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Sniper_Brick
+					Name "(21)TFBot"
 				}
 				TFBot
 				{
 					Template	T_TFBot_Giant_Sniper_Brick
+					
 				}
 				TFBot
 				{
@@ -2879,7 +2887,7 @@ population
 			//FirstSpawnWarningSound "mvm\mvm_tele_activate.wav"
 			Tank
 			{
-				Health	10000 //15000 //30000
+				Health	15000 //15000 //30000
 				Name	tankboss_fire
 				Speed	85
 				StartingPathTrackNode "path_blimp2_1"
@@ -2978,7 +2986,7 @@ population
 				Class Demoman
 				ClassIcon sentry_buster
 				Name "Kabewm"
-				Health 175
+				Health 200
 				Skill	Expert
 				Scale 1.00000000000000000000000000001
 				WeaponRestrictions MeleeOnly
@@ -3601,7 +3609,7 @@ population
 					ItemName	"warbird_rocketlauncher_warhawk"
 					"set_item_texture_wear" 0
 					"damage penalty" 0.75
-					"fire rate bonus"	0.1
+					"fire rate bonus"	0.05
 					"faster reload rate"	0.1
 					"projectile spread angle penalty" 50
 					"clip size upgrade atomic"	14

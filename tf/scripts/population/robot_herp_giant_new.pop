@@ -1104,7 +1104,7 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName	"The Nostromo Napalmer"
-				"weapon burn dmg increased"	2
+				//"weapon burn dmg increased"	2
 				"flame_drag" 4
 				"max_flame_reflection_count" 1000
 				"flame_reflect_on_collision"	1000
