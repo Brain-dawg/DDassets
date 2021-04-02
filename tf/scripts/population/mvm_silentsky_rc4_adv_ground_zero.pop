@@ -1878,7 +1878,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				Class	Heavy
 				Name	"Reserve Shooter Heavy"
 				WeaponRestrictions	SecondaryOnly
-				ClassIcon	shotgun_reserve2
+				ClassIcon	heavy_shotgun
 				Item	"Commando Elite"
 				Item	"The Reserve Shooter"
 				Skill	Hard

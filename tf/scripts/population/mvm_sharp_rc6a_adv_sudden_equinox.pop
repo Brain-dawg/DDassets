@@ -2412,6 +2412,7 @@ gettysburg
                 Name sticky_tank
                 Health 42000
                 Speed 75
+				Classicon tank_sticky_hellmet
                 StartingPathTrackNode "tank_path_a_1"
 
                 OnKilledOutput
