@@ -13,6 +13,74 @@ WaveSchedule
 	CanBotsAttackWhileInSpawnRoom No
 	RespawnWaveTime 4
 	Advanced	1
+	
+	PointTemplates [$SIGSEGV]
+	{
+		spawnfix //avoid the giant hole is spawn
+		{
+			NoFixup 1
+			func_respawnroom //bruh1
+			{
+				"mins" "-192 -414.5 -928"
+				"maxs" "192 414.5 928"
+				"Origin" "320 609 736"
+				"StartDisabled" "0"
+				"targetname" "fuck1"
+				"TeamNum" "3"
+			}
+			func_respawnroom //bruh2
+			{
+				"mins" "-152 -17 -928"
+				"maxs" "152 17 928"
+				"Origin" "280 177 736"
+				"StartDisabled" "0"
+				"targetname" "fuck2"
+				"TeamNum" "3"
+			}
+			func_respawnroom //bruh3
+			{
+				"mins" "-36 -16 -928"
+				"maxs" "36 16 928"
+				"Origin" "164 144 736"
+				"StartDisabled" "0"
+				"targetname" "fuck3"
+				"TeamNum" "3"
+			}
+			trigger_add_tf_player_condition //bruh
+			{
+				"mins" "-192 -414.5 -928"
+				"maxs" "192 414.5 928"
+				"Origin" "320 609 736"
+				"condition" "51"
+				"duration" "-1"
+				"spawnflags" "1"
+				"filtername" "filter_blue"
+				"targetname" "fuckall1"
+			}
+			trigger_add_tf_player_condition //bruh
+			{
+				"mins" "-152 -17 -928"
+				"maxs" "152 17 928"
+				"Origin" "280 177 736"
+				"condition" "51"
+				"duration" "-1"
+				"spawnflags" "1"
+				"filtername" "filter_blue"
+				"targetname" "fuckall2"
+			}
+			trigger_add_tf_player_condition //bruh
+			{
+				"mins" "-36 -16 -928"
+				"maxs" "36 16 928"
+				"Origin" "164 144 736"
+				"condition" "51"
+				"duration" "-1"
+				"spawnflags" "1"
+				"filtername" "filter_blue"
+				"targetname" "fuckall3"
+			}
+		}
+	}
 
     Templates
     {
@@ -355,6 +423,9 @@ WaveSchedule
             Skill Expert
         }
     }
+	
+	SpawnTemplate "spawnfix"
+	
     Wave
 	{
 		StartWaveOutput
