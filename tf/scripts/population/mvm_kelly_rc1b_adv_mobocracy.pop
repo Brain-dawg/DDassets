@@ -4,7 +4,6 @@
 //Additional Icons By lite https://steamcommunity.com/id/liteflame/
 //Red Sentry Buster by NeoDement https://steamcommunity.com/id/neodement/
 //Uber Tank by Bazooks https://steamcommunity.com/profiles/76561198158093750
-//Blimp by rveyrand and PenolAkurashi https://gamebanana.com/skins/171098
 //Advanced Skill
 //Requires sigsegv extensions
 
@@ -22,7 +21,6 @@ WaveSchedule
 	SentryBusterFriendlyFire 0 			[$SIGSEGV]
 	StandableHeads 1 					[$SIGSEGV]
 	ImprovedAirblast 1					[$SIGSEGV]
-	BodyPartScaleSpeed 50				[$SIGSEGV]
 	TextPrintTime 0 					[$SIGSEGV]
 	
 	//Money
@@ -39,16 +37,16 @@ WaveSchedule
 	CustomUpgradesFile "mvm_upgrades_hellmet.txt" [$SIGSEGV]
 	
 	//Precache
-	PrecacheSound "siren2.wav" 									[$SIGSEGV]
-	PrecacheSound "rescue.wav" 									[$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_tank_ubered.mdl"	[$SIGSEGV]
-	PrecacheModel "models/bots/demo/red_sentry_buster.mdl"		[$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" [$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl" [$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl" [$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl" [$SIGSEGV]
-	PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl" [$SIGSEGV]
+	PrecacheSound "siren2.wav" 											[$SIGSEGV]
+	PrecacheSound "rescue.wav" 											[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_tank_ubered.mdl"			[$SIGSEGV]
+	PrecacheModel "models/bots/demo/red_sentry_buster.mdl"				[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" 				[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" 		[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl" 		[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl" 		[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl"	[$SIGSEGV]
+	PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl" 		[$SIGSEGV]
 
 
 	//Disable Sounds
@@ -535,15 +533,15 @@ WaveSchedule
 		"charge meter on hit" 0
 	}
 	
-	ItemAttributes [$SIGSEGV] // reworked fire design, burn on hit, 65 dmg per ring impact, -50% bullet damage
-	{
-		ItemName "The Huo Long Heatmaker"
-		"Set DamageType Ignite" 1
-		"ring of fire while aiming" 65
-		"uses ammo while aiming" 0
-		"damage penalty" 0.5
-		"damage bonus vs burning" 1
-	}
+	//ItemAttributes [$SIGSEGV] // reworked fire design, burn on hit, 65 dmg per ring impact, -50% bullet damage
+	//{
+	//	ItemName "The Huo Long Heatmaker"
+	//	"Set DamageType Ignite" 1
+	//	"ring of fire while aiming" 65
+	//	"uses ammo while aiming" 0
+	//	"damage penalty" 0.5
+	//	"damage bonus vs burning" 1
+	//}
 
 	ItemAttributes [$SIGSEGV] // minicrit instead of crits to not overshadow kgb
 	{
@@ -588,12 +586,12 @@ WaveSchedule
 		"damage bonus bullet vs sentry target" 0.75
 	}
 	
-	ItemAttributes [$SIGSEGV] // ranged sapper removal (no enemy sapper in mobocracy because of mounted sentry problem)
-	{
-		ItemName "The Pomson 6000"
-		"damage applies to sappers" 1
-		"energy weapon no hurt building" 0
-	}
+	//ItemAttributes [$SIGSEGV] // ranged sapper removal (no enemy sapper in mobocracy because of mounted sentry problem)
+	//{
+	//	ItemName "The Pomson 6000"
+	//	"damage applies to sappers" 1
+	//	"energy weapon no hurt building" 0
+	//}
 	
 	ItemAttributes [$SIGSEGV] // health penalty, removed self mark to compensate
 	{
@@ -640,12 +638,12 @@ WaveSchedule
 		"auto fires full clip" 1
 	}
 	
-	ItemAttributes [$SIGSEGV] // reverted to pre-uber update beta version --broken
+	ItemAttributes [$SIGSEGV] // reverted to pre-uber update beta version
 	{
 		ItemName "The Quick-Fix"
-		//"heal rate bonus" 1.5
-		//"ubercharge rate bonus" 1.5
-		//"overheal penalty" 0
+		"heal rate bonus" 1.5
+		"ubercharge rate bonus" 1.5
+		65"overheal penalty" 0
 	}
 	
 	ItemAttributes [$SIGSEGV] // stock can heal friendly buildings
@@ -663,7 +661,7 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // well deserved nerf to most powerful medic item
 	{
 		ItemName "The Ubersaw"
-		"add uber charge on hit" 0.15
+		"fire rate penalty" 1.4
 		"crit mod disabled" 0
 	}
 	
@@ -764,11 +762,11 @@ WaveSchedule
 		"max health additive bonus" 75
 	}
 	
-	ItemAttributes [$SIGSEGV] // fix to straight upgrade (no enemy sentry in mobocracy)
-	{
-		ItemName "The Red-Tape Recorder"
-		"sapper health penalty" 0.5
-	}
+	//ItemAttributes [$SIGSEGV] // fix to straight upgrade (no enemy sentry in mobocracy)
+	//{
+	//	ItemName "The Red-Tape Recorder"
+	//	"sapper health penalty" 0.5
+	//}
 	
 	//TEMPLATES
 	
@@ -1634,7 +1632,6 @@ WaveSchedule
 			}
 			
 			//SIG
-			FireSound "Weapon_Reserve_Shooter.Single" [$SIGSEGV]
 			AimAt Body [$SIGSEGV]
 			FireWeapon [$SIGSEGV]
 			{
@@ -1771,7 +1768,6 @@ WaveSchedule
 			}
 				
 			//SIG
-			FireSound "Weapon_BarretsArm.Fizzle" [$SIGSEGV]
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 1
@@ -2804,7 +2800,7 @@ WaveSchedule
 			Tank
 			{
 				Health 11111
-				Classicon tank
+				Classicon tank_lite
 				Speed 75
 				Skin 0
 				Name "tankboss"
@@ -4048,7 +4044,6 @@ WaveSchedule
 					"damage penalty" 0.1
 					"mark for death" 1
 					"faster reload rate" 2
-					"projectile penetration" 1
 					"reveal disguised victim on hit" 1
 					"subtract victim medigun charge on hit" 100
 					"subtract victim cloak on hit" 100
@@ -5035,7 +5030,7 @@ WaveSchedule
                 {
                     ItemName "Battery Canteens"
                     "ubercharge" 1
-                    "powerup duration" 12
+                    "powerup duration" 24
                     "powerup charges" 1
                 }
 				
@@ -7016,188 +7011,9 @@ WaveSchedule
 		WaveSpawn [$SIGSEGV]
 		{
 			Name "red"
-			Where red_player_teamspawn
-			TotalCount 1337
-			MaxActive 3
-			SpawnCount 1
-			WaitBeforeStarting 4
-			WaitBetweenSpawns 2
-			Support 1
-			TotalCurrency 0
-		
-		RandomChoice
-		{
-			TFBot
-			{
-				Class Scout
-				Name "Bonk! Scout"
-				Skill Expert
-				Tag bot_red
-				Classicon red2_lite
-				Name "Bonk! Scout"
-				Item "Bonk Helm"
-				Item "Bonk! Atomic Punch"
-				Item "The Atomizer"
-				WeaponRestrictions MeleeOnly
-				CharacterAttributes
-				{
-					"voice pitch scale" 0.95
-					"crit mod disabled" 0
-					"ammo regen" 1
-					"effect bar recharge rate increased" 0.5
-				}
-				
-				//SIG
-				Action Mobber [$SIGSEGV]
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_CRITBOOSTED_ON_KILL
-				}
-				//SIG
-			}
-			
-			TFBot
-			{
-				Template T_TFBot_Soldier_Extended_Battalion
-				Skill Expert
-				Tag bot_red
-				Health 220
-				Classicon red2_lite
-				Attributes DisableDodge
-				Item "The Direct Hit"
-				Item "The Battalion's Backup"
-				Attributes SpawnWithFullCharge
-				ItemAttributes
-				{
-					ItemName "The Battalion's Backup"
-					"max health additive penalty" -20
-				}
-				CharacterAttributes
-				{
-					"voice pitch scale" 0.95
-					"crit mod disabled" 0
-					"ammo regen" 1
-				}
-				
-				//SIG
-				Action Mobber [$SIGSEGV]
-				AimAt Feet [$SIGSEGV]
-				AimLeadProjectileSpeed 1980 [$SIGSEGV] 
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
-			}
-			
-			TFBot
-			{
-				Class Demoman
-				Classicon red2_lite
-				Attributes DisableDodge
-				Name "Persian Demo"
-				Health 200
-				Tag bot_red
-				Item "Sultan's Ceremonial"	
-				Item "Ali Baba's Wee Booties"
-				Item "The Persian Persuader"
-				Item "The Splendid Screen"	
-				Skill Expert
-				WeaponRestrictions MeleeOnly
-				ItemAttributes
-				{
-					ItemName "The Splendid Screen"
-					"Attack not cancel charge" 1
-				}		
-				ItemAttributes
-				{
-					ItemName "Ali Baba's Wee Booties"
-					"max health additive penalty" -25
-				}
-				CharacterAttributes
-				{
-					"voice pitch scale" 0.95
-					"crit mod disabled" 0
-					"ammo regen" 1
-				}
-				
-				//SIG
-				Action Mobber [$SIGSEGV]
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_CRITBOOSTED_ON_KILL
-				}
-				//SIG
-			}
-			
-			TFBot
-			{
-				Class Pyro
-				Skill Expert
-				Tag bot_red
-				Classicon red2_lite
-				Attributes DisableDodge
-				Item "The Dragon's Fury"
-				Item "The Gas Passer"
-				CharacterAttributes
-				{
-					"voice pitch scale" 0.95
-					"crit mod disabled" 0
-					"ammo regen" 1
-				}
-				
-				//SIG
-				Action Mobber [$SIGSEGV]
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
-			}
-			
-			TFBot
-			{
-				Class Heavyweapons
-				Skill Expert
-				Item "Natascha"
-				Health 350
-				MaxVisionRange 1200
-				Tag bot_red
-				Classicon red2_lite
-				Attributes DisableDodge
-				CharacterAttributes
-				{
-					"voice pitch scale" 0.95
-					"crit mod disabled" 0
-					"ammo regen" 1
-				}
-				
-				//SIG
-				Action Mobber [$SIGSEGV]
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
-			}
-			
-		}
-		}
-		
-		WaveSpawn [$SIGSEGV]
-		{
-			Name "red"
 			Where spawnbot_red
 			TotalCount 1337
-			MaxActive 3
+			MaxActive 5
 			SpawnCount 1
 			WaitBeforeStarting 4
 			WaitBetweenSpawns 20
@@ -8073,8 +7889,8 @@ WaveSchedule
 		{
 			Name "part03"
 			Where spawnbot_any
-			TotalCount 30
-			MaxActive 6
+			TotalCount 24
+			MaxActive 4
 			SpawnCount 2
 			WaitForAllDead "part02"
 			WaitBetweenSpawns 12
@@ -8184,6 +8000,7 @@ WaveSchedule
 			{
 				Health 44444
 				Speed 75
+				DisableSmokestack 1 [$SIGSEGV]
 				Classicon blimp2_lite
 				Skin 1 [$SIGSEGV]
 				MaxTurnRate 10 [$SIGSEGV]
@@ -8218,7 +8035,7 @@ WaveSchedule
 			Name "part05"
 			Where spawnbot_any
 			TotalCount 32
-			MaxActive 16
+			MaxActive 12
 			SpawnCount 1
 			WaitForAllDead "part04"
 			WaitBetweenSpawns 1
@@ -10199,10 +10016,10 @@ WaveSchedule
 				Skill Expert
 				Health 300000
 				Scale 15
+				Item "Deathadder"
 				Item "The Gunboats"
 				Item "Batter's Bracers"
 				Item "Blast Blocker"
-				Item "Deathadder"
 				Attributes HoldFireUntilFullReload
 				Attributes UseBossHealthBar
 				Attributes MiniBoss
@@ -10359,7 +10176,7 @@ WaveSchedule
 				Health 11111
 				Speed 150
 				Skin 0
-				Classicon tank
+				Classicon tank_lite
 				DisableSmokestack 1 [$SIGSEGV]
 				Name "tankboss"
 				StartingPathTrackNode "tank_path_a"
@@ -10386,7 +10203,7 @@ WaveSchedule
 			TotalCount 1337
 			MaxActive 2
 			SpawnCount 1
-			WaitBeforeStarting 30
+			WaitBeforeStarting 31
 			WaitBetweenSpawns 60
 			TotalCurrency 0
 			Support 1
@@ -10401,8 +10218,8 @@ WaveSchedule
 				MaxTurnRate 25 [$SIGSEGV]
 				Model "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
 				Gravity 0 [$SIGSEGV]
-				ReplaceModelCollisions 1 [$SIGSEGV]
 				DisableTracks 1 [$SIGSEGV]
+				ReplaceModelCollisions 1 [$SIGSEGV]
 				DisableChildModels 1 [$SIGSEGV]
 				EngineLoopSound "npc\combine_gunship\dropship_engine_distant_loop1.wav" [$SIGSEGV]
 				PingSound "npc\combine_gunship\ping_search.wav" [$SIGSEGV]

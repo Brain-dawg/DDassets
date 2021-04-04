@@ -38,6 +38,7 @@ WaveSchedule
 	StartingCurrency		1
 	RespawnWaveTime 		3
 	CanBotsAttackWhileInSpawnRoom yes
+
 	NoReanimators 1				[$SIGSEGV]
 	NoMvMDeathTune 1 			[$SIGSEGV]
 	SniperHideLasers 1 			[$SIGSEGV]
@@ -223,6 +224,12 @@ WaveSchedule
 		ItemName "Festive Eyelander"
 		"set turn to ice" 1
 	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Holiday Punch"
+		"set turn to ice" 1
+	}
 	
 	Templates
 	{
@@ -287,7 +294,7 @@ WaveSchedule
 			Class Engineer 
 			Classicon engineer
 			Skill Normal
-			AimTrackingInterval 0.05
+			AimTrackingInterval 0
 			Health 125
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
@@ -343,7 +350,7 @@ WaveSchedule
 			}
 			CharacterAttributes
 			{
-				"heal rate bonus" 20
+				"heal rate bonus" 50
 				"overheal penalty" 0
 			}
 		}
@@ -367,7 +374,7 @@ WaveSchedule
 		{
 			Class Scout
 			Classicon scout_blaster_nys
-			Skill Normal
+			Skill Easy
 			Item "Baby Face's Blaster"
 			ItemAttributes
 			{
@@ -417,7 +424,7 @@ WaveSchedule
 			Name "Giant Uber Medic"
 			ClassIcon medic_uber
 			Skill Expert
-			Health 2500
+			Health 4500
 			Attributes SpawnWithFullCharge
 			Attributes IgnoreEnemies
 			WeaponRestrictions SecondaryOnly
@@ -1404,7 +1411,7 @@ WaveSchedule
 				Class Heavyweapons
 				Name "Giant Thumper Heavy"
 				ClassIcon thumper_lite
-				Skill Normal
+				Skill Expert
 				Health 5000
 				MaxVisionRange 1200
 				WeaponRestrictions SecondaryOnly
@@ -1746,7 +1753,7 @@ WaveSchedule
 			TotalCurrency 1
 			
 			FirstSpawnWarningSound items\samurai\tf_samurai_noisemaker_seta_02.wav
-			DoneWarningSound vo\eli_lab\eli_handle_b.wav
+			DoneWarningSound vo\demoman_paincrticialdeath05.mp3
 		
 			TFBot
 			{
@@ -1768,6 +1775,7 @@ WaveSchedule
 				AutoJumpMin 0.01
 				AutoJumpMax 0.01
 				AimTrackingInterval 0
+				NoBombUpgrades 1 [$SIGSEGV]
 				UseHumanModel 1 [$SIGSEGV]
 				ItemAttributes
 				{
@@ -1787,7 +1795,6 @@ WaveSchedule
 					"fire rate bonus" 0.6
 					"crit from behind" 1
 					"silent killer" 1
-					//"dmg pierces resists absorbs" 1
 					"hit self on miss" 1
 					"apply look velocity on damage" 520
 				}
@@ -1803,7 +1810,6 @@ WaveSchedule
 					"rage giving scale" 0.1
 					"charge time increased" -0.25
 					"charge recharge rate increased" 100
-					//"bot custom jump particle"	1
 				}
 			}
 		
@@ -2299,7 +2305,7 @@ WaveSchedule
 					ItemName "The Loose Cannon"
 					"blast dmg to self increased" 0
                     "damage bonus" 6
-                    "blast radius increased" 2.25
+                    "blast radius increased" 2.35
 					"clip size penalty" 0.75
 					"fire rate penalty" 3
 					"faster reload rate" -1
@@ -2722,7 +2728,6 @@ WaveSchedule
 				Item "Starduster"
 				Item "Texas Ten Gallon"
 				Attributes UseBossHealthBar
-				//AimTrackingInterval 0.05
 				NoBombUpgrades 1 [$SIGSEGV]
 				Action Fetchflag [$SIGSEGV]
 				WeaponResist [$SIGSEGV]
@@ -2737,7 +2742,7 @@ WaveSchedule
 					"cloak consume rate decreased" 1
 					//Removed old stats
 					
-					"damage bonus" 2
+					"damage bonus" 1.5
 					"projectile penetration" 1
 					"fire rate bonus" 0.15
 					"faster reload rate" 1.5
@@ -2948,7 +2953,7 @@ WaveSchedule
 		
 			Tank
 			{
-				Health 45000
+				Health 40000
 				Speed 75
 				Model "models/bots/boss_bot/boss_tank_color.mdl" [$SIGSEGV]
 				Name "sand_tank"
@@ -3150,7 +3155,7 @@ WaveSchedule
 				Item "Trickster's Turnout Gear"
 				Item "Pyro Helm"
 				Item "The Reserve Shooter"
-				UseBestWeapon 1
+				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
 				Health 40000
 				AimTrackingInterval 0
@@ -3340,7 +3345,7 @@ WaveSchedule
 				Scale 1.9
 				Attributes Miniboss
 				ClassIcon engineer_gazer_lite
-				Health 50000
+				Health 40000
 				Item "Ali Baba's Wee Booties"
 				Item "The Short Circuit"
 				Item "Beep Man"
