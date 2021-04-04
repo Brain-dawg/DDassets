@@ -317,8 +317,20 @@ population
 		Spy 1
 		Medic 1
 	}
-	PointTemplates   {
+	PointTemplates [$SIGSEGV]
+	{
 	
+		telefix //Added to fix missing tele destination in gate B
+		{
+			NoFixup 1
+			info_teleport_destination
+			{
+				"targetname" "teleport_bots_gate2"
+				"origin" "-2593.66 399.548 384"
+				
+			}
+		}
+		
 		bombfix //switch flag teams to show up on HUD
 		{
             NoFixup 1
@@ -405,6 +417,7 @@ population
 	}
 	
 	SpawnTemplate [$SIGSEGV] "bombfix"
+	SpawnTemplate [$SIGSEGV] "telefix"
 	
 	Templates
 	{	
@@ -415,7 +428,7 @@ population
 			Health	420
 			ClassIcon scout_bonk
 			Skill Easy
-			Action Mobber
+			Action Mobber [$SIGSEGV]
 			Tag bot_giant
 			WeaponRestrictions SecondaryOnly
 			Attributes SuppressFire
