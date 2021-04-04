@@ -3157,7 +3157,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Sun-on-a-Stick"
-						"attack_minicrits_and_consumes_burning" 1
+						"attack_minicrits_and_consumes_burning" 1 
 						"damage bonus vs burning" 1.75
 						"set damagetype ignite" 1
 					}
@@ -3253,15 +3253,15 @@ WaveSchedule {
 			Action Trigger
 		}
 
-        WaveSpawn
+        WaveSpawn //sound boosters
         {
-            FirstSpawnWarningSound ui/gamestartup19.mp3
+            FirstSpawnWarningSound #ui/gamestartup19.mp3
             WaitBeforeStarting 5
         }
 
         WaveSpawn
         {
-            FirstSpawnWarningSound ui/gamestartup19.mp3
+            FirstSpawnWarningSound #ui/gamestartup19.mp3
             WaitBeforeStarting 5
         }
 
@@ -3280,16 +3280,14 @@ WaveSchedule {
         {
             TotalCount 1
             SpawnCount 1
-            
             WaitBeforeStarting 11.5
-            
             StartWaveWarningSound ambient/alarms/train_horn_distant1.wav
 
-            FirstSpawnOutput                                                                                                                                                            
-            {
-                Target ST_maker_relay                                 
-                Action Trigger                         
-            }
+           LastSpawnOutput                                                                                                                                                            
+           {
+				Target ST_maker_relay                                 
+				Action Trigger                         
+           }
 
             Tank
             {
@@ -3297,11 +3295,9 @@ WaveSchedule {
 				Health 85000
 				StartingPathTrackNode tank_path_b_1
                 Speed 75
-
-                IsCrit 1
+                IsCrit 1 [$SIGSEGV]
                 Skin 1
-				ClassIcon tank_sticky
-
+				ClassIcon tank_sticky [$SIGSEGV]
 				OnBombDroppedOutput 
                 {
 					Target boss_deploy_relay
@@ -3322,7 +3318,6 @@ WaveSchedule {
             TotalCount 1
             SpawnCount 1
             Support Limited
-
             WaitBeforeStarting 11.5
 
             RandomChoice
@@ -3383,7 +3378,6 @@ WaveSchedule {
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Health 50000
 					Action Mobber [$SIGSEGV]
-
 					ItemAttributes
 					{
 						ItemName Deflector
@@ -3411,7 +3405,6 @@ WaveSchedule {
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Action Mobber [$SIGSEGV]
 					Item "Upgradeable TF_WEAPON_FLAMETHROWER"
-
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
@@ -3433,7 +3426,6 @@ WaveSchedule {
 					Action Mobber [$SIGSEGV]
 					Health 28000
 					Attributes DisableDodge
-
 					ItemAttributes
 					{
 						ItemName "The Sandman"
@@ -3448,7 +3440,6 @@ WaveSchedule {
                     Template T_TFBot_Chief_Gauntlet
 					Health 50000
 					Action Mobber [$SIGSEGV]
-
 					ItemAttributes
 					{
 						ItemName "Fists of Steel"
@@ -3467,7 +3458,6 @@ WaveSchedule {
                     Template G_Demo_Stickybomb_Giant_Chief
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Action Mobber [$SIGSEGV]
-
 					AimAt Head [$SIGSEGV]
 					AimLeadProjectileSpeed 730 [$SIGSEGV]
 
