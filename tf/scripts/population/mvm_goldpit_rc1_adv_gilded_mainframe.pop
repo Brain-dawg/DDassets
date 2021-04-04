@@ -21,6 +21,18 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 	MedigunShieldDamage	1	[$SIGSEGV]
 	ImprovedAirblast	1	[$SIGSEGV]
 	TextPrintTime		0	[$SIGSEGV]
+	ClassLimit	[$SIGSEGV]	//	Limits the number of specified classes. Could call it revenge for the sheer amount of teams that doublestacked Heavy on Platinum Parade lmao
+	{
+		Scout			1
+		Soldier			1
+		Pyro			1
+		Demoman			1
+		Heavyweapons	1
+		Engineer		1
+		Medic			1
+		Sniper			1
+		Spy				1
+	}
 	PlayerAttributes	// disable flamethrower pushback entirely
 	{
 		Pyro	// Part of me wants to write "fuck you" here 100 times and just make this popfile ultra wide
@@ -28,75 +40,6 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 			"airblast functionality flags"	30
 		}
 	}
-	
-	PointTemplates [$SIGSEGV]
-	{
-		spawnfix //avoid the giant hole is spawn
-		{
-			NoFixup 1
-			func_respawnroom //bruh1
-			{
-				"mins" "-192 -414.5 -928"
-				"maxs" "192 414.5 928"
-				"Origin" "320 609 736"
-				"StartDisabled" "0"
-				"targetname" "fuck1"
-				"TeamNum" "3"
-			}
-			func_respawnroom //bruh2
-			{
-				"mins" "-152 -17 -928"
-				"maxs" "152 17 928"
-				"Origin" "280 177 736"
-				"StartDisabled" "0"
-				"targetname" "fuck2"
-				"TeamNum" "3"
-			}
-			func_respawnroom //bruh3
-			{
-				"mins" "-36 -16 -928"
-				"maxs" "36 16 928"
-				"Origin" "164 144 736"
-				"StartDisabled" "0"
-				"targetname" "fuck3"
-				"TeamNum" "3"
-			}
-			trigger_add_tf_player_condition //bruh
-			{
-				"mins" "-192 -414.5 -928"
-				"maxs" "192 414.5 928"
-				"Origin" "320 609 736"
-				"condition" "51"
-				"duration" "-1"
-				"spawnflags" "1"
-				"filtername" "filter_blue"
-				"targetname" "fuckall1"
-			}
-			trigger_add_tf_player_condition //bruh
-			{
-				"mins" "-152 -17 -928"
-				"maxs" "152 17 928"
-				"Origin" "280 177 736"
-				"condition" "51"
-				"duration" "-1"
-				"spawnflags" "1"
-				"filtername" "filter_blue"
-				"targetname" "fuckall2"
-			}
-			trigger_add_tf_player_condition //bruh
-			{
-				"mins" "-36 -16 -928"
-				"maxs" "36 16 928"
-				"Origin" "164 144 736"
-				"condition" "51"
-				"duration" "-1"
-				"spawnflags" "1"
-				"filtername" "filter_blue"
-				"targetname" "fuckall3"
-			}
-		}
-	}
-	
 	Templates
 	{
 		Crin_TFBot_Boss_BazingaBomber	// OUR WHOLE UNIVERSE WAS IN A HOT DENSE STATE WHEN NEARLY 14 BILLION YEARS AGO EXPANSION STARTED- WAIT.
@@ -1052,9 +995,6 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 			Template	T_TFBot_Spy
 		}
 	}
-	
-	SpawnTemplate "spawnfix"
-	
 	Wave
 	{
 		StartWaveOutput
@@ -1459,7 +1399,6 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 					AimAt	Feet					[$SIGSEGV]
 					AimOffset	"0 0 10"			[$SIGSEGV]
 					AimLeadProjectileSpeed	2000	[$SIGSEGV]
-					Tag	bot_giant
 					ItemAttributes
 					{
 						ItemName	"The Direct Hit"

@@ -1233,7 +1233,6 @@ WaveSchedule
 			Name "Giant Pyro"
 			ClassIcon pyro_giant
 			Attributes MiniBoss
-			Tag	"bot_giant"
 			Item "The Phlogistinator"
 			Attributes SpawnWithFullCharge
 			ItemAttributes
@@ -1629,7 +1628,7 @@ WaveSchedule
 			ClassIcon demo_burst_spammer_giant
 			Health 3300
 			Skill Hard
-			Tag	"bot_giant"
+			Tag bot_giant
 			WeaponRestrictions PrimaryOnly
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
@@ -2047,7 +2046,6 @@ WaveSchedule
 			Skill	Expert
 			WeaponRestrictions	SecondaryOnly
 			Item	"heavy hair"
-			Tag	"bot_giant"
 			ItemAttributes
 			{
 				ItemName	"tf_weapon_shotgun_hwg"
@@ -2164,7 +2162,6 @@ WaveSchedule
 			Health 5000
 			Item "football helmet"
 			Item "Deflector"
-			Tag	"bot_giant"
 			WeaponRestrictions PrimaryOnly
 			MaxVisionRange 1200
 			Attributes MiniBoss
