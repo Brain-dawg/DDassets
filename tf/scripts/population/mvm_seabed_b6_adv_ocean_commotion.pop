@@ -626,6 +626,7 @@ population
 			Class	Demoman
 			Skill	Expert
 			WeaponRestrictions	MeleeOnly
+			Tag	bot_giant
 			Tag	"bot_sentrybuster"
 			Attributes	"MiniBoss"
 			Attributes	"DisableDodge"
@@ -724,6 +725,7 @@ population
 			Health 4000
 			WeaponRestrictions PrimaryOnly
 			Attributes HoldFireUntilFullReload
+			Tag	bot_giant
 			Attributes MiniBoss
 			AimAt Feet [$SIGSEGV]
 			RocketCustomParticle flamethrower_underwater
@@ -763,6 +765,7 @@ population
 			WeaponRestrictions PrimaryOnly
 			Attributes HoldFireUntilFullReload
 			Attributes MiniBoss
+			Tag	bot_giant
 			AimAt Feet [$SIGSEGV]
 			Item "W.A.S.P. Launcher"
 			Item "the lucky shot"
@@ -3696,6 +3699,7 @@ population
 				//RocketCustomParticle flamethrower_underwater
 				Item "W.A.S.P. Launcher"
 				Item "the lucky shot"
+				Tag	bot_giant
 				ItemAttributes
 				{
 					ItemName	"W.A.S.P. Launcher"

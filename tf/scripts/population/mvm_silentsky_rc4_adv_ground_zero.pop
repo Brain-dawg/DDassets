@@ -26,18 +26,6 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 	SendBotsToSpectatorImmediately	1	[$SIGSEGV]
 	//BotPushaway					0	[$SIGSEGV]	// Fixes RED robots fighting to the death for YOUR engineer's teleporter. Temporarily testing while disabled
 	MedigunShieldDamage				1	[$SIGSEGV]	// Enables final boss shield attack to hurt RED players
-	ClassLimit							[$SIGSEGV]	
-	{
-		Scout			1
-		Soldier			3	// hey atleast you can play with 3 banners now
-		Pyro			2	// m e l t the tanks (actually no don't)
-		Demoman			2	// alternatively, one piper and one sticky demo
-		Heavyweapons	1	// fuck you
-		Engineer		1	// I wanna say 2 engis would be fun for some but there's two things: having to possibly deal with 2 surprise busters, and the possibility of griefers abusing them
-		Medic			1	// Originally set to no limit, this makes sure you can't have 3 medics that heal RED robots to increase their reload rates/damage permanently
-		Sniper			1
-		Spy				1	// fuck you in particular
-	}
 	PlayerAttributes	// disable flamethrower pushback entirely
 	{
 		Pyro	// Part of me wants to write "fuck you" here 100 times and just make this popfile ultra wide
