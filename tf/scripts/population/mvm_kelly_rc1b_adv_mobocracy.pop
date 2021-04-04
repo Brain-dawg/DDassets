@@ -643,7 +643,7 @@ WaveSchedule
 		ItemName "The Quick-Fix"
 		"heal rate bonus" 1.5
 		"ubercharge rate bonus" 1.5
-		65"overheal penalty" 0
+		"overheal penalty" 0
 	}
 	
 	ItemAttributes [$SIGSEGV] // stock can heal friendly buildings
