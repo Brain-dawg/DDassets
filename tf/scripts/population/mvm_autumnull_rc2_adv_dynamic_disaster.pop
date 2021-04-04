@@ -3378,7 +3378,6 @@ WaveSchedule {
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Health 50000
 					Action Mobber [$SIGSEGV]
-
 					ItemAttributes
 					{
 						ItemName Deflector
@@ -3406,7 +3405,6 @@ WaveSchedule {
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Action Mobber [$SIGSEGV]
 					Item "Upgradeable TF_WEAPON_FLAMETHROWER"
-
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_FLAMETHROWER"
@@ -3428,7 +3426,6 @@ WaveSchedule {
 					Action Mobber [$SIGSEGV]
 					Health 28000
 					Attributes DisableDodge
-
 					ItemAttributes
 					{
 						ItemName "The Sandman"
@@ -3443,7 +3440,6 @@ WaveSchedule {
                     Template T_TFBot_Chief_Gauntlet
 					Health 50000
 					Action Mobber [$SIGSEGV]
-
 					ItemAttributes
 					{
 						ItemName "Fists of Steel"
@@ -3462,7 +3458,6 @@ WaveSchedule {
                     Template G_Demo_Stickybomb_Giant_Chief
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 					Action Mobber [$SIGSEGV]
-
 					AimAt Head [$SIGSEGV]
 					AimLeadProjectileSpeed 730 [$SIGSEGV]
 
