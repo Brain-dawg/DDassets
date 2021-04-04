@@ -18,6 +18,7 @@ WaveSchedule {
 	SendBotsToSpectatorImmediately 1 	[$SIGSEGV]
 	StandableHeads 1				 	[$SIGSEGV]
 	DisplayRobotDeathNotice 1			[$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 
 	ExtraSpawnPoint [$SIGSEGV]
     {
@@ -161,7 +162,7 @@ WaveSchedule {
 		Count 8
 		MinimumSeparation 500
 		NavAreaFilter SNIPER_SPOT
-		SentryGun {Level 1}
+		SentryGun { Level 1 }
 	}
 	Templates {
 	
@@ -1944,6 +1945,7 @@ WaveSchedule {
 					Attributes DisableDodge
 
 					AimAt Head [$SIGSEGV]
+					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 
 					ItemAttributes
 					{
@@ -2076,7 +2078,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Festive Ambassador"
-						"crit_dmg_falloff 0"
+						"crit_dmg_falloff" 0
 						"headshot damage increase" 2.5
 						"fire rate penalty" 3.5
 						"crit on hard hit" 1
@@ -3135,7 +3137,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Sun-on-a-Stick"
-						"attack_minicrits_and_consumes_burning 1"
+						"attack_minicrits_and_consumes_burning" 1
 						"damage bonus vs burning" 1.75
 						"set damagetype ignite" 1
 					}
@@ -3155,7 +3157,7 @@ WaveSchedule {
 					ItemAttributes
 					{
 						ItemName "Sun-on-a-Stick"
-						"attack_minicrits_and_consumes_burning 1"
+						"attack_minicrits_and_consumes_burning" 1 
 						"damage bonus vs burning" 1.75
 						"set damagetype ignite" 1
 					}
