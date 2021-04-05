@@ -120,14 +120,12 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		ItemName	"The Half-Zatoichi"
 		"crits become minicrits"	1
 	}
-	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Flying Guillotine"
 		"minicrits become crits" 1
 		"effect bar recharge rate increased" 0.5
 	}
-	
 	// ItemAttributes	[$SIGSEGV]	// gives demoman a unique ranged option
 	// {
 		// ItemName	"The Loose Cannon"
