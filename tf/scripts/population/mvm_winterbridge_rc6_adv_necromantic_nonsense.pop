@@ -16,7 +16,7 @@
 
 WaveSchedule
 {
-	StartingCurrency 1200
+	StartingCurrency 1800
 	RespawnWaveTime  4
 	CanBotsAttackWhileInSpawnRoom no
 
@@ -45,7 +45,7 @@ WaveSchedule
 	
 	// Allow use of weapons blocked by tf_logic_medieval
 	MedievalMode  0 [$SIGSEGV]
-	ItemWhiteList   [$SIGSEGV]
+	ItemWhitelist   [$SIGSEGV]
 	{
 		Classname "tf_weapon_parachute"
 		Classname "tf_wearable"
@@ -106,6 +106,13 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"drop health pack on kill" 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Flying Guillotine"
+		"minicrits become crits" 1
+		"effect bar recharge rate increased" 0.5
 	}
 	
 	// WAVE 2 Piss Snipers
@@ -559,7 +566,7 @@ WaveSchedule
 			Name  "W2-G-HUNTSMEN"
 			Where spawnbot_gate01
 
-			TotalCount 4
+			TotalCount 2
 			MaxActive  2
 			SpawnCount 1
 			TotalCurrency 150
@@ -658,7 +665,7 @@ WaveSchedule
 			Name  "W2-G-SKELE-DEMOS-MEDICS"
 			Where spawnbot_gate01
 
-			TotalCount 4
+			TotalCount 2
 			MaxActive  2
 			SpawnCount 2
 			TotalCurrency 250
@@ -673,7 +680,7 @@ WaveSchedule
 				
 				TFBot
 				{
-					Template T_TFBot_Medic
+					Template T_TFBot_Medic_BigHeal
 					Item     "Zombie Medic"
 				}
 			}
@@ -2204,7 +2211,7 @@ WaveSchedule
 			{
 				Type     "Common"
 				Delay    4
-				Cooldown 5
+				Cooldown 10
 				Charges  2
 				Limit    2
 			}
@@ -2246,7 +2253,7 @@ WaveSchedule
 			{
 				Type     "Rare"
 				Delay    4
-				Cooldown 8
+				Cooldown 20
 				Charges  1
 				Limit    1
 			}
@@ -2983,6 +2990,7 @@ WaveSchedule
 						"override footstep sound set" 4
 						"cancel falling damage" 1
 						"voice pitch scale" 0.7
+						"damage penalty" 0.5
 					}
 				}
 
@@ -3000,12 +3008,13 @@ WaveSchedule
 
 					CharacterAttributes
 					{
-						"move speed bonus" 0.5
+						"move speed bonus" 0.25
 						"damage force reduction" 0.5
 						"airblast vulnerability multiplier" 0.5
 						"override footstep sound set" 4
 						"cancel falling damage" 1
 						"voice pitch scale" 0.7
+						"damage penalty" 0.5
 					}
 					ItemAttributes
 					{
@@ -3050,12 +3059,13 @@ WaveSchedule
 
 					CharacterAttributes
 					{
-						"move speed bonus" 0.5
+						"move speed bonus" 0.25
 						"damage force reduction" 0.5
 						"airblast vulnerability multiplier" 0.5
 						"override footstep sound set" 4
 						"cancel falling damage" 1
 						"voice pitch scale" 0.7
+						"damage penalty" 0.5
 					}
 				}
 
@@ -3079,6 +3089,7 @@ WaveSchedule
 						"override footstep sound set" 4
 						"cancel falling damage" 1
 						"voice pitch scale" 0.7
+						"damage penalty" 0.5
 					}
 					ItemAttributes
 					{
