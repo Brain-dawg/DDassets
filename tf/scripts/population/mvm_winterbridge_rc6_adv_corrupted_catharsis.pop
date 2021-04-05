@@ -9,7 +9,7 @@
 
 Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 {
-	StartingCurrency	600
+	StartingCurrency	1200
 	RespawnWaveTime	2
 	CanBotsAttackWhileInSpawnRoom	no
 	Advanced	1
@@ -120,6 +120,14 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		ItemName	"The Half-Zatoichi"
 		"crits become minicrits"	1
 	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Flying Guillotine"
+		"minicrits become crits" 1
+		"effect bar recharge rate increased" 0.5
+	}
+	
 	// ItemAttributes	[$SIGSEGV]	// gives demoman a unique ranged option
 	// {
 		// ItemName	"The Loose Cannon"
@@ -281,7 +289,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			TotalCount	32
 			MaxActive	9
 			SpawnCount	3
-			WaitBetweenSpawns	3
+			WaitBetweenSpawns	5
 			Where	spawnbot_gate01
 			Where	spawnbot_gate01_right
 			RandomChoice
@@ -357,8 +365,8 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Support	1
 			Name	wave1c_support1_limited
 			WaitForAllDead	wave1b
-			TotalCount	9
-			MaxActive	9
+			TotalCount	6
+			MaxActive	6
 			SpawnCount	3
 			WaitBeforeStarting	5
 			WaitBetweenSpawns	14
@@ -373,14 +381,14 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		{
 			Name	wave1c_tonk
 			WaitForAllDead	wave1b_giant
-			TotalCurrency	100
+			TotalCurrency	250
 			TotalCount	1
 			WaitBeforeStarting	4
 			Tank
 			{
-				Health	6900
+				Health	6969
 				Speed	100
-				Name	"small_tank_turret"
+				Name	"small_tank_jarate"
 				StartingPathTrackNode "boss_path_area1"
 
 				OnBombDroppedOutput                             
@@ -1244,13 +1252,13 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Where spawnbot_gate02
 			Where spawnbot_main
 
-			TotalCount  5
+			TotalCount  3
 			MaxActive   2
 			SpawnCount  1
 			TotalCurrency 50
 
 			WaitBeforeStarting 6
-			WaitBetweenSpawns  10
+			WaitBetweenSpawns  12
 
 			TFBot { Template T_TFBot_Giant_Pyro_DragonMage }
 		}
@@ -1419,7 +1427,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Where spawnbot_gate02
 			Where spawnbot_main
 
-			TotalCount  3
+			TotalCount  2
 			MaxActive   1
 			SpawnCount  1
 			TotalCurrency 100
@@ -1503,11 +1511,11 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Where spawnbot_main
 
 			Support 1
-			MaxActive  8
+			MaxActive  4
 			SpawnCount 4
 
 			WaitBeforeStarting 4
-			WaitBetweenSpawns  12
+			WaitBetweenSpawns  20
 			WaitForAllDead wave4d
 
 			TFBot { Template T_TFBot_Sniper_Skeleton }
@@ -1525,7 +1533,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			SpawnCount 1
 
 			WaitBeforeStarting 14
-			WaitBetweenSpawns  20
+			WaitBetweenSpawns  40
 			WaitForAllDead wave4d
 
 			TFBot { Template T_TFBot_Giant_Heavyweapons_WispGenerator_Burst }
@@ -2146,7 +2154,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Name  "Giant Gatling Pirate"
 			Class Heavy
 
-			Skill  Expert
+			Skill  Normal
 			Health 5000
 			Attributes MiniBoss
 			MaxVisionRange 1024
@@ -2159,6 +2167,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				"damage force reduction" 0.3
 				"airblast vulnerability multiplier" 0.3
 				"override footstep sound set" 2
+				"damage penalty" 0.7
 			}
 		}
 		
@@ -2192,7 +2201,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				Name "Attr1"
 				Delay 0
 				Repeats 1
-				IfHealthBelow 22500
+				IfHealthBelow 20000
 			}
 			
 			ChangeAttributes [$SIGSEGV]
@@ -2200,7 +2209,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				Name "Attr2"
 				Delay 0
 				Repeats 1
-				IfHealthBelow 15000
+				IfHealthBelow 17500
 			}
 			
 			Taunt [$SIGSEGV]
@@ -2208,7 +2217,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				Delay    1
 				Cooldown 15
 				Repeats  0
-				IfHealthBelow 15000
+				IfHealthBelow 17500
 			}
 			
 			FireInput [$SIGSEGV] 
@@ -2218,7 +2227,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				Delay  0
 				Cooldown 15
 				Repeats  0
-				IfHealthBelow 15000
+				IfHealthBelow 17500
 			}
 	
 			EventChangeAttributes
@@ -2553,7 +2562,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Spell	[$SIGSEGV]
 			{
 				Type	"Fireball"
-				Cooldown	3
+				Cooldown	6
 				Limit 1
 			}
 			Spell	[$SIGSEGV]
@@ -2861,13 +2870,6 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			OnParentKilledOutput
 			{
 				Target "pumpkin"
-				Action Kill
-				Delay 0.02
-			}
-			
-			OnParentKilledOutput
-			{
-				Target "!self"
 				Action Kill
 				Delay 0.02
 			}
