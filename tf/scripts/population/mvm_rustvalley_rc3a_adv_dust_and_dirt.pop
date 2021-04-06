@@ -1390,7 +1390,7 @@ population
 			SpawnCount	1
 			WaitBeforeStarting	3
 			WaitBetweenSpawns	6
-			Where	spawnbot_left0
+			Where	spawnbot_mid0
 			Where	spawnbot_main1
 			TFBot
 				{
@@ -1913,7 +1913,7 @@ Action Trigger
 		}
 		WaveSpawn
 		{
-			TotalCurrency	0
+			TotalCurrency	40
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1

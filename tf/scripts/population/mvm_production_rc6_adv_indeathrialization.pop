@@ -875,7 +875,7 @@ population
 		}
 		WaveSpawn
 		{
-			Where	spawnbot
+			Where	flankers
 			TotalCurrency	140
 			TotalCount	14
 			MaxActive	4
@@ -951,7 +951,7 @@ population
 		}
 		WaveSpawn
 		{
-			Where	flankers
+			Where	spawnbot_mission_sniper
 			TotalCurrency	40
 			TotalCount	4
 			MaxActive	4
@@ -1669,7 +1669,7 @@ population
 			SpawnCount	2
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	12
-			Where	spawnbot
+			Where	spawnbot_mission_sniper
 			FirstSpawnOutput
             {
             Target A_door_open
@@ -1874,7 +1874,7 @@ population
 			WaitBetweenSpawns	25
 			name fuckyou
 			WaitForAllDead	62
-			Where	flankers
+			Where	spawnbot_mission_sniper
 			Squad
 			{
 			TFBot
@@ -2015,7 +2015,7 @@ population
 			SpawnCount	4
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	spawnbot
+			Where	flankers
 			FirstSpawnOutput
             {
             Target A_door_open
@@ -2059,7 +2059,7 @@ population
 						"damage bonus" 2.5
 						"gesture speed increase" 1.3
 						"airblast vertical vulnerability multiplier"	0.1
-						"move speed penalty"	0.35
+						"move speed penalty"	0.5
 					}
 					Item	"The Blutsauger"
 					Item	"the amputator"

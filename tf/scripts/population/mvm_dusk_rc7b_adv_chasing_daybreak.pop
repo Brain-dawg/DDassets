@@ -29,6 +29,33 @@ WaveSchedule
 	NoRomevisionCosmetics 1 [$SIGSEGV]
 	MedigunShieldDamage 1 [$SIGSEGV]
 	EnableDominations 1 [$SIGSEGV]
+	PointTemplates [$SIGSEGV]
+	{
+		stuckfix //fixes medimedes getting stuck on rock with jump spell among other bots
+		{
+			NoFixup 1
+			trigger_teleport
+			{
+				"targetname" "rockfix"
+				"StartDisabled" "0"
+				"target" "teleexit"
+				"spawnflags" "3"
+				"filtername" "filter_blu"
+				"origin" "305.388031 1218.585083 141.372711"
+				"mins" "-40 -40 -40"
+				"maxs" "40 40 40"
+				"solid" "0"
+			}
+			NoFixup 1
+			info_teleport_destination
+			{
+				"targetname" "teleexit"
+				"origin" "462.552399 1484.115601 84.438446"
+			}
+		}
+	}
+	
+	SpawnTemplate [$SIGSEGV] "stuckfix"
 	Templates
 	{
 		//Unused Robot
