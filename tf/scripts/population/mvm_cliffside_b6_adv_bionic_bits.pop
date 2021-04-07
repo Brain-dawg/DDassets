@@ -237,13 +237,14 @@ WaveSchedule
 		Hell_Express
 		{
 			Class Scout
-			Name "Rainbow Scout"
+			Name "Super Rainbow"
 			ClassIcon scout_rng
 			Skill Expert
 			Item "The Lightning Lid"
-			Health 1500
+			Health 1200
 			WeaponRestrictions MeleeOnly
 			Attributes MiniBoss
+			ExtAttr JumpStomp [$SIGSEGV]
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 2
@@ -258,8 +259,7 @@ WaveSchedule
 			{
 				ItemName "TF_WEAPON_BAT"
 				"SPELL: set item tint RGB" 5
-				"damage bonus" 0.1
-				"dmg bonus vs buildings" 1337
+				"damage penalty" 0.01
 			}
 			CharacterAttributes
 			{
@@ -269,7 +269,8 @@ WaveSchedule
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
 				"override footstep sound set" 5
-				"heal on hit for rapidfire" 1500
+				"heal on hit for rapidfire" 1200
+				"move speed bonus" 2
 			}
 		}
 		
@@ -294,8 +295,8 @@ WaveSchedule
 			Class Engineer 
 			Classicon engineer
 			Skill Normal
-			AimTrackingInterval 0
-			Health 125
+			AimTrackingInterval 0.05
+			Health 275
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
 			ExtAttr TargetStickies
@@ -561,7 +562,7 @@ WaveSchedule
 		Where spawnbot_flank_right
 		Where spawnbot_flank_left
 		BeginAtWave 1
-		RunForThisManyWaves 7
+		RunForThisManyWaves 6
 		CooldownTime 60
 		
 		RandomChoice
@@ -614,7 +615,7 @@ WaveSchedule
 		Where spawnbot_flank_right
 		Where spawnbot_flank_left
 		BeginAtWave 1
-		RunForThisManyWaves 7
+		RunForThisManyWaves 6
 		CooldownTime 60
 		DesiredCount 2
 
@@ -651,7 +652,7 @@ WaveSchedule
 		InitialCooldown 30
 		Where spawnbot
 		BeginAtWave 1
-		RunForThisManyWaves 7
+		RunForThisManyWaves 6
 		CooldownTime 60
 		DesiredCount 2
 
@@ -713,7 +714,7 @@ WaveSchedule
 		Where spawnbot_flank_right
 		Where spawnbot_flank_left
 		BeginAtWave 1
-		RunForThisManyWaves 7
+		RunForThisManyWaves 6
 		CooldownTime 60
 		DesiredCount 1
 
@@ -1081,7 +1082,7 @@ WaveSchedule
 				Attributes MiniBoss
 				Attributes AlwaysFireWeapon
 				Attributes UseBossHealthBar
-				AimTrackingInterval 0
+				AimTrackingInterval 0.05
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Item "Batter's Bracers"
 				Item "Forgotten King's Pauldrons"
@@ -2105,13 +2106,14 @@ WaveSchedule
 				Item "The Beggar's Bazooka"
 				Attributes SpawnWithFullCharge
 				Item "The Buff Banner"
+				ForceRomeVision 1 [$SIGSEGV]
 				ItemAttributes
 				{
 					ItemName "The Beggar's Bazooka"
 					"can overload" 0
 					"auto fires full clip" 0
 					"rocket specialist" 4
-					"projectile spread angle penalty" 0
+					//"projectile spread angle penalty" 0
 				}
 				CharacterAttributes
 				{
@@ -2138,6 +2140,9 @@ WaveSchedule
 				Skill Expert
 				Name "Power Pyro"
 				Item "The Phlogistinator"
+				Item "The Scorch Shot"
+				UseBestWeapon 1	[$SIGSEGV]
+				ForceRomeVision 1 [$SIGSEGV]
 				Attributes AlwaysCrit
 				ItemAttributes
 				{
@@ -2167,13 +2172,14 @@ WaveSchedule
 				Name "Power Demo"
 				Classicon demo_sticky_daan
 				Item "The Scottish Resistance"
+				ForceRomeVision 1 [$SIGSEGV]
 				WeaponRestrictions SecondaryOnly
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_GRENADELAUNCHER"
 					"is_passive_weapon" 1
 					"override projectile type" 27
-					"faster reload rate" 0.4
+					//"faster reload rate" 0.4
 				}
 				ItemAttributes
 				{
@@ -2181,7 +2187,7 @@ WaveSchedule
 					"stickybomb charge rate" 0.001
 					"max pipebombs decreased" -13
 					"Projectile range increased" 0.4
-					"faster reload rate" 0.4
+					//"faster reload rate" 0.4
 					"damage bonus" 1.8
 				}
 			}
@@ -2247,7 +2253,7 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 2
 			WaitForAllDead "part02"
-			WaitBeforeStarting 6
+			WaitBeforeStarting 18
 			TotalCurrency 2
 		
 			Squad
@@ -2305,7 +2311,7 @@ WaveSchedule
 					ItemName "The Loose Cannon"
 					"blast dmg to self increased" 0
                     "damage bonus" 6
-                    "blast radius increased" 2.35
+                    "blast radius increased" 2.25
 					"clip size penalty" 0.75
 					"fire rate penalty" 3
 					"faster reload rate" -1
@@ -2493,9 +2499,10 @@ WaveSchedule
 			Where spawnbot_flank_right
 			Where spawnbot_flank_left
 			TotalCount 4
-			MaxActive 1
+			MaxActive 2
 			SpawnCount 1
 			WaitForAllDead "part01"
+			WaitBetweenSpawns 24
 			TotalCurrency 4
 		
 			TFBot
@@ -2728,6 +2735,7 @@ WaveSchedule
 				Item "Starduster"
 				Item "Texas Ten Gallon"
 				Attributes UseBossHealthBar
+				AimTrackingInterval 0.05
 				NoBombUpgrades 1 [$SIGSEGV]
 				Action Fetchflag [$SIGSEGV]
 				WeaponResist [$SIGSEGV]
@@ -2759,7 +2767,7 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"backstab shield" 1
-					"damage force reduction" 0.75
+					"damage force reduction" 0.5
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"cancel falling damage" 1
@@ -3015,7 +3023,7 @@ WaveSchedule
 			SpawnCount 1
 			WaitForAllDead "part01"
 			WaitBeforeStarting 28
-			WaitBetweenSpawns 15
+			WaitBetweenSpawns 10
 			TotalCurrency 10
 			RandomSpawn 1
 			
@@ -3158,7 +3166,7 @@ WaveSchedule
 				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
 				Health 40000
-				AimTrackingInterval 0
+				AimTrackingInterval 0.05
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Attributes UseBossHealthBar
 				ItemAttributes
@@ -3247,60 +3255,6 @@ WaveSchedule
 			}
 		
 		}
-		
-		WaveSpawn
-		{
-			Name "fake"
-			Where spawnbot
-			TotalCount 0
-			MaxActive 0
-			SpawnCount 0
-			TotalCurrency 0
-			Support 1
-			
-			TFBot
-			{
-				Class Scout
-				Classicon sniper
-			}
-		
-		}
-		
-		WaveSpawn
-		{
-			Name "fake"
-			Where spawnbot
-			TotalCount 0
-			MaxActive 0
-			SpawnCount 0
-			TotalCurrency 0
-			Support 1
-			
-			TFBot
-			{
-				Class Scout
-				Classicon spy
-			}
-		
-		}
-		
-		WaveSpawn
-		{
-			Name "fake"
-			Where spawnbot
-			TotalCount 0
-			MaxActive 0
-			SpawnCount 0
-			TotalCurrency 0
-			Support 1
-			
-			TFBot
-			{
-				Class Scout
-				Classicon engineer
-			}
-		
-		}
 
 		WaveSpawn
 		{
@@ -3356,7 +3310,7 @@ WaveSchedule
 					Duration 8
 				}			
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
-				AimTrackingInterval 0
+				AimTrackingInterval 0.05
 				CustomWeaponModel [$SIGSEGV]
 				{
 					Slot 1
@@ -3383,7 +3337,7 @@ WaveSchedule
 				{
 					Itemname "The Short Circuit"
 					"apply z velocity on damage" 520
-					"fire rate bonus" 0.5
+					//"fire rate bonus" 0.5
 					"dmg bonus vs buildings" 1337
 				}
 				Itemattributes
@@ -3421,11 +3375,11 @@ WaveSchedule
 			Where spawnbot_flank_right
 			Where spawnbot_flank_left
 			TotalCount 1337
-			MaxActive 3
-			SpawnCount 1
+			MaxActive 12
+			SpawnCount 3
 			WaitForAllDead "part01"
 			WaitBeforeStarting 12
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 6
 			TotalCurrency 0	
 			Support 1
 		
