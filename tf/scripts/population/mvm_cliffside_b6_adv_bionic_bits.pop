@@ -266,7 +266,6 @@ WaveSchedule
 			{
 				"wet immunity" 1
 				"mult stun resistance" 0
-				"melee range multiplier" 0.75
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -349,7 +348,7 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "The Quick-Fix"
-				"ubercharge rate bonus" 0.1
+				"ubercharge rate bonus" 0.001
 			}
 			CharacterAttributes
 			{
@@ -407,7 +406,7 @@ WaveSchedule
 			{
 				ItemName "Deflector"
 				"damage bonus"	1.2
-				"attack projectiles" 2
+				"attack projectiles" 1
 				"heal on kill" 5000
 			}
 			CharacterAttributes
@@ -1421,18 +1420,36 @@ WaveSchedule
 				WeaponRestrictions SecondaryOnly
 				Attributes MiniBoss
 				Item "Pugilist's Protector"
-				Item "Thumper"
+				//Item "Thumper"
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model models/weapons/c_models/c_rapidfire/c_rapidfire_1.mdl
+				}
 				ItemAttributes 
 				{
 					ItemName "Pugilist's Protector"
 					"set item tint rgb" 7366246
 				}
-				CharacterAttributes
+				ItemAttributes
 				{
-					"fire rate bonus" 2
+					ItemName "TF_WEAPON_SHOTGUN_HWG"
+					"damage bonus" 2.1
+					"clip size bonus" 1.3
+					"weapon maxammo bonus" 1.5
+					"weapon spread bonus" 0.7
+					"fire rate penalty" 1.2
+					"bullets per shot penalty" 0.5
+					"Reload time increased" 1.13
+					"single wep deploy time increased" 1.15
+					"fire rate bonus" 2.5
 					"bullets per shot bonus" 10
 					"damage penalty" 0.5
 					"faster reload rate" 0.1
+					"attack projectiles" 2
+				}
+				CharacterAttributes
+				{
 					"move speed bonus"	0.7
 					"damage force reduction" 0.3
 					"airblast vulnerability multiplier" 0.3
@@ -1775,7 +1792,7 @@ WaveSchedule
 				AutoJumpMin 0.01
 				AutoJumpMax 0.01
 				AimTrackingInterval 0
-				//NoBombUpgrades 1 [$SIGSEGV]
+				NoBombUpgrades 1 [$SIGSEGV]
 				UseHumanModel 1 [$SIGSEGV]
 				ItemAttributes
 				{
@@ -2227,7 +2244,7 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 2
 			WaitForAllDead "part02"
-			WaitBeforeStarting 6
+			WaitBeforeStarting 12
 			TotalCurrency 2
 		
 			Squad
@@ -2253,7 +2270,6 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 2
 			WaitForAllDead "part02"
-			WaitBeforeStarting 18
 			TotalCurrency 2
 		
 			Squad
@@ -2751,7 +2767,7 @@ WaveSchedule
 					"cloak consume rate decreased" 1
 					//Removed old stats
 					
-					"damage bonus" 1.5
+					//"damage bonus" 1.5
 					"projectile penetration" 1
 					"fire rate bonus" 0.15
 					"faster reload rate" 1.5
