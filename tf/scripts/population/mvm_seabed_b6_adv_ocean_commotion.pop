@@ -317,7 +317,8 @@ population
 		Spy 1
 		Medic 1
 	}
-	PointTemplates   {
+	PointTemplates [$SIGSEGV]
+	{
 	
 		telefix //Added to fix missing tele destination in gate B
 		{
@@ -427,7 +428,7 @@ population
 			Health	420
 			ClassIcon scout_bonk
 			Skill Easy
-			Action Mobber
+			Action Mobber [$SIGSEGV]
 			Tag bot_giant
 			WeaponRestrictions SecondaryOnly
 			Attributes SuppressFire
