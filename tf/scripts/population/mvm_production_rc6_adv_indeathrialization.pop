@@ -8,16 +8,16 @@ population
 	RespawnWaveTime	3
 	CanBotsAttackWhileInSpawnRoom	yes
 	SniperHideLasers 1
-	RespecEnabled 0
+	RespecLimit 1
 	SandmanStun 1
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	ExtraSpawnPoint [$SIGSEGV] //Adds spawn points on specified location
     {
         Name "spawnredbot"
         TeamNum 3
-        X	"3703.72"
-        Y	"-2237.18"                  
-        Z	"65.09"        
+        X	"2886.11"
+        Y	"-2923.64"              
+        Z	"157.84"
     }
 	Templates
 	{
@@ -232,8 +232,7 @@ population
 		}
 		Explanation [$SIGSEGV] //Dispayed once the wave is initialized
 		{
-			Line "{blue}Refunding is disabled."
-			Line "{red}Be ready to stick to one class for the whole mission!"
+			Line "{blue}Refunding will be allowed once after collecting enough credits."
 		}
 		WaveSpawn
 		{
@@ -1200,7 +1199,7 @@ population
 			{
 				TFBot
 				{
-					Health	30000
+					Health	25000
 					Skill	Expert
 					Name	"Medic Bulldozer"
 					Attributes UseBOssHealthBar
@@ -1266,27 +1265,17 @@ population
 			}
 			TFBot
 			{
-			Class Pyro
-			Skill easy
-			}
-			TFBot
-			{
 			Template T_TFBot_Sniper_Huntsman
 			}
 			TFBot
 			{
 			Class Heavyweapons
-			Skill easy
+			Skill normal
 			}
 			TFBot
 			{
-			Class Scout
-			skill easy
-			}
-			TFBot
-			{
-			Class Scout
-			skill easy
+			Class Heavyweapons
+			Skill normal
 			}
 			}
 		}
@@ -1294,10 +1283,10 @@ population
 		{
 			TotalCurrency	50
 			TotalCount	25
-			MaxActive	18
+			MaxActive	15
 			SpawnCount	1
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	4
+			WaitBeforeStarting	1
+			WaitBetweenSpawns	3
 			Support	1
 			WaitForAllDead fortnite1
 			Where	spawnbot
@@ -1321,15 +1310,6 @@ population
 					}
 					TFBot
 					{
-						Skill	Expert
-						Template	T_TFBot_Scout_Shortstop
-						CharacterAttributes
-						{
-						"health from healers increased" 20
-						}
-					}
-					TFBot
-					{
 						Template	T_TFBot_Sniper_Huntsman_Spammer
 						CharacterAttributes
 						{
@@ -1343,28 +1323,6 @@ population
 						{
 						"health from healers increased" 20
 						}
-					}
-					TFBot
-					{
-						Skill	Expert
-						CharacterAttributes
-						{
-						"health from healers increased" 20
-						}
-						Template	T_TFBot_Scout_Shortstop
-					}
-					TFBot
-					{
-						Template	T_TFBot_Demoman_Samurai
-						CharacterAttributes
-						{
-						"health from healers increased" 20
-						}
-					}
-					TFBot
-					{
-						Class Scout
-						Skill easy
 					}
 			}
 		}
@@ -1628,7 +1586,7 @@ population
 					ItemAttributes
 					{
 						ItemName	tf_weapon_sniperrifle
-						"faster reload rate"	0.25
+						"faster reload rate"	0.23
 					}
 					CharacterAttributes
 					{
@@ -1946,7 +1904,7 @@ population
 			Support 1
 			WaitForAllDead w7support
 			WaitBeforeStarting	10
-			WaitBetweenSpawns	3
+			WaitBetweenSpawns	2
 			Where	spawnbot_mission_sniper
 			RandomChoice
 			{
@@ -2015,7 +1973,7 @@ population
 			SpawnCount	4
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	flankers
+			Where	spawnbot
 			FirstSpawnOutput
             {
             Target A_door_open
@@ -2025,7 +1983,7 @@ population
 			{
 			TFBot
 				{
-					Health	30000
+					Health	27500
 					Skill	Expert
 					Name	"Medic Bulldozer"
 					Attributes UseBOssHealthBar
@@ -2165,10 +2123,10 @@ population
 					}
 					ItemAttributes
 					{
-						"damage bonus"	5.25
+						"damage bonus"	5.5
 						"faster reload rate" 0.1
 						ItemName	"the Blutsauger"
-						"heal on hit for rapidfire"	69
+						"heal on hit for rapidfire"	75
 						"override projectile type"	2
 						"is_passive_weapon" 1
 						"fire rate bonus" 4
