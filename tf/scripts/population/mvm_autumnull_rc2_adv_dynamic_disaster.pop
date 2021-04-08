@@ -149,6 +149,15 @@ WaveSchedule {
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
+			NoFixup 1
+			training_annotation
+			{
+			  "targetname"   "meleetank"
+			  "parentname" 	 "tankboss_melee"
+			  "display_text" "Melee The Tank!"
+			  "lifetime"     "10"
+			  "origin" "-3360 -3712 -208"	
+			}
 		}	
 	}
 
@@ -1446,7 +1455,10 @@ WaveSchedule {
 
 			WaitBeforeStarting 10
 			WaitForAllDead part2a
-
+			LastSpawnOutput {
+				Target meleetank
+				Action Show
+			}
 			Tank
 			{
 				Name tankboss_melee
@@ -3297,7 +3309,7 @@ WaveSchedule {
                 Speed 75
                 IsCrit 1 [$SIGSEGV]
                 Skin 1
-				ClassIcon tank_sticky [$SIGSEGV]
+				ClassIcon tank_sticky_hellmet [$SIGSEGV]
 				OnBombDroppedOutput 
                 {
 					Target boss_deploy_relay
@@ -3380,7 +3392,7 @@ WaveSchedule {
 					Action Mobber [$SIGSEGV]
 					ItemAttributes
 					{
-						ItemName Deflector
+						ItemName "Deflector"
 						"killstreak tier" 1
 					}
 
