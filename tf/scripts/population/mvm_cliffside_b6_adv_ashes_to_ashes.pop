@@ -221,7 +221,6 @@ gettysburg
     {
         ItemName "The Fortified Compound"
         "arrow mastery" 1
-        "faster reload rate" 1.25
         "headshot damage increase" 1.2
     }
 

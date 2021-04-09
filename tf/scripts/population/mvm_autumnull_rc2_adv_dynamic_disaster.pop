@@ -1,7 +1,7 @@
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_gettysburg_dd.pop
-WaveSchedule {
+braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy_leaks_it {
 	StartingCurrency 4000
 	RespawnWaveTime 5
 	FixedRespawnWaveTime 1
@@ -146,6 +146,15 @@ WaveSchedule {
 			  "targetname"   "twomin"
 			  "parentname" 	 "spawnbot_jeep"
 			  "display_text" "2 Minutes remain..."
+			  "lifetime"     "10"
+			  "origin" "-3360 -3712 -208"	
+			}
+			NoFixup 1
+			training_annotation
+			{
+			  "targetname"   "meleetank"
+			  "parentname" 	 "tankboss_melee"
+			  "display_text" "Melee The Tank!"
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
@@ -1446,7 +1455,10 @@ WaveSchedule {
 
 			WaitBeforeStarting 10
 			WaitForAllDead part2a
-
+			LastSpawnOutput {
+				Target meleetank
+				Action Show
+			}
 			Tank
 			{
 				Name tankboss_melee
@@ -1941,7 +1953,7 @@ WaveSchedule {
 				{
                     Template G_Sniper_Huntsman_Bleed
                     ClassIcon red2_lite
-					Attributes Mobber
+					Action Mobber
 					Attributes DisableDodge
 
 					AimAt Head [$SIGSEGV]
@@ -3297,7 +3309,7 @@ WaveSchedule {
                 Speed 75
                 IsCrit 1 [$SIGSEGV]
                 Skin 1
-				ClassIcon tank_sticky [$SIGSEGV]
+				ClassIcon tank_sticky_hellmet [$SIGSEGV]
 				OnBombDroppedOutput 
                 {
 					Target boss_deploy_relay
@@ -3380,7 +3392,7 @@ WaveSchedule {
 					Action Mobber [$SIGSEGV]
 					ItemAttributes
 					{
-						ItemName Deflector
+						ItemName "Deflector"
 						"killstreak tier" 1
 					}
 

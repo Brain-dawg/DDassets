@@ -120,12 +120,14 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		ItemName	"The Half-Zatoichi"
 		"crits become minicrits"	1
 	}
+	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Flying Guillotine"
 		"minicrits become crits" 1
 		"effect bar recharge rate increased" 0.5
 	}
+	
 	// ItemAttributes	[$SIGSEGV]	// gives demoman a unique ranged option
 	// {
 		// ItemName	"The Loose Cannon"
@@ -162,10 +164,11 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		}
 		Explanation [$SIGSEGV]
 		{
-			Line	"{e46dff}Engineers are mages in this mission and are able to cast spells."
-			Line	"{e46dff}Some weapons that aren't allowed in medieval mode are also enabled."
-			Line	"{e46dff}Some weapons have been rebalanced. Canteens are disabled."
-			Line	"{e46dff}Health kits do NOT drop from enemies in this mission."
+			Line "{7ef563}Wave 1 / 4"
+			Line "{e46dff}Engineers are mages in this mission and are able to cast spells."
+			Line "{e46dff}Some weapons that aren't allowed in medieval mode are also enabled."
+			Line "{e46dff}Some weapons have been rebalanced. Canteens are disabled."
+			Line "{e46dff}Health kits do NOT drop from enemies in this mission."
 		}
 
 		// Ambience (Wave 1 Start)
@@ -246,11 +249,11 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		{
 			Name	wave1a_giant
 			TotalCurrency	100
-			TotalCount	3
-			MaxActive	2
+			TotalCount	2
+			MaxActive	1
 			SpawnCount	1
-			WaitBeforeStarting	24
-			WaitBetweenSpawns	24
+			WaitBeforeStarting	48
+			WaitBetweenSpawns	30
 			Where	spawnbot_gate01_right
 			TFBot
 			{
@@ -460,6 +463,10 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		{
 			Target wave_start_relay
 			Action Trigger
+		}
+		Explanation [$SIGSEGV]
+		{
+			Line "{7ef563}Wave 2 / 4"
 		}
 		
 		WaveSpawn
@@ -803,6 +810,11 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			Target wave_start_relay
 			Action Trigger
 		}
+		Explanation [$SIGSEGV]
+		{
+			Line "{ffe46d}Wave 3 / 4"
+		}
+		
 		WaveSpawn
 		{
 			Name	wave3a
@@ -1184,6 +1196,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		}
 		Explanation [$SIGSEGV]
 		{
+			Line "{f7385b}Wave 4 / 4"
 			Line "{e46dff}The flying dutchman has come to deal with you himself!"
 			Line "{e46dff}His ship will appear later in the wave. "
 			Line "{e46dff}Defeat the wave before it reaches the hatch. (You can't damage ghost ships!)"
