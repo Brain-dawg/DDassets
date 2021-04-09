@@ -469,10 +469,25 @@ WaveSchedule
 		ItemName "Tomislav"
 		"mod minigun can holster while spinning" 1
 	}
+
+	ItemAttributes [$SIGSEGV] // flare minigun
+	{
+		ItemName "The Huo Long Heatmaker"
+		"override projectile type" 6
+		"centerfire projectile" 1
+		"Set DamageType Ignite" 1
+		"ring of fire while aiming" 4
+		"uses ammo while aiming" 0
+		"damage penalty" 1
+		"crits_become_minicrits" 1
+		"damage bonus vs burning" 1
+		"maxammo primary reduced" 0.5
+	}
 	
-	ItemAttributes [$SIGSEGV] // regular spin-up, no resis, no rev walk at all
+	ItemAttributes [$SIGSEGV] // regular spin-up, no resis, no rev walk at all, +5% more dmg
 	{
 		ItemName "The Brass Beast"
+		"damage bonus" 1.25
 		"minigun spinup time increased" 1
 		"aiming movespeed decreased" 0.0025
 		"spunup_damage_resistance" 1
@@ -532,16 +547,6 @@ WaveSchedule
 		"ammo gives charge" 0
 		"charge meter on hit" 0
 	}
-	
-	//ItemAttributes [$SIGSEGV] // reworked fire design, burn on hit, 65 dmg per ring impact, -50% bullet damage
-	//{
-	//	ItemName "The Huo Long Heatmaker"
-	//	"Set DamageType Ignite" 1
-	//	"ring of fire while aiming" 65
-	//	"uses ammo while aiming" 0
-	//	"damage penalty" 0.5
-	//	"damage bonus vs burning" 1
-	//}
 
 	ItemAttributes [$SIGSEGV] // minicrit instead of crits to not overshadow kgb
 	{
@@ -583,7 +588,7 @@ WaveSchedule
 	{
 		ItemName "The Widowmaker"
 		"mod ammo per shot" 50
-		"damage bonus bullet vs sentry target" 0.75
+		"damage bonus bullet vs sentry target" 1
 	}
 	
 	//ItemAttributes [$SIGSEGV] // ranged sapper removal (no enemy sapper in mobocracy because of mounted sentry problem)
@@ -674,6 +679,7 @@ WaveSchedule
 		"lunchbox adds minicrits" 2
 		"aiming movespeed decreased" 4
 		"sniper charge per sec" 0
+		"damage bonus" 1.6
 	}
 
 	ItemAttributes [$SIGSEGV] // hook bow - DAMAGE UPGRADE DOES NOT WORK
@@ -684,6 +690,7 @@ WaveSchedule
 		"dmg penalty vs players" 150
 		"afterburn duration penalty" 0
 		"weapon burn dmg reduced" 0
+		"deploy time decreased" 0.35
 	}
 	
 	ItemAttributes [$SIGSEGV] // reverted to v1, increased crit time from 3 to 5 seconds
@@ -698,6 +705,14 @@ WaveSchedule
 	{
 		ItemName "TF_WEAPON_SMG"
 		"minicritboost on kill" 10	
+	}
+
+	ItemAttributes [$SIGSEGV] // v1 revert
+	{
+		ItemName "Darwin's Danger Shield"
+		"afterburn immunity" 0
+		"dmg taken from fire reduced" 1
+		"max health additive bonus" 25
 	}
 	
 	ItemAttributes [$SIGSEGV] // accuracy themed sniper melee, fix for hook bow
@@ -721,14 +736,14 @@ WaveSchedule
 		"clip size penalty" 0.5	
 	}
 	
-	ItemAttributes [$SIGSEGV] // v1 revert with new downside
+	ItemAttributes [$SIGSEGV] // v1 revert with new downside, +5% damage
 	{
 		ItemName "The Enforcer"
 		"dmg pierces resists absorbs" 0
 		"crit mod disabled" 1		
 		"fire rate penalty" 1
 		"damage bonus while disguised" 1
-		"damage bonus" 1.2
+		"damage bonus" 1.25
 		"max health additive penalty" -25
 	}
 	
@@ -1588,26 +1603,12 @@ WaveSchedule
 				//SIG
 		}
 		
-		Hell_Hunter
-		{
-			Class Pyro
-			Skill Expert
-			Item "The Scorch Shot"
-			WeaponRestrictions SecondaryOnly
-			Attributes IgnoreFlag
-			
-			//SIG
-			UseMeleeThreatPrioritization 1 [$SIGSEGV]
-			ExtAttr TargetStickies
-			//SIG
-		}
-		
 		Hell_Rifle
 		{
 			Class Sniper
 			Classicon sniper_m4a1_lite
 			Name "Infantry"
-			Health 200
+			Health 65
 			Skill Expert
 			Item "The Hitman's Heatmaker"
 			Item "Commando Elite"
@@ -1752,7 +1753,18 @@ WaveSchedule
 			ClassIcon engineer_gazer_lite
 			Skill Expert
 			WeaponRestrictions SecondaryOnly
-			Item "The Hardium Helm"
+			//Item "The Hardium Helm"
+			Item "Ali Baba's Wee Booties"
+			ItemAttributes
+			{
+				ItemName "Ali Baba's Wee Booties"
+				"max health additive penalty" -25
+			}
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 0
+				Model "workshop\player\items\soldier\hw2013_rocket_ranger\hw2013_rocket_ranger.mdl"
+			}
 			Item "The Scorch Shot"	
 			ItemAttributes
 			{
@@ -1828,10 +1840,6 @@ WaveSchedule
 				"deploy time decreased" 0.001
 			}
 			
-			//SIG
-			AimTrackingInterval 0
-			AimAt Head [$SIGSEGV]
-			//SIG	
 		}
 	}
 	}		
@@ -1984,29 +1992,24 @@ WaveSchedule
 				Yaw   "45"
 				Roll    "0"
 			}
-		}		
+		}
 		WaveSpawn
 		{
-			Name "stickybomb"
+			Name "fakeicon"
 			Where spawnbot_any
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
 			TotalCurrency 0
-			WaitBeforeStarting 8.1
-			WaitBetweenSpawnsAfterDeath 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
 			Support 1
-			RandomChoice
-			{
-			RandomChoice
-			{	
 			TFBot
 			{
-			Template Hell_Hunter
+			Class Scout
+			Classicon red2_lite
 			}	
-			}
-			}
-		}		
+		}				
 		WaveSpawn
 		{
 			Name "saucerkiller"
@@ -2957,9 +2960,9 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "part05"
-			Where spawnbot_any
+			Where spawnbot_barn
 			TotalCount 32
-			MaxActive 12
+			MaxActive 6
 			SpawnCount 1
 			WaitForAllDead "part04"
 			WaitBeforeStarting 12
@@ -2994,8 +2997,7 @@ WaveSchedule
 				}
 				
 				//SIG
-				Action Spy [$SIGSEGV]
-				AimTrackingInterval 0
+				Action Mobber [$SIGSEGV]
 				StripItemSlot 0
 				StripItemSlot 1
 				//SIG
@@ -3149,24 +3151,24 @@ WaveSchedule
 				Yaw   "45"
 				Roll    "0"
 			}
-		}		
+		}
 		WaveSpawn
 		{
-			Name "stickybomb"
+			Name "fakeicon"
 			Where spawnbot_any
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
 			TotalCurrency 0
-			WaitBeforeStarting 8.1
-			WaitBetweenSpawnsAfterDeath 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
 			Support 1
 			TFBot
 			{
-			Template Hell_Hunter
+			Class Scout
 			Classicon red2_lite
 			}	
-		}		
+		}			
 		WaveSpawn
 		{
 			Name "saucerkiller"
@@ -3939,11 +3941,6 @@ WaveSchedule
 				RocketCustomParticle "mvm_soldier_shockwave" [$SIGSEGV]
 				RocketCustomModel "models\buildables\sentry3_rockets.mdl" [$SIGSEGV]
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
-				DamageAppliesCond [$SIGSEGV]
-				{
-					Name TF_COND_MARKEDFORDEATH
-					Duration 5
-				}
 				ItemColor [$SIGSEGV]
 				{
 					ItemName "The Gunboats"
@@ -4064,7 +4061,7 @@ WaveSchedule
 				}
 				
 				//SIG
-				AimTrackingInterval 0
+				AimTrackingInterval 0.05
 				AimAt Head [$SIGSEGV]
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				AimLeadProjectileSpeed 2400 [$SIGSEGV] 
@@ -4230,23 +4227,23 @@ WaveSchedule
 				Yaw   "45"
 				Roll    "0"
 			}
-		}		
+		}	
 		WaveSpawn
 		{
-			Name "stickybomb"
+			Name "fakeicon"
 			Where spawnbot_any
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
 			TotalCurrency 0
-			WaitBeforeStarting 8.1
-			WaitBetweenSpawnsAfterDeath 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
 			Support 1
 			TFBot
 			{
-			Template Hell_Hunter
+			Class Scout
 			Classicon red2_lite
-			}
+			}	
 		}		
 		WaveSpawn
 		{
@@ -5191,23 +5188,23 @@ WaveSchedule
 				Yaw   "45"
 				Roll    "0"
 			}
-		}		
+		}	
 		WaveSpawn
 		{
-			Name "stickybomb"
+			Name "fakeicon"
 			Where spawnbot_any
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
 			TotalCurrency 0
-			WaitBeforeStarting 8.1
-			WaitBetweenSpawnsAfterDeath 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
 			Support 1
 			TFBot
 			{
-			Template Hell_Hunter
+			Class Scout
 			Classicon red2_lite
-			}
+			}	
 		}		
 		WaveSpawn
 		{
@@ -5531,6 +5528,7 @@ WaveSchedule
 					"patient overheal penalty" 0
 					"cancel falling damage" 1
 					"damage force reduction" 0
+					"receive friendly fire" 1
 				}
 				
 				//CRASHFIX
@@ -5579,6 +5577,7 @@ WaveSchedule
 					"cancel falling damage" 1
 					"uber duration bonus" -8
 					"damage force reduction" 0
+					"receive friendly fire" 1
 				}
 				
 				//CRASHFIX
@@ -6832,24 +6831,23 @@ WaveSchedule
 				Roll    "0"
 			}
 		}
-	
 		WaveSpawn
 		{
-			Name "stickybomb"
+			Name "fakeicon"
 			Where spawnbot_any
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
 			TotalCurrency 0
-			WaitBeforeStarting 8.1
-			WaitBetweenSpawnsAfterDeath 8
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
 			Support 1
 			TFBot
 			{
-			Template Hell_Hunter
+			Class Scout
 			Classicon red2_lite
-			}
-		}		
+			}	
+		}
 		WaveSpawn
 		{
 			Name "saucerkiller"
@@ -7007,13 +7005,192 @@ WaveSchedule
 			}
 			}	
 		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where red_player_teamspawn
+			TotalCount 1337
+			MaxActive 2
+			SpawnCount 1
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 2
+			Support 1
+			TotalCurrency 0
+		
+		RandomChoice
+		{
+			TFBot
+			{
+				Class Scout
+				Name "Bonk! Scout"
+				Skill Expert
+				Tag bot_red
+				Classicon red2_lite
+				Name "Bonk! Scout"
+				Item "Bonk Helm"
+				Item "Bonk! Atomic Punch"
+				Item "The Atomizer"
+				WeaponRestrictions MeleeOnly
+				CharacterAttributes
+				{
+					"voice pitch scale" 0.95
+					"crit mod disabled" 0
+					"ammo regen" 1
+					"effect bar recharge rate increased" 0.5
+				}
+				
+				//SIG
+				Action Mobber [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_CRITBOOSTED_ON_KILL
+				}
+				//SIG
+			}
+			
+			TFBot
+			{
+				Template T_TFBot_Soldier_Extended_Battalion
+				Skill Expert
+				Tag bot_red
+				Health 220
+				Classicon red2_lite
+				Attributes DisableDodge
+				Item "The Direct Hit"
+				Item "The Battalion's Backup"
+				Attributes SpawnWithFullCharge
+				ItemAttributes
+				{
+					ItemName "The Battalion's Backup"
+					"max health additive penalty" -20
+				}
+				CharacterAttributes
+				{
+					"voice pitch scale" 0.95
+					"crit mod disabled" 0
+					"ammo regen" 1
+				}
+				
+				//SIG
+				Action Mobber [$SIGSEGV]
+				AimAt Feet [$SIGSEGV]
+				AimLeadProjectileSpeed 1980 [$SIGSEGV] 
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
+			}
+			
+			TFBot
+			{
+				Class Demoman
+				Classicon red2_lite
+				Attributes DisableDodge
+				Name "Persian Demo"
+				Health 200
+				Tag bot_red
+				Item "Sultan's Ceremonial"	
+				Item "Ali Baba's Wee Booties"
+				Item "The Persian Persuader"
+				Item "The Splendid Screen"	
+				Skill Expert
+				WeaponRestrictions MeleeOnly
+				ItemAttributes
+				{
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+				}		
+				ItemAttributes
+				{
+					ItemName "Ali Baba's Wee Booties"
+					"max health additive penalty" -25
+				}
+				CharacterAttributes
+				{
+					"voice pitch scale" 0.95
+					"crit mod disabled" 0
+					"ammo regen" 1
+				}
+				
+				//SIG
+				Action Mobber [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_CRITBOOSTED_ON_KILL
+				}
+				//SIG
+			}
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Expert
+				Tag bot_red
+				Classicon red2_lite
+				Attributes DisableDodge
+				Item "The Dragon's Fury"
+				Item "The Gas Passer"
+				CharacterAttributes
+				{
+					"voice pitch scale" 0.95
+					"crit mod disabled" 0
+					"ammo regen" 1
+				}
+				
+				//SIG
+				Action Mobber [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
+			}
+			
+			TFBot
+			{
+				Class Heavyweapons
+				Skill Expert
+				Item "Natascha"
+				Health 350
+				MaxVisionRange 1200
+				Tag bot_red
+				Classicon red2_lite
+				Attributes DisableDodge
+				CharacterAttributes
+				{
+					"voice pitch scale" 0.95
+					"crit mod disabled" 0
+					"ammo regen" 1
+				}
+				
+				//SIG
+				Action Mobber [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
+			}
+			
+		}
+		}
 		
 		WaveSpawn [$SIGSEGV]
 		{
 			Name "red"
 			Where spawnbot_red
 			TotalCount 1337
-			MaxActive 5
+			MaxActive 3
 			SpawnCount 1
 			WaitBeforeStarting 4
 			WaitBetweenSpawns 20
@@ -8059,6 +8236,7 @@ WaveSchedule
 			MaxActive 16
 			SpawnCount 1
 			WaitForAllDead "part05"
+			WaitBetweenSpawns 1
 			TotalCurrency 0
 			
 			TFBot
@@ -8272,6 +8450,23 @@ WaveSchedule
 				Yaw   "45"
 				Roll    "0"
 			}
+		}
+		WaveSpawn
+		{
+			Name "fakeicon"
+			Where spawnbot_any
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 0
+			Support 1
+			TFBot
+			{
+			Class Scout
+			Classicon red2_lite
+			}	
 		}			
 		WaveSpawn
 		{
@@ -10203,7 +10398,7 @@ WaveSchedule
 			TotalCount 1337
 			MaxActive 2
 			SpawnCount 1
-			WaitBeforeStarting 31
+			WaitBeforeStarting 30
 			WaitBetweenSpawns 60
 			TotalCurrency 0
 			Support 1
