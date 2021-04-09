@@ -1,7 +1,7 @@
 #base robot_standard.pop
 #base robot_giant.pop
 #base robot_gettysburg_dd.pop
-WaveSchedule {
+braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy_leaks_it {
 	StartingCurrency 4000
 	RespawnWaveTime 5
 	FixedRespawnWaveTime 1
@@ -1953,7 +1953,7 @@ WaveSchedule {
 				{
                     Template G_Sniper_Huntsman_Bleed
                     ClassIcon red2_lite
-					Attributes Mobber
+					Action Mobber
 					Attributes DisableDodge
 
 					AimAt Head [$SIGSEGV]
