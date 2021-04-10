@@ -43,7 +43,7 @@ gettysburg
     FixedBuybacks 1                 [$SIGSEGV]
     TextPrintTime 0
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
-    CustomUpgradesFile "mvm_upgrades_gettysburg_final.txt"                  [$SIGSEGV]
+    CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                  [$SIGSEGV]
 
     ClassLimit [$SIGSEGV]
     {

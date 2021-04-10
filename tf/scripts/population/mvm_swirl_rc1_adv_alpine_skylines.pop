@@ -14,7 +14,7 @@ population
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
 	NoRomevisionCosmetics 1 [$SIGSEGV]
 	TextPrintTime 0 [$SIGSEGV]
-	CustomUpgradesFile "mvm_upgrades_herp.txt" [$SIGSEGV]
+	CustomUpgradesFile "mvm_upgrades_herp_fix.txt" [$SIGSEGV]
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" [$SIGSEGV]
@@ -2018,7 +2018,7 @@ population
 					Attributes	"AlwaysFireWeapon"
 					ItemAttributes
 					{
-						ItemName	"TF_WEAPON_ROCKERLAUNCHER"
+						ItemName	"TF_WEAPON_ROCKETLAUNCHER"
 						"damage bonus" 2.0
 						"faster reload rate"	-0.8
 						"fire rate bonus"	0.3
@@ -2039,7 +2039,7 @@ population
 					Attributes	"AlwaysFireWeapon"
 					ItemAttributes
 					{
-						ItemName	"TF_WEAPON_ROCKERLAUNCHER"
+						ItemName	"TF_WEAPON_ROCKETLAUNCHER"
 						"damage bonus" 2.0
 						"faster reload rate"	-0.8
 						"fire rate bonus"	0.3
@@ -2109,7 +2109,7 @@ population
 					Attributes	"AlwaysFireWeapon"
 					ItemAttributes
 					{
-						ItemName	"TF_WEAPON_ROCKERLAUNCHER"
+						ItemName	"TF_WEAPON_ROCKETLAUNCHER"
 						"damage bonus" 2.0
 						"faster reload rate"	-0.8
 						"fire rate bonus"	0.3
@@ -2130,7 +2130,7 @@ population
 					Attributes	"AlwaysFireWeapon"
 					ItemAttributes
 					{
-						ItemName	"TF_WEAPON_ROCKERLAUNCHER"
+						ItemName	"TF_WEAPON_ROCKETLAUNCHER"
 						"damage bonus" 2.0
 						"faster reload rate"	-0.8
 						"fire rate bonus"	0.3
@@ -2200,7 +2200,7 @@ population
 					Attributes	"AlwaysFireWeapon"
 					ItemAttributes
 					{
-						ItemName	"TF_WEAPON_ROCKERLAUNCHER"
+						ItemName	"TF_WEAPON_ROCKETLAUNCHER"
 						"damage bonus" 2.0
 						"faster reload rate"	-0.8
 						"fire rate bonus"	0.25
@@ -2267,6 +2267,7 @@ population
 				{
 					Template	T_TFBot_Giant_Demo_WideBurst
 					ClassIcon demo_burst_crit
+					Attributes	"AlwaysCrit"
 				}
 				TFBot
 				{
