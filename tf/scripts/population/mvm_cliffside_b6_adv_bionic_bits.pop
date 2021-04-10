@@ -339,7 +339,7 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Giga-Heal Medic"
-			Classicon medic
+			Classicon hellmet_bigheal
 			Skill Expert
 			WeaponRestrictions SecondaryOnly
 			Attributes IgnoreEnemies
