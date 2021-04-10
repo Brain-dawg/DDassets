@@ -10374,7 +10374,7 @@ WaveSchedule
 					Repeats 0
 					IfSeeTarget 1
 					Duration 0
-					IfHealthBelow 6665
+					IfHealthBelow 6499
 					Type "Jump"
 				}
 			}
