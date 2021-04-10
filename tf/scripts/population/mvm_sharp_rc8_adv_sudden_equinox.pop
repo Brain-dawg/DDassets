@@ -282,7 +282,7 @@ gettysburg
             Item "Letch's LED"
 			Item "The Triggerman's Tacticals"
             Attributes MiniBoss
-			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+		      	UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
             Attributes SpawnWithFullCharge
 
             AlwaysGlow 1 [$SIGSEGV]
@@ -534,7 +534,7 @@ gettysburg
                     Attributes AlwaysFireWeapon
                     Attributes MiniBoss
                     Attributes AlwaysCrit
-					UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+		          			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
                     WeaponRestrictions SecondaryOnly
                     Item "The Self-Aware Beauty Mark"
                     Item "Trophy Belt"
