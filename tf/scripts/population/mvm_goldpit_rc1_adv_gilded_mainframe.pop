@@ -118,7 +118,7 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 			ItemModel [$SIGSEGV] // Replaces item model
 			{
 				ItemName	"The Loch-n-Load"
-				Model		"models/weapons/c_models/c_the_bolshevik_bomber/c_the_bolshevik_bomber.mdl"
+				Model		"models/weapons/c_models/c_the_bolshevik_bomber/c_the_bolshevik_bomber_1.mdl"
 			}
 			AimAt	Feet
 			AimOffset	"0 0 10"			[$SIGSEGV]

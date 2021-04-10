@@ -98,6 +98,30 @@ WaveSchedule
 				"origin" "465.334 -2129.2 432"
 			}
 		}
+		Tank_Unstuck_System //blade plz.
+		{
+			NoFixup 1
+			logic_relay //boss dead relay. There's actually no boss_dead_relay so I don't need to do this, but if I have to fix this I'm making the name of it stupid then.
+			{
+				"targetname" "boss_dead_please_fix_your_maps_blade_thank_you_relay"
+				"OnTrigger" "shutter_trigger,Enable,,0,-1"
+			}
+			trigger_multiple //tank touch test to force open door if it closes. I did the math for the brush in my head, so it probably is wrong.
+			{
+				"targetname" "tank_touch_test"
+				"mins" "-40 -24 -42"
+				"maxs" "40 24 42"
+				"origin" "-1432 760 342"
+				"spawnflags" "1"
+				"OnTrigger" "shutter_trigger,Enable,,0,-1"
+			}
+			filter_activator_name //tank filter. Does this exist already? Mabey. I saw filter_tank somewhere, but I'm too busy to check if it works.
+			{
+				"targetname" "filter_tank_fix"
+				"filtername" "tankboss"
+				"Negated" "Allow entities that match criteria"
+			}
+		}
 	}
 	
 	Templates
@@ -763,6 +787,7 @@ WaveSchedule
 	}
 	
 	SpawnTemplate "Unstuck_System" [$SIGSEGV]
+	SpawnTemplate "Tank_Unstuck_System" [$SIGSEGV]
 	
 	Wave // WAVE 1
 	{
@@ -1954,7 +1979,7 @@ WaveSchedule
 				StartingPathTrackNode "tank_path_a_10"
 				OnKilledOutput                        
 				{
-					Target boss_dead_relay
+					Target boss_dead_please_fix_your_maps_blade_thank_you_relay
 					Action Trigger
 				}
 				OnBombDroppedOutput

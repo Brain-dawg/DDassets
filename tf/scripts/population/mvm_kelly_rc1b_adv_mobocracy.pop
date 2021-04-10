@@ -548,10 +548,16 @@ WaveSchedule
 		"charge meter on hit" 0
 	}
 
-	ItemAttributes [$SIGSEGV] // minicrit instead of crits to not overshadow kgb
+	ItemAttributes [$SIGSEGV] // giant shotgun
 	{
 		ItemName "TF_WEAPON_SHOTGUN_HWG"
-		"minicritboost on kill" 5
+		"fire rate penalty"       	 2.5
+		"bullets per shot bonus"	 10
+		"damage penalty"         	 0.5
+		"mod no reload DISPLAY ONLY" 1
+		"faster reload rate" 		 0
+		"crit mod disabled"      	 0
+		"maxammo secondary reduced"  0.37
 	}
 	
 	ItemAttributes [$SIGSEGV] // minicrit instead of crits to not overshadow kgb
@@ -1608,7 +1614,7 @@ WaveSchedule
 			Class Sniper
 			Classicon sniper_m4a1_lite
 			Name "Infantry"
-			Health 65
+			Health 200
 			Skill Expert
 			Item "The Hitman's Heatmaker"
 			Item "Commando Elite"
@@ -1753,18 +1759,7 @@ WaveSchedule
 			ClassIcon engineer_gazer_lite
 			Skill Expert
 			WeaponRestrictions SecondaryOnly
-			//Item "The Hardium Helm"
-			Item "Ali Baba's Wee Booties"
-			ItemAttributes
-			{
-				ItemName "Ali Baba's Wee Booties"
-				"max health additive penalty" -25
-			}
-			CustomWeaponModel [$SIGSEGV]
-			{
-				Slot 0
-				Model "workshop\player\items\soldier\hw2013_rocket_ranger\hw2013_rocket_ranger.mdl"
-			}
+			Item "The Hardium Helm"
 			Item "The Scorch Shot"	
 			ItemAttributes
 			{
@@ -2965,7 +2960,7 @@ WaveSchedule
 			MaxActive 6
 			SpawnCount 1
 			WaitForAllDead "part04"
-			WaitBeforeStarting 12
+			WaitBeforeStarting 24
 			WaitBetweenSpawns 1
 			TotalCurrency 0
 			Support 1
@@ -2990,10 +2985,6 @@ WaveSchedule
 				{
 					ItemName "Pugilist's Protector"
 					"set item tint rgb" 15132390
-				}
-				CharacterAttributes
-				{
-					"move speed bonus"	2
 				}
 				
 				//SIG
@@ -3034,6 +3025,7 @@ WaveSchedule
 			Line "{D500FF}Miss Pauling{FFFFFF} : Pauling again. Sorry to interrupt."
 			Line "{D500FF}Miss Pauling{FFFFFF} : According to intel, {blue}Sentry Busters{FFFFFF} no longer respond to sentryguns and will instead seek out any opponent in the vicinity."
 			Line "{D500FF}Miss Pauling{FFFFFF} : Sniper robots can also {blue}headshot! {FFFFFF}Try not to lose your {blue}head {FFFFFF}over it."
+			Line "{D500FF}Miss Pauling{FFFFFF} : Here are some {red}spy robots {FFFFFF}to help you out. They're alot more bearable than the original."
 		}
 		
 		SpawnTemplate [$SIGSEGV]
@@ -4061,7 +4053,7 @@ WaveSchedule
 				}
 				
 				//SIG
-				AimTrackingInterval 0.05
+				AimTrackingInterval 0
 				AimAt Head [$SIGSEGV]
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				AimLeadProjectileSpeed 2400 [$SIGSEGV] 
@@ -6537,6 +6529,7 @@ WaveSchedule
 			{
 				Class Heavyweapons
 				Skill Expert
+				MaxVisionRange 1000
 				WeaponRestrictions MeleeOnly
 				Name "Former Punch"
 				ClassIcon heavy_chief
@@ -6547,6 +6540,7 @@ WaveSchedule
 				Item "PY-40 Incinibot"
 				Item "Arsonist Apparatus"
 				Item "Moccasin Machinery"
+				UseHumanAnimations 1 [$SIGSEGV]
 				Attributes MiniBoss
 				Attributes UseBossHealthBar
 				ItemAttributes
@@ -7136,6 +7130,7 @@ WaveSchedule
 				Class Pyro
 				Skill Expert
 				Tag bot_red
+				MaxVisionRange 1000
 				Classicon red2_lite
 				Attributes DisableDodge
 				Item "The Dragon's Fury"
@@ -7159,10 +7154,17 @@ WaveSchedule
 			TFBot
 			{
 				Class Heavyweapons
+				Name "Deflector Heavy"
 				Skill Expert
-				Item "Natascha"
-				Health 350
-				MaxVisionRange 1200
+				Item "The U-clank-a"
+				Item "Deflector"
+				ItemAttributes
+				{
+					ItemName "Deflector"
+					"attack projectiles" 2
+				}
+				Item "The Dalokohs Bar"
+				Health 300
 				Tag bot_red
 				Classicon red2_lite
 				Attributes DisableDodge
@@ -7798,6 +7800,7 @@ WaveSchedule
 			TFBot
 			{
 				Class HeavyWeapons
+				Name "Deflector Heavy"
 				Skill Normal
 				Item "The U-clank-a"
 				Item "Deflector"
@@ -7894,6 +7897,108 @@ WaveSchedule
 			TotalCurrency 0
 			Support 1
 			RandomSpawn 1
+
+			RandomChoice
+			{
+
+			TFBot
+			{
+				Class Scout
+				Classicon heavy_shotgun
+				MaxVisionRange 500
+				Skill Expert
+				
+				//SIG
+				Action Spy [$SIGSEGV]
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				StripItemSlot 1
+				StripItemSlot 2
+				FireWeapon [$SIGSEGV]
+				{
+					Delay 0
+					Cooldown 0
+					Repeats 0
+					IfSeeTarget 1
+					Duration 0
+					Type "Primary"
+				}
+				//SIG
+			}
+
+			TFBot
+			{
+				Class Scout
+				Classicon heavy_shotgun
+				Item "The Force-a-Nature"
+				MaxVisionRange 500
+				Skill Expert
+				
+				//SIG
+				Action Spy [$SIGSEGV]
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				StripItemSlot 1
+				StripItemSlot 2
+				FireWeapon [$SIGSEGV]
+				{
+					Delay 0
+					Cooldown 0
+					Repeats 0
+					IfSeeTarget 1
+					Duration 0
+					Type "Primary"
+				}
+				//SIG
+			}
+
+			TFBot
+			{
+				Class Scout
+				Classicon heavy_shotgun
+				Item "The Soda Popper"
+				MaxVisionRange 500
+				Skill Expert
+				
+				//SIG
+				Action Spy [$SIGSEGV]
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				StripItemSlot 1
+				StripItemSlot 2
+				FireWeapon [$SIGSEGV]
+				{
+					Delay 0
+					Cooldown 0
+					Repeats 0
+					IfSeeTarget 1
+					Duration 0
+					Type "Primary"
+				}
+				//SIG
+			}
+
+			TFBot
+			{
+				Class Scout
+				Classicon heavy_shotgun
+				Item "Baby Face's Blaster"
+				MaxVisionRange 500
+				Skill Expert
+				
+				//SIG
+				Action Spy [$SIGSEGV]
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				StripItemSlot 1
+				StripItemSlot 2
+				FireWeapon [$SIGSEGV]
+				{
+					Delay 0
+					Cooldown 0
+					Repeats 0
+					IfSeeTarget 1
+					Duration 0
+					Type "Primary"
+				}
+				//SIG
+			}
 			
 			TFBot
 			{
@@ -7918,6 +8023,8 @@ WaveSchedule
 					Type "Primary"
 				}
 				//SIG
+			}
+
 			}
 			
 		}	
@@ -7953,7 +8060,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "warbird_minigun_butcherbird"
-					"damage bonus" 1.2
+					"damage bonus" 1.5
 					"attack projectiles" 2
 					"generate rage on damage" 3			
 				}
@@ -8023,7 +8130,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "warbird_minigun_butcherbird"
-					"damage bonus" 1.2
+					"damage bonus" 1.5
 					"attack projectiles" 2
 					"generate rage on damage" 3			
 				}
@@ -8386,71 +8493,11 @@ WaveSchedule
 		
 		SpawnTemplate [$SIGSEGV]
 		{
-			Name "wallsentry"
-			Origin "375 -2815 360"
-			Angles "90 90 0"
-		}
-		
-		SpawnTemplate [$SIGSEGV]
-		{
-			Name "wallsentry"
-			Origin "-375 -2815 360"
-			Angles "90 90 0"
-		}
-		
-		SpawnTemplate [$SIGSEGV]
-		{
 			Name "leetdispenser"
 			Origin "1192 -1624 0"
 			Angles "0 0 0"
 		}
 		
-		SpawnTemplate [$SIGSEGV]
-		{
-			Name "hatchsentry"
-			Origin "125 -2524 13"
-			Angles "0 -90 0"
-		}
-		
-		SpawnTemplate [$SIGSEGV]
-		{
-			Name "hatchsentry"
-			Origin "-125 -2524 13"
-			Angles "0 -90 0"
-		}
-		
-		SpawnTemplate [$SIGSEGV]
-		{
-			Name "hatchsentry"
-			Origin "125 -2250 13"
-			Angles "0 90 0"
-		}
-		
-		SpawnTemplate [$SIGSEGV]
-		{
-			Name "hatchsentry"
-			Origin "-125 -2250 13"
-			Angles "0 90 0"
-		}
-		
-		SentryGun [$SIGSEGV]
-		{
-			TeamNum 2
-			Level 1
-			Ismini 1
-			Bodygroup 1
-			Skin 2
-			Health 100
-			Position
-			{
-				X    "-329"
-				Y    "-1093"
-				Z     "256" 
-				Pitch   "0"
-				Yaw   "45"
-				Roll    "0"
-			}
-		}
 		WaveSpawn
 		{
 			Name "fakeicon"
@@ -10292,13 +10339,14 @@ WaveSchedule
 			{
 				Class Demoman
 				Name "Bomb Runner"
-				Health 6666
+				Health 6500
 				Scale 1.9
 				ClassIcon scout_bombrunner
 				Attributes IgnoreEnemies
 				Attributes MiniBoss
 				Skill Expert
 				WeaponRestrictions MeleeOnly
+				ExtAttr JumpStomp [$SIGSEGV]
 				UseBusterModel 1 [$SIGSEGV]
 				CustomWeaponModel [$SIGSEGV]
 				{
@@ -10326,7 +10374,7 @@ WaveSchedule
 					Repeats 0
 					IfSeeTarget 1
 					Duration 0
-					IfHealthBelow 6665
+					IfHealthBelow 6499
 					Type "Jump"
 				}
 			}
@@ -10361,7 +10409,7 @@ WaveSchedule
 			TotalCount 1337
 			MaxActive 2
 			SpawnCount 1
-			WaitBeforeStarting 30
+			WaitBeforeStarting 31
 			WaitBetweenSpawns 60
 			TotalCurrency 0
 			Support 1

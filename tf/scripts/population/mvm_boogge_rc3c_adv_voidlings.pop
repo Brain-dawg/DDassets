@@ -41,7 +41,7 @@ gettysburg
     EnableDominations 1                 [$SIGSEGV]
     ImprovedAirblast 1                  [$SIGSEGV]
     TextPrintTime 0                     [$SIGSEGV]
-    CustomUpgradesFile "mvm_upgrades_gettysburg_final.txt"                  [$SIGSEGV]
+    CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                  [$SIGSEGV]
     PrecacheModel models/bots/boss_bot/boss_tank_color.mdl                  [$SIGSEGV]
 
     OverrideSounds [$SIGSEGV]
