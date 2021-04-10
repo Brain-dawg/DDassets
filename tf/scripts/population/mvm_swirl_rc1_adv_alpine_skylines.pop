@@ -1824,7 +1824,7 @@ population
 			TFBot
 			{
 				Template	T_TFBot_Giant_Demo_WideBurst
-				//ClassIcon demo_burst_giant
+				ClassIcon demo_burst_giant
 			}
 		}
 		WaveSpawn
@@ -2266,8 +2266,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Demo_WideBurst
-					ClassIcon demo_scatter
-					Attributes	"AlwaysCrit"
+					ClassIcon demo_burst_crit
 				}
 				TFBot
 				{
