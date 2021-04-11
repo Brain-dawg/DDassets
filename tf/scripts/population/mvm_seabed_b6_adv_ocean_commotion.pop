@@ -1789,6 +1789,7 @@ population
 				{
 					Template	T_TFBot_Giant_Heavyweapons //_Booster
 					UseMeleeThreatPrioritization 1 [$SIGSEGV]
+					Tag bot_giant
 				}
 				TFBot
 				{
