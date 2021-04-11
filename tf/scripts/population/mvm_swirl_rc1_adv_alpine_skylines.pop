@@ -1049,6 +1049,11 @@ population
 			Where	spawnbot_ambush_lower
 			StartWaveWarningSound "vo\announcer_security_warning.mp3"
 			FirstSpawnWarningSound "mvm\mvm_tele_deliver.wav"
+			FirstSpawnOutput                                                                                                                   
+			{
+				Target ambush_door_lower    
+				Action Open
+			}
 			Squad
 			{
 				TFBot
@@ -1192,6 +1197,18 @@ population
 					"airblast vulnerability multiplier"	0.15
 					"override footstep sound set"	3
 				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCount 0
+			SpawnCount 0
+			WaitForAllDead w2_ambushc
+			Support	1
+			FirstSpawnOutput                                                                                                                  
+			{
+				Target ambush_door_lower      
+				Action Close
 			}
 		}
 		WaveSpawn
@@ -1474,13 +1491,13 @@ population
 				{
 					Default
 					{
-						Skill	Normal
+						Skill	Hard
 						BehaviorModifiers	Push
 						WeaponRestrictions	SecondaryOnly
 						Tag	"bot_gatebot"
 						Tag	"nav_prefer_gate1_flank"
 						Attributes	"IgnoreFlag"
-						Item	"The Flare Gun"	//"The Detonator"
+						Item	"The Detonator"
 						Item	"MvM Gatebot Light Pyro"
 						ItemAttributes
 						{
@@ -1491,13 +1508,13 @@ population
 					}
 					RevertGateBotsBehavior
 					{
-						Skill	Normal
+						Skill	Hard
 						WeaponRestrictions	SecondaryOnly
-						Item	"The Flare Gun"	//"The Detonator"
+						Item	"The Detonator"
 						Item	"MvM Gatebot Light Pyro"
 						ItemAttributes
 						{
-							ItemName	"The Flare Gun"	//"The Detonator"
+							ItemName	"The Detonator"
 							"fire rate bonus"	0.4
 							"faster reload rate"	0.2
 						}
@@ -2694,6 +2711,11 @@ population
 			WaitBeforeStarting	8
 			WaitBetweenSpawns	6
 			Where	spawnbot_main
+			FirstSpawnOutput                                                                                                                   
+			{
+				Target ambush_door_lower    
+				Action Open
+			}
 			TFBot
 			{
 				Skill	Hard
@@ -2857,6 +2879,19 @@ population
 						"heal rate bonus"	200
 					}
 				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w5_ambushd
+			TotalCount	0
+			MaxActive	0
+			WaitBeforeStarting	5
+			Support	1
+			FirstSpawnOutput                                                                                                                  
+			{
+				Target ambush_door_lower      
+				Action Close
 			}
 		}
 		WaveSpawn
