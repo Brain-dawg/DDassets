@@ -2685,65 +2685,6 @@ WaveSchedule
 				}
 			}
 		}
-		// WaveSpawn
-		// {
-		// 	Name                5G
-		// 	WaitForAllDead		5D
-		// 	Where 				spawnbot
-		// 	TotalCount 			1
-		// 	MaxActive 			1
-		// 	SpawnCount 			1
-		// 	WaitBeforeStarting 	20
-		// 	WaitBetweenSpawns 	0
-		// 	TotalCurrency 		100
-		// 	FirstSpawnWarningSound	"ambient\siren.wav"
-		// 	FirstSpawnOutput                                                                                                                                                            
-		// 	{
-		// 		Target	boss_spawn_relay
-		// 		Action	Trigger                         
-		// 	}
-		//     Tank
-		// 	{
-		// 		Health	12000
-		// 		Name	"small_tank_crit"
-		// 		Speed	75
-		// 		StartingPathTrackNode "tankpath_back"
-		// 		OnKilledOutput
-		// 		{
-		// 			Target	boss_dead_relay
-		// 			Action	Trigger
-		// 		}
-		// 		OnBombDroppedOutput
-		// 		{
-		// 			Target	boss_deploy_relay
-		// 			Action	Trigger
-		// 		}
-		// 	}
-		// }
-		// WaveSpawn
-		// {
-		// 	Name                5Sniper
-		// 	Where 				spawnbot_mission_sniper
-		// 	TotalCount 			2
-		// 	MaxActive 			2
-		// 	SpawnCount 			2
-		// 	WaitBeforeStarting 	1
-		// 	WaitBetweenSpawns 	45
-		// 	TotalCurrency 		0
-		// 	Support				1
-		//     Squad
-		// 	{
-		// 		TFBot
-		// 		{
-		// 			Template		T_TFBot_Force_Giant_Sniper_SydneySleeper
-		// 			Item		    "Corona Australis"
-		// 		}
-		// 		TFBot
-		// 		{
-		// 			Template		Dispenser
-		// 		}
-		// 	}
-		// }
 		WaveSpawn
 		{
 			Name 5S
@@ -2781,32 +2722,12 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name 5S
-			Where spawnbot_all
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 15
-			WaitBetweenSpawns 20
-			TotalCurrency 0
-			Support 1
-			TFBot
-			{
-				Template Dispenser
-				CharacterAttributes
-				{
-					"cancel falling damage" 1
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Name 5S
 			WaitForAllDead 5E
-			Where spawnbot_all
+			Where spawnbot_left
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			WaitBeforeStarting 20
+			WaitBeforeStarting 5
 			WaitBetweenSpawns 15
 			TotalCurrency 0
 			Support 1
@@ -3072,27 +2993,27 @@ WaveSchedule
 				{
 					Template T_TFBot_Force_Pyro_Magic_Fire_Mini
 					Tag carrier_spawn
-					// Item 			"Battery Canteens"
-					// ItemAttributes
-					// {
-					// 	ItemName 			"Battery Canteens"
-					// 	"ubercharge" 		1
-					// 	"powerup charges" 	1
-					// 	"powerup duration"	1
-					// }
+					Item 			"Battery Canteens"
+					ItemAttributes
+					{
+						ItemName 			"Battery Canteens"
+						"ubercharge" 		1
+						"powerup charges" 	1
+						"powerup duration"	2
+					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Force_Pyro_Magic_Fire_Mini_V2
 					Tag carrier_spawn
-					// Item 			"Battery Canteens"
-					// ItemAttributes
-					// {
-					// 	ItemName 			"Battery Canteens"
-					// 	"ubercharge" 		1
-					// 	"powerup charges" 	1
-					// 	"powerup duration"	1
-					// }
+					Item 			"Battery Canteens"
+					ItemAttributes
+					{
+						ItemName 			"Battery Canteens"
+						"ubercharge" 		1
+						"powerup charges" 	1
+						"powerup duration"	2
+					}
 				}
 			}
 		}
