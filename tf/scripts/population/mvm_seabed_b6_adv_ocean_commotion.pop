@@ -16,7 +16,7 @@ population
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
 	BodyPartScaleSpeed 50 [$SIGSEGV]
 	TextPrintTime 0 [$SIGSEGV]
-	CustomUpgradesFile "mvm_upgrades_herp_fix.txt" [$SIGSEGV]
+	//CustomUpgradesFile "mvm_upgrades_herp_fix.txt" [$SIGSEGV]
 	//ImprovedAirblast 1 [$SIGSEGV]
 	//NoReanimators 1 [$SIGSEGV]
 	//ItemBlacklist [$SIGSEGV]
