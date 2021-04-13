@@ -748,7 +748,7 @@ population
 		WaveSpawn
 		{
 			Name	2A
-			TotalCurrency	50
+			TotalCurrency	150
 			TotalCount	8
 			MaxActive	4
 			SpawnCount	2
@@ -827,7 +827,7 @@ population
 		{
 			Name	2C
 			WaitForAllDead	2BScout
-			TotalCurrency	50
+			TotalCurrency	150
 			TotalCount	7
 			MaxActive	7
 			SpawnCount	7
@@ -890,7 +890,7 @@ population
 		{
 			Name	2C
 			WaitForAllSpawned	2BScout
-			TotalCurrency	50
+			TotalCurrency	150
 			TotalCount	7
 			MaxActive	7
 			SpawnCount	7
@@ -1033,7 +1033,7 @@ population
 			TFBot
 			{
 				Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
-				ClassIcon pyro_flare_giant
+				ClassIcon pyro_scorch
 				Attributes	AlwaysCrit
 				Name "Exiled Wizard"
 				Item "All Hallows' Hatte"
@@ -1208,7 +1208,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
-					Classicon pyro_flare_giant
+					Classicon pyro_scorch
 					Attributes	AlwaysCrit
 					Name "Exiled Wizard"
 					Item "All Hallows' Hatte"
@@ -1260,21 +1260,18 @@ population
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill	Hard
 				}
 				TFBot
 				{
 					Template T_TFBot_Heavyweapons_Heater_normal
 					Name "Wanyudo"
 					Item "Handsome Devil"
-					Skill	Hard
 				}
 			}
 		}
@@ -1317,109 +1314,21 @@ population
 			WaitBetweenSpawns	1.5
 			WaitBeforeStarting	20
 			Support 1
-			RandomChoice
+			TFBot
 			{
-				TFBot
+				Template	T_TFBot_Soldier_Extended_Concheror
+				Item "The Cow Mangler 5000"
+				Item "Stout Shako"
+				Name "Colorful Gate Keeper"
+				ItemAttributes
 				{
-					Template	T_TFBot_Soldier_Extended_Concheror
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 16753920
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 16753920
-					}
+					ItemName "The Cow Mangler 5000"
+					"set item tint rgb" 16753920
 				}
-				TFBot
+				ItemAttributes
 				{
-					Template	T_TFBot_Soldier_Extended_Concheror
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 4915330
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 4915330
-					}
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Concheror
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 8172377
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 8172377
-					}
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Battalion
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 16776960
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 16776960
-					}
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 255
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 255
-					}
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Buff_Banner
-					Item "The Cow Mangler 5000"
-					Item "Stout Shako"
-					Name "Colorful Gate Keeper"
-					ItemAttributes
-					{
-						ItemName "The Cow Mangler 5000"
-						"set item tint rgb" 15631086
-					}
-					ItemAttributes
-					{
-						ItemName "Stout Shako"
-						"set item tint rgb" 15631086
-					}
+					ItemName "Stout Shako"
+					"set item tint rgb" 16753920
 				}
 			}
 		}
@@ -1935,7 +1844,7 @@ population
 		WaveSpawn
 		{
 			Name	Tank_1
-			TotalCurrency	200
+			TotalCurrency	100
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -2040,7 +1949,7 @@ population
 		{
 			Name	Tank_2
 			WaitForAllDead	Tank_1
-			TotalCurrency	200
+			TotalCurrency	100
 			TotalCount	2
 			MaxActive	2
 			SpawnCount	1
@@ -2068,7 +1977,7 @@ population
 		{
 			Name	5C
 			WaitForAllDead	5B
-			TotalCurrency	200
+			TotalCurrency	100
 			TotalCount	20
 			MaxActive	16
 			SpawnCount	4
@@ -2361,7 +2270,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Heavyweapons_Deflector
-					ClassIcon	heavy_deflector_giant
+					ClassIcon	heavy_deflectoR
 					Item "The Siberian Sophisticate"
 					Name "Super Minigun Butler"
 				}
@@ -2420,10 +2329,11 @@ population
 		WaveSpawn
 		{
 			Name BossSupport
-			WaitForAllSpawned	6C
-			MaxActive	12
-			SpawnCount	12
-			WaitBetweenSpawns	13
+			WaitForAllDead	6C
+			MaxActive	9
+			SpawnCount	9
+			WaitBeforeStarting	16
+			WaitBetweenSpawns	20
 			Where whatever
 			TFBot
 			{
@@ -2446,8 +2356,7 @@ population
 					"dmg taken from blast reduced"	0.3
 					"dmg taken from fire reduced"	0.4
 					"dmg taken from crit increased"	100
-					"dmg taken from bullets reduced"	0.7
-					"move speed bonus"	1.4
+					"move speed bonus"	0.9
 				}
 			}
 		}
@@ -2481,7 +2390,7 @@ population
 					ItemName	"Upgradeable TF_WEAPON_GRENADELAUNCHER"
 					"heal on hit for rapidfire"	70
 					"projectile penetration"	1
-					"faster reload rate"	0.9
+					"faster reload rate"	0.6
 					"fire rate bonus"	0.001
 					"Projectile speed increased" 1.2
 					"override projectile type"	8

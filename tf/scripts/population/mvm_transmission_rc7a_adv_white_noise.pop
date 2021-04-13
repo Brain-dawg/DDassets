@@ -45,12 +45,10 @@
 
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
 
-//CHANGELOG LATEST EDITS 19-01
-//- GateBeebot_MultStinger health increased to 1200 to bee consistent
-//- Added small health regen to minigiants to show hp on hover-over
-//- GateBot_Soldier_Burst damage penalty reduced from 0.55 to 0.75 (consistent w normal)
-//- Giant Flare Rain Pyros aim at the head now
-//- Queen Bee Soldier's rockets home in for 3 secs max now
+//CHANGELOG LATEST EDITS 13-04 (haha homestuck)
+//- Fixed missing 'Giant' prefix for Giant Flare Rains
+//- Slightly edited explanation about SH stats to be clearer about the values
+//- Giant Multi-Regen Heavies now use melee AI
 
 WaveSchedule
 {
@@ -58,7 +56,6 @@ WaveSchedule
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom Yes //As per a "standard" of sorts
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
-	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	
 	ItemAttributes [$SIGSEGV]
 	{
@@ -180,10 +177,8 @@ WaveSchedule
 			ClassIcon medic_uber
 			Skill Expert
 			Attributes SpawnWithFullCharge
-			Attributes IgnoreEnemies
 			Item "The Crusader's Crossbow"
 			Item "Bumble Beenie"
-			Tag bot_squad_member
 			ItemAttributes
 			{
 				ItemName "TF_WEAPON_MEDIGUN"
@@ -208,7 +203,6 @@ WaveSchedule
 			Attributes ProjectileShield
 			Item "powerhouse_medigun_sparkoflife"
 			Item "Bumble Beenie"
-			Tag bot_squad_member
 			ItemAttributes
 			{
 				ItemName "powerhouse_medigun_sparkoflife"
@@ -229,11 +223,9 @@ WaveSchedule
 			Name "Healy Honey Bee"
 			Skill Expert
 			Attributes SpawnWithFullCharge
-			Attributes IgnoreEnemies
 			Item "The Crusader's Crossbow"
 			Item "The Quick-Fix"
 			Item "Bumble Beenie"
-			Tag bot_squad_member
 			ItemAttributes
 			{
 				ItemName "The Quick-Fix"
@@ -789,12 +781,13 @@ WaveSchedule
 			Item "The Firefly"
 			ClassIcon pyro_flare_rain_nys
 			Tag bot_giant
+			AimAt Head [$SIGSEGV]
 			ItemAttributes
 			{
 				ItemName "The Flare Gun"
-				"fire rate bonus" 0.3
-				"projectile spread angle penalty" 5
-				"projectile speed decreased" 0.3
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 3
+				"projectile speed decreased" 0.4
 				"health regen" 5
 			}
 		}
@@ -894,7 +887,7 @@ WaveSchedule
 		T_TFBot_Giant_Pyro_Flare_Rain
 		{
 			Class Pyro
-			Name "Flare Rain Pyro"
+			Name "Giant Flare Rain Pyro"
 			Health 3000
 			MaxVisionRange 1200
 			ClassIcon pyro_flare_rain_nys
@@ -905,6 +898,7 @@ WaveSchedule
 			Item "The Firefly"
 			Tag bot_giant
 			AimAt Head [$SIGSEGV]
+			AimLeadProjectileSpeed 700 [$SIGSEGV]
 			CharacterAttributes
 			{
 				"move speed bonus" 0.5
@@ -918,6 +912,7 @@ WaveSchedule
 				"fire rate bonus" 0.1
 				"projectile spread angle penalty" 5
 				"projectile speed decreased" 0.4
+				"damage bonus" 1.5
 			}
 		}
 		
@@ -999,7 +994,6 @@ WaveSchedule
 			Skill Expert
 			Attributes MiniBoss
 			ClassIcon sniper_bow_multi
-			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 			Tag bot_giant
 			ItemAttributes
 			{
@@ -1208,7 +1202,7 @@ WaveSchedule
 		Explanation [$SIGSEGV]
 		{
 			Line "{blue}Be wary! Sentry Busters will not hurt their fellow robots!"
-			Line "{red}The Southern Hospitality will power up your dispenser, at the cost of some sentry firepower."
+			Line "{red}The Southern Hospitality will double your dispenser's heal rate, at the cost of 20% less sentry damage."
 			Line "{red}Additionally, bots can attack from their spawn!"
 			Line "{red}Keep a safe distance or be overwhelmed!"
 		}
@@ -1820,7 +1814,7 @@ WaveSchedule
 			Where spawnbot_upper1
 			WaitBetweenSpawns 4
 			TotalCount 15
-			MaxActive 3
+			MaxActive 6
 			SpawnCount 3
 			TotalCurrency 30
 			TFBot
@@ -3118,7 +3112,7 @@ WaveSchedule
 					Attributes MiniBoss
 					Attributes UseBossHealthBar
 					Attributes AlwaysCrit
-					//Changes to shotgun when health is low
+					UseMeleeThreatPrioritization 1 [$SIGSEGV] //Prefer players close to the bot
 					WeaponSwitch [$SIGSEGV] //Periodically switches weapon
 					{
 						Delay 0 
@@ -3142,7 +3136,7 @@ WaveSchedule
 						"override footstep sound set" 2
 						"rage giving scale" 0.4
 						"health regen" 80
-						"deploy time decreased" 0.5
+						"deploy time decreased" 0.3
 					}
 					ItemAttributes
 					{
@@ -3424,7 +3418,7 @@ WaveSchedule
 					Attributes MiniBoss
 					Attributes UseBossHealthBar
 					Attributes AlwaysCrit
-					//Changes to shotgun when health is low
+					UseMeleeThreatPrioritization 1 [$SIGSEGV] //Prefer players close to the bot
 					WeaponSwitch [$SIGSEGV] //Periodically switches weapon
 					{
 						Delay 0 
