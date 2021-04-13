@@ -1163,6 +1163,7 @@ WaveSchedule {
 				Attributes AlwaysCrit
 				Attributes MiniBoss
 				Attributes AutoJump
+				ExtAttr JumpStomp [$SIGSEGV]
 				Attributes UseBossHealthBar
 				AimAt Feet
 				AutoJumpMin 6
