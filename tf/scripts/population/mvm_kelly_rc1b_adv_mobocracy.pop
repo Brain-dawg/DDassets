@@ -86,6 +86,20 @@ WaveSchedule
 	DisableSound "Announcer.MVM_Tank_Alert_Halfway_Multiple"	[$SIGSEGV]
 	DisableSound "Announcer.MVM_Tank_Alert_Near_Hatch"			[$SIGSEGV]
 	DisableSound "Announcer.MVM_Tank_Alert_Deploying"			[$SIGSEGV]
+
+	ClassLimit [$SIGSEGV]
+    {
+		Scout		2
+		Soldier		2
+		Pyro		2
+        Demoman		2
+        Heavy		2
+        Engineer	2
+		Medic		2
+        Sniper		2
+        Spy			2
+		Civilian	2
+    }
 	
 	OverrideSounds [$SIGSEGV]
 	{
@@ -479,8 +493,8 @@ WaveSchedule
 		"ring of fire while aiming" 4
 		"uses ammo while aiming" 0
 		"damage penalty" 1
-		"crits_become_minicrits" 1
 		"damage bonus vs burning" 1
+		"crit mod disabled"       0
 		"maxammo primary reduced" 0.5
 	}
 	
@@ -551,11 +565,12 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // giant shotgun
 	{
 		ItemName "TF_WEAPON_SHOTGUN_HWG"
+		"max health additive penalty" -100
 		"fire rate penalty"       	 2.5
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
 		"mod no reload DISPLAY ONLY" 1
-		"faster reload rate" 		 0
+		"mod max primary clip override" -1
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -2988,6 +3003,7 @@ WaveSchedule
 				}
 				
 				//SIG
+				UseHumanAnimations 1 [$SIGSEGV]
 				Action Mobber [$SIGSEGV]
 				StripItemSlot 0
 				StripItemSlot 1
@@ -3496,6 +3512,16 @@ WaveSchedule
 					Slot 0
 					Model "models\empty.mdl"
 				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
 				AddCond [$SIGSEGV]
 				{
 					Name TF_COND_REPROGRAMMED
@@ -3873,6 +3899,16 @@ WaveSchedule
 				CustomWeaponModel [$SIGSEGV]
 				{
 					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
 					Model "models\empty.mdl"
 				}
 				//SIG
@@ -6529,7 +6565,7 @@ WaveSchedule
 			{
 				Class Heavyweapons
 				Skill Expert
-				MaxVisionRange 1000
+				MaxVisionRange 2000
 				WeaponRestrictions MeleeOnly
 				Name "Former Punch"
 				ClassIcon heavy_chief
@@ -6540,7 +6576,6 @@ WaveSchedule
 				Item "PY-40 Incinibot"
 				Item "Arsonist Apparatus"
 				Item "Moccasin Machinery"
-				UseHumanAnimations 1 [$SIGSEGV]
 				Attributes MiniBoss
 				Attributes UseBossHealthBar
 				ItemAttributes
@@ -6570,6 +6605,7 @@ WaveSchedule
 				
 				//SIG
 				AimTrackingInterval 0
+				UseHumanAnimations 1 [$SIGSEGV]
 				Taunt [$SIGSEGV]
 				{
 					Delay 0
@@ -9891,6 +9927,16 @@ WaveSchedule
 					Slot 0
 					Model "models\empty.mdl"
 				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
 				AddCond [$SIGSEGV]
 				{
 					Name TF_COND_REPROGRAMMED
@@ -10339,7 +10385,7 @@ WaveSchedule
 			{
 				Class Demoman
 				Name "Bomb Runner"
-				Health 6500
+				Health 6666
 				Scale 1.9
 				ClassIcon scout_bombrunner
 				Attributes IgnoreEnemies
@@ -10374,7 +10420,7 @@ WaveSchedule
 					Repeats 0
 					IfSeeTarget 1
 					Duration 0
-					IfHealthBelow 6499
+					IfHealthBelow 6665
 					Type "Jump"
 				}
 			}
