@@ -1,8 +1,8 @@
 //Tincan Termination
 //An Advanced mission for the map Autumnull by botrot.
 
-//Wave 1: $700; Wave 2: $650; Wave 3: $700; Wave 4: $600; Wave 5: $700; Wave 6: $900; Wave 7: $650; 
-//Total Mission Money (including starting money): $5700; $6300 with bonus from A+ rating
+//Wave 1: $750; Wave 2: $700; Wave 3: $700; Wave 4: $800; Wave 5: $700; Wave 6: $900; Wave 7: $650; 
+//Total Mission Money (including starting money): $6000; $6600 with bonus from A+ rating
 
 #base robot_giant.pop
 #base robot_standard.pop
@@ -584,7 +584,7 @@ WaveSchedule
 		}
 	}
     //Wave 1
-	//Total Money: $700, $800 with bonus from A+ rating
+	//Total Money: $750, $850 with bonus from A+ rating
 	Wave
 	{
         StartWaveOutput
@@ -756,7 +756,7 @@ WaveSchedule
 		{
 			Name	wave1c
 			WaitForAllSpawned	wave1b
-			TotalCurrency	100
+			TotalCurrency	150
 			TotalCount	4
 			MaxActive	4
 			SpawnCount	2
@@ -800,7 +800,7 @@ WaveSchedule
 		}
     }
     //Wave 2
-	//Total Money: $650, $750 with bonus from A+ rating
+	//Total Money: $700, $800 with bonus from A+ rating
 	Wave
 	{
         StartWaveOutput
@@ -964,7 +964,7 @@ WaveSchedule
 		{
 			Name	wave2tank
             WaitForAllDead wave2b
-			TotalCurrency	25
+			TotalCurrency	50
 			TotalCount	35
 			MaxActive	14
 			SpawnCount	7
@@ -995,7 +995,7 @@ WaveSchedule
 		{
 			Name	wave2tank
             WaitForAllDead wave2b
-			TotalCurrency	25
+			TotalCurrency	50
 			TotalCount	4
 			MaxActive	4
 			SpawnCount	2
@@ -1283,7 +1283,7 @@ WaveSchedule
 		}
     }
     //Wave 4
-	//Total Money: $600, $700 with bonus from A+ rating
+	//Total Money: $800, $900 with bonus from A+ rating
 	Wave
 	{
         StartWaveOutput
@@ -1328,7 +1328,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name	wave4a
-			TotalCurrency	50
+			TotalCurrency	100
 			TotalCount	36
 			MaxActive	12
 			SpawnCount	6
@@ -1345,7 +1345,7 @@ WaveSchedule
 		{
 			Name	wave4b
             WaitForAllDead wave4a
-			TotalCurrency	50
+			TotalCurrency	100
 			TotalCount	26
 			MaxActive	10
 			SpawnCount	2
@@ -1446,7 +1446,7 @@ WaveSchedule
 		{
 			Name	wave4c
 			WaitForAllDead	wave4b
-			TotalCurrency	50
+			TotalCurrency	100
 			TotalCount	4
 			MaxActive	4
 			SpawnCount	4
@@ -1516,7 +1516,7 @@ WaveSchedule
 		{
 			Name	wave4support
             WaitForAllDead wave4b
-			TotalCurrency	50
+			TotalCurrency	100
 			TotalCount	30
 			MaxActive	12
 			SpawnCount	3
@@ -1719,19 +1719,27 @@ WaveSchedule
 			{
 				TFBot
 				{
+					//Sigsegv-mod exclusive; this bot will lead rockets and aim at enemy's feet for increased accuracy
+					AimLeadProjectileSpeed 1100 [$SIGSEGV]
+					AimAt Feet [$SIGSEGV] 
 					Template T_TFBot_Soldier_Extended_Concheror
-					Skill Hard
-					Attributes AlwaysCrit
-					Item "the direct hit"
+					Skill Expert
 				}
 				TFBot
 				{
-					Template	T_TFBot_Medic
+					//Sigsegv-mod exclusive; this bot will lead syringes and aim at enemy's head for increased accuracy
+					AimLeadProjectileSpeed 1000 [$SIGSEGV]
+					AimAt Head [$SIGSEGV] 
+					Template	T_TFBot_Medic_BigHeal
+					Name   "Big Heal Medic"
+					Item   "The Surgeon's Stahlhelm"
+					Attributes SpawnWithFullCharge
 					Skill Expert
 					ItemAttributes
 					{
 						ItemName "TF_WEAPON_SYRINGEGUN_MEDIC"
 						"damage penalty" 1
+						"mad milk syringes" 1
 					}
 				}
 			}
