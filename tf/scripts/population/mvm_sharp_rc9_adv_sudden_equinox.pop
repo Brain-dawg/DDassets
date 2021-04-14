@@ -79,7 +79,7 @@ gettysburg
         "engy sentry radius increased" 2
         "construction rate increased" 2
         "engy disposable sentries" 1
-        "mult teleporter recharge rate" 2
+        "mult teleporter recharge rate" 0.5
     }
 
     ItemAttributes //minigun pen dmg penalty
