@@ -149,7 +149,7 @@ WaveSchedule {
 			Item "The Cozy Camper"
 			Item "The Bazaar Bargain"
 			Item "The Shahanshah"
-			AimAt Head
+			AimAt Head [$SIGSEGV]
 		}
 	}
 	Mission {
@@ -718,7 +718,7 @@ WaveSchedule {
 				Health 200
 				ClassIcon demo_sticky_daan
 				WeaponRestrictions SecondaryOnly
-				AimAt Feet
+				AimAt Feet [$SIGSEGV]
 				ItemAttributes {
 					ItemName "TF_WEAPON_GRENADELAUNCHER"
 					"override projectile type" 7
@@ -785,8 +785,8 @@ WaveSchedule {
 			TFBot {
 				Template T_TFBot_Giant_Medic
 				Attributes AlwaysCrit 
-				AimAt Head
-				AimLeadProjectileSpeed 1000
+				AimAt Head [$SIGSEGV]
+				AimLeadProjectileSpeed 1000 [$SIGSEGV]
 				Health 2500 
 				WeaponRestrictions PrimaryOnly 
 				Item "The Blutsauger"
@@ -914,8 +914,8 @@ WaveSchedule {
 				Attributes UseBossHealthBar
 				Attributes AlwaysFireWeapon
 			//	Attributes Aggressive
-				Action FetchFlag
-				UseMeleeThreatPrioritization 1
+				Action FetchFlag [$SIGSEGV]
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				WeaponRestrictions PrimaryOnly
 				Tag bot_giant
 				Item "The Pomson 6000"
@@ -966,7 +966,7 @@ WaveSchedule {
 			Support Limited 
  			WaitBeforeStarting 5
 			WaitForAllSpawned  "wave5a"
-			FirstSpawnWarningSound "ui/gamestartup21.mp3"
+			FirstSpawnWarningSound #ui/gamestartup21.mp3
 			TFBot {Class Scout ClassIcon spy_revolver}
 		}
 		WaveSpawn {
@@ -978,7 +978,7 @@ WaveSchedule {
 			WaitForAllSpawned "wave5a"
 			WaitBetweenSpawns 4
  			WaitBeforeStarting 5
-			FirstSpawnWarningSound "ui/gamestartup21.mp3"
+			FirstSpawnWarningSound #ui/gamestartup21.mp3
 			Support Limited
 			TFBot { 
 				Class Spy 
@@ -1020,7 +1020,7 @@ WaveSchedule {
 				Item "teufort_smg_treadplatetormenter"
 				Item "The Hitman's Heatmaker"
 				WeaponRestrictions SecondaryOnly
-				AimAt Head
+				AimAt Head [$SIGSEGV]
 				ItemAttributes {
 					ItemName "The Hitman's Heatmaker" //only for the cool classic tracer
 					"is_passive_weapon" 1
@@ -1098,7 +1098,7 @@ WaveSchedule {
 			SpawnCount 1
 			WaitBetweenSpawns 8
 			WaitBeforeStarting 10
-			StartWaveWarningSound "ui/gamestartup18.mp3"
+			StartWaveWarningSound #ui/gamestartup18.mp3
 			Support 1
 			TFBot {
 				Class Demoman
@@ -1145,11 +1145,11 @@ WaveSchedule {
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 3
-			StartWaveWarningSound "ui/gamestartup18.mp3"
+			StartWaveWarningSound #ui/gamestartup18.mp3
 			TFBot {
 				Class Soldier
 				Name "General Grapple"
-				Health 50000
+				Health 60000
 				Skill Expert
 				ClassIcon soldier_airstrike
 				Item "TF_WEAPON_GRAPPLINGHOOK"
@@ -1163,12 +1163,18 @@ WaveSchedule {
 				Attributes AlwaysCrit
 				Attributes MiniBoss
 				Attributes AutoJump
+				ExtAttr JumpStomp [$SIGSEGV]
 				Attributes UseBossHealthBar
-				AimAt Feet
+				AimAt Feet [$SIGSEGV]
 				AutoJumpMin 6
 				AutoJumpMax 10
-				UseMeleeThreatPrioritization 1
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				UseHumanAnimations 1 [$SIGSEGV]
+				FireWeapon [$SIGSEGV]
+				{
+					IfSeeTarget 1
+					Type "Primary"
+				}
 				ItemAttributes {
 					ItemName "TF_WEAPON_GRAPPLINGHOOK"
 					"is_passive_weapon" 1
@@ -1177,7 +1183,7 @@ WaveSchedule {
 				} 
 				ItemAttributes {
 					ItemName "warbird_rocketlauncher_warhawk"
-					"disable weapon switch" 1 //blocks grapple switching on rafra's plugin
+					"disable weapon switch" 1 //blocks grapple switching on rafmod
 					"projectile spread angle penalty" 1.5
 					"centerfire projectile" 1
 					"projectile speed increased" 1.25

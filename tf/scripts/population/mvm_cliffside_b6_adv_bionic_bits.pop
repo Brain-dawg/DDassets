@@ -36,12 +36,13 @@ WaveSchedule
     }
 	
 	StartingCurrency		1
-	RespawnWaveTime 		3
+	RespawnWaveTime 		1
 	CanBotsAttackWhileInSpawnRoom yes
 
 	NoReanimators 1				[$SIGSEGV]
 	NoMvMDeathTune 1 			[$SIGSEGV]
-	SniperHideLasers 1 			[$SIGSEGV]
+	//SniperHideLasers 1 		[$SIGSEGV]
+	MaxSpeedLimit 800			[$SIGSEGV]
 	SniperAllowHeadshots 1		[$SIGSEGV]
 	BonusRatioHalf 2			[$SIGSEGV]
 	BonusRatioFull 2			[$SIGSEGV]
@@ -80,28 +81,25 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"increased air control" 4
+		"ammo regen" 0.5
 		"damage applies to sappers" 1
 		"deploy time decreased" 0.5
+		"effect bar recharge rate increased" 0.001
 		Scout
 		{
-		"weapon spread bonus" 0.5
-		"effect bar recharge rate increased" 0.5
-		"ammo regen" 0.25
+		"weapon spread bonus" 0.001
 		"cancel falling damage" 1
 		}
 		Soldier
 		{
-		"weapon spread bonus" 0.5
-		"ammo regen" 0.25
+		"weapon spread bonus" 0.001
 		"disable buildings on hit" 0.5
 		"cancel falling damage" 1
 		}
 		Pyro
 		{
-		"weapon spread bonus" 0.5
-		"ammo regen" 0.25
-		//"airblast dashes" 1
-		"mult airblast primary refire time" 0.0025
+		"weapon spread bonus" 0.001
+		"mult airblast primary refire time" 0.001
 		"cancel falling damage" 1
 		}
 		Heavyweapons
@@ -109,18 +107,16 @@ WaveSchedule
 		"minigun spinup time decreased" 0.5
 		"boots falling stomp" 1
 		"ragdolls become ash" 1
-		"ammo regen" 0.25
 		}
 		Engineer
 		{
-		"weapon spread bonus" 0.5
+		"weapon spread bonus" 0.001
 		"metal regen" 100
 		"has pipboy build interface" 1
 		"mod teleporter speed boost" 1
 		"mult firerocket rate" 0.25
 		"max health additive bonus" 150
 		"mvm sentry ammo" 10
-		"ammo regen" 0.25
 		"cancel falling damage" 1
 		}
 		Demoman
@@ -129,14 +125,12 @@ WaveSchedule
 		"melee cleave attack" 1
 		"charge time increased" 2
 		"charge impact damage increased" 3
-		"ammo regen" 0.25
 		"cancel falling damage" 1
 		}
 		Medic
 		{
 		"health regen" 40
 		"overheal penalty" 0
-		"ammo regen" 0.25
 		"medic machinery beam" 4
 		"cancel falling damage" 1
 		}
@@ -145,15 +139,13 @@ WaveSchedule
 		"weapon spread bonus" 0.001
 		"damage all connected" 1
 		"arrow mastery" 2
-		"ammo regen" 0.25
 		"cancel falling damage" 1
 		}
 		Spy
 		{
-		"weapon spread bonus" 0.5
+		"weapon spread bonus" 0.001
 		"mult decloak rate" 0.1
 		"cloak regen rate increased" 6
-		"ammo regen" 0.25
 		"cancel falling damage" 1
 		}
 	}
@@ -195,17 +187,29 @@ WaveSchedule
 		"mod minigun can holster while spinning" 1
 		"maxammo primary reduced" 0.5
 	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "TF_WEAPON_SHOTGUN_HWG"
+		"fire rate penalty"       	 2.5
+		"bullets per shot bonus"	 10
+		"damage penalty"         	 0.5
+		"mod no reload DISPLAY ONLY" 1
+		"mod max primary clip override" -1
+		"crit mod disabled"      	 0
+		"maxammo secondary reduced"  0.37
+	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "TF_WEAPON_INVIS"
-		"max health additive bonus" 50
+		"max health additive bonus" 75
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Cloak and Dagger"
-		"max health additive bonus" 50
+		"max health additive bonus" 75
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -238,19 +242,16 @@ WaveSchedule
 		Hell_Express
 		{
 			Class Scout
-			Name "Rainbow Road"
+			Name "Greater Super Scout"
 			ClassIcon scout_rng
 			Skill Expert
 			Item "The Lightning Lid"
+			Item "Batsaber"
 			Health 1200
 			WeaponRestrictions MeleeOnly
 			Attributes MiniBoss
+			Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
-			CustomWeaponModel [$SIGSEGV]
-			{
-				Slot 2
-				Model models\weapons\c_models\c_lollichop\c_lollichop.mdl
-			}
 			ItemAttributes
 			{
 				ItemName "The Lightning Lid"
@@ -258,19 +259,16 @@ WaveSchedule
 			}
 			ItemAttributes
 			{
-				ItemName "TF_WEAPON_BAT"
+				ItemName "Batsaber"
 				"SPELL: set item tint RGB" 5
-				"damage penalty" 0.01
 			}
 			CharacterAttributes
 			{
-				"wet immunity" 1
-				"mult stun resistance" 0
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
+				"mult stun resistance" 0
 				"override footstep sound set" 5
-				"heal on hit for rapidfire" 1200
 				"move speed bonus" 2
 			}
 		}
@@ -287,7 +285,7 @@ WaveSchedule
 			Attributes IgnoreEnemies
 			CharacterAttributes
 			{
-				"move speed bonus"	3
+				"move speed bonus" 1.3
 			}
 		}
 		
@@ -297,11 +295,10 @@ WaveSchedule
 			Classicon engineer
 			Skill Normal
 			AimTrackingInterval 0.05
-			Health 275
+			Health 125
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
 			ExtAttr TargetStickies
-			Action Mobber [$SIGSEGV]
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_SAPPED
@@ -319,18 +316,10 @@ WaveSchedule
 			}
 			FireWeapon [$SIGSEGV]
 			{
-				Delay 1
-				Cooldown 1
+				Delay 0
+				Cooldown 0
 				IfSeeTarget 1
 				Duration 1
-				Type Secondary
-			}
-			FireWeapon [$SIGSEGV]
-			{
-				Delay 0
-				Cooldown 8
-				IfSeeTarget 0
-				Duration 0.25
 				Type Secondary
 			}
 		}
@@ -339,11 +328,11 @@ WaveSchedule
 		{
 			Class Medic
 			Name "Giga-Heal Medic"
-			Classicon medic
-			Skill Expert
+			Classicon hellmet_bigheal
+			Skill Normal
 			WeaponRestrictions SecondaryOnly
 			Attributes IgnoreEnemies
-			Item "The Medicine Manpurse"
+			Item "Self-Care"
 			Item "The Quick-Fix"
 			ItemAttributes
 			{
@@ -378,17 +367,7 @@ WaveSchedule
 			Classicon scout_blaster_nys
 			Skill Easy
 			Item "Baby Face's Blaster"
-			ItemAttributes
-			{
-				ItemName "Baby Face's Blaster"
-				"move speed penalty" 0.7
-				"hype resets on jump" 100
-				"lose hype on take damage" 0
-				"clip size penalty" 1
-				"damage penalty" 0.7
-				"no double jump" 1
-				"weapon spread bonus" 0.6
-			}
+			UseBestWeapon 1	[$SIGSEGV]
 		}
 		
 		Hell_HoK
@@ -401,6 +380,7 @@ WaveSchedule
 			Item "Deflector"
 			Health 5000
 			UseMeleeThreatPrioritization 1 [$SIGSEGV]
+			AimTrackingInterval 0.5 [$SIGSEGV]
 			Attributes MiniBoss
 			ItemAttributes
 			{
@@ -725,16 +705,16 @@ WaveSchedule
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Tele_Battle
-			Health 600
+			Health 500
 			Item "The Jag"
 		}
 		
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Tele_Battle
-			Health 600
+			Health 500
 			Item "The Wrangler"
-			AimTrackingInterval 0
+			AimTrackingInterval 0.05
 		}
 		
 	}
@@ -1022,8 +1002,6 @@ WaveSchedule
 		{
 			Name "part04"
 			Where spawnbot
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 24
 			MaxActive 12
 			SpawnCount 12
@@ -1153,7 +1131,7 @@ WaveSchedule
 			{
 				Class Heavyweapons
 				ClassIcon heavy_crit
-				Name "Welterweight Champ"
+				Name "Black Heavyweight Champ"
 				Skill Expert
 				WeaponRestrictions MeleeOnly
 				Action Mobber [$SIGSEGV]
@@ -1180,7 +1158,9 @@ WaveSchedule
 				{
 					ItemName "the killing gloves of boxing"
 					"critboost on kill" 0
-					"fire rate penalty" 0.6
+					"damage bonus" 0.001
+					"damage causes airblast" 1
+					"apply z velocity on damage" -1337
 					"stun enemies wielding same weapon" 1
 				}
 			}
@@ -2214,11 +2194,12 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "part03"
-			Where spawnbot_giant
-			TotalCount 2
-			MaxActive 2
+			Where spawnbot
+			TotalCount 6
+			MaxActive 6
 			SpawnCount 2
 			WaitForAllDead "part02"
+			WaitBetweenSpawns 6
 			TotalCurrency 2
 		
 			Squad
@@ -2235,58 +2216,6 @@ WaveSchedule
 				
 			}			
 		}
-		
-		WaveSpawn
-		{
-			Name "part03"
-			Where spawnbot_flank_right
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 2
-			WaitForAllDead "part02"
-			WaitBeforeStarting 12
-			TotalCurrency 2
-		
-			Squad
-			{
-				TFBot
-				{
-					Template Hell_HoK
-				}
-				
-				TFBot
-				{
-					Template Hell_Guber
-				}
-				
-			}			
-		}
-		
-		WaveSpawn
-		{
-			Name "part03"
-			Where spawnbot_flank_left
-			TotalCount 2
-			MaxActive 2
-			SpawnCount 2
-			WaitForAllDead "part02"
-			TotalCurrency 2
-		
-			Squad
-			{
-				TFBot
-				{
-					Template Hell_HoK
-				}
-				
-				TFBot
-				{
-					Template Hell_Guber
-				}
-				
-			}			
-		}
-		
 		
 		WaveSpawn
 		{
@@ -3051,6 +2980,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Name "Giant Cloak Heavy"
+				Health 2500
 				Classicon heavy_d
 				Action Mobber [$SIGSEGV]
 				Attributes DisableDodge
@@ -3070,6 +3000,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Name "Giant Cloak Heavy"
+				Health 2500
 				Classicon heavy_d
 				Action FetchFlag [$SIGSEGV]
 				Attributes DisableDodge
@@ -3183,7 +3114,7 @@ WaveSchedule
 				Item "The Reserve Shooter"
 				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
-				Health 40000
+				Health 30000
 				AimTrackingInterval 0.05
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Attributes UseBossHealthBar

@@ -28,19 +28,19 @@ gettysburg
     RespawnWaveTime 4
     Advanced 1
 
-    BotPushaway 0                   [$SIGSEGV]
+    //BotPushaway 0                   [$SIGSEGV]
     NoReanimators 1                 [$SIGSEGV]
     //NoRomevisionCosmetics 1         [$SIGSEGV]
     MedigunShieldDamage 1           [$SIGSEGV]
     FixSetCustomModelInput 1        [$SIGSEGV]
     SentryBusterFriendlyFire 0      [$SIGSEGV]
-    SniperHideLasers 1              [$SIGSEGV]
+    //SniperHideLasers 1              [$SIGSEGV]
     SniperAllowHeadshots 1          [$SIGSEGV]
     NoMvMDeathTune 1                [$SIGSEGV]
     BuybacksPerWave 1               [$SIGSEGV]
     EnableDominations 1             [$SIGSEGV]
     ImprovedAirblast 1              [$SIGSEGV]
-    FixedBuybacks 1                 [$SIGSEGV]
+    //FixedBuybacks 1                 [$SIGSEGV]
     TextPrintTime 0
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
     CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                  [$SIGSEGV]
@@ -58,8 +58,13 @@ gettysburg
         Spy 1
     }
 
-    PlayerAttributes //medic machinery beam
+    PlayerAttributes
     {
+        Heavyweapons
+        {
+            "dont count damage towards crit rate" 1
+        }
+
         Medic
         {
             "medic machinery beam" 2.5
@@ -77,19 +82,19 @@ gettysburg
         "mult teleporter recharge rate" 0.5
     }
 
-    ItemAttributes //minigun penetration damage penalty
+    ItemAttributes //minigun pen dmg penalty
     {
         ClassName tf_weapon_minigun
         "penetration damage penalty" 0.5
     }
 
-    ItemAttributes //snipers gib
+    ItemAttributes //sniper blood splatter
     {
         ClassName tf_weapon_sniperrifle
         "crit on hard hit" 1
     }
 
-    ItemAttributes //classic rework
+    ItemAttributes //classic explosive rework
     {
         ItemName "The Classic"
         "explosive bullets" 100
@@ -100,30 +105,40 @@ gettysburg
         //"reload time increased" 2
     }
 
-    ItemAttributes //wrangler nerf
+    ItemAttributes //wrangler BIG SLOW sentries
     {
         ClassName tf_weapon_laser_pointer
-        "build small sentries" 1
+        "building scale" 1.2
+        "engy sentry fire rate increased" 1.33
     }
 
-    ItemAttributes //jumpy flamethrower
+    ItemAttributes //market gardener 2x dmg
+    {
+        ItemName "The Market Gardener"
+        "damage bonus" 2
+    }
+
+    ItemAttributes //reflect homing support whatever flamethrower
     {
         ItemName "The Degreaser"
-        "airblast dashes" 1
-        "mult airblast refire time" 0.75
-        //"airblast_give_teammate_speed_boost" 1
-        "mult airblast primary refire time" 2
-        "maxammo primary increased" 1.25
-        "airblast pushback scale" 1.25
+        "mult airblast refire time" 1.25
+        "airblast_give_teammate_speed_boost" 1
+        "mod projectile heat follow crosshair" 1
+        "airblast cost increased" 2
+        "mult reflect velocity" 2
     }
 
     ItemAttributes //for those psychos who wanna play caberknight
     {
         ItemName "The Ullapool Caber"
         "regenerate stickbomb" 1
+        "blast dmg to self increased" 0.1
+        "fire rate penalty" 1
+        "crit on hard hit" 1
+        "self dmg push force increased" 0.25
     }
 
-    ItemAttributes //compound
+    ItemAttributes
     {
         ItemName "The Fortified Compound"
         "arrow mastery" 1
@@ -139,13 +154,14 @@ gettysburg
         "hand scale" 2
         "fire rate penalty" 3
         "reload time increased" 1.5
-        "crit on hard hit" 1
+        "turn to gold" 1
         crit_dmg_falloff 0
         "last shot crits" 1
         "clip size penalty" 0.2
         //"mod max primary clip override" 1
         "item style override" 1
         "is australium item" 1
+        "explosive sniper shot" 3
     }
 
     ItemAttributes //big iron
@@ -161,28 +177,29 @@ gettysburg
         crit_dmg_falloff 0
         "last shot crits" 1
         "clip size penalty" 0.2
+        "explosive sniper shot" 3
         //"mod max primary clip override" 1
     }
 
-    ItemAttributes //phlog nerf
+    ItemAttributes
     {
         ItemName "The Phlogistinator"
-        "mod flamethrower spinup time" 0.5
-        "damage penalty" 0.75
+        "mod flamethrower spinup time" 0.33
+        //"damage penalty" 0.85
     }
 
-    ItemAttributes //gas buff
+    ItemAttributes
     {
         ItemName "The Gas Passer"
-        "weapon burn dmg increased" 5
+        "weapon burn dmg increased" 6
     }
 
-    ItemAttributes //beggars nerf
+    ItemAttributes
     {
         ItemName "The Beggar's Bazooka"
         //"fire rate bonus hidden" 0.5
         "reload time increased hidden" 1.5
-        "blast radius decreased" 0.9
+        //"blast radius decreased" 0.9
     }
 
     Mission //Buster
@@ -2383,8 +2400,8 @@ gettysburg
 				{
 					"move speed bonus" 2
 					"kill forces attacker to laugh" 1
-                    "effect bar recharge rate increased" 0.5
-                    "rage giving scale" 0.25
+                    "effect bar recharge rate increased" 0.75
+                    //"rage giving scale" 0.25
 				}
 			}
         }
@@ -2928,7 +2945,7 @@ gettysburg
 
                     CharacterAttributes
                     {
-                        "move speed bonus" 0.5
+                        "move speed bonus" 0.65
                         "damage force reduction" 0.2
                         "airblast vulnerability multiplier" 0.2
                         "override footstep sound set" 3
@@ -2967,6 +2984,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3015,6 +3033,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3063,6 +3082,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3111,6 +3131,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3159,6 +3180,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3208,7 +3230,7 @@ gettysburg
 				{
 					"move speed bonus" 2
 					"kill forces attacker to laugh" 1
-                    "effect bar recharge rate increased" 0.67
+                    "effect bar recharge rate increased" 0.75
 				}
             }
         }
