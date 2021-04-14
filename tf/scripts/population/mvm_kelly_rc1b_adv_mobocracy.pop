@@ -489,12 +489,12 @@ WaveSchedule
 		ItemName "The Huo Long Heatmaker"
 		"override projectile type" 6
 		"centerfire projectile" 1
-		"Set DamageType Ignite" 1
 		"ring of fire while aiming" 4
 		"uses ammo while aiming" 0
 		"damage penalty" 1
 		"damage bonus vs burning" 1
-		"crit mod disabled"       0
+		"damage bonus HIDDEN" 2
+		"crit mod disabled" 0
 		"maxammo primary reduced" 0.5
 	}
 	
@@ -3003,7 +3003,6 @@ WaveSchedule
 				}
 				
 				//SIG
-				UseHumanAnimations 1 [$SIGSEGV]
 				Action Mobber [$SIGSEGV]
 				StripItemSlot 0
 				StripItemSlot 1

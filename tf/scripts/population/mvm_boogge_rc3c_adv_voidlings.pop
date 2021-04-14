@@ -28,7 +28,7 @@ gettysburg
     Advanced 1
     //ForceHoldiay 2
     EventPopFile Halloween
-    BotPushaway 0                       [$SIGSEGV]
+    //BotPushaway 0                       [$SIGSEGV]
     NoReanimators 1                     [$SIGSEGV]
     NoRomevisionCosmetics 1             [$SIGSEGV]
     MedigunShieldDamage 1               [$SIGSEGV]
@@ -78,24 +78,7 @@ gettysburg
         }
     }
 
-	ItemAttributes
-    {
-        ItemName "The Gunslinger"
-        "mult dispenser rate" 1.5
-        "mvm sentry ammo" 2.5
-        "engy sentry radius increased" 2
-        "construction rate increased" 2
-        "engy disposable sentries" 1
-        "mult teleporter recharge rate" 0.5
-    }
-
-    ItemAttributes
-    {
-        ClassName tf_weapon_minigun
-        "penetration damage penalty" 0.5
-    }
-
-    ItemAttributes //gunslinger buff
+	ItemAttributes //gunslinger buff
     {
         ItemName "The Gunslinger"
         "mult dispenser rate" 1.5
@@ -129,10 +112,11 @@ gettysburg
         //"reload time increased" 2
     }
 
-    ItemAttributes //wrangler small sentries
+    ItemAttributes //wrangler BIG SLOW sentries
     {
         ClassName tf_weapon_laser_pointer
-        "build small sentries" 1
+        "building scale" 1.2
+        "engy sentry fire rate increased" 1.33
     }
 
     ItemAttributes //market gardener 2x dmg
@@ -141,7 +125,7 @@ gettysburg
         "damage bonus" 2
     }
 
-    ItemAttributes //jumpy flamethrower
+    ItemAttributes //reflect homing support whatever flamethrower
     {
         ItemName "The Degreaser"
         "mult airblast refire time" 1.25
@@ -208,7 +192,7 @@ gettysburg
     {
         ItemName "The Phlogistinator"
         "mod flamethrower spinup time" 0.33
-        "damage penalty" 0.85
+        //"damage penalty" 0.85
     }
 
     ItemAttributes
@@ -223,12 +207,6 @@ gettysburg
         //"fire rate bonus hidden" 0.5
         "reload time increased hidden" 1.5
         //"blast radius decreased" 0.9
-    }
-
-    ItemAttributes
-    {
-        ItemName "The Ubersaw"
-        "add uber charge on hit" 0.125
     }
 
     Mission //Wave 1-2 Buster Mission
@@ -1008,7 +986,7 @@ gettysburg
             WaitBetweenSpawns 2
             WaitBeforeStarting 1
 
-            TotalCurrency 120
+            TotalCurrency 320
 
             RandomChoice
             {
@@ -3089,6 +3067,7 @@ gettysburg
                 Template G_Medic_Hemorrhage
                 Action FetchFlag
                 UseMeleeThreatPrioritization 1
+                AimAt Head
                 AimLeadProjectileSpeed 2000
 
                 CharacterAttributes

@@ -22,6 +22,14 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 
 	ExtraSpawnPoint [$SIGSEGV]
     {
+        Name redspawn2
+        TeamNum 3 // 2 - Red team 3 - Robots
+        X	1213                    
+        Y	-41                
+        Z	-117        
+    }	
+	ExtraSpawnPoint [$SIGSEGV]
+    {
         Name redspawn
         TeamNum 3 // 2 - Red team 3 - Robots
         X	2143                     
@@ -49,7 +57,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"targetname" "nobomb"
 				"OnTrigger" "intel,Kill,,0,-1"
 			}
-		}		
+		}
 		pottybreak
 		{
 			NoFixup 1
@@ -62,25 +70,22 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "pop_interface,UnPauseBotSpawning,,37,1"
 				"OnTrigger" "upgradeclose,Trigger,,37,1"
 			}
-		}		
-		pottybreak //spawns both using 1 spawntemplate
-		{
-            NoFixup 1
-			func_forcefield
-			{
+            // NoFixup 1
+			// func_forcefield
+			// {
 				
-                "disablereceiveshadows" "0"
-				"origin" "2143 57 -15"	
-                "renderamt" "255"
-                "rendercolor" "255 255 255"
-                "renderfx" "0"
-                "rendermode" "10"
-                "TeamNum" "2"
-                "targetname" "blockspawn"
-                "mins" "-200 -150 -150"
-                "maxs" "150 150 150"
-				"StartDisabled" "0"
-			}	
+                // "disablereceiveshadows" "0"
+				// "origin" "2143 57 -15"	
+                // "renderamt" "255"
+                // "rendercolor" "255 255 255"
+                // "renderfx" "0"
+                // "rendermode" "10"
+                // "TeamNum" "2"
+                // "targetname" "blockspawn"
+                // "mins" "-200 -150 -150"
+                // "maxs" "150 150 150"
+				// "StartDisabled" "0"
+			// }	
 		}
 		annotations
 		{
@@ -187,7 +192,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Scale 1
 			Item "The Mantreads"
 			NoBombUpgrades 1	//baby box trigger no work
-			AddCond [$SIGSEGV] { Name TF_COND_REPROGRAMMED Delay 1 } //1s delay to stomp tele
 			AddCond [$SIGSEGV] { Name TF_COND_STEALTHED_USER_BUFF_FADING }
 			AddCond [$SIGSEGV] { Name TF_COND_MEGAHEAL }
 			
@@ -201,6 +205,12 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"move speed bonus" 0.0001
 				"dmg from ranged reduced" 0
 				"dmg from melee increased" 0
+				"become fireproof on hit by fire" 1
+				"afterburn immunity" 1
+				"airblast pushback scale" 0
+				"dmg taken from fire reduced" 0
+				"fire retardant" 1
+				"not solid to players" 1
 				"damage force reduction" 0
 				"no_jump" 1
 				"health drain" -2
@@ -1114,7 +1124,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			RandomChoice { Squad { TFBot {} }}
 		}
 		WaveSpawn {
-			Where redspawn
+			Where redspawn2
 			MaxActive 1
 			SpawnCount 1
 			Support Limited
@@ -1943,7 +1953,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			SpawnCount 1
 			MaxActive 1
 			Support 1
-
 			WaitBeforeStarting 3
 			WaitBetweenSpawnsAfterDeath 10
 			
@@ -3063,7 +3072,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
             Tank
 			{
 				Name tankboss_bullet
-				Health 30000
+				Health 15000
 				Speed 69 //nice
 				StartingPathTrackNode tank_path_bullet_start
 
@@ -3086,7 +3095,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
             Tank
 			{
 				Name tankboss_blast
-				Health 30000
+				Health 15000
 				Speed 69 //nice
 				StartingPathTrackNode tank_path_blast_start
 
@@ -3116,6 +3125,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			{
 				Template G_Heavy_Heater_Deflector_Giant
 				ClassIcon heavy_deflector_giant
+				Skill Normal
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Action Mobber [$SIGSEGV]
 			}
@@ -3194,7 +3204,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
                 Template G_Scout_Sandman_Boss_Air
                 Health 20000
                 Action Mobber [$SIGSEGV]
-
 				AimLeadProjectileSpeed 3000 [$SIGSEGV]
 				AimAt Head [$SIGSEGV]
 
@@ -3232,7 +3241,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
                 Health 20000
                 Attributes AlwaysCrit
                 Action Mobber [$SIGSEGV]
-
 				AimLeadProjectileSpeed 3000 [$SIGSEGV]
 				AimAt Head [$SIGSEGV]
 

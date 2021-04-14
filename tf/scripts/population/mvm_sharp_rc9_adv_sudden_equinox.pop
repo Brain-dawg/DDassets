@@ -28,19 +28,19 @@ gettysburg
     RespawnWaveTime 4
     Advanced 1
 
-    BotPushaway 0                   [$SIGSEGV]
+    //BotPushaway 0                   [$SIGSEGV]
     NoReanimators 1                 [$SIGSEGV]
     //NoRomevisionCosmetics 1         [$SIGSEGV]
     MedigunShieldDamage 1           [$SIGSEGV]
     FixSetCustomModelInput 1        [$SIGSEGV]
     SentryBusterFriendlyFire 0      [$SIGSEGV]
-    SniperHideLasers 1              [$SIGSEGV]
+    //SniperHideLasers 1              [$SIGSEGV]
     SniperAllowHeadshots 1          [$SIGSEGV]
     NoMvMDeathTune 1                [$SIGSEGV]
     BuybacksPerWave 1               [$SIGSEGV]
     EnableDominations 1             [$SIGSEGV]
     ImprovedAirblast 1              [$SIGSEGV]
-    FixedBuybacks 1                 [$SIGSEGV]
+    //FixedBuybacks 1                 [$SIGSEGV]
     TextPrintTime 0
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
     CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                  [$SIGSEGV]
@@ -2383,8 +2383,8 @@ gettysburg
 				{
 					"move speed bonus" 2
 					"kill forces attacker to laugh" 1
-                    "effect bar recharge rate increased" 0.5
-                    "rage giving scale" 0.25
+                    "effect bar recharge rate increased" 0.75
+                    //"rage giving scale" 0.25
 				}
 			}
         }
@@ -2928,7 +2928,7 @@ gettysburg
 
                     CharacterAttributes
                     {
-                        "move speed bonus" 0.5
+                        "move speed bonus" 0.65
                         "damage force reduction" 0.2
                         "airblast vulnerability multiplier" 0.2
                         "override footstep sound set" 3
@@ -2967,6 +2967,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3015,6 +3016,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3063,6 +3065,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3111,6 +3114,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3159,6 +3163,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
+                        "voice pitch scale" 0
                     }
 
                     FireWeapon
@@ -3208,7 +3213,7 @@ gettysburg
 				{
 					"move speed bonus" 2
 					"kill forces attacker to laugh" 1
-                    "effect bar recharge rate increased" 0.67
+                    "effect bar recharge rate increased" 0.75
 				}
             }
         }

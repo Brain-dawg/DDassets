@@ -2993,27 +2993,11 @@ WaveSchedule
 				{
 					Template T_TFBot_Force_Pyro_Magic_Fire_Mini
 					Tag carrier_spawn
-					Item 			"Battery Canteens"
-					ItemAttributes
-					{
-						ItemName 			"Battery Canteens"
-						"ubercharge" 		1
-						"powerup charges" 	1
-						"powerup duration"	2
-					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Force_Pyro_Magic_Fire_Mini_V2
 					Tag carrier_spawn
-					Item 			"Battery Canteens"
-					ItemAttributes
-					{
-						ItemName 			"Battery Canteens"
-						"ubercharge" 		1
-						"powerup charges" 	1
-						"powerup duration"	2
-					}
 				}
 			}
 		}
