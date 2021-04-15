@@ -97,6 +97,44 @@ WaveSchedule
 				"targetname" "door_b_stuck_target"
 				"origin" "465.334 -2129.2 432"
 			}
+			trigger_multiple //gate b check
+			{
+				"targetname" "gate_b_stuck_check"
+				"mins" "-266 -233 -144"
+				"maxs" "266 233 144"
+				"origin" "-700 2546 369"
+				"spawnflags" "1"
+				"OnStartTouchAll" "gate_b_stuck_timer,Enable,,0,-1"
+				"OnEndTouchAll" "gate_b_stuck_timer,Disable,,0,-1"
+				"OnEndTouchAll" "gate_b_stuck_timer,ResetTimer,,0.1,-1"
+				"OnEndTouchAll" "gate_b_stuck_tele,Disable,,0,-1"
+			}
+			logic_timer //gate b timer
+			{
+				"RefireTime" "10"
+				"spawnflags" "0"
+				"StartDisabled" "1"
+				"targetname" "gate_b_stuck_timer"
+				"UseRandomTime" "0"
+				"OnTimer" "gate_b_stuck_tele,Enable,,0,-1"
+				"OnTimer" "gate_b_stuck_tele,Disable,,0.1,-1"
+			}
+			trigger_teleport //gate b tele
+			{
+				"targetname" "gate_b_stuck_check"
+				"mins" "-266 -233 -144"
+				"maxs" "266 233 144"
+				"origin" "-700 2546 369"
+				"spawnflags" "1"
+				"StartDisabled" "1"
+				"target" "gate_b_stuck_target"
+				"targetname" "gate_b_stuck_tele"
+			}
+			info_teleport_destination //gate b tele dest
+			{
+				"targetname" "gate_b_stuck_target"
+				"origin" "-1291 2533 370"
+			}
 		}
 		Tank_Unstuck_System //blade plz.
 		{
