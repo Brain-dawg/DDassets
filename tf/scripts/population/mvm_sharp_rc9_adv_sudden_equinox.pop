@@ -47,24 +47,11 @@ gettysburg
 
     ClassLimit [$SIGSEGV]
     {
-        Scout 1
-        Soldier 1
-        Pyro 1
-        Demoman 1
         Heavyweapons 1
-        Engineer 1
-        Medic 1
-        Sniper 1
-        Spy 1
     }
 
     PlayerAttributes
     {
-        Heavyweapons
-        {
-            "dont count damage towards crit rate" 1
-        }
-
         Medic
         {
             "medic machinery beam" 2.5
@@ -82,10 +69,10 @@ gettysburg
         "mult teleporter recharge rate" .5
     }
 
-    ItemAttributes //minigun pen dmg penalty
+    ItemAttributes
     {
         ClassName tf_weapon_minigun
-        "penetration damage penalty" 0.5
+        "dont count damage towards crit rate" 1
     }
 
     ItemAttributes //sniper blood splatter
@@ -108,7 +95,7 @@ gettysburg
     ItemAttributes //wrangler BIG SLOW sentries
     {
         ClassName tf_weapon_laser_pointer
-        "building scale" 1.2
+        "building scale" 1.125
         "engy sentry fire rate increased" 1.33
     }
 
@@ -372,6 +359,7 @@ gettysburg
                     "engy dispenser radius increased" 20
                     //"mult dispenser rate" 1.5 //custom attribute
                     "construction rate increased" 1.33
+                    "building scale" 1.25
                 }
             }
         }
@@ -2290,39 +2278,58 @@ gettysburg
 
         WaveSpawn
         {
-            Where spawnbot
-            TotalCount 10
+            Where spawnbot_titan
+            TotalCount 2
             SpawnCount 1
-            MaxActive 3
+            MaxActive 1
             Support 1
 
             WaitForAllDead 4b
             //WaitBeforeStarting 2
-            WaitBetweenSpawns 1
+            WaitBetweenSpawnsAfterDeath 1
 
             TotalCurrency 25
 
             TFBot
 			{
-				Name "Super Bonk Scout"
-				Class Scout
-				ClassIcon scout_bonk
-				Skill Hard
+				Name "Giant Bonk Scout"
+                Class Scout
+                ClassIcon scout_bonk_giant
+                Health 1600
+                Skill Expert
+                Item "Bonk Helm"
                 Item "Bonk! Atomic Punch"
-				Item "The Holy Mackerel"
-                Item "Bonk Boy"
-                Item "Batter's Helmet"
-				Attributes AlwaysCrit
-				WeaponRestrictions MeleeOnly
-                Action Mobber
+                Item "The Atomizer"
+                WeaponRestrictions MeleeOnly
+                Attributes MiniBoss
+                Tag bot_giant
 
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"kill forces attacker to laugh" 1
-                    "effect bar recharge rate increased" 0.75
-                    //"rage giving scale" 0.25
-				}
+                Action Mobber
+                ExtAttr IgnoreBuildings
+                FastUpdate 1
+
+                ItemAttributes
+                {
+                    ItemName "The Atomizer"
+                    "killstreak tier" 2
+                    "killstreak idleeffect" 1
+                }
+
+                ItemAttributes
+                {
+                    ItemName "Bonk Helm"
+                    "set item tint rgb" 15185211
+                }
+
+                CharacterAttributes
+                {
+                    "effect bar recharge rate increased" 0.35
+                    "deploy time decreased" 0.5
+                    "damage force reduction" 0.35
+                    "airblast vulnerability multiplier" 0.35
+                    "airblast vertical vulnerability multiplier" 0.5
+                    "override footstep sound set" 5
+                }
 			}
         }
 

@@ -26,7 +26,7 @@ gettysburg
     CanBotsAttackWhileInSpawnRoom Yes
     Advanced 1
 
-    MaxSpeedLimit 521                   [$SIGSEGV]
+    //MaxSpeedLimit 521                   [$SIGSEGV]
     //BotPushaway 0                       [$SIGSEGV]
     NoReanimators 1                     [$SIGSEGV]
     NoRomevisionCosmetics 1             [$SIGSEGV]
@@ -63,15 +63,7 @@ gettysburg
 
     ClassLimit [$SIGSEGV]
     {
-        Scout 1
-        Soldier 1
-        Pyro 1
-        Demoman 1
         Heavyweapons 1
-        Engineer 1
-        Medic 1
-        Sniper 1
-        Spy 1
     }
 
     ExtraSpawnPoint [$SIGSEGV]
@@ -140,11 +132,6 @@ gettysburg
 
     PlayerAttributes
     {
-        Heavyweapons
-        {
-            "dont count damage towards crit rate" 1
-        }
-
         Medic
         {
             "medic machinery beam" 2.5
@@ -162,10 +149,10 @@ gettysburg
         "mult teleporter recharge rate" 2
     }
 
-    ItemAttributes //minigun pen dmg penalty
+    ItemAttributes
     {
         ClassName tf_weapon_minigun
-        "penetration damage penalty" 0.5
+        "dont count damage towards crit rate" 1
     }
 
     ItemAttributes //sniper blood splatter
@@ -188,7 +175,7 @@ gettysburg
     ItemAttributes //wrangler BIG SLOW sentries
     {
         ClassName tf_weapon_laser_pointer
-        "building scale" 1.2
+        "building scale" 1.125
         "engy sentry fire rate increased" 1.33
     }
 
