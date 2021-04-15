@@ -98,7 +98,6 @@ WaveSchedule
 		Medic		2
         Sniper		2
         Spy			2
-		Civilian	2
     }
 	
 	OverrideSounds [$SIGSEGV]
