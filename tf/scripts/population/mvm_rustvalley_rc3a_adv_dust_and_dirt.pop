@@ -715,7 +715,7 @@ population
 					WeaponRestrictions	SecondaryOnly
 					Classicon scout_pistol 
 					Skill	Expert
-					health 3000
+					health 2500
 					Name	"Giant Armored Magnum Scout"
 					Template	T_TFBot_Giant_Scout
 					ItemAttributes
@@ -827,7 +827,7 @@ population
 			TotalCount	2
 			MaxActive	2
 			SpawnCount	2
-			WaitBeforeStarting	0
+			WaitBeforeStarting	1
 			WaitBetweenSpawns	10
 			WaitForAllSpawned	24
 			Where spawnbot_mid0
@@ -1397,7 +1397,7 @@ population
 					WeaponRestrictions	SecondaryOnly
 					Classicon scout_pistol 
 					Skill	Expert
-					health 3000
+					health 2500
 					Name	"Giant Armored Magnum Scout"
 					Template	T_TFBot_Giant_Scout
 					ItemAttributes
