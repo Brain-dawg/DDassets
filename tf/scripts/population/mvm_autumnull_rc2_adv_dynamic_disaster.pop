@@ -58,6 +58,28 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "intel,Kill,,0,-1"
 			}
 		}
+		stuckfix
+		{
+			NoFixup 1
+			trigger_teleport
+			{
+				"targetname" "rockfix"
+				"StartDisabled" "0"
+				"target" "teleexit"
+				"spawnflags" "3"
+				"filtername" "filter_bluteam"
+				"origin" "1284.946167 20.883808 -107.96868"
+				"mins" "-100 -100 -100"
+				"maxs" "100 100 100"
+				"solid" "0"
+			}
+			NoFixup 1
+			info_teleport_destination
+			{
+				"targetname" "teleexit"
+				"origin" "-6108.538574 -4458.934082 -329.96868"
+			}
+		}
 		pottybreak
 		{
 			NoFixup 1
@@ -167,6 +189,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 	}
 
 	SpawnTemplate "bombfix" [$SIGSEGV]
+	SpawnTemplate "stuckfix" [$SIGSEGV]
 	
 	SpawnTemplate "annotations" [$SIGSEGV]
 	
@@ -203,21 +226,10 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"voice pitch scale" 0
 				"gesture speed increase" 0.25
 				"move speed bonus" 0.0001
-				"dmg from ranged reduced" 0
-				"dmg from melee increased" 0
-				"become fireproof on hit by fire" 1
-				"afterburn immunity" 1
 				"airblast pushback scale" 0
-				"dmg taken from fire reduced" 0
-				"fire retardant" 1
-				"not solid to players" 1
-				"damage force reduction" 0
 				"no_jump" 1
 				"health drain" -2
-				"mod weapon blocks healing" 1 //blocks normal healing
-				"health from packs decreased" 0 //blocks sandvich
-				"reduced_healing_from_medics" 0 //blocks bow 
-				"health from healers reduced" 0 //blocks dispenser
+				"is suicide counter" 1
 				"backstab shield" 1
 			}
 		}	
@@ -1184,7 +1196,10 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			SpawnCount 1
 			WaitBetweenSpawns 1
             WaitBeforeStarting 2
-			
+			DoneOutput {
+				Target rockfix
+				Action Kill
+			}
 			RandomChoice {
 				Tank {
 					Name "tankboss"
