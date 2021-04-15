@@ -482,7 +482,10 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 			TotalCurrency 50
 
 			WaitBetweenSpawns  3
-
+			StartWaveOutput {
+				Target clipfix
+				Action Kill
+			}
 			TFBot { Template T_TFGatebot_Sniper_Huntsman_Special }
 		}
 		

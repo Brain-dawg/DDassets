@@ -712,9 +712,11 @@ WaveSchedule
 			MaxActive  10
 			SpawnCount 5
 			TotalCurrency 50
-
 			WaitBetweenSpawns  4
-
+			StartWaveOutput {
+				Target clipfix
+				Action Kill
+			}
 			TFBot { Template T_TFGateBot_Demoman_Knight }
 		}
 		
@@ -4340,6 +4342,7 @@ WaveSchedule
 	} // PointTemplates
 	
 	SpawnTemplate "WizardLogic"      [$SIGSEGV]
+	SpawnTemplate "stuckfix"      [$SIGSEGV]
 	
 	SpawnTemplate [$SIGSEGV]
 	{

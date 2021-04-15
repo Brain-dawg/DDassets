@@ -378,6 +378,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_ScorchShot_FastShot
+					classicon pyro_flare
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -385,6 +386,7 @@ population
 				{
 					Template	T_TFBot_ScorchShot_FastShot
 					Name "Exiled Junior Wizard"
+					classicon pyro_flare
 					Item "Point and Shoot"
 				}
 			}
@@ -445,6 +447,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_ScorchShot_FastShot
+					classicon pyro_flare
 					Name "Exiled Junior Wizard"
 					Item "Point and Shoot"
 				}
@@ -1040,7 +1043,7 @@ population
 					"damage causes airblast" 1
 					"mod no reload DISPLAY ONLY" 1
 				}
-				ClassIcon pyro_scorch
+				classicon pyro_flare
 				Attributes	AlwaysCrit
 				Name "Exiled Wizard"
 				Item "All Hallows' Hatte"
@@ -1215,7 +1218,7 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
-					Classicon pyro_scorch
+					classicon pyro_flare
 					ItemAttributes
 					{
 						ItemName "The Scorch Shot"
@@ -1682,14 +1685,6 @@ population
 				TFBot
 				{
 					Template	T_TFBot_Soldier_Extended_Concheror
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Battalion
-				}
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Battalion
 				}
 			}
 		}
