@@ -1033,6 +1033,13 @@ population
 			TFBot
 			{
 				Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
+				ItemAttributes
+				{
+					ItemName "The Scorch Shot"
+					"fire rate bonus" 0.6
+					"damage causes airblast" 1
+					"mod no reload DISPLAY ONLY" 1
+				}
 				ClassIcon pyro_scorch
 				Attributes	AlwaysCrit
 				Name "Exiled Wizard"
@@ -1209,6 +1216,13 @@ population
 				{
 					Template	T_TFBot_Giant_Pyro_Flare_Spammer_ScorchShot
 					Classicon pyro_scorch
+					ItemAttributes
+					{
+						ItemName "The Scorch Shot"
+						"fire rate bonus" 0.6
+						"damage causes airblast" 1
+						"mod no reload DISPLAY ONLY" 1
+					}
 					Attributes	AlwaysCrit
 					Name "Exiled Wizard"
 					Item "All Hallows' Hatte"

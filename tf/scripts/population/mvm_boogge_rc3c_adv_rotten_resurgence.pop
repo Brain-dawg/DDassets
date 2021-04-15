@@ -83,10 +83,9 @@ WaveSchedule
             Attributes AlwaysCrit
             ClassIcon soldier_giant
             Item "Steel Shako"
-            Item "pyroland_rocketlauncher_braincandy"
 			ItemAttributes
 			{
-				ItemName "pyroland_rocketlauncher_braincandy"
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
                 "mod medic healed damage bonus" 2
 				"reload time decreased while healed" 0.5
 				"fire rate bonus" 0.2
@@ -187,8 +186,8 @@ WaveSchedule
             Skill Expert
             Scale 1.9
             Item "the dragon's fury"
-            Item "pyroland_shotgun_flowerpower"
             Item "TF_WEAPON_SPELLBOOK"
+            Item "The Homewrecker" //in case bot accidentally switches to melee for some reason
             Item "The Person in the Iron Mask"	
             Attributes AlwaysCrit
             Attributes  MiniBoss
@@ -196,15 +195,13 @@ WaveSchedule
             ItemAttributes
             {
                 ItemName "the dragon's fury"
-                "paintkit_proto_def_index"    390       //Dragon Slayer
-                "set_item_texture_wear" 0.2 //Factory New
                 "killstreak tier" 1
                 "item_meter_charge_rate" 0.6
                 "speed_boost_on_hit" 3
             }
             ItemAttributes
             {
-                ItemName "pyroland_shotgun_flowerpower"
+                ItemName  "TF_WEAPON_SHOTGUN_PYRO"
                 "Set DamageType Ignite" 1
                 "killstreak tier" 1
                 "override projectile type"  6 // Fires flares instead of bullets
@@ -330,8 +327,6 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "the iron bomber"
-                "paintkit_proto_def_index"    201        //Quack Canvassed
-                "set_item_texture_wear"  0.2   //Factory New
 				"projectile spread angle penalty" 2
 				"fire rate bonus" 0
 				"faster reload rate" 0.1
@@ -438,11 +433,9 @@ WaveSchedule
 			Attributes	MiniBoss
             ClassIcon heavy_giant
             Item   "The Bunsen Brave"
-			Item   "pyroland_minigun_mistercuddles"
 			ItemAttributes
 			{
-				ItemName	"pyroland_minigun_mistercuddles"
-                "set_item_texture_wear"  0.2   //Factory New
+				ItemName	"TF_WEAPON_MINIGUN"
 				"fire rate bonus" 0.55
                 "speed_boost_on_hit" 3
                 "fire rate bonus with reduced health" 0.65
@@ -813,16 +806,14 @@ WaveSchedule
 			{
                 UseMeleeThreatPrioritization 1 [$SIGSEGV] //Sigsegv-mod exclusive; will prioritize closest target
 				Template	T_TFBot_Giant_Pyro
-                Item  "pyroland_flamethrower_balloonicorn"
                 Item  "Blazing Bull"
                 Item  "Fallen Angel"
                 Item  "Tail From the Crypt"
 				Attributes  AlwaysCrit
 				ItemAttributes
 				{
-					ItemName "pyroland_flamethrower_balloonicorn"
+					ItemName "TF_WEAPON_FLAMETHROWER"
 					"lunchbox adds minicrits" 2
-                    "set_item_texture_wear" 0.2 //Factory New
 				}
 			}
         }
@@ -839,16 +830,14 @@ WaveSchedule
 			{
                 UseMeleeThreatPrioritization 1 [$SIGSEGV] //Sigsegv-mod exclusive; will prioritize closest target
 				Template	T_TFBot_Giant_Pyro
-                Item  "pyroland_flamethrower_balloonicorn"
                 Item  "Blazing Bull"
                 Item  "Fallen Angel"
                 Item  "Tail From the Crypt"
 				Attributes  AlwaysCrit
 				ItemAttributes
 				{
-					ItemName "pyroland_flamethrower_balloonicorn"
+					ItemName "TF_WEAPON_FLAMETHROWER"
 					"lunchbox adds minicrits" 2
-                    "set_item_texture_wear" 0.2 //Factory New
 				}
 			}
         }
@@ -934,9 +923,7 @@ WaveSchedule
                 Item        "Crazy Legs"
                 ItemAttributes
 				{
-					ItemName	"the shortstop"
-                    "paintkit_proto_def_index"    207        //Bonk Varnished
-                    "set_item_texture_wear"  0.2   //Factory New    
+					ItemName	"the shortstop"   
 					"reload time increased hidden" 1
 				}
 			}
@@ -966,15 +953,12 @@ WaveSchedule
                     AimLeadProjectileSpeed 1216.6 [$SIGSEGV]
                     AimAt Feet [$SIGSEGV] 
                     Template	T_TFBot_Giant_Demoman
-                    Item        "pyroland_grenadelauncher_sweetdreams"
                     Item        "The Squid's Lid"
                     Item        "Cap'n Calamari"
                     ItemAttributes
                     {
-                        ItemName "pyroland_grenadelauncher_sweetdreams"
-                        "faster reload rate" -0.4
+                        ItemName "TF_WEAPON_GRENADELAUNCHER"
 				        "fire rate bonus" 0.5
-                        "set_item_texture_wear"  0.2   //Factory New   
                     }
                 }
 			}
@@ -1012,16 +996,13 @@ WaveSchedule
 				AimLeadProjectileSpeed 1216.6 [$SIGSEGV]
                 AimAt Feet [$SIGSEGV] 
                 Template	T_TFBot_Giant_Demoman
-                Item        "pyroland_grenadelauncher_sweetdreams"
                 Item        "the chargin' targe"
                 Item        "The Squid's Lid"
                 Item        "Cap'n Calamari"
                 ItemAttributes
                 {
-                    ItemName "pyroland_grenadelauncher_sweetdreams"
-                    "faster reload rate" -0.4
+                    ItemName "TF_WEAPON_GRENADELAUNCHER"
 				    "fire rate bonus" 0.5
-                    "set_item_texture_wear"  0.2   //Factory New   
                 }
             }
         }
@@ -1076,13 +1057,6 @@ WaveSchedule
                 {
                     UseMeleeThreatPrioritization 1 [$SIGSEGV] //Sigsegv-mod exclusive; will prioritize closest target
                     Template T_TFBot_Giant_Heavyweapons
-                    Item  "pyroland_minigun_braincandy"
-                    ItemAttributes
-                    {
-                        ItemName "pyroland_minigun_braincandy"
-                        "damage bonus" 1.5
-                        "set_item_texture_wear"  0.2   //Factory New   
-                    }
                     Item "Minsk Beef"
                     Item "Bull Locks"
                     Item "Bone-Cut Belt"
@@ -1091,15 +1065,9 @@ WaveSchedule
                 {
                     ClassIcon soldier_giant
                     Template T_TFBot_Giant_Soldier_Extended_Buff_Banner
-                    Item  "pyroland_rocketlauncher_braincandy"
                     Item  "Supernatural Stalker"
                     Item  "Hellhunter's Headpiece"
                     Item  "Ghoul Gibbin' Gear"
-                    ItemAttributes
-                    {
-                        ItemName "pyroland_rocketlauncher_braincandy"
-                        "set_item_texture_wear"  0.2   //Factory New 
-                    }
                     CharacterAttributes
                     {
                         "deploy time increased" 0.5
@@ -1109,15 +1077,9 @@ WaveSchedule
                 {
                     ClassIcon soldier_giant
                     Template T_TFBot_Giant_Soldier_Extended_Buff_Banner
-                    Item  "pyroland_rocketlauncher_braincandy"
                     Item  "Supernatural Stalker"
                     Item  "Hellhunter's Headpiece"
                     Item  "Ghoul Gibbin' Gear"
-                    ItemAttributes
-                    {
-                        ItemName "pyroland_rocketlauncher_braincandy"
-                        "set_item_texture_wear"  0.2   //Factory New 
-                    }
                     CharacterAttributes
                     {
                         "deploy time increased" 0.5
@@ -1372,16 +1334,11 @@ WaveSchedule
                 Item "idiot box"
                 Item "steel pipes"
 				Item "shoestring budget"
-                Item "pyroland_rocketlauncher_braincandy"
                 ItemAttributes
                 {
-                    ItemName "pyroland_rocketlauncher_braincandy"
-                    "set_item_texture_wear"  0.2   //Factory New 
+                    ItemName "TF_WEAPON_ROCKETLAUNCHER"
                     "faster reload rate" 0.4
 					"rocket specialist" 4
-                    "fire rate bonus" 0.1
-                    "clip size upgrade atomic" 5.0
-                    "Projectile speed increased" 0.65
                 }
                 CharacterAttributes
                 {
@@ -1407,16 +1364,11 @@ WaveSchedule
                 Item "idiot box"
                 Item "steel pipes"
 				Item "shoestring budget"
-                Item "pyroland_rocketlauncher_braincandy"
                 ItemAttributes
                 {
-                    ItemName "pyroland_rocketlauncher_braincandy"
-                    "set_item_texture_wear"  0.2   //Factory New 
+                    ItemName "TF_WEAPON_ROCKETLAUNCHER"
                     "faster reload rate" 0.4
 					"rocket specialist" 4
-                    "fire rate bonus" 0.1
-                    "clip size upgrade atomic" 5.0
-                    "Projectile speed increased" 0.65
                 }
                 CharacterAttributes
                 {
@@ -1446,15 +1398,7 @@ WaveSchedule
                     Item "idiot box"
                     Item "steel pipes"
                     Item "shoestring budget"
-                    Item "pyroland_rocketlauncher_braincandy"
                     Item "The Battalion's Backup"
-                    ItemAttributes
-                    {
-                        ItemName "pyroland_rocketlauncher_braincandy"
-                        "set_item_texture_wear"  0.2   //Factory New 
-                        "faster reload rate" -0.8
-                        "fire rate bonus" 0.5
-                    }
                     CharacterAttributes
 					{
 						"increase buff duration"	9.0
@@ -1467,15 +1411,12 @@ WaveSchedule
                     AimLeadProjectileSpeed 1216.6 [$SIGSEGV]
                     AimAt Feet [$SIGSEGV]
                     Template	T_TFBot_Giant_Demoman
-                    Item        "pyroland_grenadelauncher_sweetdreams"
                     Item        "The Squid's Lid"
                     Item        "Cap'n Calamari"
                     ItemAttributes
                     {
-                        ItemName "pyroland_grenadelauncher_sweetdreams"
-                        "faster reload rate" -0.4
+                        ItemName "TF_WEAPON_GRENADELAUNCHER"
 				        "fire rate bonus" 0.5
-                        "set_item_texture_wear"  0.2   //Factory New   
                     }
                 }
 			}
@@ -1572,8 +1513,6 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "The Brass Beast"
-                        "paintkit_proto_def_index"    206        //Pizza Polished
-                        "set_item_texture_wear"  0.2   //Factory New
 						"damage bonus"	1.7
 						"spunup_damage_resistance" 0.5
 					}
@@ -1954,15 +1893,15 @@ WaveSchedule
             {
                 TFBot
                 {
-                    Template T_TFBot_Pyro_Conch
+                   Template T_TFBot_Pyro_Conch
                 }
                 TFBot
                 {
-                    Template T_TFBot_Pyro_Conch
+                   Template T_TFBot_Pyro_Conch
                 }
                 TFBot
                 {
-                    Template T_TFBot_Pyro_Gas
+                   Template T_TFBot_Pyro_Gas
                 }
             }
         }

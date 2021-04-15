@@ -2830,6 +2830,28 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 	
 	PointTemplates [$SIGSEGV]
 	{
+		stuckfix //fixes weird clipping 
+		{
+			NoFixup 1
+			trigger_teleport
+			{
+				"targetname" "clipfix"
+				"StartDisabled" "0"
+				"target" "teleexit"
+				"spawnflags" "3"
+				"filtername" "filter_blue"
+				"origin" "6211.763672 4076.236328 702.991943"
+				"mins" "-40 -40 -40"
+				"maxs" "40 40 40"
+				"solid" "0"
+			}
+			NoFixup 1
+			info_teleport_destination
+			{
+				"targetname" "teleexit"
+				"origin" "6437.214355 3677.406250 803.856689"
+			}
+		}
 		SpawnPoints
 		{
 			NoFixup 1
@@ -3394,6 +3416,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 	SpawnTemplate "DutchmanTeleportLogic" [$SIGSEGV]
 	SpawnTemplate "PumpkinTeleportLogic"  [$SIGSEGV]
 	SpawnTemplate "WizardLogic"           [$SIGSEGV]
+	SpawnTemplate "stuckfix"			  [$SIGSEGV]
 	
 	SpawnTemplate [$SIGSEGV]
 	{
