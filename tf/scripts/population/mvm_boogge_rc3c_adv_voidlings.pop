@@ -54,15 +54,7 @@ gettysburg
 
     ClassLimit [$SIGSEGV]
     {
-        Scout 1
-        Soldier 1
-        Pyro 1
-        Demoman 1
         Heavyweapons 1
-        Engineer 1
-        Medic 1
-        Sniper 1
-        Spy 1
     }
 
     PlayerAttributes
@@ -86,13 +78,13 @@ gettysburg
         "engy sentry radius increased" 2
         "construction rate increased" 2
         "engy disposable sentries" 1
-        "mult teleporter recharge rate" 2
+        "mult teleporter recharge rate" .5
     }
 
-    ItemAttributes //minigun pen dmg penalty
+    ItemAttributes
     {
         ClassName tf_weapon_minigun
-        "penetration damage penalty" 0.5
+        "dont count damage towards crit rate" 1
     }
 
     ItemAttributes //sniper blood splatter
@@ -115,7 +107,7 @@ gettysburg
     ItemAttributes //wrangler BIG SLOW sentries
     {
         ClassName tf_weapon_laser_pointer
-        "building scale" 1.2
+        "building scale" 1.125
         "engy sentry fire rate increased" 1.33
     }
 
@@ -2562,8 +2554,9 @@ gettysburg
                     {
                         "gesture speed increase" 1.33
                         "always allow taunt" 1
-                        "damage penalty" 0.33
-                        "dmg penalty vs players" 3
+                        "damage penalty" 0.1
+                        "dmg penalty vs players" 10
+                        "dmg bonus vs buildings" 10
                     }
 
                     Taunt
@@ -2599,6 +2592,7 @@ gettysburg
             {
                 Template G_Heavy_Enrage_Giant
                 UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                FastUpdate 1
             }
         }
 
@@ -2691,11 +2685,11 @@ gettysburg
         {
             Name 5a
             Where spawnbot_flank
-            TotalCount 5
+            TotalCount 4
             SpawnCount 1
             MaxActive 1
 
-            WaitBetweenSpawnsAfterDeath 2
+            WaitBetweenSpawnsAfterDeath 5
 
             TotalCurrency 4
 
@@ -2787,16 +2781,7 @@ gettysburg
             {
                 TFBot
                 {
-                    Name "Leadfoot Bonk Scout"
                     Template G_Scout_Bonk
-                    Item "The Teufort Tooth Kicker"
-
-                    CharacterAttributes
-                    {
-                        "damage force reduction" 0.25
-                        "airblast vulnerability multiplier" 0.25
-                        "airblast vertical vulnerability multiplier" 0.25
-                    }
                 }
 
                 TFBot
