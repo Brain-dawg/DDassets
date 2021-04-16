@@ -68,7 +68,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"target" "teleexit"
 				"spawnflags" "3"
 				"filtername" "filter_bluteam"
-				"origin" "1284.946167 20.883808 -107.96868"
+				"origin" "-3407.954590 -3356.858398 36"
 				"mins" "-100 -100 -100"
 				"maxs" "100 100 100"
 				"solid" "0"
@@ -92,22 +92,22 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "pop_interface,UnPauseBotSpawning,,37,1"
 				"OnTrigger" "upgradeclose,Trigger,,37,1"
 			}
-            // NoFixup 1
-			// func_forcefield
-			// {
+            NoFixup 1
+			func_forcefield
+			{
 				
-                // "disablereceiveshadows" "0"
-				// "origin" "2143 57 -15"	
-                // "renderamt" "255"
-                // "rendercolor" "255 255 255"
-                // "renderfx" "0"
-                // "rendermode" "10"
-                // "TeamNum" "2"
-                // "targetname" "blockspawn"
-                // "mins" "-200 -150 -150"
-                // "maxs" "150 150 150"
-				// "StartDisabled" "0"
-			// }	
+                "disablereceiveshadows" "0"
+				"origin" "2143 57 -15"	
+                "renderamt" "255"
+                "rendercolor" "255 255 255"
+                "renderfx" "0"
+                "rendermode" "10"
+                "TeamNum" "2"
+                "targetname" "blockspawn"
+                "mins" "-200 -150 -150"
+                "maxs" "150 150 150"
+				"StartDisabled" "0"
+			}	
 		}
 		annotations
 		{
@@ -216,7 +216,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Item "The Mantreads"
 			NoBombUpgrades 1	//baby box trigger no work
 			AddCond [$SIGSEGV] { Name TF_COND_STEALTHED_USER_BUFF_FADING }
-			AddCond [$SIGSEGV] { Name TF_COND_MEGAHEAL }
 			
 			Taunt [$SIGSEGV] {
 				Delay 0 //Time before the first taunt starts (Default: 10)
@@ -1136,7 +1135,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			RandomChoice { Squad { TFBot {} }}
 		}
 		WaveSpawn {
-			Where redspawn2
+			Where spawnbot_left
 			MaxActive 1
 			SpawnCount 1
 			Support Limited
