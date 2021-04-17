@@ -69,8 +69,8 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"spawnflags" "3"
 				"filtername" "filter_bluteam"
 				"origin" "-3407.954590 -3356.858398 36"
-				"mins" "-100 -100 -100"
-				"maxs" "100 100 100"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
 				"solid" "0"
 			}
 			NoFixup 1
@@ -121,6 +121,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "tenmin,Show,,1200,-1"
 				"OnTrigger" "fivemin,Show,,1500,-1"
 				"OnTrigger" "twomin,Show,,1680,-1"
+				"OnTrigger" "boss_deploy_relay,Trigger,,1800,-1"
 			}
 			NoFixup 1
 			training_annotation
@@ -189,7 +190,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 	}
 
 	SpawnTemplate "bombfix" [$SIGSEGV]
-	SpawnTemplate "stuckfix" [$SIGSEGV]
 	
 	SpawnTemplate "annotations" [$SIGSEGV]
 	
@@ -1117,7 +1117,9 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Target wave_finished_relay
 			Action Trigger
 		}
-
+		
+		SpawnTemplate "stuckfix" [$SIGSEGV]
+		
 		Explanation [$SIGSEGV]
         {
             Line "{blue}There is no bomb in this mission, bots will actively hunt players down."
@@ -1135,20 +1137,25 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			RandomChoice { Squad { TFBot {} }}
 		}
 		WaveSpawn {
+			Where spawnbot_tank
+			MaxActive 1
+			SpawnCount 1
+			Support Limited
+			WaitBeforeStarting 1800
+			FirstSpawnWarningSound "vo\announcer_failure.mp3"
+			RandomChoice { Squad { TFBot {} }}
+		}
+		WaveSpawn {
 			Where spawnbot_left
 			MaxActive 1
 			SpawnCount 1
 			Support Limited
 			WaitBeforeStarting 1
+			DoneWarningSound "ambient\machines\thumper_shutdown1.wav"
 			StartWaveOutput {
 				Target annotationrelay
 				Action Trigger
 			}
-			DoneOutput
-            {
-                Target boss_deploy_relay
-                Action trigger
-            }
 
 			RandomChoice { Squad { TFBot { Template BombHolder } } }
 		}
