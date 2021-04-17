@@ -433,7 +433,7 @@ WaveSchedule
 		BeginAtWave	5
 		RunForThisManyWaves	1
 		InitialCooldown	60
-		CooldownTime	50
+		CooldownTime	75
 		DesiredCount	1
 		TFBot
 		{
@@ -1686,19 +1686,19 @@ WaveSchedule
 				TFBot
 				{
 					Class Pyro
-					Skill Normal
+					Skill Easy
+					Item "the backburner"
+				}
+				TFBot
+				{
+					Class Pyro
+					Skill Easy
 					Item "the backburner"
 				}
 				TFBot
 				{
 					Class Pyro
 					Skill Normal
-					Item "the backburner"
-				}
-				TFBot
-				{
-					Class Pyro
-					Skill Hard
 					Item "the backburner"
 				}
 			}
@@ -1730,10 +1730,7 @@ WaveSchedule
 					//Sigsegv-mod exclusive; this bot will lead syringes and aim at enemy's head for increased accuracy
 					AimLeadProjectileSpeed 1000 [$SIGSEGV]
 					AimAt Head [$SIGSEGV] 
-					Template	T_TFBot_Medic_BigHeal
-					Name   "Big Heal Medic"
-					Item   "The Surgeon's Stahlhelm"
-					Attributes SpawnWithFullCharge
+					Template	T_TFBot_Medic
 					Skill Expert
 					ItemAttributes
 					{
@@ -1753,7 +1750,7 @@ WaveSchedule
 			MaxActive	3
 			SpawnCount	1
 			WaitBeforeStarting	20
-			WaitBetweenSpawns   25
+			WaitBetweenSpawns   30
 			Where	spawnbot_alley
 			TFBot
 			{
@@ -1779,7 +1776,6 @@ WaveSchedule
 				Health  200
 				Class	Demoman
 				Skill	Hard
-				Attributes AlwaysCrit
 				WeaponRestrictions	MeleeOnly
 				ItemAttributes
 				{
@@ -1791,6 +1787,11 @@ WaveSchedule
 					ItemName	"the tide turner"
 					"attack not cancel charge"	1	
 					"lose demo charge on damage when charging" 0
+				}
+				ItemAttributes
+				{
+					ItemName	"the scotsman's skullcutter"
+					"critboost on kill" 3
 				}
 				Item	"ali baba's wee booties"
 				Item	"the tide turner"
