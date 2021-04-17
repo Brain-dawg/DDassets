@@ -508,29 +508,27 @@ WaveSchedule
         T_TFBot_Medic_Shield
         {
             Class Medic
-            ClassIcon medic_shield
-            Name "Shield Medic"
-            Skill Expert
-            WeaponRestrictions SecondaryOnly
-            Attributes SpawnWithFullCharge
-            Attributes ProjectileShield
-            Attributes IgnoreEnemies
-            Item "titanium tyrolean"
-            ItemAttributes
-            {
-                ItemName tf_weapon_medigun
-                "ubercharge rate penalty" -3
-                "generate rage on heal" 2
-                "increase buff duration" 999
-            }
-            CharacterAttributes
-            {
-                "bot medic uber health threshold" 25
-                "bot medic uber deploy delay duration" 9999
-                "mod soldier buff type" 5
-                "deploy time increased" 1.34
-            }
-            Item "The Buff Banner"
+			Name "Shield Medic"
+			Skill Expert
+			ClassIcon medic_shield
+			WeaponRestrictions SecondaryOnly
+			Attributes SpawnWithFullCharge
+			Attributes IgnoreEnemies
+			Attributes ProjectileShield
+			Item  "the bot dogger"
+			ItemAttributes
+			{
+				ItemName tf_weapon_medigun
+				"ubercharge rate bonus" 0.01
+				"generate rage on heal" 3
+				"increase buff duration" 2
+			}
+			CharacterAttributes
+			{
+				"bot medic uber deploy delay duration" 9999
+				"heal rate bonus" 2		
+				"overheal penalty" 0
+			}
         }
         T_TFBot_Sniper_Bow_II
         {
@@ -942,11 +940,6 @@ WaveSchedule
             Squad
 			{
                 FormationSize 100
-                ShouldPreserveSquad 1
-				TFBot
-                {
-                    Template    T_TFBot_Medic_Shield
-                }
                 TFBot
                 {
                     //Sigsegv-mod exclusive; this bot will lead grenades and aim at enemy's feet for increased accuracy
@@ -960,6 +953,10 @@ WaveSchedule
                         ItemName "TF_WEAPON_GRENADELAUNCHER"
 				        "fire rate bonus" 0.5
                     }
+                }
+				TFBot
+                {
+                    Template    T_TFBot_Medic_Shield
                 }
 			}
         }
@@ -1275,11 +1272,6 @@ WaveSchedule
             Squad
 			{
                 FormationSize 100
-                ShouldPreserveSquad 1
-				TFBot
-                {
-                    Template    T_TFBot_Medic_Shield
-                }
                 TFBot
                 {
                     Name "Heavy"
@@ -1290,6 +1282,10 @@ WaveSchedule
                     {
                         "kill forces attacker to laugh"	1
                     }
+                }
+				TFBot
+                {
+                    Template    T_TFBot_Medic_Shield
                 }
                 TFBot
                 {
@@ -2029,14 +2025,13 @@ WaveSchedule
             Squad
 			{
                 FormationSize 100
-                ShouldPreserveSquad 1
-				TFBot
-                {
-                    Template    T_TFBot_Medic_Shield
-                }
                 TFBot
                 {
                     Template	T_TFBot_Giant_Heavyweapons_Haste
+                }
+				TFBot
+                {
+                    Template    T_TFBot_Medic_Shield
                 }
 			}
         }
@@ -2053,14 +2048,13 @@ WaveSchedule
             Squad
 			{
                 FormationSize 100
-                ShouldPreserveSquad 1
-				TFBot
-                {
-                    Template    T_TFBot_Medic_Shield
-                }
                 TFBot
                 {
                     Template	T_TFBot_Giant_Heavyweapons_Haste
+                }
+				TFBot
+                {
+                    Template    T_TFBot_Medic_Shield
                 }
 			}
         }
@@ -2077,14 +2071,13 @@ WaveSchedule
             Squad
 			{
                 FormationSize 100
-                ShouldPreserveSquad 1
-				TFBot
-                {
-                    Template    T_TFBot_Medic_Shield
-                }
                 TFBot
                 {
                     Template	T_TFBot_Giant_Heavyweapons_Haste
+                }
+				TFBot
+                {
+                    Template    T_TFBot_Medic_Shield
                 }
 			}
         }

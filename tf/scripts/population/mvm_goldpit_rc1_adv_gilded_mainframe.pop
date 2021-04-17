@@ -932,6 +932,32 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 				}
 			}
 		}
+		G_Medic_Shield	// stolen from gettysburg :ujel:
+		{
+			Name "Shield Medic"
+			Class Medic
+			ClassIcon medic_shield
+			Skill Expert
+			Attributes SpawnWithFullCharge
+			Attributes ProjectileShield
+			Attributes IgnoreEnemies
+			Item "Halogen Head Lamp"
+			Item "Mecha-Medes"
+			WeaponRestrictions SecondaryOnly
+			
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"generate rage on heal" 1
+				"increase buff duration" 2
+			}
+			
+			CharacterAttributes
+			{
+				"bot medic uber deploy delay duration" 500
+				"voice pitch scale" 0
+			}
+		}
 	}
 	Mission
 	{
@@ -1999,7 +2025,7 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 		}
 		WaveSpawn
 		{
-			Name	wave6_countershields	// :ujel:
+			Name	wave6_countershields
 			TotalCurrency	100
 			TotalCount	32
 			MaxActive	12
@@ -2008,11 +2034,6 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 			Where	spawnbot
 			Squad
 			{
-				ShouldPreserveSquad	1
-				TFBot
-				{
-					Template	T_TFBot_Medic_Shield_Chad
-				}
 				TFBot
 				{
 					Class	Pyro
@@ -2036,6 +2057,10 @@ Why_yes_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell
 					Item	"The Dragon's Fury"
 					Item	"Skullbrero"
 					MaxVisionRange	690
+				}
+				TFBot
+				{
+					Template	G_Medic_Shield
 				}
 			}
 		}

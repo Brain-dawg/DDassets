@@ -36,7 +36,7 @@ WaveSchedule
     }
 	
 	StartingCurrency		1
-	RespawnWaveTime 		1
+	RespawnWaveTime 		3
 	CanBotsAttackWhileInSpawnRoom yes
 
 	NoReanimators 1				[$SIGSEGV]
@@ -69,6 +69,20 @@ WaveSchedule
             }
         }
     }
+
+	ClassLimit [$SIGSEGV]
+    {
+		Scout		2
+		Soldier		2
+		Pyro		2
+        Demoman		2
+        Heavy		2
+        Engineer	2
+		Medic		2
+        Sniper		2
+        Spy			2
+		Civilian	2
+    }
 	
 	ItemBlacklist [$SIGSEGV]
 	{
@@ -81,24 +95,34 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"increased air control" 4
-		"ammo regen" 0.5
+		"ammo regen" 0.35
 		"damage applies to sappers" 1
 		"deploy time decreased" 0.5
-		"effect bar recharge rate increased" 0.001
+		"always allow taunt" 1
+
 		Scout
 		{
-		"weapon spread bonus" 0.001
-		"cancel falling damage" 1
+		"is miniboss" 1
+		"cannot upgrade" 1
+		"crit mod disabled" 0
+		"damage bonus" 2
+
+		"voice pitch scale" 0.7
+		"damage force reduction" 0
+		"airblast vulnerability multiplier" 0.5
+		"max health additive bonus" 1475
+		"patient overheal penalty" 0
+		"boots falling stomp" 1
 		}
 		Soldier
 		{
-		"weapon spread bonus" 0.001
+		"weapon spread bonus" 0.5
 		"disable buildings on hit" 0.5
 		"cancel falling damage" 1
 		}
 		Pyro
 		{
-		"weapon spread bonus" 0.001
+		"weapon spread bonus" 0.5
 		"mult airblast primary refire time" 0.001
 		"cancel falling damage" 1
 		}
@@ -110,7 +134,7 @@ WaveSchedule
 		}
 		Engineer
 		{
-		"weapon spread bonus" 0.001
+		"weapon spread bonus" 0.5
 		"metal regen" 100
 		"has pipboy build interface" 1
 		"mod teleporter speed boost" 1
@@ -143,11 +167,50 @@ WaveSchedule
 		}
 		Spy
 		{
-		"weapon spread bonus" 0.001
+		"weapon spread bonus" 0.5
 		"mult decloak rate" 0.1
 		"cloak regen rate increased" 6
 		"cancel falling damage" 1
 		}
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ClassName "TF_WEAPON_BAT"
+		"provide on active" 1
+		"no_duck" 1
+		"override footstep sound set" 5
+	}
+
+	ItemAttributes [$SIGSEGV] // Giant Jumping
+	{
+		ItemName "The Sandman"
+		"provide on active" 1
+		"max health additive penalty" -400
+		"effect bar recharge rate increased" 0.1
+		"increased jump height" 2
+		"cancel falling damage" 1
+		//"always crit" 1
+		"head scale" 1.5
+		"no_duck" 1
+		"override footstep sound set" 5
+	}
+
+	ItemAttributes [$SIGSEGV] // Super Scout
+	{
+		ItemName "The Holy Mackerel"
+		"provide on active" 1
+		"max health additive penalty" -400
+		"move speed bonus" 1.3
+		"no double jump" 1
+		"no_duck" 1
+		"override footstep sound set" 5
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Flying Guillotine"
+		"effect bar recharge rate increased" 0.001
 	}
 
 	ItemAttributes [$SIGSEGV]
@@ -195,7 +258,7 @@ WaveSchedule
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
 		"mod no reload DISPLAY ONLY" 1
-		"mod max primary clip override" -1
+		"faster reload rate" 		 0
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -243,11 +306,12 @@ WaveSchedule
 		{
 			Class Scout
 			Name "Greater Super Scout"
+			Scale 1.9
 			ClassIcon scout_rng
 			Skill Expert
 			Item "The Lightning Lid"
 			Item "Batsaber"
-			Health 1200
+			Health 888
 			WeaponRestrictions MeleeOnly
 			Attributes MiniBoss
 			Attributes IgnoreEnemies
@@ -267,9 +331,11 @@ WaveSchedule
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
+				"wet immunity" 1
 				"mult stun resistance" 0
 				"override footstep sound set" 5
 				"move speed bonus" 2
+				"increased jump height" 1.2
 			}
 		}
 		
@@ -295,7 +361,7 @@ WaveSchedule
 			Classicon engineer
 			Skill Normal
 			AimTrackingInterval 0.05
-			Health 125
+			Health 275
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
 			ExtAttr TargetStickies
@@ -365,9 +431,11 @@ WaveSchedule
 		{
 			Class Scout
 			Classicon scout_blaster_nys
-			Skill Easy
+			Skill Expert
 			Item "Baby Face's Blaster"
+			Item "Pretty Boy's Pocket Pistol"
 			UseBestWeapon 1	[$SIGSEGV]
+			AimTrackingInterval 1 [$SIGSEGV]
 		}
 		
 		Hell_HoK
@@ -386,7 +454,7 @@ WaveSchedule
 			{
 				ItemName "Deflector"
 				"damage bonus"	1.2
-				"attack projectiles" 1
+				"attack projectiles" 2
 				"heal on kill" 5000
 			}
 			CharacterAttributes
@@ -565,7 +633,7 @@ WaveSchedule
 				Attributes AlwaysFireWeapon
 				CharacterAttributes
 				{
-					"move speed bonus" 2
+					"move speed bonus" 1.625
 					"cannot disguise" 1
 					"head scale" 2.2
 					"torso scale" 0.3
@@ -680,6 +748,7 @@ WaveSchedule
 			{
 				"sapper degenerates buildings" 0.5
 				"sapper damage penalty" 0
+				"armor piercing" 100
 			}	
 		}
 		
@@ -705,14 +774,14 @@ WaveSchedule
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Tele_Battle
-			Health 500
+			Health 600
 			Item "The Jag"
 		}
 		
 		TFBot
 		{
 			Template T_TFBot_Engineer_Sentry_Tele_Battle
-			Health 500
+			Health 600
 			Item "The Wrangler"
 			AimTrackingInterval 0.05
 		}
@@ -1158,7 +1227,7 @@ WaveSchedule
 				{
 					ItemName "the killing gloves of boxing"
 					"critboost on kill" 0
-					"damage bonus" 0.001
+					"damage bonus" 0.5
 					"damage causes airblast" 1
 					"apply z velocity on damage" -1337
 					"stun enemies wielding same weapon" 1
@@ -2200,7 +2269,7 @@ WaveSchedule
 			SpawnCount 2
 			WaitForAllDead "part02"
 			WaitBetweenSpawns 6
-			TotalCurrency 2
+			TotalCurrency 6
 		
 			Squad
 			{

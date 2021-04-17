@@ -98,6 +98,7 @@ WaveSchedule
 		Medic		2
         Sniper		2
         Spy			2
+		Civilian	2
     }
 	
 	OverrideSounds [$SIGSEGV]
@@ -355,7 +356,7 @@ WaveSchedule
 		ItemName "The Gunboats"
 		"cancel falling damage" 1
 	}
-	
+
 	ItemAttributes [$SIGSEGV] // help out rocketjumper playstyle
 	{
 		ItemName "The Market Gardener"
@@ -492,7 +493,7 @@ WaveSchedule
 		"uses ammo while aiming" 0
 		"damage penalty" 1
 		"damage bonus vs burning" 1
-		"damage bonus HIDDEN" 2
+		"damage bonus HIDDEN" 1.5
 		"crit mod disabled" 0
 		"maxammo primary reduced" 0.5
 	}
@@ -569,7 +570,7 @@ WaveSchedule
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
 		"mod no reload DISPLAY ONLY" 1
-		"mod max primary clip override" -1
+		"faster reload rate" 		 0
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -727,12 +728,12 @@ WaveSchedule
 		"minicritboost on kill" 10	
 	}
 
-	ItemAttributes [$SIGSEGV] // v1 revert
+	ItemAttributes [$SIGSEGV] // new purpose - melee resistance
 	{
-		ItemName "Darwin's Danger Shield"
-		"afterburn immunity" 0
-		"dmg taken from fire reduced" 1
-		"max health additive bonus" 25
+		ItemName "The Razorback"
+		"backstab shield" 0
+		"patient overheal penalty" 1
+		"mult dmgtaken from melee" 0.25
 	}
 	
 	ItemAttributes [$SIGSEGV] // accuracy themed sniper melee, fix for hook bow
@@ -5036,11 +5037,17 @@ WaveSchedule
 			TFBot
 			{
 				Class Demoman
-				Name "Burst Fire Demo"
+				Name "Burst Fire Demo!"
 				ClassIcon demo_burst
-				Skill Expert
+				Skill Normal
+				Item "The Bomber Knight"
 				WeaponRestrictions PrimaryOnly
 				Attributes HoldFireUntilFullReload
+				ItemAttributes
+				{
+					ItemName "The Bomber Knight"
+					"set item tint rgb" 6535423
+				}
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_GRENADELAUNCHER"
@@ -5058,6 +5065,7 @@ WaveSchedule
                 }
 				
 				//SIG
+				AimTrackingInterval 0.05
 				AddCond [$SIGSEGV]
 				{
 					Name TF_COND_CRITBOOSTED_ON_KILL
@@ -7207,6 +7215,7 @@ WaveSchedule
 					"voice pitch scale" 0.95
 					"crit mod disabled" 0
 					"ammo regen" 1
+					"effect bar recharge rate increased" 2
 				}
 				
 				//SIG

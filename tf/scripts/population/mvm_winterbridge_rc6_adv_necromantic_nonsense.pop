@@ -36,6 +36,7 @@ WaveSchedule
 	// No cheese pls
 	ClassLimit [$SIGSEGV]
 	{
+		Pyro     2
 		Demoman  2
 		Heavy    2
 		Engineer 1
@@ -67,6 +68,7 @@ WaveSchedule
 		Classname "tf_weapon_shovel"
 		Classname "tf_weapon_katana"
 		
+		Name      "The Detonator"
 		Classname "tf_weapon_jar_gas"
 		Classname "tf_weapon_flaregun_revenge"
 		Classname "tf_weapon_rocketpack"
@@ -74,6 +76,7 @@ WaveSchedule
 		Classname "tf_weapon_breakable_sign"
 		Classname "tf_weapon_slap"
 		
+		Name      "The Loose Cannon"
 		Classname "tf_wearable_demoshield"
 		Classname "tf_weapon_bottle"
 		Classname "tf_weapon_sword"
@@ -106,6 +109,12 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"drop health pack on kill" 1
+		Soldier
+		{
+			"increase buff duration" 2
+			"mod rage on hit bonus" 25
+			"mod soldier buff range" 1.5
+		}
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -113,6 +122,36 @@ WaveSchedule
 		ItemName "The Flying Guillotine"
 		"minicrits become crits" 1
 		"effect bar recharge rate increased" 0.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Mantreads"
+		"max health additive bonus" 150
+		"health regen" 10
+		"wet immunity" 1
+		"cancel falling damage" 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Gunboats"
+		"dmg taken increased" 0.85
+		"mult dmgtaken from melee" 0.5
+		"dmg from ranged reduced" 0.75
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Escape Plan"
+		"mult crit when health is below percent" 0.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Equalizer"
+		"damage bonus" 1.5
+		"mult crit when health is below percent" 0.3
 	}
 	
 	// WAVE 2 Piss Snipers
@@ -3763,24 +3802,190 @@ WaveSchedule
 	{
 		stuckfix //fixes weird clipping 
 		{
-			NoFixup 1
-			trigger_teleport
+			prop_dynamic
 			{
-				"targetname" "clipfix"
+				"angles" "0 45 0"
+				"origin" "6044 4291 528"
+				"body" "0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "1"
+				"disableshadows" "1"
+				"effects" "0"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "1" // 1
+				"fademindist" "-1"
+				"fadescale" "1"
+				"health" "0"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"minhealthdmg" "0"
+				"model" "models/props_mining/support_wall001a.mdl"
+				"PerformanceMode" "0"
+				"physdamagescale" "1.0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"rendercolor" "255 255 255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"shadowcastdist" "0"
+				"skin" "0"
+				"solid" "6" // 6
+				"spawnflags" "0"
 				"StartDisabled" "0"
-				"target" "teleexit"
-				"spawnflags" "3"
-				"filtername" "filter_blue"
-				"origin" "6211.763672 4076.236328 702.991943"
-				"mins" "-40 -40 -40"
-				"maxs" "40 40 40"
-				"solid" "0"
+				"texframeindex" "0"
 			}
-			NoFixup 1
-			info_teleport_destination
+			prop_dynamic
 			{
-				"targetname" "teleexit"
-				"origin" "6437.214355 3677.406250 803.856689"
+				"angles" "0 45 0"
+				"origin" "6134 4201 528"
+				"body" "0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "1"
+				"disableshadows" "1"
+				"effects" "0"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "1" // 1
+				"fademindist" "-1"
+				"fadescale" "1"
+				"health" "0"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"minhealthdmg" "0"
+				"model" "models/props_mining/support_wall001a.mdl"
+				"PerformanceMode" "0"
+				"physdamagescale" "1.0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"rendercolor" "255 255 255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"shadowcastdist" "0"
+				"skin" "0"
+				"solid" "6" // 6
+				"spawnflags" "0"
+				"StartDisabled" "0"
+				"texframeindex" "0"
+			}
+			prop_dynamic
+			{
+				"angles" "0 45 0"
+				"origin" "6224 4111 528"
+				"body" "0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "1"
+				"disableshadows" "1"
+				"effects" "0"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "1" // 1
+				"fademindist" "-1"
+				"fadescale" "1"
+				"health" "0"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"minhealthdmg" "0"
+				"model" "models/props_mining/support_wall001a.mdl"
+				"PerformanceMode" "0"
+				"physdamagescale" "1.0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"rendercolor" "255 255 255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"shadowcastdist" "0"
+				"skin" "0"
+				"solid" "6" // 6
+				"spawnflags" "0"
+				"StartDisabled" "0"
+				"texframeindex" "0"
+			}
+			prop_dynamic
+			{
+				"angles" "0 45 0"
+				"origin" "6314 4021 528"
+				"body" "0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "1"
+				"disableshadows" "1"
+				"effects" "0"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "1" // 1
+				"fademindist" "-1"
+				"fadescale" "1"
+				"health" "0"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"minhealthdmg" "0"
+				"model" "models/props_mining/support_wall001a.mdl"
+				"PerformanceMode" "0"
+				"physdamagescale" "1.0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"rendercolor" "255 255 255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"shadowcastdist" "0"
+				"skin" "0"
+				"solid" "6" // 6
+				"spawnflags" "0"
+				"StartDisabled" "0"
+				"texframeindex" "0"
+			}
+			prop_dynamic
+			{
+				"angles" "0 45 0"
+				"origin" "6404 3931 528"
+				"body" "0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "1"
+				"disableshadows" "1"
+				"effects" "0"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "1" // 1
+				"fademindist" "-1"
+				"fadescale" "1"
+				"health" "0"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"minhealthdmg" "0"
+				"model" "models/props_mining/support_wall001a.mdl"
+				"PerformanceMode" "0"
+				"physdamagescale" "1.0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"rendercolor" "255 255 255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"shadowcastdist" "0"
+				"skin" "0"
+				"solid" "6" // 6
+				"spawnflags" "0"
+				"StartDisabled" "0"
+				"texframeindex" "0"
 			}
 		}
 		StickyTank
@@ -4197,6 +4402,191 @@ WaveSchedule
 			}
 		}
 		
+		PyroDispenserLogic
+		{
+			NoFixup 1
+			
+			OnSpawnOutput // filter_tf_class is buggy as fuck
+			{
+				Target filter_pyro
+				Action AddOutput
+				Param  "tfclass 7"
+				Delay  0.00
+			}
+			
+			OnSpawnOutput // filter_tf_class is buggy as fuck
+			{
+				Target filter_not_pyro
+				Action AddOutput
+				Param  "tfclass 7"
+				Delay  0.00
+			}
+			
+			filter_tf_class
+			{
+				"targetname" "filter_pyro"
+				"tfclass"    "7"
+				"Negated"    "0"
+			}
+			
+			filter_tf_class
+			{
+				"targetname" "filter_not_pyro"
+				"tfclass"    "7"
+				"Negated"    "1"
+			}
+			
+			filter_activator_name
+			{
+				"targetname" "filter_pyroplayer"
+				"filtername" "pyro"
+				"Negated"    "0"		
+			}
+			
+			filter_activator_name
+			{
+				"targetname" "filter_not_pyroplayer"
+				"filtername" "pyro"
+				"Negated"    "1"
+			}
+			
+			filter_multi
+			{
+				"targetname" "filter_redpyro_nodisp"
+				"Filter01"   "filter_pyro"
+				"Filter02"   "filter_red"
+				"Filter03"   "filter_not_pyroplayer"
+				"filtertype" "0"
+				"Negated"    "0"
+			}
+			
+			filter_multi
+			{
+				"targetname" "filter_redpyro"
+				"Filter01"   "filter_pyro"
+				"Filter02"   "filter_red"
+				"filtertype" "0"
+				"Negated"    "0"
+			}
+			
+			// Pyro changed class but still has targetname pyro
+			filter_multi
+			{
+				"targetname" "filter_changed_pyro"
+				"Filter01"   "filter_not_pyro"
+				"Filter02"   "filter_red"
+				"Filter03"   "filter_pyroplayer"
+				"filtertype" "0"
+				"Negated"    "0"
+			}
+			
+			env_entity_maker
+			{
+				"targetname"     "pyro_dispenser_maker"	
+				"EntityTemplate" "pyro_dispenser_template"				
+			}
+			
+			trigger_multiple
+			{
+				"targetname"    "pyro_cleanup_trigger"
+				"filtername"    "filter_changed_pyro"
+				"spawnflags"    "1"
+				"StartDisabled" "0"
+				"wait"          "0"
+				"mins"          "0 0 0"
+				"maxs"          "9216 8192 4096"
+
+				"OnStartTouch"  "!activator,AddOutput,targetname ,0,-1"
+			}
+			
+			trigger_multiple
+			{
+				"targetname"    "pyro_reset_targetname"
+				"filtername"    "filter_redpyro"
+				"spawnflags"    "1"
+				"StartDisabled" "0"
+				"wait"          "0"
+				"mins"          "0 0 0"
+				"maxs"          "9216 8192 4096"
+				
+				"OnEndTouch"    "!activator,AddOutput,targetname ,0,-1"
+			}
+			
+			trigger_multiple
+			{
+				"targetname"    "pyro_give_dispenser_trigger"
+				"filtername"    "filter_redpyro_nodisp"
+				"spawnflags"    "1"
+				"StartDisabled" "1"
+				"wait"          "0"
+				"mins"          "0 0 0"
+				"maxs"          "9216 8192 4096"
+
+				"OnStartTouch"  "pyro_dispenser_maker,ForceSpawnAtEntityOrigin,!activator,0,-1"
+				"OnStartTouch"  "!activator,AddOutput,targetname pyro,0,-1"
+			}
+			
+			logic_timer
+			{
+				"targetname" "pyro_check_changed_timer"
+				"RefireTime" "0.5"
+				"spawnflags" "0"
+				"StartDisabled" "1"
+				"UseRandomTime" "0"
+
+				"OnTimer" "pyro_cleanup_trigger,Disable,,0,-1"
+				"OnTimer" "pyro_give_dispenser_trigger,Disable,,0,-1"
+				"OnTimer" "pyro_cleanup_trigger,Enable,,0.01,-1"
+				"OnTimer" "pyro_give_dispenser_trigger,Enable,,0.03,-1"
+				"OnTimer" "pyro_cleanup_trigger,Disable,,0.04,-1"
+				"OnTimer" "pyro_give_dispenser_trigger,Disable,,0.04,-1"				
+			}
+		}
+		
+		pyro_dispenser_template
+		{
+			dispenser_touch_trigger
+			{
+				"targetname"    "pyro_dispenser_touchtrigger"
+				"StartDisabled" "0"
+				"wait"          "0"
+				"mins"          "-256 -256 -48"
+				"maxs"          "256 256 256"
+			}
+			
+			trigger_multiple
+			{
+				"targetname"    "pyro_dispenser_init"
+				"filtername"    "filter_redpyro"
+				"spawnflags"    "1"
+				"StartDisabled" "0"
+				"wait"          "0"
+				"mins"          "-24 -24 0"
+				"maxs"          "24 24 80"
+
+				"OnStartTouch"  "pyro_dispenser,SetParent,!activator,0,-1"
+				"OnStartTouch"  "pyro_dispenser_touchtrigger,SetParent,pyro_dispenser,0,-1"
+				"OnStartTouch"  "pyro_dispenser,SetParentAttachment,flag,0.01,-1"
+				"OnStartTouch"  "!self,Kill,,0.02,-1"
+			}
+			
+			obj_dispenser
+			{
+				"targetname" "pyro_dispenser"
+				"touch_trigger" "pyro_dispenser_touchtrigger"
+				"modelscale" "0.01"
+				"body" "0"
+				"defaultupgrade" "1"
+				"disablereceiveshadows" "0"
+				"disableshadows" "0"
+				"skin" "0"
+				"solid" "0"
+				"SolidToPlayer" "0"
+				"spawnflags" "10"
+				"TeamNum" "2"			
+			}
+		}
+		
 		BearHeavyBoss
 		{
 			NoFixup 1
@@ -4339,10 +4729,31 @@ WaveSchedule
 				"OnTrigger" "botattributes_random_start_relay,Trigger,,44,-1"
 			}
 		}
+		
+		Misc
+		{
+			NoFixup 1
+			
+			OnSpawnOutput
+			{
+				Target "outputs_relay"
+				Action Trigger
+			}
+			
+			logic_relay
+			{
+				"targetname" "outputs_relay"
+				"OnTrigger" "pyro_give_dispenser_trigger,Enable,,0.01,-1"
+				"OnTrigger" "pyro_check_changed_timer,Enable,,0.02,-1"
+				"OnTrigger" "player,AddOutput,targetname ,0,-1"
+			}
+		}
 	} // PointTemplates
 	
-	SpawnTemplate "WizardLogic"      [$SIGSEGV]
-	SpawnTemplate "stuckfix"      [$SIGSEGV]
+	SpawnTemplate "Misc"               [$SIGSEGV]
+	SpawnTemplate "PyroDispenserLogic" [$SIGSEGV]
+	SpawnTemplate "WizardLogic"        [$SIGSEGV]
+	SpawnTemplate "stuckfix"           [$SIGSEGV]
 	
 	SpawnTemplate [$SIGSEGV]
 	{
