@@ -193,6 +193,8 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 	
 	SpawnTemplate "pottybreak" [$SIGSEGV]
 	
+	SpawnTemplate "annotations" [$SIGSEGV]
+	
 	RandomPlacement {
 		Count 8
 		MinimumSeparation 500
@@ -1118,7 +1120,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		
 		SpawnTemplate "stuckfix" [$SIGSEGV]
 		
-		SpawnTemplate "annotations" [$SIGSEGV]
 			
 		Explanation [$SIGSEGV]
         {
@@ -3282,7 +3283,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
     {
 		InitWaveOutput {
 			Target "annotationrelay"
-			Action Kill
+			Action CancelPending
 		}
         StartWaveOutput 
         {
