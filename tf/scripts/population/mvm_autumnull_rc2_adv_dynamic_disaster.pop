@@ -191,8 +191,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 
 	SpawnTemplate "bombfix" [$SIGSEGV]
 	
-	SpawnTemplate "annotations" [$SIGSEGV]
-	
 	SpawnTemplate "pottybreak" [$SIGSEGV]
 	
 	RandomPlacement {
@@ -1120,6 +1118,8 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		
 		SpawnTemplate "stuckfix" [$SIGSEGV]
 		
+		SpawnTemplate "annotations" [$SIGSEGV]
+			
 		Explanation [$SIGSEGV]
         {
             Line "{blue}There is no bomb in this mission, bots will actively hunt players down."
@@ -3280,6 +3280,10 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
     
 	Wave
     {
+		InitWaveOutput {
+			Target "annotationrelay"
+			Action Kill
+		}
         StartWaveOutput 
         {
 			Target wave_start_relay
