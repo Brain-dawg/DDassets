@@ -1362,7 +1362,7 @@ population
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
-			WaitBeforeStarting	0
+			WaitBeforeStarting	5
 			WaitBetweenSpawns	10
 			Tank
 			{
