@@ -3043,7 +3043,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				"targetname" "spawnbot_pumpkin"
 				"StartDisabled" "1"
 				"spawnflags" "511"
-				"TeamNum" "2"
+				"TeamNum" "3"
 				"origin" "4200 4200 600"
 			}
 		}
@@ -3755,7 +3755,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 				"skin" "0"
 				"solid" "0"
 				"SolidToPlayer" "0"
-				"spawnflags" "10"
+				"spawnflags" "2"
 				"TeamNum" "2"			
 			}
 		}

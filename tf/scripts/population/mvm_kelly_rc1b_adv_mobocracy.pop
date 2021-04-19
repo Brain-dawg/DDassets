@@ -98,7 +98,6 @@ WaveSchedule
 		Medic		2
         Sniper		2
         Spy			2
-		Civilian	2
     }
 	
 	OverrideSounds [$SIGSEGV]
@@ -264,8 +263,10 @@ WaveSchedule
 	
 	//STATS
 	
-	PlayerAttributes [$SIGSEGV] // scout gets free 5x HP REGEN UPGRADE to make up for no money drops
+	PlayerAttributes [$SIGSEGV] // scout gets free 5x HP REGEN UPGRADE to make up for no money drops + midair taunts
 	{
+		"always allow taunt" 1
+
 		Scout
 		{
 		"health regen" 10
@@ -647,6 +648,23 @@ WaveSchedule
 		"Construction rate increased" 2.5
 		"upgrade rate decrease" 0
 		"crit mod disabled" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // removed stats, new sentry - missile turret + speed pad
+	{
+		ItemName "The Eureka Effect"
+		"Construction rate decreased" 1
+		"metal_pickup_decreased" 1
+		"mod teleporter cost" 1
+		"alt fire teleport to spawn" 0
+
+		"mod teleporter speed boost" 1
+		"rocket specialist" 4
+		"mult firerocket rate" 0.05
+		"engy sentry fire rate increased" 5
+		"engy building health bonus" 1.5
+		"engy sentry radius increased" 1.5
+		"rocket jump damage reduction" 0
 	}
 		
 	ItemAttributes [$SIGSEGV] // shotgun needler

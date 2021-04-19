@@ -11,15 +11,15 @@
 // +----------+----------+----------+
 // | Wave     | Currency | A+       |
 // +----------+----------+----------+
-// | Wave 1   | 750      | 850      |
+// | Wave 1   | 800      | 900      |
 // | Wave 2   | 800      | 900      |
 // | Wave 3   | 800      | 900      |
 // | Wave 4   | 950      | 1050     |
-// | Wave 5   | 750      | 850      |
+// | Wave 5   | 800      | 900      |
 // | Wave 6   | 1000     | 1100     |
 // | Wave 7   | 420      | 520      |
 // +----------+----------+----------+
-// | Total    | 5470     | 6170     |
+// | Total    | 5570     | 6270     |
 // +----------+----------+----------+
 //
 
@@ -1592,7 +1592,6 @@ WaveSchedule
 				Slot 0 
 				Model "models/weapons/c_models/c_gamma_gazer/c_gamma_gazer_1.mdl"
 			}
-			//FireSound 			"weapons/capper_shoot.wav" [$SIGSEGV]
 			AimTrackingInterval 	0.1
 			ItemAttributes
 			{
@@ -2011,7 +2010,7 @@ WaveSchedule
 			SpawnCount 			3
 			WaitBeforeStarting 	30
 			WaitBetweenSpawns 	10
-			TotalCurrency 		150
+			TotalCurrency 		200
 			Squad
 			{
 				TFBot
@@ -2625,7 +2624,7 @@ WaveSchedule
 				TFBot //Replace Crit Soldier with Direct Hit
 				{
 					Class			Soldier
-                    ClassIcon       soldier_giant
+                    ClassIcon       soldier_dh_nys
 					Skill			Hard
 					Item 			"The Direct Hit"
 					AimAt			Body
@@ -2635,7 +2634,7 @@ WaveSchedule
                 TFBot
 				{
 					Class			Soldier
-                    ClassIcon       soldier_giant
+                    ClassIcon       soldier_dh_nys
 					Skill			Hard
 					AimAt			Body
 					Item 			"The Direct Hit"
@@ -2644,7 +2643,7 @@ WaveSchedule
                 TFBot
 				{
 					Class			Soldier
-                    ClassIcon       soldier_giant
+                    ClassIcon       soldier_dh_nys
 					Skill			Hard
 					AimAt			Body
 					Item 			"The Direct Hit"
@@ -2653,7 +2652,7 @@ WaveSchedule
                 TFBot
 				{
 					Class			Soldier
-                    ClassIcon       soldier_giant
+                    ClassIcon       soldier_dh_nys
 					Skill			Hard
 					Item 			"The Direct Hit"
 					AimAt			Body
@@ -2662,7 +2661,7 @@ WaveSchedule
                 TFBot
 				{
 					Class			Soldier
-                    ClassIcon       soldier_giant
+                    ClassIcon       soldier_dh_nys
 					Skill			Hard
 					AimAt			Body
 					Item 			"The Direct Hit"
@@ -3004,7 +3003,7 @@ WaveSchedule
 			SpawnCount 			3
 			WaitBeforeStarting 	55
 			WaitBetweenSpawns 	0
-			TotalCurrency 		100
+			TotalCurrency 		150
 			Squad
 			{
 				TFBot
@@ -3535,7 +3534,8 @@ WaveSchedule
 				Item					"Jungle Jersey"
 				Item					"Transparent Trousers"
 				Item					"Forest Footwear"
-				Item					"Flatliner"		
+				Item					"Flatliner"	
+				AlwaysGlow				1	
 				CharacterAttributes
 				{
 					"airblast vulnerability multiplier" 0.7

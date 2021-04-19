@@ -7,14 +7,14 @@
 
 population
 {
-	StartingCurrency	600
+	StartingCurrency	800
 	RespawnWaveTime	6
 	CanBotsAttackWhileInSpawnRoom	no
 	Advanced	1
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
 	NoRomevisionCosmetics 1 [$SIGSEGV]
 	TextPrintTime 0 [$SIGSEGV]
-	CustomUpgradesFile "mvm_upgrades_herp_fix.txt" [$SIGSEGV]
+	//CustomUpgradesFile "mvm_upgrades_herp_fix.txt" [$SIGSEGV]
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" [$SIGSEGV]
@@ -442,7 +442,7 @@ population
 			{
 				ItemName	"Brick"
 				"effect bar recharge rate increased"	0.01
-				"dmg penalty vs players" 2.0
+				//"dmg penalty vs players" 2.0
 			}
 			CharacterAttributes
 			{
@@ -593,10 +593,6 @@ population
 			Class	Spy
 			Skill	Expert
 			Item	"The Backburner"
-			CharacterAttributes
-			{
-				"dmg taken from fire increased"	0.3
-			}
 		}
 	}
 	Mission
@@ -957,12 +953,12 @@ population
 			Target wave_init_lower_relay
 			Action Trigger
 		}
-		//Explanation [$SIGSEGV] //Dispayed once the wave is initialized
-		//{
-			//Line "{red}This wave, Ambush Bots will be attacking you from behind."
-			//Line "{blue}Listen closely for the audio cues."
-			//Line "{yellow}Later waves will have ambush bots."
-		//}
+		Explanation [$SIGSEGV] //Dispayed once the wave is initialized
+		{
+			Line "{red}This wave, Ambush Bots will be attacking you from behind."
+			Line "{blue}Listen closely for the audio cues."
+			Line "{yellow}Later waves will have ambush bots."
+		}
 		WaveSpawn
 		{
 			Name	w2_primary
@@ -1067,7 +1063,7 @@ population
 					ItemAttributes
 					{
 						ItemName	"The Back Scatter"
-						"minicrits become crits"	1
+						//"minicrits become crits"	1
 						"weapon spread bonus"	1
 					}
 					ItemAttributes
@@ -1078,7 +1074,7 @@ population
 				}
 				TFBot
 				{
-					Health	200
+					//Health	200
 					Name	"Ambush Pyro"
 					Class	Pyro
 					Skill	Expert
@@ -1119,7 +1115,7 @@ population
 					ItemAttributes
 					{
 						ItemName	"The Back Scatter"
-						"minicrits become crits"	1
+						//"minicrits become crits"	1
 						"weapon spread bonus"	1
 					}
 					ItemAttributes
@@ -1130,7 +1126,7 @@ population
 				}
 				TFBot
 				{
-					Health	200
+					//Health	200
 					Name	"Ambush Pyro"
 					Class	Pyro
 					Skill	Expert
@@ -1156,7 +1152,7 @@ population
 			WaitBeforeStarting	10
 			WaitBetweenSpawns	10
 			Where	spawnbot_ambush_lower
-			FirstSpawnWarningSound "mvm\giant_heavy\giant_heavy_entrance.wav"
+			FirstSpawnWarningSound mvm\mvm_tele_deliver.wav
 			DoneOutput                                                                                                                   
 			{
 				Target relay_close_ambush          
@@ -1446,8 +1442,8 @@ population
 			Name	w3_giant
 			WaitForAllDead	w3_tank
 			TotalCurrency	50
-			TotalCount	4
-			MaxActive	4
+			TotalCount	2
+			MaxActive	2
 			SpawnCount	2
 			WaitBeforeStarting	8
 			WaitBetweenSpawns	20
@@ -2267,9 +2263,9 @@ population
 			Name	w4_finale4
 			WaitForAllDead	w4_finale3
 			TotalCurrency	25
-			TotalCount	2 //4
-			MaxActive	2 //4
-			SpawnCount	2
+			TotalCount	1 //4
+			MaxActive	1 //4
+			SpawnCount	1
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	20
 			Where	spawnbot_main
@@ -2278,19 +2274,11 @@ population
 				Target relay_mission_use_ambush
 				Action Trigger
 			}
-			Squad
+			TFBot
 			{
-				TFBot
-				{
-					Template	T_TFBot_Giant_Demo_WideBurst
-					ClassIcon demo_burst_crit
-					Attributes	"AlwaysCrit"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Medic_Regen_Super
-					Tag "bot_squad_member"
-				}
+				Template	T_TFBot_Giant_Demo_WideBurst
+				ClassIcon demo_burst_crit
+				Attributes	"AlwaysCrit"
 			}
 		}
 		WaveSpawn
@@ -2378,246 +2366,9 @@ population
 				//Target boss_path_teleport_forward //tank teleports forward
 				//Action Teleport
 			//}
-			RandomChoice
+			TFBot
 			{
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					Name "(11)TFBot"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					Name "(16)TFBot"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					Name "(14)TFBot"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					Name "(18)TFBot"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					Name "(21)TFBot"
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-					
-				}
-				TFBot
-				{
-					Template	T_TFBot_Giant_Sniper_Brick
-				}
+				Template	T_TFBot_Giant_Sniper_Brick	
 			}
 		}
 		WaveSpawn
@@ -2775,8 +2526,8 @@ population
 			WaitBetweenSpawns	10
 			Where	spawnbot_ambush_upper
 			StartWaveWarningSound "vo\announcer_security_warning.mp3"
-			FirstSpawnWarningSound "mvm\giant_heavy\giant_heavy_entrance.wav"
-			LastSpawnWarningSound "mvm\giant_heavy\giant_heavy_entrance.wav"
+			FirstSpawnWarningSound mvm\mvm_tele_deliver.wav
+			LastSpawnWarningSound mvm\mvm_tele_deliver.wav
 			DoneOutput                                                                                                                   
 			{
 				Target relay_close_ambush          
@@ -3011,8 +2762,8 @@ population
 			WaitForAllSpawned	w5_ambushb
 			TotalCurrency	0
 			TotalCount	18
-			MaxActive	3 //6
-			SpawnCount	3
+			MaxActive	2 //6
+			SpawnCount	2
 			WaitBeforeStarting	15
 			WaitBetweenSpawns	15
 			Where	"spawnfuck"
@@ -3027,7 +2778,7 @@ population
 				Scale 1.00000000000000000000000000001
 				WeaponRestrictions MeleeOnly
 				Item "The Ullapool Caber"
-				UseBusterModel 1 [$SIGSEGV]
+				//UseBusterModel 1 [$SIGSEGV]
 				Action Mobber [$SIGSEGV]
 				ItemAttributes 
 				{
