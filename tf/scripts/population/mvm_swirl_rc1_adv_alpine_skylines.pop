@@ -5,6 +5,7 @@
 #base robot_swirl.pop
 #base robot_gatebot_improved.pop
 
+
 population
 {
 	StartingCurrency	800
@@ -22,6 +23,37 @@ population
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl" [$SIGSEGV]
+	
+	PointTemplates [$SIGSEGV]
+	{
+		AmbushFailsafe //open ambush doors
+		{
+			NoFixup 1
+			trigger_multiple //upper ambush door open
+			{
+				"targetname" "ambush_door_upper_trigger"
+				"filtername" "filter_blue"
+				"mins" "-64 -64 -64"
+				"maxs" "64 64 64"
+				"origin" "-1056 3104 464"
+				"spawnflags" "1"
+				"OnStartTouchAll" "ambush_door_upper,Open,,0,-1"
+			}
+			trigger_multiple //lower ambush door open
+			{
+				"targetname" "ambush_door_lower_trigger"
+				"filtername" "filter_blue"
+				"mins" "-64 -64 -64"
+				"maxs" "64 64 64"
+				"origin" "-1056 3104 16"
+				"spawnflags" "1"
+				"OnStartTouchAll" "ambush_door_lower,Open,,0,-1"
+			}
+		}
+	}
+	
+	SpawnTemplate "AmbushFailsafe" [$SIGSEGV]
+	
 	ExtraTankPath [$SIGSEGV]
 	{
 		Name	"path_blimp1"
@@ -2528,6 +2560,11 @@ population
 			StartWaveWarningSound "vo\announcer_security_warning.mp3"
 			FirstSpawnWarningSound mvm\mvm_tele_deliver.wav
 			LastSpawnWarningSound mvm\mvm_tele_deliver.wav
+			FirstSpawnOutput                                                                                                                   
+			{
+				Target ambush_door_upper  
+				Action Open
+			}
 			DoneOutput                                                                                                                   
 			{
 				Target relay_close_ambush          
@@ -2641,9 +2678,10 @@ population
 			Support	1
 			FirstSpawnOutput                                                                                                                  
 			{
-				Target ambush_door_lower      
+				Target ambush_door_upper     
 				Action Close
 			}
+			
 		}
 		WaveSpawn
 		{
