@@ -77,24 +77,32 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			{
 				"targetname" "teleexit"
 				"origin" "-6108.538574 -4458.934082 -329.96868"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
 			}
 			trigger_remove_tf_player_condition
 			{
 				"targetname" "deleteuber"
 				"Condition" "TF_COND_INVULNERABLE_WEARINGOFF"
 				"origin" "-6103.644043 -4459.020508 -333.639771"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
 			}
 			trigger_remove_tf_player_condition
 			{
 				"targetname" "deleteuber2"
 				"Condition" "TF_COND_INVULNERABLE"
 				"origin" "-6103.644043 -4459.020508 -333.639771"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
 			}
 			trigger_remove_tf_player_condition
 			{
 				"targetname" "deleteuber3"
 				"Condition" "TF_COND_INVULNERABLE_HIDE_UNLESS_DAMAGED"
 				"origin" "-6103.644043 -4459.020508 -333.639771"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
 			}
 		}
 		pottybreak
