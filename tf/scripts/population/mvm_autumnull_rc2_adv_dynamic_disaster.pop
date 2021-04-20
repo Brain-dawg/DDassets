@@ -73,7 +73,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"maxs" "200 200 200"
 				"solid" "0"
 			}
-			NoFixup 1
 			info_teleport_destination
 			{
 				"targetname" "teleexit"
@@ -92,7 +91,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "pop_interface,UnPauseBotSpawning,,37,1"
 				"OnTrigger" "upgradeclose,Trigger,,37,1"
 			}
-            NoFixup 1
 			func_forcefield
 			{
 				
@@ -123,7 +121,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"OnTrigger" "twomin,Show,,1680,-1"
 				"OnTrigger" "boss_deploy_relay,Trigger,,1800,-1"
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "destroyall"
@@ -132,7 +129,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "twentymin"
@@ -141,7 +137,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "halfway"
@@ -150,7 +145,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "tenmin"
@@ -159,7 +153,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "fivemin"
@@ -168,7 +161,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "twomin"
@@ -177,7 +169,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			  "lifetime"     "10"
 			  "origin" "-3360 -3712 -208"	
 			}
-			NoFixup 1
 			training_annotation
 			{
 			  "targetname"   "meleetank"
@@ -209,27 +200,13 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			ClassIcon timer_lite
 			Tag bot_timer
 			Health 3366
-			WeaponRestrictions PrimaryOnly
 			Attributes UseBossHealthBar
-			Attributes MiniBoss //stomp tele
 			Scale 1
-			Item "The Mantreads"
-			NoBombUpgrades 1	//baby box trigger no work
-			AddCond [$SIGSEGV] { Name TF_COND_STEALTHED_USER_BUFF_FADING }
-			
-			Taunt [$SIGSEGV] {
-				Delay 0 //Time before the first taunt starts (Default: 10)
-				Cooldown 0 //Time between each taunt (Default: 10)
-			}
 			CharacterAttributes {
-				"voice pitch scale" 0
-				"gesture speed increase" 0.25
 				"move speed bonus" 0.0001
 				"airblast pushback scale" 0
 				"no_jump" 1
 				"health drain" -2
-				"is suicide counter" 1
-				"backstab shield" 1
 			}
 		}	
 		Buster { 
