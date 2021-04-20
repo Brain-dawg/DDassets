@@ -51,11 +51,11 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		bombfix
 		{
 			NoFixup 1
-			logic_relay
+			logic_auto
 			{
 				"origin" "-630 -232 34"
 				"targetname" "nobomb"
-				"OnTrigger" "intel,Kill,,0,-1"
+				"OnMapSpawn" "item_teamflag,Kill,,0,-1"
 			}
 		}
 		stuckfix
@@ -65,44 +65,13 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			{
 				"targetname" "rockfix"
 				"StartDisabled" "0"
-				"target" "teleexit"
+				"target" "spawnbot_mobberwave"
 				"spawnflags" "3"
 				"filtername" "filter_bluteam"
 				"origin" "-3407.954590 -3356.858398 36"
 				"mins" "-200 -200 -200"
 				"maxs" "200 200 200"
 				"solid" "0"
-			}
-			info_teleport_destination
-			{
-				"targetname" "teleexit"
-				"origin" "-6108.538574 -4458.934082 -329.96868"
-				"mins" "-200 -200 -200"
-				"maxs" "200 200 200"
-			}
-			trigger_remove_tf_player_condition
-			{
-				"targetname" "deleteuber"
-				"Condition" "TF_COND_INVULNERABLE_WEARINGOFF"
-				"origin" "-6103.644043 -4459.020508 -333.639771"
-				"mins" "-200 -200 -200"
-				"maxs" "200 200 200"
-			}
-			trigger_remove_tf_player_condition
-			{
-				"targetname" "deleteuber2"
-				"Condition" "TF_COND_INVULNERABLE"
-				"origin" "-6103.644043 -4459.020508 -333.639771"
-				"mins" "-200 -200 -200"
-				"maxs" "200 200 200"
-			}
-			trigger_remove_tf_player_condition
-			{
-				"targetname" "deleteuber3"
-				"Condition" "TF_COND_INVULNERABLE_HIDE_UNLESS_DAMAGED"
-				"origin" "-6103.644043 -4459.020508 -333.639771"
-				"mins" "-200 -200 -200"
-				"maxs" "200 200 200"
 			}
 		}
 		pottybreak
@@ -227,7 +196,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Tag bot_timer
 			Health 3366
 			Attributes UseBossHealthBar
-			Scale 1
+			Scale 0.5
 			CharacterAttributes {
 				"move speed bonus" 0.0001
 				"airblast pushback scale" 0
@@ -1107,10 +1076,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		}
 	}
 	Wave {
-		InitWaveOutput {
-			Target nobomb
-			Action Trigger
-		}
 		StartWaveOutput {
 			Target wave_start_relay
 			Action Trigger
