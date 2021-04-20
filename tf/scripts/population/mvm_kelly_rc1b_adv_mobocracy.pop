@@ -660,7 +660,7 @@ WaveSchedule
 
 		"mod teleporter speed boost" 1
 		"rocket specialist" 4
-		"mult firerocket rate" 0.05
+		"mult firerocket rate" 0.1
 		"engy sentry fire rate increased" 5
 		"engy building health bonus" 1.5
 		"engy sentry radius increased" 1.5

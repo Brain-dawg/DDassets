@@ -9,7 +9,7 @@
 
 WaveSchedule
 {
-	StartingCurrency 800
+	StartingCurrency 900
 	CanBotsAttackWhileInSpawnRoom No
 	RespawnWaveTime 4
 	Advanced	1
@@ -446,7 +446,7 @@ WaveSchedule
             SpawnCount 1
             MaxActive 12
             WaitBetweenSpawns 0.75
-            TotalCurrency 600
+            TotalCurrency 750
             Where spawnbot
 
             RandomChoice
@@ -604,7 +604,7 @@ WaveSchedule
             SpawnCount 20
             MaxActive 20
             Where spawnbot
-            TotalCurrency 200
+            TotalCurrency 300
 
             TFBot
             {
@@ -638,7 +638,7 @@ WaveSchedule
             WaitBeforeStarting 10
             WaitBetweenSpawns 4
             Where spawnbot
-            TotalCurrency 50
+            TotalCurrency 150
 
             TFBot
             {
@@ -670,7 +670,7 @@ WaveSchedule
             WaitBeforeStarting 12
             WaitBetweenSpawns 15
             Where spawnbot_giant
-            TotalCurrency 50
+            TotalCurrency 100
 
             TFBot
             {
@@ -823,7 +823,7 @@ WaveSchedule
             SpawnCount 2
             MaxActive 2
             Where spawnbot
-            TotalCurrency 100
+            TotalCurrency 200
 
             Squad
             {
@@ -846,7 +846,7 @@ WaveSchedule
             SpawnCount 2
             MaxActive 2
             Where spawnbot
-            TotalCurrency 100
+            TotalCurrency 200
 
             Squad
             {
@@ -872,7 +872,7 @@ WaveSchedule
             WaitForAllDead "wave03_gatebot1"
             WaitBetweenSpawns 2
             Where spawnbot
-            TotalCurrency 50
+            TotalCurrency 100
 
             Squad
             {
@@ -1149,7 +1149,7 @@ WaveSchedule
             TotalCount 1
             SpawnCount 1
             Where spawnbot_chief
-            TotalCurrency 100
+            TotalCurrency 200
 
             TFBot
             {
@@ -1254,7 +1254,7 @@ WaveSchedule
             WaitBeforeStarting 10
             Where spawnbot
             WaitBetweenSpawns 4
-            TotalCurrency 50
+            TotalCurrency 250
             
             TFBot
             {
@@ -1576,7 +1576,7 @@ WaveSchedule
             SpawnCount 2
             MaxActive 2
             Where spawnbot
-            TotalCurrency 100
+            TotalCurrency 300
 
             Squad
             {
@@ -1636,7 +1636,7 @@ WaveSchedule
             WaitBeforeStarting 5
             WaitBetweenSpawns 3
             Where spawnbot
-            TotalCurrency 50
+            TotalCurrency 100
             
             TFBot
             {
@@ -1889,7 +1889,7 @@ WaveSchedule
             MaxActive 14
             WaitBetweenSpawns 6
             Where spawnbot
-            TotalCurrency 50
+            TotalCurrency 100
 
             TFBot
             {
@@ -1923,7 +1923,7 @@ WaveSchedule
             WaitBeforeStarting 15
             WaitBetweenSpawns 10
             Where spawnbot
-            TotalCurrency 50
+            TotalCurrency 150
 
             TFBot
             {
@@ -1940,7 +1940,7 @@ WaveSchedule
             WaitForAllDead "wave06_b"
             WaitBetweenSpawns 10
             Where spawnbot_gatebot
-            TotalCurrency 50
+            TotalCurrency 150
 
             TFBot
             {
@@ -2234,7 +2234,7 @@ WaveSchedule
             MaxActive 12
             WaitBetweenSpawns 2
             Where spawnbot
-            TotalCurrency 100
+            TotalCurrency 350
 
             Squad
             {

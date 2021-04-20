@@ -310,7 +310,7 @@ WaveSchedule
 			Skill Expert
 			Item "The Lightning Lid"
 			Item "Batsaber"
-			Health 1200
+			Health 888
 			WeaponRestrictions MeleeOnly
 			Attributes MiniBoss
 			Attributes IgnoreEnemies
@@ -407,6 +407,7 @@ WaveSchedule
 			{
 				"heal rate bonus" 50
 				"overheal penalty" 0
+				"mod weapon blocks healing" 1
 			}
 		}
 		
@@ -3287,7 +3288,6 @@ WaveSchedule
 			TotalCurrency 1337
 
 			FirstSpawnWarningSound vo\mvm\norm\soldier_mvm_robot24.mp3
-			DoneWarningSound misc\tf_crowd_walla_intro.wav
 		
 			TFBot
 			{
@@ -3308,7 +3308,6 @@ WaveSchedule
 					Duration 8
 				}			
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
-				AimTrackingInterval 0.05
 				CustomWeaponModel [$SIGSEGV]
 				{
 					Slot 1
