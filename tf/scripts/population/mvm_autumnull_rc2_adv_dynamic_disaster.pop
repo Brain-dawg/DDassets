@@ -204,14 +204,22 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Scale 1
 			AddCond [$SIGSEGV]
 			{
-					Index 51
-					Delay 1
-					Duration 1 
+				Index 51
+				Duration 2
+			}
+			AddCond [$SIGSEGV]
+			{
+				Index 5
+				Duration 2
+			}
+			AddCond [$SIGSEGV]
+			{
+				Index 8
+				Duration 2
 			}
 			CharacterAttributes {
 				"move speed bonus" 0.0001
 				"airblast pushback scale" 0
-				"no_jump" 1
 				"health drain" -2
 			}
 		}	
