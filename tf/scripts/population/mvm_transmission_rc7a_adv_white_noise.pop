@@ -45,10 +45,22 @@
 
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
 
-//CHANGELOG LATEST EDITS 13-04 (haha homestuck)
-//- Fixed missing 'Giant' prefix for Giant Flare Rains
-//- Slightly edited explanation about SH stats to be clearer about the values
-//- Giant Multi-Regen Heavies now use melee AI
+//CHANGELOG LATEST EDITS 19-04
+//- Moved 150$ from W4 to W3. Total payout remains the same.
+//W1
+//- Changed Giant Burst Demos' medics to charged q-fixes
+//- Removed crits from Sandman Scouts
+//W3
+//- Changed Direct Hit Soldiers to Rapid Bison Soldiers, lowering blast spam
+//- Added HoldFireUntilFullReload to Backup Soldiers, slightly lowering their spam.
+//W4
+//- Nerfed Rapid Fire Demos' fire rate to 0.75 (from 0.5)
+//- Removed uber from Overhealer Medics, changed icon accordingly
+//W5
+//- Changed Queen Bee Soldier's name to Killer Bee Queen
+//- Lowered TurnRate of KBQ's rockets to 120, from 200
+//W6
+//- Slightly changed Explanation text to better indicate Giant Multi-Regen Heavies' AI.
 
 WaveSchedule
 {
@@ -1335,19 +1347,22 @@ WaveSchedule
 				{
 					Template T_TFBot_Giant_Demo_Burst
 					Tag bot_giant
-					AimLeadProjectileSpeed 1000 [$SIGSEGV]
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 			}
 		}
@@ -1368,25 +1383,30 @@ WaveSchedule
 				{
 					Template T_TFBot_Giant_Demo_Burst
 					Tag bot_giant
-					AimLeadProjectileSpeed 1000 [$SIGSEGV]
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 			}
 		}
@@ -1529,7 +1549,6 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Scout_Sandman_FastCharge
-				Attributes AlwaysCrit
 			}
 		}
 	}
@@ -1827,7 +1846,7 @@ WaveSchedule
 	
 	////////////////////////////////////////////////////////////////////////////////
 	
-	Wave //Wave 3 - Payout: $550 + $100 bonus
+	Wave //Wave 3 - Payout: $700 + $100 bonus
 	{
 		StartWaveOutput
 		{
@@ -1848,7 +1867,7 @@ WaveSchedule
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
@@ -1919,9 +1938,19 @@ WaveSchedule
 			TFBot
 			{
 				Class Soldier
+				Name "Rapid Bison Soldier"
+				Item "The Righteous Bison"
 				Skill Hard
-				Item "The Direct Hit"
-				Name "Direct Hit Soldier"
+				ClassIcon soldier_bison
+				WeaponRestrictions SecondaryOnly
+				ItemAttributes
+				{
+					ItemName "The Righteous Bison"
+					"faster reload rate" 0.01
+					"fire rate bonus" 0.75
+					"dmg bonus vs buildings" 5
+					"set item tint rgb" 14204632 //pinkish
+				}
 			}
 		}
 		WaveSpawn
@@ -1934,7 +1963,7 @@ WaveSchedule
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
@@ -1980,7 +2009,7 @@ WaveSchedule
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
@@ -2047,6 +2076,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Soldier_Extended_Battalion
+				Attributes HoldFireUntilFullReload
 			}
 		}
 		WaveSpawn
@@ -2060,7 +2090,7 @@ WaveSchedule
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
@@ -2105,7 +2135,7 @@ WaveSchedule
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
@@ -2152,7 +2182,7 @@ WaveSchedule
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 90
+			TotalCurrency 120
 			Squad
 			{
 				TFBot
@@ -2212,7 +2242,6 @@ WaveSchedule
 			TotalCount 6
 			MaxActive 2
 			SpawnCount 1
-			TotalCurrency 30
 			Support 1
 			TFBot
 			{
@@ -2235,7 +2264,7 @@ WaveSchedule
 	
 	////////////////////////////////////////////////////////////////////////////////
 	
-	Wave //Wave 4 - Payout: $800 + $100 bonus
+	Wave //Wave 4 - Payout: $650 + $100 bonus
 	{
 		StartWaveOutput
 		{
@@ -2258,7 +2287,7 @@ WaveSchedule
 			TotalCount 4
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 100
+			TotalCurrency 80
 			Squad
 			{
 				TFBot
@@ -2334,13 +2363,19 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "Upgradeable TF_WEAPON_GRENADELAUNCHER"
-						"fire rate bonus" 0.5
+						"fire rate bonus" 0.75
 						"faster reload rate" 0.001
 					}
 				}
 				TFBot
 				{
 					Template T_TFBot_Medic_Herp_Overheal
+					ClassIcon medic_overheal
+					ItemAttributes
+					{
+						ItemName	tf_weapon_medigun
+						"ubercharge rate bonus"	-10 //no uber
+					}
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
 				}
@@ -2388,7 +2423,7 @@ WaveSchedule
 			TotalCount 4
 			MaxActive 1
 			SpawnCount 1
-			TotalCurrency 80
+			TotalCurrency 40
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Jumping_Sandman_Improved
@@ -2460,7 +2495,7 @@ WaveSchedule
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 60
+			TotalCurrency 80
 			Squad
 			{
 				TFBot
@@ -2496,7 +2531,6 @@ WaveSchedule
 			TotalCount 6
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 60
 			Support Limited
 			FirstSpawnOutput
 			{
@@ -2553,7 +2587,6 @@ WaveSchedule
 			TotalCount 10
 			MaxActive 3
 			SpawnCount 3
-			TotalCurrency 50
 			Support 1
 			TFBot
 			{
@@ -2853,7 +2886,7 @@ WaveSchedule
 			{
 				TFBot
 				{
-					Name "Queen Bee Soldier"
+					Name "Killer Bee Queen"
 					Class Soldier
 					Health 20000
 					Scale 1.8
@@ -2866,7 +2899,7 @@ WaveSchedule
 					Item "harvest_rocketlauncher_autumn"
 					Item "Bumble Beenie"
 					ItemAttributes
-					{ //Maybe slightly nerf damage and turn rate?
+					{
 						ItemName "harvest_rocketlauncher_autumn"
 						"dmg bonus vs buildings" 1.5
 						"dmg penalty vs players" 1.5 //6 dmg bleed
@@ -2893,7 +2926,7 @@ WaveSchedule
 						IgnoreDisguisedSpies 1
 						IgnoreStealthedSpies 1
 						RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
-						TurnPower 200 //How fast should the rocket rotate to face the target
+						TurnPower 120 //How fast should the rocket rotate to face the target
 						MaxAimError 300 //Max angle between rocket and the target
 						AimTime 3
 					}
@@ -3073,7 +3106,8 @@ WaveSchedule
 	{
 		Explanation [$SIGSEGV]
 		{
-			Line "{blue}Stay cautious! These Giant Heavies have a trick up their sleeve!"
+			Line "{blue}Stay cautious! These Giant Regen Heavies will target the closest player."
+			Line "{blue}On top of that, they have additional functionality when desperate!"
 		}
 		
 		StartWaveOutput

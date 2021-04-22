@@ -110,8 +110,7 @@ WaveSchedule
 		"damage force reduction" 0
 		"airblast vulnerability multiplier" 0
 		"max health additive bonus" 1075
-		"patient overheal penalty" 0
-		"mult_patient_overheal_penalty_active" 0
+		"override footstep sound set" 5
 		"boots falling stomp" 1
 		}
 		Soldier
@@ -298,6 +297,43 @@ WaveSchedule
 		ItemName "The Holiday Punch"
 		"set turn to ice" 1
 	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "The Outdoorsman"
+		"set item tint rgb" 13595446
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "The Apparatchik's Apparel"
+		"set item tint rgb" 13595446
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Basic Spellbook"
+		"voice pitch scale" 1.4
+		"gesture speed increase" 1.75
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Gold Frying Pan"
+		"receive friendly fire" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Golden Wrench"
+		"receive friendly fire" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Saxxy"
+		"receive friendly fire" 1
+	}
 	
 	Templates
 	{
@@ -334,6 +370,7 @@ WaveSchedule
 				"mult stun resistance" 0
 				"override footstep sound set" 5
 				"move speed bonus" 2
+				"increased jump height" 1.75
 			}
 		}
 		
@@ -747,7 +784,7 @@ WaveSchedule
 			{
 				"sapper degenerates buildings" 0.5
 				"sapper damage penalty" 0
-				"armor piercing" 100
+				"armor piercing" 50
 			}	
 		}
 		
@@ -3232,6 +3269,7 @@ WaveSchedule
 					"damage force reduction" 0
 					"rage giving scale" 0.1
 					"deploy time decreased" 0.001
+					"mult stun resistance" 0
 				}
 			}		
 		}
@@ -3369,6 +3407,7 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0
 					"damage force reduction" 0
 					"rage giving scale" 0.1
+					"mult stun resistance" 0
 				}
 			}					
 		}

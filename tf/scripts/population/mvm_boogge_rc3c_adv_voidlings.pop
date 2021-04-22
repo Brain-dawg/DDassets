@@ -59,15 +59,16 @@ gettysburg
 
     PlayerAttributes
     {
-        Heavyweapons
-        {
-            "dont count damage towards crit rate" 1
-        }
-
         Medic
         {
             "medic machinery beam" 2.5
         }
+    }
+
+    ItemAttributes
+    {
+        ClassName tf_weapon_minigun
+        "dont count damage towards crit rate" 1
     }
 
 	ItemAttributes //gunslinger buff
@@ -78,7 +79,7 @@ gettysburg
         "engy sentry radius increased" 2
         "construction rate increased" 2
         "engy disposable sentries" 1
-        "mult teleporter recharge rate" .5
+        "mult teleporter recharge rate" 0.5
     }
 
     ItemAttributes
@@ -104,10 +105,16 @@ gettysburg
         //"reload time increased" 2
     }
 
-    ItemAttributes //wrangler BIG SLOW sentries
+    ItemAttributes
+    {
+        ItemName "Festive Eyelander"
+        "set turn to ice" 1
+    }
+
+    ItemAttributes
     {
         ClassName tf_weapon_laser_pointer
-        "building scale" 1.125
+        "always allow taunt" 1
         "engy sentry fire rate increased" 1.33
     }
 
@@ -120,7 +127,7 @@ gettysburg
     ItemAttributes //reflect homing support whatever flamethrower
     {
         ItemName "The Degreaser"
-        "mult airblast refire time" 1.25
+        //"mult airblast refire time" 1.25
         "airblast_give_teammate_speed_boost" 1
         "mod projectile heat follow crosshair" 1
         "airblast cost increased" 2
@@ -759,7 +766,7 @@ gettysburg
         {
             Name "Overclocked Engineer"
             Template G_Engineer
-            Health 500
+            Health 275
             Attributes TeleportToHint
             Attributes AlwaysCrit
             //TeleportWhere spawnbot

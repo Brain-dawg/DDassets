@@ -58,6 +58,12 @@ gettysburg
         }
     }
 
+    ItemAttributes
+    {
+        ClassName tf_weapon_minigun
+        "dont count damage towards crit rate" 1
+    }
+
 	ItemAttributes //gunslinger buff
     {
         ItemName "The Gunslinger"
@@ -66,13 +72,7 @@ gettysburg
         "engy sentry radius increased" 2
         "construction rate increased" 2
         "engy disposable sentries" 1
-        "mult teleporter recharge rate" .5
-    }
-
-    ItemAttributes
-    {
-        ClassName tf_weapon_minigun
-        "dont count damage towards crit rate" 1
+        "mult teleporter recharge rate" 0.5
     }
 
     ItemAttributes //sniper blood splatter
@@ -92,10 +92,16 @@ gettysburg
         //"reload time increased" 2
     }
 
-    ItemAttributes //wrangler BIG SLOW sentries
+    ItemAttributes
+    {
+        ItemName "Festive Eyelander"
+        "set turn to ice" 1
+    }
+
+    ItemAttributes
     {
         ClassName tf_weapon_laser_pointer
-        "building scale" 1.125
+        "always allow taunt" 1
         "engy sentry fire rate increased" 1.33
     }
 
@@ -108,7 +114,7 @@ gettysburg
     ItemAttributes //reflect homing support whatever flamethrower
     {
         ItemName "The Degreaser"
-        "mult airblast refire time" 1.25
+        //"mult airblast refire time" 1.25
         "airblast_give_teammate_speed_boost" 1
         "mod projectile heat follow crosshair" 1
         "airblast cost increased" 2
@@ -203,7 +209,7 @@ gettysburg
             WeaponRestrictions MeleeOnly
             Item "Golden Wrench"
             //Item "The Gunslinger"
-            ForceRomevision 1
+            //ForceRomevision 1
 
             CharacterAttributes
             {
@@ -301,7 +307,7 @@ gettysburg
             ItemAttributes
             {
                 ItemName "The Razorback"
-                item_meter_charge_rate 3
+                item_meter_charge_rate 5
             }
 
             CharacterAttributes
@@ -360,39 +366,6 @@ gettysburg
                     //"mult dispenser rate" 1.5 //custom attribute
                     "construction rate increased" 1.33
                     "building scale" 1.25
-                }
-            }
-        }
-    }
-
-    Mission //W4 Ranger Sniper
-    {
-        Objective Sniper
-        Where spawnbot
-        DesiredCount 2
-        InitialCooldown 15
-        CooldownTime 45
-        BeginAtWave 4
-        RunForThisManyWaves 1
-
-        RandomChoice
-        {
-            Squad
-            {
-                TFBot
-                {
-                    Template G_Engineer_Ranger
-                    Attributes DisableDodge
-                    Attributes AlwaysCrit
-                    AimAt Head [$SIGSEGV]
-                    AimLeadProjectileSpeed 2000 [$SIGSEGV]
-
-                    ItemAttributes
-                    {
-                        ItemName "The Rescue Ranger"
-                        "fire rate penalty" 1.75
-                        "reload time decreased" 0.01
-                    }
                 }
             }
         }
@@ -2225,7 +2198,7 @@ gettysburg
             Where spawnbot_titan
             TotalCount 20
             SpawnCount 1
-            MaxActive 3
+            MaxActive 2
             Support 1
 
             WaitForAllSpawned 4a
@@ -2261,7 +2234,7 @@ gettysburg
             Where spawnbot_main
             TotalCount 10
             SpawnCount 1
-            MaxActive 5
+            MaxActive 4
             Support 1
 
             WaitForAllDead 4b

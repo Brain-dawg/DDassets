@@ -324,18 +324,18 @@ WaveSchedule
 		"critboost on kill" 3	
 	}
 	
-	ItemAttributes [$SIGSEGV]	// reliable crit cleaver
+	ItemAttributes [$SIGSEGV]	// crit cleaver
 	{
 		ItemName "The Flying Guillotine"
-		"minicrits become crits" 1
+		"always crit" 1
 	}
 			
-	ItemAttributes [$SIGSEGV] // +15% bonus base damage. pointblank damage scales from 155 up to 255. removed projectile speed
+	ItemAttributes [$SIGSEGV] // +15% bonus base damage. pointblank damage scales from 155 up to 255
 	{
 		ItemName "The Direct Hit"
 		"ragdolls become ash" 1
 		"damage bonus HIDDEN" 1.15
-		"Projectile speed increased" 1
+		//"Projectile speed increased" 1
 	}
 	
 	ItemAttributes [$SIGSEGV] // infinite clip, more health, degreaser switch
@@ -363,6 +363,12 @@ WaveSchedule
 		ItemName "The Market Gardener"
 		"damage bonus" 2
 		"fire rate penalty" 2
+	}
+
+	ItemAttributes [$SIGSEGV] // light class 1-shot
+	{
+		ItemName "The Equalizer"
+		"damage bonus HIDDEN" 1.15
 	}
 		
 	ItemAttributes [$SIGSEGV] // self explanatory
@@ -419,10 +425,10 @@ WaveSchedule
 		"maxammo primary reduced" 0.75
 	}
 	
-	ItemAttributes [$SIGSEGV] // added unique stats to napalmer, airblast jumps and -25% damage
+	ItemAttributes [$SIGSEGV] // added unique stats to napalmer, airblast jumps
 	{
 		ItemName "The Nostromo Napalmer"
-		"damage penalty" 0.75
+		//"damage penalty" 0.75
 		"airblast dashes" 1
 		"increased air control" 4
 	}
@@ -437,6 +443,12 @@ WaveSchedule
 	{
 		ItemName "The Gas Passer"
 		"weapon burn dmg increased" 5
+	}
+
+	ItemAttributes [$SIGSEGV] // increased speed boost time to 5 seconds
+	{
+		ItemName "The Hot Hand"
+		"speed_boost_on_hit_enemy" 5
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -506,6 +518,16 @@ WaveSchedule
 		"minigun spinup time increased" 1
 		"aiming movespeed decreased" 0.0025
 		"spunup_damage_resistance" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // stronger option for steak, new downside
+	{
+		ItemName "Warrior's Spirit"
+		"provide on active" 0
+		"damage bonus" 1.35
+		"dmg taken increased" 1
+		"heal on kill" 0
+		"fire rate penalty" 1.4
 	}
 	
 	ItemAttributes [$SIGSEGV] // doublejump for demoman
@@ -632,6 +654,12 @@ WaveSchedule
 		ClassName "tf_weapon_laser_pointer"
 		"max health additive penalty" -25
 	}
+
+	ItemAttributes [$SIGSEGV] // self explanatory, health penalty
+	{
+		ItemName "The Short Circuit"
+		"max health additive penalty" -25
+	}
 	
 	ItemAttributes [$SIGSEGV] // infinite attack range for mini sentry + more ammo
 	{
@@ -689,7 +717,7 @@ WaveSchedule
 		"ubercharge rate bonus" 1.5
 		"overheal penalty" 0
 	}
-	
+
 	ItemAttributes [$SIGSEGV] // stock can heal friendly buildings
 	{
 		ItemName "TF_WEAPON_MEDIGUN"
@@ -708,6 +736,16 @@ WaveSchedule
 		"fire rate penalty" 1.4
 		"crit mod disabled" 0
 	}
+
+	ItemAttributes [$SIGSEGV] // 50% chance of save
+	{
+		ItemName "The Solemn Vow"
+		"mod see enemy health" 0
+
+		"crit mod disabled" 0
+		"damage penalty" 0
+		"teleport instead of die" 50
+	}
 	
 	ItemAttributes [$SIGSEGV] // cleared old stats, mimics railgun from Open Fortress
 	{
@@ -724,6 +762,7 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // hook bow - DAMAGE UPGRADE DOES NOT WORK
 	{
 		ItemName "The Fortified Compound"
+		"max health additive bonus" 50
 		"override projectile type" 26
 		"mark for death" 1
 		"dmg penalty vs players" 150
@@ -821,6 +860,44 @@ WaveSchedule
 	//	ItemName "The Red-Tape Recorder"
 	//	"sapper health penalty" 0.5
 	//}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "The Outdoorsman"
+		"set item tint rgb" 13595446
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "The Apparatchik's Apparel"
+		"set item tint rgb" 13595446
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Basic Spellbook"
+		"voice pitch scale" 1.4
+		"gesture speed increase" 1.75
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Gold Frying Pan"
+		"receive friendly fire" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Golden Wrench"
+		"receive friendly fire" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Saxxy"
+		"receive friendly fire" 1
+	}
+
 	
 	//TEMPLATES
 	
@@ -7666,6 +7743,7 @@ WaveSchedule
 				Name "Gaben"
 				Health 250
 				Skill Expert
+				Tag bot_red
 				Classicon vip
 				Attributes IgnoreFlag
 				WeaponRestrictions SecondaryOnly
