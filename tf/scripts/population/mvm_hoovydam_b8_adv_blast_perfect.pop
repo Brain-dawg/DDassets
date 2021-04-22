@@ -97,6 +97,44 @@ WaveSchedule
 				"targetname" "door_b_stuck_target"
 				"origin" "465.334 -2129.2 432"
 			}
+			trigger_multiple //gate a check
+			{
+				"targetname" "gate_a_stuck_check"
+				"mins" "-169 -100 -144"
+				"maxs" "169 100 144"
+				"origin" "-3405 -1464 609"
+				"spawnflags" "1"
+				"OnStartTouchAll" "gate_a_stuck_timer,Enable,,0,-1"
+				"OnEndTouchAll" "gate_a_stuck_timer,Disable,,0,-1"
+				"OnEndTouchAll" "gate_a_stuck_timer,ResetTimer,,0.1,-1"
+				"OnEndTouchAll" "gate_a_stuck_tele,Disable,,0,-1"
+			}
+			logic_timer //gate a timer
+			{
+				"RefireTime" "11"
+				"spawnflags" "0"
+				"StartDisabled" "1"
+				"targetname" "gate_a_stuck_timer"
+				"UseRandomTime" "0"
+				"OnTimer" "gate_a_stuck_tele,Enable,,0,-1"
+				"OnTimer" "gate_a_stuck_tele,Disable,,0.1,-1"
+			}
+			trigger_teleport //gate a tele
+			{
+				"targetname" "gate_a_stuck_check"
+				"mins" "-169 -100 -144"
+				"maxs" "169 100 144"
+				"origin" "-3405 -1454 609"
+				"spawnflags" "1"
+				"StartDisabled" "1"
+				"target" "gate_a_stuck_target"
+				"targetname" "gate_a_stuck_tele"
+			}
+			info_teleport_destination //gate a tele dest
+			{
+				"targetname" "gate_a_stuck_target"
+				"origin" "-3021 -1489 607"
+			}
 			trigger_multiple //gate b check
 			{
 				"targetname" "gate_b_stuck_check"
