@@ -190,7 +190,7 @@ WaveSchedule
 		"increased jump height" 2
 		"cancel falling damage" 1
 		//"always crit" 1
-		//"head scale" 1.5
+		"head scale" 1.5
 		"no_duck" 1
 		"override footstep sound set" 5
 	}
@@ -209,6 +209,12 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Flying Guillotine"
+		"effect bar recharge rate increased" 0.001
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Wrap Assassin"
 		"effect bar recharge rate increased" 0.001
 	}
 
@@ -300,39 +306,9 @@ WaveSchedule
 
 	ItemAttributes [$SIGSEGV] // easter egg
 	{
-		ItemName "The Outdoorsman"
-		"set item tint rgb" 13595446
-	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "The Apparatchik's Apparel"
-		"set item tint rgb" 13595446
-	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
 		ItemName "Basic Spellbook"
 		"voice pitch scale" 1.4
 		"gesture speed increase" 1.75
-	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "Gold Frying Pan"
-		"receive friendly fire" 1
-	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "Golden Wrench"
-		"receive friendly fire" 1
-	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "Saxxy"
-		"receive friendly fire" 1
 	}
 	
 	Templates
@@ -348,6 +324,8 @@ WaveSchedule
 			Item "Batsaber"
 			Health 888
 			WeaponRestrictions MeleeOnly
+			FastUpdate 1
+			DropWeapon 1
 			Attributes MiniBoss
 			Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
@@ -360,6 +338,8 @@ WaveSchedule
 			{
 				ItemName "Batsaber"
 				"SPELL: set item tint RGB" 5
+				"hand scale" 1.5
+				"move speed bonus" 2
 			}
 			CharacterAttributes
 			{
@@ -369,7 +349,6 @@ WaveSchedule
 				"wet immunity" 1
 				"mult stun resistance" 0
 				"override footstep sound set" 5
-				"move speed bonus" 2
 				"increased jump height" 1.75
 			}
 		}
@@ -395,7 +374,6 @@ WaveSchedule
 			Class Engineer 
 			Classicon engineer
 			Skill Normal
-			AimTrackingInterval 0.05
 			Health 275
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
@@ -466,12 +444,25 @@ WaveSchedule
 		Hell_BFB
 		{
 			Class Scout
-			Classicon scout_blaster_nys
-			Skill Expert
-			Item "Baby Face's Blaster"
-			Item "Pretty Boy's Pocket Pistol"
-			UseBestWeapon 1	[$SIGSEGV]
-			AimTrackingInterval 1 [$SIGSEGV]
+			ClassIcon scout_fan
+			Skill Easy
+			DropWeapon 1
+			Item "The Force-a-Nature"
+			ItemAttributes
+			{
+				ItemName "The Force-a-Nature"
+				"item style override" 1
+			}
+			Item "Gold Frying Pan"
+			WeaponSwitch [$SIGSEGV]
+            {
+                Delay 0
+                Cooldown 0
+                Repeats 1
+				IfSeeTarget 0
+				Type "Melee"
+				IfHealthBelow 51
+			}
 		}
 		
 		Hell_HoK
@@ -750,7 +741,6 @@ WaveSchedule
 			Skill Expert
 			Item "The Dead Ringer"
 			Item "The Spy-cicle"
-			AimTrackingInterval 0.05
 			ItemAttributes
 			{
 				ItemName tf_weapon_revolver
@@ -1166,7 +1156,6 @@ WaveSchedule
 				Attributes MiniBoss
 				Attributes AlwaysFireWeapon
 				Attributes UseBossHealthBar
-				AimTrackingInterval 0.05
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Item "Batter's Bracers"
 				Item "Forgotten King's Pauldrons"
@@ -1217,12 +1206,12 @@ WaveSchedule
 			Name "part06"
 			Where spawnbot_flank_right
 			Where spawnbot_flank_left
-			TotalCount 6
-			MaxActive 6
+			TotalCount 12
+			MaxActive 12
 			SpawnCount 1
 			WaitForAllDead "part05"
-			WaitBeforeStarting 4
-			WaitBetweenSpawns 2
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 3
 			TotalCurrency 0
 			Support 1
 		
@@ -1519,7 +1508,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_SHOTGUN_HWG"
-					"damage bonus" 2.1
+					"damage bonus" 1.05
 					"clip size bonus" 1.3
 					"weapon maxammo bonus" 1.5
 					"weapon spread bonus" 0.7
@@ -2285,7 +2274,7 @@ WaveSchedule
 					ItemName "TF_WEAPON_GRENADELAUNCHER"
 					"is_passive_weapon" 1
 					"override projectile type" 27
-					//"faster reload rate" 0.4
+					"faster reload rate" 0.4
 				}
 				ItemAttributes
 				{
@@ -2293,7 +2282,7 @@ WaveSchedule
 					"stickybomb charge rate" 0.001
 					"max pipebombs decreased" -13
 					"Projectile range increased" 0.4
-					//"faster reload rate" 0.4
+					"faster reload rate" 0.4
 					"damage bonus" 1.8
 				}
 			}
@@ -2398,6 +2387,7 @@ WaveSchedule
 					"torso scale" 0.2
 					"mult stun resistance" 0
 					"wet immunity" 1
+					"not solid to players" 1
 				}			
 			}
 			
@@ -2719,9 +2709,9 @@ WaveSchedule
 				HomingRockets [$SIGSEGV]
 				{
 					Enable               1
-					IgnoreDisguisedSpies 0
-					IgnoreStealthedSpies 0
-					TurnPower    15
+					IgnoreDisguisedSpies 1
+					IgnoreStealthedSpies 1
+					TurnPower   999
 					MaxAimError 999
 					RocketSpeed 0.35
 				}
@@ -2805,7 +2795,7 @@ WaveSchedule
 					"cloak consume rate decreased" 1
 					//Removed old stats
 					
-					"damage bonus" 1.5
+					"damage bonus" 2
 					"projectile penetration" 1
 					"fire rate bonus" 0.15
 					"faster reload rate" 1.5
@@ -3148,7 +3138,6 @@ WaveSchedule
 				Classicon heavy_steelfist_nys
 				Item "Fists of Steel"
 				Item "The U-clank-a"
-				AimTrackingInterval 0.05
 				ItemAttributes
 				{
 					ItemName "The U-clank-a"
@@ -3224,7 +3213,6 @@ WaveSchedule
 				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
 				Health 30000
-				AimTrackingInterval 0.05
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Attributes UseBossHealthBar
 				ItemAttributes
@@ -3354,7 +3342,7 @@ WaveSchedule
 				FireWeapon [$SIGSEGV]
                 {
                     Delay 0.1
-                    Cooldown 5           
+                    Cooldown 2.5           
                     Duration 0.1
 					IfSeeTarget 1
 					Type Primary
