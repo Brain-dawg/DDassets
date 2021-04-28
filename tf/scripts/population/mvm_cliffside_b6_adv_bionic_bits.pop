@@ -39,20 +39,21 @@ WaveSchedule
 	RespawnWaveTime 		3
 	CanBotsAttackWhileInSpawnRoom yes
 
-	NoReanimators 1				[$SIGSEGV]
-	NoMvMDeathTune 1 			[$SIGSEGV]
-	//SniperHideLasers 1 		[$SIGSEGV]
-	MaxSpeedLimit 800			[$SIGSEGV]
-	SniperAllowHeadshots 1		[$SIGSEGV]
-	BonusRatioHalf 2			[$SIGSEGV]
-	BonusRatioFull 2			[$SIGSEGV]
-	SentryBusterFriendlyFire 0 	[$SIGSEGV]
-	StandableHeads 1 			[$SIGSEGV]
-	RedPlayersAreRobots 1 		[$SIGSEGV]
-	ImprovedAirblast 1			[$SIGSEGV]
-	RobotLimit 26 				[$SIGSEGV]
-	NoHolidayPickups 1			[$SIGSEGV]
-	TextPrintTime 0 			[$SIGSEGV]
+	NoReanimators 1					[$SIGSEGV]
+	NoMvMDeathTune 1 				[$SIGSEGV]
+	//SniperHideLasers 1 			[$SIGSEGV]
+	MaxSpeedLimit 800				[$SIGSEGV]
+	SniperAllowHeadshots 1			[$SIGSEGV]
+	BonusRatioHalf 2				[$SIGSEGV]
+	BonusRatioFull 2				[$SIGSEGV]
+	SentryBusterFriendlyFire 0 		[$SIGSEGV]
+	StandableHeads 1 				[$SIGSEGV]
+	RedPlayersAreRobots 1 			[$SIGSEGV]
+	ImprovedAirblast 1				[$SIGSEGV]
+	RobotLimit 26 					[$SIGSEGV]
+	NoHolidayPickups 1				[$SIGSEGV]
+	TextPrintTime 0 				[$SIGSEGV]
+	//FlagCarrierMovementPenalty 1  	[$SIGSEGV]
 
 	//Precache
 	PrecacheModel "models\bots\boss_bot\boss_tank_color.mdl"	[$SIGSEGV]
@@ -108,9 +109,9 @@ WaveSchedule
 
 		"voice pitch scale" 0.7
 		"damage force reduction" 0
-		"airblast vulnerability multiplier" 0
+		"airblast vulnerability multiplier" 0.25
 		"max health additive bonus" 1075
-		"override footstep sound set" 5
+		//"override footstep sound set" 5
 		"boots falling stomp" 1
 		}
 		Soldier
@@ -189,7 +190,7 @@ WaveSchedule
 		"effect bar recharge rate increased" 0.1
 		"increased jump height" 2
 		"cancel falling damage" 1
-		//"always crit" 1
+		"always crit" 1
 		"head scale" 1.5
 		"no_duck" 1
 		"override footstep sound set" 5
@@ -303,13 +304,6 @@ WaveSchedule
 		ItemName "The Holiday Punch"
 		"set turn to ice" 1
 	}
-
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "Basic Spellbook"
-		"voice pitch scale" 1.4
-		"gesture speed increase" 1.75
-	}
 	
 	Templates
 	{
@@ -325,9 +319,9 @@ WaveSchedule
 			Health 888
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
-			DropWeapon 1
+			//DropWeapon 1
 			Attributes MiniBoss
-			Attributes IgnoreEnemies
+			//Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
 			ItemAttributes
 			{
@@ -340,7 +334,60 @@ WaveSchedule
 				"SPELL: set item tint RGB" 5
 				"hand scale" 1.5
 				"move speed bonus" 2
+				//"no_duck" 1
 			}
+			VoiceCommand [$SIGSEGV]
+            {
+				Delay 1
+				Cooldown 3
+				Type "Dispenser here"
+            }
+			CharacterAttributes
+			{
+				"damage force reduction" 0
+				"airblast vulnerability multiplier" 0
+				"airblast vertical vulnerability multiplier" 0
+				"wet immunity" 1
+				"mult stun resistance" 0
+				"override footstep sound set" 5
+				"increased jump height" 1.75
+			}
+		}
+
+		Hell_Express2
+		{
+			Class Scout
+			Name "Greater Super Scout"
+			ClassIcon scout_rng
+			Skill Expert
+			Item "The Lightning Lid"
+			Item "Batsaber"
+			Health 888
+			WeaponRestrictions MeleeOnly
+			FastUpdate 1
+			DropWeapon 1
+			Attributes MiniBoss
+			//Attributes IgnoreEnemies
+			ExtAttr JumpStomp [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName "The Lightning Lid"
+				"SPELL: set item tint RGB" 5
+			}
+			ItemAttributes
+			{
+				ItemName "Batsaber"
+				"SPELL: set item tint RGB" 5
+				"hand scale" 1.5
+				"move speed bonus" 2
+				"no_duck" 1
+			}
+			VoiceCommand [$SIGSEGV]
+            {
+				Delay 1
+				Cooldown 3
+				Type "Dispenser here"
+            }
 			CharacterAttributes
 			{
 				"damage force reduction" 0
@@ -367,6 +414,12 @@ WaveSchedule
 			{
 				"move speed bonus" 1.3
 			}
+			VoiceCommand [$SIGSEGV]
+            {
+				Delay 5
+				Cooldown 15
+				Type "Dispenser here"
+            }
 		}
 		
 		Hell_Circuit
@@ -454,6 +507,11 @@ WaveSchedule
 				"item style override" 1
 			}
 			Item "Gold Frying Pan"
+			ItemAttributes
+			{
+				ItemName "Gold Frying Pan"
+				"item style override" 1
+			}
 			WeaponSwitch [$SIGSEGV]
             {
                 Delay 0
@@ -999,7 +1057,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Template Hell_Express
+				Template Hell_Express2
 			}
 		
 		}
@@ -1508,7 +1566,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_SHOTGUN_HWG"
-					"damage bonus" 1.05
+					"damage bonus" 1.55
 					"clip size bonus" 1.3
 					"weapon maxammo bonus" 1.5
 					"weapon spread bonus" 0.7

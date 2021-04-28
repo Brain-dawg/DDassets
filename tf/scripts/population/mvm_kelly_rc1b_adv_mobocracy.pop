@@ -456,7 +456,7 @@ WaveSchedule
 		ItemName "The Loose Cannon" // disabled problematic cannonball push, added reskinned pipes, -20% damage +50% explosion radius
 		"override projectile type" 3
 		"damage penalty" 0.8
-		"Blast radius increased" 1.5
+		"Blast radius increased" 2
 		"custom projectile model" "models\weapons\w_models\w_cannonball.mdl"
 	}
 	
@@ -588,7 +588,7 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // giant shotgun
 	{
 		ItemName "TF_WEAPON_SHOTGUN_HWG"
-		"max health additive penalty" -100
+		"max health additive penalty" -175
 		"fire rate penalty"       	 2.5
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
@@ -741,7 +741,7 @@ WaveSchedule
 	{
 		ItemName "The Solemn Vow"
 		"mod see enemy health" 0
-
+		"fire rate penalty" 1
 		"crit mod disabled" 0
 		"damage penalty" 0
 		"teleport instead of die" 50
@@ -1644,6 +1644,7 @@ WaveSchedule
 					"damage force reduction" 0.6
 					"airblast vulnerability multiplier" 0.6
 					"heal rate bonus" 200
+					//"mod weapon blocks healing" 1
 				}
 				
 				//SIG
@@ -1679,6 +1680,7 @@ WaveSchedule
 					"damage force reduction" 0.6
 					"airblast vulnerability multiplier" 0.6
 					"heal rate bonus" 200
+					"mod weapon blocks healing" 1
 				}
 				
 				//SIG
@@ -1712,6 +1714,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.6
 					"heal rate bonus" 200
 					"bot medic uber deploy delay duration" 10000
+					"mod weapon blocks healing" 1
 				}
 				
 				//SIG
@@ -5165,6 +5168,7 @@ WaveSchedule
 				{
 					Name TF_COND_CRITBOOSTED_ON_KILL
 				}
+				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				//SIG
 			}
 
@@ -7272,6 +7276,11 @@ WaveSchedule
 				Attributes DisableDodge
 				Item "The Dragon's Fury"
 				Item "The Gas Passer"
+				ItemAttributes
+				{
+					ItemName "The Gas Passer"
+					"explode_on_ignite" 1
+				}
 				CharacterAttributes
 				{
 					"voice pitch scale" 0.95
@@ -7310,7 +7319,7 @@ WaveSchedule
 					"voice pitch scale" 0.95
 					"crit mod disabled" 0
 					"ammo regen" 1
-					"effect bar recharge rate increased" 2
+					"effect bar recharge rate increased" 3
 				}
 				
 				//SIG
@@ -10495,6 +10504,7 @@ WaveSchedule
 				Attributes MiniBoss
 				Skill Expert
 				WeaponRestrictions MeleeOnly
+				FastUpdate 1
 				ExtAttr JumpStomp [$SIGSEGV]
 				UseBusterModel 1 [$SIGSEGV]
 				CustomWeaponModel [$SIGSEGV]
@@ -10512,6 +10522,7 @@ WaveSchedule
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
+					"mult stun resistance" 0
 					"override footstep sound set" 7
 					"rage giving scale" 0
 					"cancel falling damage" 1
