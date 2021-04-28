@@ -1,6 +1,6 @@
 // ADVANCED MISSION FOR MVM_HANAMI_RC1
 // MADE BY PEALOVER
-// V7
+// V8 (post-launch)
 
 #base robot_giant.pop
 #base robot_standard.pop
@@ -333,7 +333,7 @@ WaveSchedule
 			AutoJumpMax 10
 			Health 50000
 			Scale 1.8
-			Name "Liberator"
+			Name "Blastage Infinity"
 			ItemAttributes
 			{
 				ItemName "The Liberty Launcher"
@@ -615,8 +615,8 @@ WaveSchedule
 		{
 			Name "W1B-1"
 			TotalCount 1
-			WaitForAllSpawned "W1A-2"
-			WaitBeforeStarting 30
+			WaitForAllDead "W1A-2"
+			WaitBeforeStarting 3
 			WaitBetweenSpawns 0
 			TotalCurrency 100
 			FirstSpawnOutput
@@ -649,8 +649,8 @@ WaveSchedule
 			SpawnCount 4
 			MaxActive 8
 			TotalCount 16
-			WaitForAllSpawned "W1A-2"
-			WaitBeforeStarting 30
+			WaitForAllDead "W1A-2"
+			WaitBeforeStarting 0
 			WaitBetweenSpawns 15
 			TotalCurrency 100
 			Squad
@@ -680,8 +680,8 @@ WaveSchedule
 			SpawnCount 6
 			MaxActive 12
 			TotalCount 30
-			WaitForAllSpawned "W1A-2"
-			WaitBeforeStarting 30
+			WaitForAllDead "W1A-2"
+			WaitBeforeStarting 0
 			WaitBetweenSpawns 8
 			TotalCurrency 150
 			TFBot

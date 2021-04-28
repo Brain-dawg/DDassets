@@ -52,7 +52,6 @@ gettysburg
 
     PlayerAttributes
     {
-		"cannot pick up intelligence" 1
         Medic
         {
             "medic machinery beam" 2.5
@@ -221,26 +220,7 @@ gettysburg
             }
         }
     }
-	
-	PointTemplates [$SIGSEGV]
-	{
-		bombfix //switch flag teams to show up on HUD
-		{
-            NoFixup 1
-			logic_auto
-			{
-				"origin" "0 0 0"
-				"targetname" "multibombhud"
-				"OnMapSpawn" "intel_2,SetTeam,0,0,-1"
-				
-				"OnMapSpawn" "intel_2,AddOutput,OnPickupTeam2 intel_2:SetTeam:0:0:-1" //switch to blu on drop
-				"OnMapSpawn" "intel_2,AddOutput,OnDrop intel_2:SetTeam:3:0:-1"
-			}
-		}
-	}
-	
-	SpawnTemplate "bombfix" [$SIGSEGV]
-	
+
     Mission //Backburn Spy Mission W2
     {
         Objective Spy

@@ -45,12 +45,14 @@
 
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
 
-//CHANGELOG LATEST EDITS 19-04
+//CHANGELOG LATEST EDITS 27-04
 //- Moved 150$ from W4 to W3. Total payout remains the same.
 //W1
 //- Changed Giant Burst Demos' medics to charged q-fixes
+//- Removed 2 uber medics from the Giant Shotgun Heavies
 //- Removed crits from Sandman Scouts
 //W3
+//- Removed Giant Rapid Blast Soldier's Buff Banner; changed its uber medics to kritz medics
 //- Changed Direct Hit Soldiers to Rapid Bison Soldiers, lowering blast spam
 //- Added HoldFireUntilFullReload to Backup Soldiers, slightly lowering their spam.
 //W4
@@ -1450,9 +1452,9 @@ WaveSchedule
 			Where spawnbot_main0
 			Where spawnbot_main1
 			WaitBetweenSpawns 18
-			TotalCount 15
-			MaxActive 10
-			SpawnCount 5
+			TotalCount 9
+			MaxActive 6
+			SpawnCount 3
 			TotalCurrency 120
 			Squad
 			{
@@ -1461,18 +1463,6 @@ WaveSchedule
 					Template T_TFBot_Giant_Heavyweapons_Shotgun
 					Skill Hard
 					Tag bot_giant
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic_QuickUber
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic_QuickUber
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
 				}
 				TFBot
 				{
@@ -1878,8 +1868,6 @@ WaveSchedule
 					Tag bot_giant
 					Item "The Liberty Launcher"
 					Item "Jumper's Jeepcap"
-					Item "The Buff Banner"
-					Attributes SpawnWithFullCharge
 					ItemAttributes
 					{
 						ItemName "The Liberty Launcher"
@@ -1896,13 +1884,13 @@ WaveSchedule
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic
+					Template T_TFBot_Medic_Krit
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic
+					Template T_TFBot_Medic_Krit
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
 				}
