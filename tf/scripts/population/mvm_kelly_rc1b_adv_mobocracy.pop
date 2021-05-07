@@ -32,6 +32,7 @@ WaveSchedule
 	ForceHoliday 2 						[$SIGSEGV]
 	NoHolidayPickups 1					[$SIGSEGV]
 	RemoveGrapplingHooks 1.5			[$SIGSEGV]
+	//FlagCarrierMovementPenalty 1  		[$SIGSEGV]
 
 	//Custom Shop
 	CustomUpgradesFile "mvm_upgrades_hellmet.txt" [$SIGSEGV]
@@ -424,6 +425,12 @@ WaveSchedule
 		ItemName "The Backburner"
 		"maxammo primary reduced" 0.75
 	}
+
+	ItemAttributes [$SIGSEGV] // less ammo/airblast to make stock more valuable
+	{
+		ItemName "Festive Backburner 2014"
+		"maxammo primary reduced" 0.75
+	}
 	
 	ItemAttributes [$SIGSEGV] // added unique stats to napalmer, airblast jumps
 	{
@@ -676,6 +683,7 @@ WaveSchedule
 		"Construction rate increased" 2.5
 		"upgrade rate decrease" 0
 		"crit mod disabled" 1
+		"building max level" 1
 	}
 
 	ItemAttributes [$SIGSEGV] // removed stats, new sentry - missile turret + speed pad
@@ -688,10 +696,9 @@ WaveSchedule
 
 		"mod teleporter speed boost" 1
 		"rocket specialist" 4
-		"mult firerocket rate" 0.1
+		"mult firerocket rate" 0.25
 		"engy sentry fire rate increased" 5
-		"engy building health bonus" 1.5
-		"engy sentry radius increased" 1.5
+		//"engy sentry radius increased" 1.5
 		"rocket jump damage reduction" 0
 	}
 		
@@ -730,6 +737,12 @@ WaveSchedule
 		"medic machinery beam" 4
 	}
 
+	ItemAttributes [$SIGSEGV] // meta shaker, half shield duration
+	{
+		ItemName "The Kritzkrieg"
+		"increase buff duration" 0.5
+	}
+
 	ItemAttributes [$SIGSEGV] // well deserved nerf to most powerful medic item
 	{
 		ItemName "The Ubersaw"
@@ -756,13 +769,14 @@ WaveSchedule
 		"lunchbox adds minicrits" 2
 		"aiming movespeed decreased" 4
 		"sniper charge per sec" 0
-		"damage bonus" 1.6
+		//"damage bonus" 1.6
 	}
 
 	ItemAttributes [$SIGSEGV] // hook bow - DAMAGE UPGRADE DOES NOT WORK
 	{
 		ItemName "The Fortified Compound"
 		"max health additive bonus" 50
+		"cancel falling damage" 1
 		"override projectile type" 26
 		"mark for death" 1
 		"dmg penalty vs players" 150
@@ -1072,7 +1086,7 @@ WaveSchedule
             {
                 Target "wallsentry"
                 Action "sethealth"
-                Param 1000
+                Param 500
 			}
 		
 			obj_sentrygun
@@ -3948,6 +3962,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Sniper_Huntsman_Spammer
 				Attributes DisableDodge
+				AimTrackingInterval 0.5 [$SIGSEGV]
 				Item "The Razorback"
 				CharacterAttributes
 				{
@@ -4178,7 +4193,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					"move speed bonus" 0.5
+					"move speed bonus" 0.55
 					"backstab shield" 1
 					"damage force reduction" 0.5
 					"airblast vulnerability multiplier" 0
@@ -4233,7 +4248,7 @@ WaveSchedule
 		Explanation [$SIGSEGV]
 		{
 			Line "{D500FF}Miss Pauling{FFFFFF} : {yellow}Mister Conagher{FFFFFF} asks me to remind you to"
-			Line "to keep your teleporters away from nearby objects or walls."
+			Line "{FFFFFF}to keep your teleporters away from nearby objects or walls."
 			Line "{D500FF}Miss Pauling{FFFFFF} : Some of those {red}allied robots {FFFFFF}might meld into solid matter otherwise. "
 		}
 		
@@ -4553,6 +4568,7 @@ WaveSchedule
 					ItemName "Fists of Steel"
 					"damage bonus" 2
 					"gesture speed increase" 1.5
+					"melee cleave attack" 1
 				}
 				ItemAttributes
 				{
@@ -10474,6 +10490,11 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0
 					"override footstep sound set" 7
 					"rage giving scale" 200
+				}
+				ItemAttributes
+				{
+					ItemName "Blast Blocker"
+					"set item tint rgb" 6535423
 				}
 				SpawnTemplate "tankkiller" [$SIGSEGV]
 		}

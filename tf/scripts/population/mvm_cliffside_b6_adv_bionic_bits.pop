@@ -8,6 +8,16 @@
 WaveSchedule
 {
 
+	ExtraTankPath [$SIGSEGV]
+    {
+        Name blimp_path
+        Node "-798 7753 1450"
+        Node "-798 4230 1450"
+        Node "-1216 3659 1450"
+        Node "-1598 688 1500"
+        Node "-119 699 1500"
+    }
+
 	ExtraSpawnPoint [$SIGSEGV]
     {
         Name "spawnbot_new"
@@ -42,7 +52,7 @@ WaveSchedule
 	NoReanimators 1					[$SIGSEGV]
 	NoMvMDeathTune 1 				[$SIGSEGV]
 	//SniperHideLasers 1 			[$SIGSEGV]
-	MaxSpeedLimit 800				[$SIGSEGV]
+	//MaxSpeedLimit 800				[$SIGSEGV]
 	SniperAllowHeadshots 1			[$SIGSEGV]
 	BonusRatioHalf 2				[$SIGSEGV]
 	BonusRatioFull 2				[$SIGSEGV]
@@ -95,7 +105,7 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"increased air control" 4
-		"ammo regen" 0.35
+		"ammo regen" 0.5
 		"damage applies to sappers" 1
 		"deploy time decreased" 0.5
 		"always allow taunt" 1
@@ -154,7 +164,7 @@ WaveSchedule
 		Medic
 		{
 		"health regen" 40
-		"overheal penalty" 0
+		"overheal penalty" -1
 		"medic machinery beam" 4
 		"cancel falling damage" 1
 		}
@@ -178,7 +188,7 @@ WaveSchedule
 	{
 		ClassName "TF_WEAPON_BAT"
 		"provide on active" 1
-		"no_duck" 1
+		//"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -192,7 +202,7 @@ WaveSchedule
 		"cancel falling damage" 1
 		"always crit" 1
 		"head scale" 1.5
-		"no_duck" 1
+		//"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -203,7 +213,7 @@ WaveSchedule
 		//"max health additive penalty" -400
 		"move speed bonus" 1.3
 		"no double jump" 1
-		"no_duck" 1
+		//"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -254,7 +264,7 @@ WaveSchedule
 	{
 		ClassName "TF_WEAPON_MINIGUN"
 		"mod minigun can holster while spinning" 1
-		"maxammo primary reduced" 0.5
+		//"maxammo primary reduced" 0.5
 	}
 
 	ItemAttributes [$SIGSEGV]
@@ -263,8 +273,7 @@ WaveSchedule
 		"fire rate penalty"       	 2.5
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
-		"mod no reload DISPLAY ONLY" 1
-		"faster reload rate" 		 0
+		//"faster reload rate" 		 0
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -298,12 +307,6 @@ WaveSchedule
 		ItemName "Festive Eyelander"
 		"set turn to ice" 1
 	}
-
-	ItemAttributes [$SIGSEGV]
-	{
-		ItemName "The Holiday Punch"
-		"set turn to ice" 1
-	}
 	
 	Templates
 	{
@@ -316,12 +319,10 @@ WaveSchedule
 			Skill Expert
 			Item "The Lightning Lid"
 			Item "Batsaber"
-			Health 888
+			Health 1200
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
-			//DropWeapon 1
 			Attributes MiniBoss
-			//Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
 			ItemAttributes
 			{
@@ -332,9 +333,6 @@ WaveSchedule
 			{
 				ItemName "Batsaber"
 				"SPELL: set item tint RGB" 5
-				"hand scale" 1.5
-				"move speed bonus" 2
-				//"no_duck" 1
 			}
 			VoiceCommand [$SIGSEGV]
             {
@@ -344,52 +342,8 @@ WaveSchedule
             }
 			CharacterAttributes
 			{
-				"damage force reduction" 0
-				"airblast vulnerability multiplier" 0
-				"airblast vertical vulnerability multiplier" 0
-				"wet immunity" 1
-				"mult stun resistance" 0
-				"override footstep sound set" 5
-				"increased jump height" 1.75
-			}
-		}
-
-		Hell_Express2
-		{
-			Class Scout
-			Name "Greater Super Scout"
-			ClassIcon scout_rng
-			Skill Expert
-			Item "The Lightning Lid"
-			Item "Batsaber"
-			Health 888
-			WeaponRestrictions MeleeOnly
-			FastUpdate 1
-			DropWeapon 1
-			Attributes MiniBoss
-			//Attributes IgnoreEnemies
-			ExtAttr JumpStomp [$SIGSEGV]
-			ItemAttributes
-			{
-				ItemName "The Lightning Lid"
-				"SPELL: set item tint RGB" 5
-			}
-			ItemAttributes
-			{
-				ItemName "Batsaber"
-				"SPELL: set item tint RGB" 5
 				"hand scale" 1.5
 				"move speed bonus" 2
-				"no_duck" 1
-			}
-			VoiceCommand [$SIGSEGV]
-            {
-				Delay 1
-				Cooldown 3
-				Type "Dispenser here"
-            }
-			CharacterAttributes
-			{
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -409,7 +363,7 @@ WaveSchedule
 			Item "Bonk Boy"
 			Item "The Holy Mackerel"
 			WeaponRestrictions MeleeOnly
-			Attributes IgnoreEnemies
+			//Attributes IgnoreEnemies
 			CharacterAttributes
 			{
 				"move speed bonus" 1.3
@@ -434,17 +388,17 @@ WaveSchedule
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_SAPPED
-				Duration 3
+				Duration 2.5
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_STUNNED
-				Duration 3
+				Duration 2.5
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_FREEZE_INPUT
-				Duration 3
+				Duration 2.5
 			}
 			FireWeapon [$SIGSEGV]
 			{
@@ -494,12 +448,14 @@ WaveSchedule
 			}
 		}
 		
-		Hell_BFB
+		Hell_Gold
 		{
 			Class Scout
-			ClassIcon scout_fan
+			ClassIcon scout_fan_armored
+			Name "Scout?"
 			Skill Easy
 			DropWeapon 1
+			Item "The Weather Master"
 			Item "The Force-a-Nature"
 			ItemAttributes
 			{
@@ -510,7 +466,7 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "Gold Frying Pan"
-				"item style override" 1
+				"item style override" 0
 			}
 			WeaponSwitch [$SIGSEGV]
             {
@@ -519,7 +475,11 @@ WaveSchedule
                 Repeats 1
 				IfSeeTarget 0
 				Type "Melee"
-				IfHealthBelow 51
+				IfHealthBelow 66
+			}
+			CharacterAttributes
+			{
+				"dmg taken from crit reduced" 0
 			}
 		}
 		
@@ -614,7 +574,7 @@ WaveSchedule
 			Health 20
 			Item "Frying Pan"
 			Item "Bozo's Bouffant"
-			Item "Bozo's Brogues"	
+			Item "Flavorful Baggies"	
 			Item "Pop-eyes"
 			Item "Lollichop Licker"
 			Attributes AlwaysFireWeapon
@@ -655,7 +615,7 @@ WaveSchedule
 			Health 20
 			Item "Frying Pan"
 			Item "Bozo's Bouffant"
-			Item "Bozo's Brogues"	
+			Item "Flavorful Baggies"	
 			Item "Pop-eyes"
 			Item "Lollichop Licker"
 			Attributes AlwaysFireWeapon
@@ -710,7 +670,7 @@ WaveSchedule
 				Health 2000
 				Item "EOTL_demopants"
 				Item "Graybanns"
-				MaxVisionRange 500
+				ExtAttr IgnorePlayers
 				WeaponRestrictions SecondaryOnly
 				ClassIcon sentry_buster
 				Attributes MiniBoss
@@ -1057,7 +1017,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Template Hell_Express2
+				Template Hell_Express
 			}
 		
 		}
@@ -1188,6 +1148,46 @@ WaveSchedule
 				}
 				
 		}
+
+		WaveSpawn
+        {
+            Name "part05a"
+            TotalCount 1
+            SpawnCount 1
+            WaitForAllDead "part04"
+            TotalCurrency 0
+
+            Tank
+			{
+				Health 4500
+				Speed 75
+				Classicon blimp2_lite
+				Skin 4 [$SIGSEGV]
+				MaxTurnRate 10 [$SIGSEGV]
+				Model "models/bots/boss_bot/boss_blimp.mdl"	 [$SIGSEGV]
+				Gravity 0 [$SIGSEGV]
+				DisableTracks 1 [$SIGSEGV]
+                DisableSmokestack 1 [$SIGSEGV]
+				DisableChildModels 1 [$SIGSEGV]
+				ReplaceModelCollisions 1 [$SIGSEGV]
+				EngineLoopSound "npc\combine_gunship\dropship_engine_distant_loop1.wav" [$SIGSEGV]
+				PingSound "npc\combine_gunship\ping_search.wav" [$SIGSEGV]
+				Name tankboss
+				StartingPathTrackNode blimp_path_1
+
+				OnKilledOutput
+				{
+					Target boss_dead_relay
+					Action Trigger
+				}
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+        }
 		
 		WaveSpawn
 		{
@@ -1521,7 +1521,7 @@ WaveSchedule
 		
 			TFBot
 			{
-				Template Hell_BFB
+				Template Hell_Gold
 			}
 		
 		
@@ -1981,8 +1981,7 @@ WaveSchedule
 			WaitBeforeStarting 24
 			WaitBetweenSpawns 1
 			TotalCurrency 24
-			
-		
+
 			TFBot
 			{
 				Class Demoman
@@ -2010,7 +2009,7 @@ WaveSchedule
 					"damage bonus"	1.5
 				}			
 			}
-		
+
 		}
 
 		WaveSpawn
@@ -2402,7 +2401,6 @@ WaveSchedule
 				Item "Deadbeats"
 				UseCustomModel models\bots\demo\bot_sentry_buster.mdl [$SIGSEGV]
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
-				AimTrackingInterval 0
 				WeaponRestrictions PrimaryOnly
 				Attributes MiniBoss
 				Attributes UseBossHealthBar
@@ -2443,8 +2441,8 @@ WaveSchedule
 					"override footstep sound set" 7
 					"head scale" 3.3
 					"torso scale" 0.2
-					"mult stun resistance" 0
-					"wet immunity" 1
+					//"mult stun resistance" 0
+					//"wet immunity" 1
 					"not solid to players" 1
 				}			
 			}
@@ -3270,7 +3268,7 @@ WaveSchedule
 				Item "The Reserve Shooter"
 				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
-				Health 30000
+				Health 40000
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				Attributes UseBossHealthBar
 				ItemAttributes

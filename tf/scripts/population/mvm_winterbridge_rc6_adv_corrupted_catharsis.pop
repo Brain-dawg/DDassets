@@ -72,7 +72,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		Classname "tf_weapon_bat_giftwrap"
 		
 		//Classname "tf_weapon_rocketlauncher" //TESTING ONLY
-		DefIndex 237 // Rocket Jumper
+		Name      "Rocket Jumper"
 		Classname "tf_weapon_buff_item"
 		Classname "tf_weapon_shovel"
 		Classname "tf_weapon_katana"
@@ -86,9 +86,11 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		Classname "tf_weapon_slap"
 		
 		Name	  "The Loose Cannon"
+		Name      "Sticky Jumper"
 		Classname "tf_wearable_demoshield"
 		Classname "tf_weapon_bottle"
 		Classname "tf_weapon_sword"
+		Classname "tf_weapon_stickbomb"
 		
 		Classname "tf_weapon_lunchbox"
 		Classname "tf_weapon_fists"
@@ -99,6 +101,7 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		Classname "tf_weapon_robot_arm" // Gunslinger
 		
 		Classname "tf_weapon_crossbow"
+		Classname "tf_weapon_syringegun_medic"
 		Classname "tf_weapon_bonesaw"
 		
 		Classname "tf_weapon_compound_bow"
@@ -126,12 +129,22 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 		}
 	}
 	
+	// Scout
+	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Flying Guillotine"
-		"minicrits become crits" 1
-		"effect bar recharge rate increased" 0.5
+		"always crit" 1
 	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Boston Basher"
+		"hit self on miss" 0
+		"bleeding duration" 20
+	}
+	
+	// Soldier
 	
 	ItemAttributes [$SIGSEGV]
 	{
@@ -152,15 +165,167 @@ Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 	
 	ItemAttributes [$SIGSEGV]
 	{
+		ItemName "TF_WEAPON_SHOVEL"
+		"damage bonus" 1.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
 		ItemName "The Escape Plan"
-		"mult crit when health is below percent" 0.5
+		"mult crit when health is below percent" 0.75
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Equalizer"
 		"damage bonus" 1.5
-		"mult crit when health is below percent" 0.3
+		"mult crit when health is below percent" 0.6
+	}
+	
+	// Pyro
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "TF_WEAPON_FIREAXE"
+		"bleeding duration" 4
+		"melee cleave attack" 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Sharpened Volcano Fragment"
+		"melee cleave attack" 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Hot Hand"
+		"crit from behind" 1
+		"speed_boost_on_hit_enemy" 3
+		"fire rate bonus" 0.75
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Homewrecker"
+		"melee cleave attack" 1
+		"stun on damage" 50 // 1.2 * (50/60) = 1
+		"fire rate penalty" 1.5
+	}
+	
+	// Demo
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Ullapool Caber"
+		"fire rate penalty" 1.5
+		"regenerate stickbomb" 1
+		"aoe blast on damage" 12.5 // 1.2 * (12.5/60) = .25
+		"cancel falling damage" 1
+	}
+	
+	// Heavy
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Fists of Steel"
+		"damage penalty" 0.8
+		"dmg taken increased" 0.75
+		"dmg from ranged reduced" 0.5
+		"dmg from melee increased" 1
+		"mult dmgtaken from melee" 0.25
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Eviction Notice"
+		"damage penalty" 0.7
+		"dmg taken increased" 0.75
+		"move speed bonus" 1.1
+		"bleeding duration" 10
+		"mod_maxhealth_drain_rate" 0
+		"speed_boost_on_hit"  0
+		"speed_boost_on_kill" 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Warrior's Spirit"
+		"dmg taken increased" 1.15
+		"damage bonus" 2.31 // 150 / 450 crit
+		"fire rate penalty" 1.5
+		"move speed penalty" 0.75
+		"mult crit when health is below percent" 0.5
+		"teleport instead of die" 0.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Gloves of Running Urgently"
+		"dmg taken increased" 0.75
+		"move speed bonus" 1.3
+		"mod_maxhealth_drain_rate" 0
+		"speed_boost_on_hit"  1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Festive Gloves of Running Urgently"
+		"dmg taken increased" 0.75
+		"move speed bonus" 1.3
+		"mod_maxhealth_drain_rate" 0
+		"speed_boost_on_hit"  1
+	}
+	
+	// Medic
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "TF_WEAPON_BONESAW"
+		"add uber charge on hit" 10
+		"fire rate bonus" 0.7
+		"health regen" 10
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Ubersaw"
+		"fire rate penalty" 1.5
+		"damage bonus" 1.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Festive Ubersaw"
+		"fire rate penalty" 1.5
+		"damage bonus" 1.5
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Vita-Saw"
+		"add uber charge on hit" 10
+		"bleeding duration" 10
+		"max health additive penalty" 0
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Amputator"
+		"max health additive bonus" 100
+		"add uber charge on hit" 10
+		"damage taken increased" 0.9
+		"mult dmgtaken from melee" 0.75
+		"aoe heal chance" 75 // .8 * (75/60) = 1
+	}
+	
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Solemn Vow"
+		"add uber charge on hit" 10
+		"damage penalty" 0.015
+		"stun on damage" 75 // .8 * (75/60) = 1
+		"single wep deploy time increased" 0.4
 	}
 
 	Wave

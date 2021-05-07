@@ -320,6 +320,21 @@ population
 	PointTemplates [$SIGSEGV]
 	{
 	
+		gatefix //extended trigger_teleport in first robot spawn
+		{
+			NoFixup 1
+			trigger_teleport
+			{
+				"targetname" "gate0_bot_teleport"
+				"mins" "-344 -528 -120"
+				"maxs" "344 528 120"
+				"origin" "-2008.03 464.07 248"
+				"spawnflags" "1"
+				"StartDisabled" "1"
+				"target" "teleport_bots_gate1"
+			}
+		}
+			
 		telefix //Added to fix missing tele destination in gate B
 		{
 			NoFixup 1
@@ -416,6 +431,7 @@ population
 		}				
 	}
 	
+	SpawnTemplate [$SIGSEGV] "gatefix"
 	SpawnTemplate [$SIGSEGV] "bombfix"
 	SpawnTemplate [$SIGSEGV] "telefix"
 	

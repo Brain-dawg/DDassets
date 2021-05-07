@@ -1,13 +1,12 @@
-//bye
+//https://coveryourselfinoil.com/
 //colonel barrage
 #base robot_giant.pop
 #base robot_standard.pop
 population
 {
-	StartingCurrency	800
+	StartingCurrency	850
 	RespawnWaveTime	3
 	CanBotsAttackWhileInSpawnRoom	yes
-	SniperHideLasers 1
 	RespecLimit 2
 	SandmanStun 1
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
@@ -876,7 +875,7 @@ population
 		{
 			Where	flankers
 			TotalCurrency	140
-			TotalCount	14
+			TotalCount	10
 			MaxActive	4
 			SpawnCount	1
 			WaitBeforeStarting	0
@@ -901,12 +900,10 @@ population
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	1
 			WaitForAllDead	32
-			Squad
+			TFBot
 			{
-				TFBot
-				{
-					Template	T_TFBot_Soldier_Extended_Buff_Banner
-				}
+				Template T_TFBot_Demoman
+				Skill easy
 			}
 		}
 		WaveSpawn
@@ -924,7 +921,7 @@ population
 			{
 				TFBot
 				{
-					Skill	hard
+					Skill	normal
 					Name	"Tomislav Heavy"
 					Class	Heavyweapons
 					Item	"tomislav"
