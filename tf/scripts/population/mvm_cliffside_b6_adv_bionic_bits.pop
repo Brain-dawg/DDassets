@@ -200,7 +200,7 @@ WaveSchedule
 		"effect bar recharge rate increased" 0.1
 		"increased jump height" 2
 		"cancel falling damage" 1
-		"always crit" 1
+		//"always crit" 1
 		"head scale" 1.5
 		//"no_duck" 1
 		"override footstep sound set" 5
@@ -323,6 +323,7 @@ WaveSchedule
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
 			Attributes MiniBoss
+			Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
 			ItemAttributes
 			{
@@ -333,17 +334,12 @@ WaveSchedule
 			{
 				ItemName "Batsaber"
 				"SPELL: set item tint RGB" 5
+				"heal on hit for rapidfire" 400
 			}
-			VoiceCommand [$SIGSEGV]
-            {
-				Delay 1
-				Cooldown 3
-				Type "Dispenser here"
-            }
 			CharacterAttributes
 			{
 				"hand scale" 1.5
-				"move speed bonus" 2
+				"move speed bonus" 1.3
 				"damage force reduction" 0
 				"airblast vulnerability multiplier" 0
 				"airblast vertical vulnerability multiplier" 0
@@ -363,17 +359,12 @@ WaveSchedule
 			Item "Bonk Boy"
 			Item "The Holy Mackerel"
 			WeaponRestrictions MeleeOnly
-			//Attributes IgnoreEnemies
+			Attributes IgnoreEnemies
 			CharacterAttributes
 			{
 				"move speed bonus" 1.3
 			}
-			VoiceCommand [$SIGSEGV]
-            {
-				Delay 5
-				Cooldown 15
-				Type "Dispenser here"
-            }
+
 		}
 		
 		Hell_Circuit
@@ -388,17 +379,17 @@ WaveSchedule
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_SAPPED
-				Duration 2.5
+				Duration 2
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_STUNNED
-				Duration 2.5
+				Duration 2
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_FREEZE_INPUT
-				Duration 2.5
+				Duration 2
 			}
 			FireWeapon [$SIGSEGV]
 			{
@@ -451,7 +442,7 @@ WaveSchedule
 		Hell_Gold
 		{
 			Class Scout
-			ClassIcon scout_fan_armored
+			ClassIcon scout_killerbee_nys
 			Name "Scout?"
 			Skill Easy
 			DropWeapon 1
@@ -1159,7 +1150,7 @@ WaveSchedule
 
             Tank
 			{
-				Health 4500
+				Health 5000
 				Speed 75
 				Classicon blimp2_lite
 				Skin 4 [$SIGSEGV]
@@ -2682,7 +2673,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Scout
-				Skill Expert
+				Skill Normal
 				ClassIcon scout_shortstop
 				Item "The Shortstop"
 				Attributes DisableDodge

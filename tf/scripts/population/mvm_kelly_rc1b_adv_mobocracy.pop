@@ -32,7 +32,7 @@ WaveSchedule
 	ForceHoliday 2 						[$SIGSEGV]
 	NoHolidayPickups 1					[$SIGSEGV]
 	RemoveGrapplingHooks 1.5			[$SIGSEGV]
-	//FlagCarrierMovementPenalty 1  		[$SIGSEGV]
+	DisplayRobotDeathNotice 1 			[$SIGSEGV]
 
 	//Custom Shop
 	CustomUpgradesFile "mvm_upgrades_hellmet.txt" [$SIGSEGV]
@@ -251,6 +251,16 @@ WaveSchedule
         TeamNum 3
         X	"-261"                     
         Y	"-382"                  
+        Z	"68"        
+    }
+
+	ExtraSpawnPoint [$SIGSEGV]
+	//Anti Gaben Cheese
+    {
+        Name "spawnbot_barn"
+        TeamNum 3
+        X	"1416"                     
+        Y	"-3088"                  
         Z	"68"        
     }
 	
@@ -531,7 +541,7 @@ WaveSchedule
 	{
 		ItemName "Warrior's Spirit"
 		"provide on active" 0
-		"damage bonus" 1.35
+		"damage bonus" 1.5
 		"dmg taken increased" 1
 		"heal on kill" 0
 		"fire rate penalty" 1.4
@@ -906,11 +916,11 @@ WaveSchedule
 		"receive friendly fire" 1
 	}
 
-	ItemAttributes [$SIGSEGV] // easter egg
-	{
-		ItemName "Saxxy"
-		"receive friendly fire" 1
-	}
+	//ItemAttributes [$SIGSEGV] // easter egg
+	//{
+	//	ItemName "Saxxy"
+	//	"receive friendly fire" 1
+	//}
 
 	
 	//TEMPLATES
@@ -1649,7 +1659,8 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_SYRINGEGUN_MEDIC"
-					"mad milk syringes" 1
+					"always crit" 1
+					"override projectile type" 1
 					"faster reload rate" 0.01
 				}
 				CharacterAttributes
@@ -1679,7 +1690,8 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_SYRINGEGUN_MEDIC"
-					"mad milk syringes" 1
+					"always crit" 1
+					"override projectile type" 1
 					"faster reload rate" 0.01
 				}
 				ItemAttributes
@@ -1716,7 +1728,8 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_SYRINGEGUN_MEDIC"
-					"mad milk syringes" 1
+					"always crit" 1
+					"override projectile type" 1
 					"faster reload rate" 0.01
 				}
 				CharacterAttributes
@@ -1833,6 +1846,7 @@ WaveSchedule
 				{
 					ItemName "TF_WEAPON_MEDIGUN"
 					"uber duration bonus" 100
+					"damage force increase hidden" 20
 				}
 				ItemAttributes
 				{
@@ -1845,7 +1859,6 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"bot medic uber health threshold" 1337
-					"damage force increase hidden" 20
 					"move speed bonus" 0.75
 				}
 				
@@ -4577,6 +4590,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
+					"backstab shield" 1
 					"move speed bonus"	0.5
 					"damage force reduction" 0.3
 					"airblast vulnerability multiplier" 0.3
@@ -6167,257 +6181,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
-			TFBot
-			{
-				Template Hell_Homing
-			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6442,7 +6206,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6467,7 +6231,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6492,7 +6256,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6517,7 +6281,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6542,7 +6306,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6567,7 +6331,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6592,7 +6356,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6617,7 +6381,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template Hell_Homing
@@ -6627,7 +6391,7 @@ WaveSchedule
 			{
 				Template Hell_Homing
 			}
-			
+
 			TFBot
 			{
 				Template T_TFBot_Soldier_Extended_Buff_Banner
@@ -10590,7 +10354,7 @@ WaveSchedule
 			TotalCount 1337
 			MaxActive 2
 			SpawnCount 1
-			WaitBeforeStarting 31
+			WaitBeforeStarting 33
 			WaitBetweenSpawns 60
 			TotalCurrency 0
 			Support 1
