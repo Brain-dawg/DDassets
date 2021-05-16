@@ -45,28 +45,12 @@
 
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
 
-//CHANGELOG LATEST EDITS 27-04
-//- Moved 150$ from W4 to W3. Total payout remains the same.
-//W1
-//- Changed Giant Burst Demos' medics to charged q-fixes
-//- Removed 2 uber medics from the Giant Shotgun Heavies
-//- Removed crits from Sandman Scouts
-//W3
-//- Removed Giant Rapid Blast Soldier's Buff Banner; changed its uber medics to kritz medics
-//- Changed Direct Hit Soldiers to Rapid Bison Soldiers, lowering blast spam
-//- Added HoldFireUntilFullReload to Backup Soldiers, slightly lowering their spam.
-//W4
-//- Nerfed Rapid Fire Demos' fire rate to 0.75 (from 0.5)
-//- Removed uber from Overhealer Medics, changed icon accordingly
-//W5
-//- Changed Queen Bee Soldier's name to Killer Bee Queen
-//- Lowered TurnRate of KBQ's rockets to 120, from 200
-//W6
-//- Slightly changed Explanation text to better indicate Giant Multi-Regen Heavies' AI.
+//CHANGELOG LATEST EDITS 15-05
+//- Increased StartingCurrency to 750$ (from 600$)
 
 WaveSchedule
 {
-	StartingCurrency 600
+	StartingCurrency 750
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom Yes //As per a "standard" of sorts
 	SentryBusterFriendlyFire 0 [$SIGSEGV]

@@ -723,7 +723,7 @@ WaveSchedule
 			Name	wave1c
 			WaitForAllSpawned	wave1b
 			TotalCurrency	100
-			TotalCount	24
+			TotalCount	26
 			MaxActive	12
 			SpawnCount	6
 			WaitBeforeStarting	8
@@ -757,45 +757,37 @@ WaveSchedule
 			Name	wave1c
 			WaitForAllSpawned	wave1b
 			TotalCurrency	150
-			TotalCount	4
-			MaxActive	4
-			SpawnCount	2
+			TotalCount	2
+			MaxActive	2
+			SpawnCount	1
 			WaitBeforeStarting	13
 			WaitBetweenSpawns 	30
 			Where	spawnbot
-			Squad
+			TFBot
 			{
-				ShouldPreserveSquad 1
-				TFBot
-				{
-					Template T_TFBot_Pyro_Fury
-				}
-				TFBot
-				{
-					Name "Giant Charged Engineer"
-					ClassIcon	engineer_ranger_nys
-                    Health  3000
-                    Class Engineer
-                    Skill Expert
-                    BehaviorModifiers Push
-                    Item "The Rescue Ranger"			
-                    WeaponRestrictions PrimaryOnly
-                    Attributes MiniBoss
-                    Attributes AlwaysCrit
-                    ItemAttributes
-                    {
-                        ItemName "The Rescue Ranger"	
-                        "faster reload rate" -0.4
-                        "fire rate bonus" 1.25
-                    }
-                    CharacterAttributes
-                    {
-                        "move speed bonus"	0.5
-                        "damage force reduction" 0.6
-                        "airblast vulnerability multiplier" 0.6
-						"override footstep sound set" 4
-                    }
-				}
+				Name "Giant Charged Engineer"
+				ClassIcon	engineer_ranger_nys
+                Health  3000
+                Class Engineer
+                Skill Expert
+                Action FetchFlag [$SIGSEGV] //Forces bot to grab the bomb
+                Item "The Rescue Ranger"			
+                WeaponRestrictions PrimaryOnly
+                Attributes MiniBoss
+                Attributes AlwaysCrit
+                ItemAttributes
+                {
+                    ItemName "The Rescue Ranger"	
+                    "faster reload rate" -0.4
+                    "fire rate bonus" 1.25
+                }
+                CharacterAttributes
+                {
+                    "move speed bonus"	0.5
+                    "damage force reduction" 0.6
+                    "airblast vulnerability multiplier" 0.6
+					"override footstep sound set" 4
+                }
 			}
 		}
     }
@@ -1425,7 +1417,7 @@ WaveSchedule
 			}
 			Tank
 			{
-				ClassIcon tank_sticky_hellmet
+				ClassIcon tank_sticky_hellmet [$SIGSEGV]
 				Health	30000
 				Speed	75
 				StartingPathTrackNode	tank_path_a_1

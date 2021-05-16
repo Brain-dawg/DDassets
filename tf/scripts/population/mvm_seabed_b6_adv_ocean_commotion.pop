@@ -6,8 +6,9 @@
 #base robot_gatebot_improved.pop
 population
 {
-	StartingCurrency	800
-	RespawnWaveTime	5
+	StartingCurrency	1600
+	RespawnWaveTime	3
+	FixedRespawnWaveTime 1
 	CanBotsAttackWhileInSpawnRoom	no
 	NoRomevisionCosmetics 1 [$SIGSEGV]
 	SniperHideLasers 1 [$SIGSEGV]
@@ -284,11 +285,15 @@ population
 	{
 		ItemName "The Huntsman"
 		"arrow mastery" 1
+		"projectile penetration" 1
+		"projectile penetration" -1 //Disallows buying pene. Does not break middle arrow.
 	}
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "the fortified compound"
 		"arrow mastery" 1
+		"projectile penetration" 1
+		"projectile penetration" -1
 	}
 	ItemAttributes [$SIGSEGV]
 	{

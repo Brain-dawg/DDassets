@@ -222,6 +222,8 @@ gettysburg
         ItemName "The Fortified Compound"
         "arrow mastery" 1
         "headshot damage increase" 1.2
+		"projectile penetration" 1
+		"projectile penetration" -1 //Disallows buying pene. Does not break middle arrow.
     }
 
     ItemAttributes //big iron
@@ -3844,9 +3846,9 @@ gettysburg
                     Item "Upgradeable TF_WEAPON_PISTOL_SCOUT"
                     Item Graybanns
                     Attributes AlwaysCrit
-
+					Action Mobber [$SIGSEGV]
                     UseBestWeapon 1
-                    AimTrackingInterval 0.001
+                    AimTrackingInterval 0.001 [$SIGSEGV]
                     UseMeleeThreatPrioritization 1
 
                     CharacterAttributes
