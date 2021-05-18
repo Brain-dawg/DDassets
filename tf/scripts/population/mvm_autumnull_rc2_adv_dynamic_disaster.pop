@@ -57,6 +57,39 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"targetname" "nobomb"
 				"OnMapSpawn" "item_teamflag,Kill,,0,-1"
 			}
+			prop_dynamic
+			{
+				"id" "3"
+				"targetname" "barrier"
+				"classname" "prop_dynamic"
+				"angles" "0 0 0"
+				"DisableBoneFollowers" "0"
+				"disablereceiveshadows" "0"
+				"disableshadows" "1"
+				"ExplodeDamage" "0"
+				"ExplodeRadius" "0"
+				"fademaxdist" "0"
+				"fademindist" "0.0001"
+				// "fademindist" "-1"
+				"fadescale" "1"
+				"MaxAnimTime" "10"
+				"maxdxlevel" "0"
+				"MinAnimTime" "5"
+				"mindxlevel" "0"
+				"model" "models\props_buildings\building_002a.mdl"
+				"modelscale" "1"
+				"PerformanceMode" "0"
+				"pressuredelay" "0"
+				"RandomAnimation" "0"
+				"renderamt" "255"
+				"renderfx" "0"
+				"rendermode" "0"
+				"SetBodyGroup" "0"
+				"skin" "0"
+				"solid" "6"
+				"spawnflags" "0"
+				"origin" "2729.111328 -803.822540 273.049500"
+			}
 		}
 		stuckfix
 		{
@@ -65,13 +98,36 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			{
 				"targetname" "rockfix"
 				"StartDisabled" "0"
-				"target" "spawnbot_mobberwave"
+				"target" "teleexit"
 				"spawnflags" "3"
 				"filtername" "filter_bluteam"
 				"origin" "-3407.954590 -3356.858398 36"
 				"mins" "-200 -200 -200"
 				"maxs" "200 200 200"
 				"solid" "0"
+			}
+			NoFixup 1
+			trigger_teleport
+			{
+				"targetname" "rockfix"
+				"StartDisabled" "0"
+				"target" "teleexit1"
+				"spawnflags" "3"
+				"filtername" "filter_bluteam"
+				"origin" "1229.809082 44.954826 -107.968681"
+				"mins" "-200 -200 -200"
+				"maxs" "200 200 200"
+				"solid" "0"
+			}
+			info_teleport_destination
+			{
+				"targetname" "teleexit"
+				"origin" "1229.809082 44.954826 -107.968681"
+			}
+			info_teleport_destination
+			{
+				"targetname" "teleexit1"
+				"origin" "2125.795898 -946.903992 -11.968681"
 			}
 		}
 		pottybreak
@@ -1084,10 +1140,9 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Target wave_finished_relay
 			Action Trigger
 		}
-		
-		SpawnTemplate "stuckfix" [$SIGSEGV]
-		
-			
+
+		SpawnTemplate "stuckfix" [$SIGSEGV]	
+
 		Explanation [$SIGSEGV]
         {
             Line "{blue}There is no bomb in this mission, bots will actively hunt players down."
@@ -1143,7 +1198,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
             Name ItBegins
             TotalCount 1
             SpawnCount 1
-
             WaitBeforeStarting 5
 
             Tank
@@ -1153,7 +1207,6 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				Speed 75
 				StartingPathTrackNode tank_path_fire_start
                 DisableSmokestack 1 [$SIGSEGV]
-
 				OnBombDroppedOutput
 				{
 					Target boss_deploy_relay
