@@ -93,6 +93,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		}
 		stuckfix
 		{
+			
 			NoFixup 1
 			trigger_teleport
 			{
@@ -106,10 +107,9 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"maxs" "200 200 200"
 				"solid" "0"
 			}
-			NoFixup 1
 			trigger_teleport
 			{
-				"targetname" "rockfix"
+				"targetname" "rockfix1"
 				"StartDisabled" "0"
 				"target" "teleexit1"
 				"spawnflags" "3"
@@ -128,6 +128,12 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			{
 				"targetname" "teleexit1"
 				"origin" "2125.795898 -946.903992 -11.968681"
+			}
+			logic_relay
+			{
+				"targetname" "killteles"
+				"origin" "0 0 0"
+				"OnTrigger" "rockfix*,Disable,,0,-1"
 			}
 		}
 		pottybreak
@@ -253,6 +259,8 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Health 3366
 			Attributes UseBossHealthBar
 			Scale 0.5
+			AddCond [$SIGSEGV] { Name TF_COND_STEALTHED_USER_BUFF_FADING }
+			
 			CharacterAttributes {
 				"move speed bonus" 0.0001
 				"airblast pushback scale" 0
@@ -940,7 +948,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 		Where spawnbot
 		BeginAtWave 1
 		RunForThisManyWaves 2
-		CooldownTime 60
+		CooldownTime 120
 		DesiredCount 2
 		RandomChoice { //spies have announcer callouts and wavebar is disgusting enough as is
 			TFBot { 
@@ -1223,8 +1231,8 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			WaitBetweenSpawns 1
             WaitBeforeStarting 2
 			DoneOutput {
-				Target rockfix
-				Action Disable
+				Target killteles
+				Action Trigger
 			}
 			RandomChoice {
 				Tank {
