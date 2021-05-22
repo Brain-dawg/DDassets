@@ -49,6 +49,7 @@ WaveSchedule
 	RespawnWaveTime 		3
 	CanBotsAttackWhileInSpawnRoom yes
 
+	NoRomevisionCosmetics 1 		[$SIGSEGV]
 	NoReanimators 1					[$SIGSEGV]
 	NoMvMDeathTune 1 				[$SIGSEGV]
 	//SniperHideLasers 1 			[$SIGSEGV]
@@ -63,7 +64,8 @@ WaveSchedule
 	RobotLimit 26 					[$SIGSEGV]
 	NoHolidayPickups 1				[$SIGSEGV]
 	TextPrintTime 0 				[$SIGSEGV]
-	//FlagCarrierMovementPenalty 1  	[$SIGSEGV]
+	DisplayRobotDeathNotice 1 		[$SIGSEGV]
+	FlagEscortCountOffset -4 		[$SIGSEGV]
 
 	//Precache
 	PrecacheModel "models\bots\boss_bot\boss_tank_color.mdl"	[$SIGSEGV]
@@ -79,7 +81,57 @@ WaveSchedule
                 Param  "255 204 153"
             }
         }
+
+		cabinet
+		{  
+			//NoFixup 1
+			prop_dynamic
+			{
+				"targetname" "locker_model"
+				"model"      "models/props_gameplay/resupply_locker.mdl"
+				"solid"      "6"
+				"angles"     "0 0 0"
+			}
+			filter_tf_bot_has_tag
+			{
+				"Negated" "0"
+				"require_all_tags" "1"
+				"tags" "bot_red"
+				"targetname" "filter_redbot"
+			}
+			func_regenerate
+			{
+				"targetname" "regenerate"
+				"associatedmodel" "locker_model"
+				"TeamNum"         "2"
+				"mins"            "0 -48 0"
+				"maxs"            "40 48 128"
+				
+				"OnStartTouchAll"  "locker_model,SetAnimation,open,0,-1"
+				"OnEndTouchAll"    "locker_model,SetAnimation,close,0,-1"
+			}
+			trigger_multiple
+			{
+				"filtername" "filter_redbot"
+				"StartDisabled"    "0"
+				"targetname"    "block"
+				"mins"    "-40 -96 -40"
+				"maxs"    "80 96 168"
+				"spawnflags" "1"
+				
+				"OnStartTouch" "regenerate,Disable,,0,-1"
+				"OnEndTouchAll" "regenerate,Enable,,0,-1"
+			}
+		
+		}
     }
+
+	SpawnTemplate [$SIGSEGV]
+	{
+		Name   "cabinet"
+		Origin "848 817 640"
+		Angles "0 -90 0"
+	}
 
 	ClassLimit [$SIGSEGV]
     {
@@ -93,6 +145,12 @@ WaveSchedule
         Sniper		2
         Spy			2
     }
+
+	OverrideSounds [$SIGSEGV]
+	{
+		"MVM.GiantHeavyExplodes"				"npc\env_headcrabcanister\explosion.wav"
+		"MVM.GiantCommonExplodes"				"npc\env_headcrabcanister\explosion.wav"
+	}
 	
 	ItemBlacklist [$SIGSEGV]
 	{
@@ -119,9 +177,10 @@ WaveSchedule
 
 		"voice pitch scale" 0.7
 		"damage force reduction" 0
-		"airblast vulnerability multiplier" 0.25
-		"max health additive bonus" 1075
-		//"override footstep sound set" 5
+		"airblast vulnerability multiplier" 0
+		"airblast vertical vulnerability multiplier" 0
+		"max health additive bonus" 1475
+		"not solid to players" 1
 		"boots falling stomp" 1
 		}
 		Soldier
@@ -157,7 +216,7 @@ WaveSchedule
 		{
 		"grenade no spin" 1
 		"melee cleave attack" 1
-		"charge time increased" 2
+		"charge time increased" 3
 		"charge impact damage increased" 3
 		"cancel falling damage" 1
 		}
@@ -178,8 +237,9 @@ WaveSchedule
 		Spy
 		{
 		"weapon spread bonus" 0.5
-		"mult decloak rate" 0.1
-		"cloak regen rate increased" 6
+		"mult decloak rate" 0.001
+		"mult cloak rate" 0.001
+		"cloak regen rate increased" 3
 		"cancel falling damage" 1
 		}
 	}
@@ -188,7 +248,7 @@ WaveSchedule
 	{
 		ClassName "TF_WEAPON_BAT"
 		"provide on active" 1
-		//"no_duck" 1
+		"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -196,13 +256,14 @@ WaveSchedule
 	{
 		ItemName "The Sandman"
 		"provide on active" 1
-		//"max health additive penalty" -400
+		"crit mod disabled" 0
+		"max health additive penalty" -400
 		"effect bar recharge rate increased" 0.1
 		"increased jump height" 2
 		"cancel falling damage" 1
 		//"always crit" 1
 		"head scale" 1.5
-		//"no_duck" 1
+		"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -210,10 +271,11 @@ WaveSchedule
 	{
 		ItemName "The Holy Mackerel"
 		"provide on active" 1
-		//"max health additive penalty" -400
+		"crit mod disabled" 0
+		"max health additive penalty" -400
 		"move speed bonus" 1.3
 		"no double jump" 1
-		//"no_duck" 1
+		"no_duck" 1
 		"override footstep sound set" 5
 	}
 
@@ -221,12 +283,18 @@ WaveSchedule
 	{
 		ItemName "The Flying Guillotine"
 		"effect bar recharge rate increased" 0.001
+		"provide on active" 1
+		"no_duck" 1
+		"override footstep sound set" 5
 	}
 
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Wrap Assassin"
 		"effect bar recharge rate increased" 0.001
+		"provide on active" 1
+		"no_duck" 1
+		"override footstep sound set" 5
 	}
 
 	ItemAttributes [$SIGSEGV]
@@ -264,7 +332,6 @@ WaveSchedule
 	{
 		ClassName "TF_WEAPON_MINIGUN"
 		"mod minigun can holster while spinning" 1
-		//"maxammo primary reduced" 0.5
 	}
 
 	ItemAttributes [$SIGSEGV]
@@ -273,7 +340,6 @@ WaveSchedule
 		"fire rate penalty"       	 2.5
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
-		//"faster reload rate" 		 0
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -281,25 +347,25 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "TF_WEAPON_INVIS"
-		"max health additive bonus" 75
+		"max health additive bonus" 50
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Cloak and Dagger"
-		"max health additive bonus" 75
+		"max health additive bonus" 50
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "Your Eternal Reward"
-		"dmg taken increased" 1.25	
+		"dmg taken increased" 1.5	
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Wanga Prick"
-		"dmg taken increased" 1.25	
+		"dmg taken increased" 1.5	
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -313,58 +379,80 @@ WaveSchedule
 	
 		Hell_Express
 		{
-			Class Scout
-			Name "Greater Super Scout"
-			ClassIcon scout_rng
+			Class Demoman
+			Classicon demoknight_nineiron
+			Name "Giant Charger Demo"
+			Item "The Splendid Screen"
+			Item "The Bolt Action Blitzer"
+			Item "Nessie's Nine Iron"
+			ItemAttributes
+			{
+				ItemName "The Bolt Action Blitzer"
+				"set item tint rgb" 8154199
+			}
 			Skill Expert
-			Item "The Lightning Lid"
-			Item "Batsaber"
-			Health 1200
+			Health 2500
+			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
-			Attributes MiniBoss
-			Attributes IgnoreEnemies
 			ExtAttr JumpStomp [$SIGSEGV]
+			AimTrackingInterval 0 [$SIGSEGV]
+			FireWeapon [$SIGSEGV]
+            {
+				Delay 0
+				Cooldown 1      
+				Duration 0
+				Repeats 0
+				IfSeeTarget 0
+				Type Primary
+            }
+			FireWeapon [$SIGSEGV]
+            {
+				Delay 1
+				Cooldown 0
+				Duration 0
+				Repeats 0
+				IfSeeTarget 0
+				Type Secondary
+            }
+			ExtAttr IgnoreBuildings
 			ItemAttributes
 			{
-				ItemName "The Lightning Lid"
-				"SPELL: set item tint RGB" 5
+					ItemName "Nessie's Nine Iron"
+					"fire rate bonus" 5
+					"damage bonus" 0
+					"gesture speed increase" 0.1
+					"max health additive penalty" 0
+					"melee range multiplier" 0.001
+					"melee bounds multiplier" 0.001
 			}
 			ItemAttributes
-			{
-				ItemName "Batsaber"
-				"SPELL: set item tint RGB" 5
-				"heal on hit for rapidfire" 400
-			}
+				{
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+					"dmg taken from fire reduced" 1
+					"dmg taken from blast reduced" 1
+					"full charge turn control" 50
+					"charge impact damage increased" 5
+					"charge time increased" 10
+					"charge recharge rate increased" 100
+				}
 			CharacterAttributes
 			{
-				"hand scale" 1.5
-				"move speed bonus" 1.3
-				"damage force reduction" 0
-				"airblast vulnerability multiplier" 0
-				"airblast vertical vulnerability multiplier" 0
-				"wet immunity" 1
-				"mult stun resistance" 0
-				"override footstep sound set" 5
-				"increased jump height" 1.75
+					"move speed bonus"	0.5
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 4
+					"increased jump height" 1.75
+					"damage all connected" 1
 			}
+			
 		}
 		
 		Hell_Lesser
 		{
-			Class Scout
-			Name "Lesser Super Scout"
-			ClassIcon scout_giant_fast
-			Skill Easy
-			Item "Bonk Boy"
-			Item "The Holy Mackerel"
-			WeaponRestrictions MeleeOnly
+			Template T_TFBot_Giant_Scout_Fast
 			Attributes IgnoreEnemies
-			CharacterAttributes
-			{
-				"move speed bonus" 1.3
-			}
-
 		}
 		
 		Hell_Circuit
@@ -372,24 +460,24 @@ WaveSchedule
 			Class Engineer 
 			Classicon engineer
 			Skill Normal
-			Health 275
+			Health 125
 			Item "The Short Circuit"
 			WeaponRestrictions SecondaryOnly
 			ExtAttr TargetStickies
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_SAPPED
-				Duration 2
+				Duration 2.5
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_STUNNED
-				Duration 2
+				Duration 2.5
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_FREEZE_INPUT
-				Duration 2
+				Duration 2.5
 			}
 			FireWeapon [$SIGSEGV]
 			{
@@ -409,7 +497,7 @@ WaveSchedule
 			Skill Normal
 			WeaponRestrictions SecondaryOnly
 			Attributes IgnoreEnemies
-			Item "Self-Care"
+			Item "Flatliner"
 			Item "The Quick-Fix"
 			ItemAttributes
 			{
@@ -427,37 +515,28 @@ WaveSchedule
 		Hell_Chocolate
 		{
 			Class Heavy
-			Name "Chocolate Heavy"
-			Health 350
-			Skill Expert
-			Item "Football Helmet"
-			MaxVisionRange 1200
-			ItemAttributes
+			Classicon heavy_champ
+			Name "Combo Heavy"
+			Health 300
+			Skill Normal
+			Item "War Head"
+			Item "The Killing Gloves of Boxing"
+			ItemModel [$SIGSEGV]
 			{
-				ItemName "Football Helmet"
-				"set item tint rgb" 8272640
+				ItemName "War Head"
+				Model "models/workshop/player/items\heavy/tw_heavybot_armor/tw_heavybot_armor.mdl"
 			}
-		}
-		
-		Hell_Gold
-		{
-			Class Scout
-			ClassIcon scout_killerbee_nys
-			Name "Scout?"
-			Skill Easy
-			DropWeapon 1
-			Item "The Weather Master"
-			Item "The Force-a-Nature"
 			ItemAttributes
 			{
-				ItemName "The Force-a-Nature"
-				"item style override" 1
+				ItemName "The Killing Gloves of Boxing"
+				"provide on active" 1
+				"move speed bonus" 2
+				"always crit" 1
 			}
-			Item "Gold Frying Pan"
 			ItemAttributes
 			{
-				ItemName "Gold Frying Pan"
-				"item style override" 0
+				ItemName "TF_WEAPON_MINIGUN"
+				"mod minigun can holster while spinning" 1
 			}
 			WeaponSwitch [$SIGSEGV]
             {
@@ -466,11 +545,24 @@ WaveSchedule
                 Repeats 1
 				IfSeeTarget 0
 				Type "Melee"
-				IfHealthBelow 66
+				IfHealthBelow 151
 			}
-			CharacterAttributes
+		}
+		
+		Hell_Gold
+		{
+			Class Scout
+			ClassIcon scout_killerbee_nys
+			Name "Annoying"
+			Skill Easy
+			DropWeapon 1
+			Item "The Weather Master"
+			WeaponRestrictions MeleeOnly
+			Item "Gold Frying Pan"
+			ItemAttributes
 			{
-				"dmg taken from crit reduced" 0
+				ItemName "Gold Frying Pan"
+				"item style override" 0
 			}
 		}
 		
@@ -568,6 +660,7 @@ WaveSchedule
 			Item "Flavorful Baggies"	
 			Item "Pop-eyes"
 			Item "Lollichop Licker"
+			ExtAttr IgnoreBuildings
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
 			UseCustomModel models/player/pyro.mdl [$SIGSEGV]
@@ -588,8 +681,8 @@ WaveSchedule
 				"fire rate penalty" 1.25
 				"damage bonus" 0
 				"cannot disguise" 1
-				"melee range multiplier" 0.00001
-				"melee bounds multiplier" 0.00001
+				"melee range multiplier" 0.001
+				"melee bounds multiplier" 0.001
 				"dmg from ranged reduced" 0
 				"dmg from melee increased" 0
 				"rage giving scale" 0
@@ -609,6 +702,7 @@ WaveSchedule
 			Item "Flavorful Baggies"	
 			Item "Pop-eyes"
 			Item "Lollichop Licker"
+			ExtAttr IgnoreBuildings
 			Attributes AlwaysFireWeapon
 			WeaponRestrictions MeleeOnly
 			UseCustomModel models/player/pyro.mdl [$SIGSEGV]
@@ -629,8 +723,8 @@ WaveSchedule
 				"fire rate penalty" 1.25
 				"damage bonus" 0
 				"cannot disguise" 1
-				"melee range multiplier" 0.00001
-				"melee bounds multiplier" 0.00001
+				"melee range multiplier" 0.001
+				"melee bounds multiplier" 0.001
 				"dmg from ranged reduced" 0
 				"dmg from melee increased" 0
 				"rage giving scale" 0
@@ -896,6 +990,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -976,6 +1071,24 @@ WaveSchedule
 			}
 		
 		}
+
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -1001,6 +1114,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -1009,6 +1124,68 @@ WaveSchedule
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -1027,28 +1204,7 @@ WaveSchedule
 			TotalCurrency 24	
 		
 			Squad
-			{
-				TFBot
-				{
-					Class Pyro
-					Skill Easy
-					Attributes AlwaysFireWeapon
-				}
-				
-				TFBot
-				{
-					Class Pyro
-					Skill Easy
-					Attributes AlwaysFireWeapon
-				}
-				
-				TFBot
-				{
-					Class Pyro
-					Skill Easy
-					Attributes AlwaysFireWeapon
-				}
-				
+			{	
 				TFBot
 				{
 					Class Pyro
@@ -1065,6 +1221,36 @@ WaveSchedule
 				{
 					Class Pyro
 					Skill Expert
+				}
+
+				TFBot
+				{
+					Class Pyro
+					Classicon pyro_giant
+					Skill Easy
+					Attributes AlwaysFireWeapon
+					Attributes AlwaysCrit
+					AimTrackingInterval 3 [$SIGSEGV]
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Classicon pyro_giant
+					Skill Easy
+					Attributes AlwaysFireWeapon
+					Attributes AlwaysCrit
+					AimTrackingInterval 3 [$SIGSEGV]
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Classicon pyro_giant
+					Skill Easy
+					Attributes AlwaysFireWeapon
+					Attributes AlwaysCrit
+					AimTrackingInterval 3 [$SIGSEGV]
 				}
 				
 			}
@@ -1115,6 +1301,7 @@ WaveSchedule
 				TFBot
 				{
 					Class Soldier
+					Classicon soldier_dh_nys
 					Skill Expert
 					Item "The Direct Hit"
 				}
@@ -1136,6 +1323,7 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Soldier_RocketShotgun
+					UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				}
 				
 		}
@@ -1150,7 +1338,7 @@ WaveSchedule
 
             Tank
 			{
-				Health 5000
+				Health 4200
 				Speed 75
 				Classicon blimp2_lite
 				Skin 4 [$SIGSEGV]
@@ -1275,6 +1463,7 @@ WaveSchedule
 				Class Heavyweapons
 				ClassIcon heavy_crit
 				Name "Black Heavyweight Champ"
+				Health 250
 				Skill Expert
 				WeaponRestrictions MeleeOnly
 				Action Mobber [$SIGSEGV]
@@ -1341,6 +1530,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -1421,6 +1611,24 @@ WaveSchedule
 			}
 		
 		}
+	
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -1446,15 +1654,79 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 2
 		
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -1466,36 +1738,16 @@ WaveSchedule
 			Where spawnbot_flank_left
 			TotalCount 24
 			MaxActive 8
-			SpawnCount 4
+			SpawnCount 1
 			WaitForAllDead "part01"
-			WaitBetweenSpawns 12
+			WaitBetweenSpawns 4
 			TotalCurrency 24
-		
-		Squad
-		
-		{
-		
+
 			TFBot
 			{
 				Template Hell_Chocolate
 			}
-			
-			TFBot
-			{
-				Template Hell_Chocolate
-			}
-			
-			TFBot
-			{
-				Template Hell_Chocolate
-			}
-			
-			TFBot
-			{
-				Template Hell_Chocolate
-			}
-			
-		}	
+
 
 		}
 		
@@ -1538,8 +1790,8 @@ WaveSchedule
 				Name "Giant Thumper Heavy"
 				ClassIcon thumper_lite
 				Skill Expert
-				Health 5000
-				MaxVisionRange 500
+				Health 4500
+				MaxVisionRange 450
 				WeaponRestrictions SecondaryOnly
 				Attributes MiniBoss
 				Item "Pugilist's Protector"
@@ -1671,8 +1923,6 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0
 					"rage giving scale"	1337
 					"override footstep sound set" 2
-					"wet immunity" 1
-					"mult stun resistance" 0
 				}			
 			}
 			
@@ -1732,8 +1982,6 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0
 					"rage giving scale"	1337
 					"override footstep sound set" 2
-					"wet immunity" 1
-					"mult stun resistance" 0
 				}			
 			}
 			
@@ -1767,6 +2015,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -1847,6 +2096,24 @@ WaveSchedule
 			}
 		
 		}
+
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -1872,15 +2139,79 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 3
 		
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -1975,30 +2306,13 @@ WaveSchedule
 
 			TFBot
 			{
-				Class Demoman
-				Name "Samurai Demo"
-				ClassIcon demoknight_samurai
-				Skill Expert
-				Item "The Half-Zatoichi"
-				Item "The Splendid Screen"
-				ItemAttributes
-				{
-					ItemName "The Splendid Screen"
-					"Attack not cancel charge" 1
-					"charge time increased" -10
-				}
-				Item "Demo Kabuto"
-				Scale 1.3
-				Health 650
-				WeaponRestrictions MeleeOnly
-				CharacterAttributes
-				{
-					"charge time increased" 2
-					"charge recharge rate increased" 7
-					"increased jump height" 2.3
-					"bot custom jump particle"	1
-					"damage bonus"	1.5
-				}			
+				Class Sniper
+				Skill Normal
+				Item "The Huntsman"
+				Item "Brick"
+				AimTrackingInterval 0.05 [$SIGSEGV]
+				Attributes AlwaysCrit
+				Classicon sniper_brick_lite
 			}
 
 		}
@@ -2111,6 +2425,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -2191,6 +2506,24 @@ WaveSchedule
 			}
 		
 		}
+
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -2216,15 +2549,79 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 4
 		
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -2468,6 +2865,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -2548,6 +2946,24 @@ WaveSchedule
 			}
 		
 		}
+
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -2573,15 +2989,79 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 5
 			MaxActive 5
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 5
 		
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -2595,7 +3075,7 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 1
 			WaitForAllDead "part01"
-			WaitBetweenSpawns 24
+			WaitBetweenSpawns 20
 			TotalCurrency 4
 		
 			TFBot
@@ -2821,8 +3301,6 @@ WaveSchedule
 				Health 20000
 				Scale 1
 				Skill Expert
-				Item "L'Etranger"
-				Item "The Dead Ringer"
 				Item "The Black Rose"
 				Item "The Texas Half-Pants"
 				Item "Starduster"
@@ -2856,6 +3334,15 @@ WaveSchedule
 					ItemName "Texas Ten Gallon"
 					"set item tint rgb" 8154199
 				}
+				FireWeapon [$SIGSEGV]
+                {
+                    Delay 0
+                    Cooldown 15           
+                    Duration 0
+					IfSeeTarget 0
+					IfHealthBelow 2501
+					Type Secondary
+                }
 				CharacterAttributes
 				{
 					"move speed bonus" 0.75
@@ -2864,7 +3351,6 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"cancel falling damage" 1
-					"mult cloak meter consume rate" 1000
 				}
 			}
 			
@@ -2927,6 +3413,7 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
@@ -3007,6 +3494,24 @@ WaveSchedule
 			}
 		
 		}
+
+		WaveSpawn
+		{
+			Name "fake"
+			Where spawnbot
+			TotalCount 0
+			MaxActive 0
+			SpawnCount 0
+			TotalCurrency 0
+			Support 1
+			
+			TFBot
+			{
+				Class Scout
+				Classicon engineer_shortcircuit_lite
+			}
+		
+		}
 		
 		WaveSpawn
 		{
@@ -3032,15 +3537,79 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 6
 			MaxActive 6
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 6
 		
 			TFBot
 			{
 				Template Hell_Express
+			}
+		
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
 			}
 		
 		}
@@ -3126,7 +3695,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Name "Giant Cloak Heavy"
-				Health 2500
+				Health 4500
 				Classicon heavy_d
 				Action Mobber [$SIGSEGV]
 				Attributes DisableDodge
@@ -3146,7 +3715,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Name "Giant Cloak Heavy"
-				Health 2500
+				Health 4500
 				Classicon heavy_d
 				Action FetchFlag [$SIGSEGV]
 				Attributes DisableDodge
@@ -3259,8 +3828,9 @@ WaveSchedule
 				Item "The Reserve Shooter"
 				UseBestWeapon 1	[$SIGSEGV]
 				ClassIcon pyro
-				Health 40000
+				Health 30000
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				RingOfFire 4 				   [$SIGSEGV]
 				Attributes UseBossHealthBar
 				ItemAttributes
 				{
@@ -3336,10 +3906,12 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 7
 			MaxActive 7
 			SpawnCount 1
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 2
 			TotalCurrency 0
 		
 			TFBot
@@ -3347,7 +3919,69 @@ WaveSchedule
 				Template Hell_Express
 			}
 		
-		}	
+		}
+
+		WaveSpawn [$SIGSEGV]
+		{
+			Name "red"
+			Where spawnbot_new
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 60
+			WaitBetweenSpawns 60
+			Support 1
+			TotalCurrency 0
+			
+			TFBot
+			{
+				Class Demoman
+				Name "Friendly Sentry Buster"
+				Skill Expert
+				Health 2500
+				Item "The Ullapool Caber"
+				WeaponRestrictions MeleeOnly
+				Attributes DisableDodge
+				Attributes IgnoreEnemies
+				ClassIcon engineer
+				Attributes MiniBoss
+				CharacterAttributes
+				{
+					"move speed bonus" 2
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"voice pitch scale" 0.7
+				}
+				
+				//SIG
+				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+				Action SuicideBomber [$SIGSEGV]
+				UseBusterModel 1 [$SIGSEGV]
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 0
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 1
+					Model "models\empty.mdl"
+				}
+				CustomWeaponModel [$SIGSEGV]
+				{
+					Slot 2
+					Model "models\empty.mdl"
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_REPROGRAMMED
+				}
+				//SIG
+			}
+		
+		}
 		
 		WaveSpawn
 		{

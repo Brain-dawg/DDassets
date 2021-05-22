@@ -4,6 +4,8 @@
 //Additional Icons By lite https://steamcommunity.com/id/liteflame/
 //Red Sentry Buster by NeoDement https://steamcommunity.com/id/neodement/
 //Uber Tank by Bazooks https://steamcommunity.com/profiles/76561198158093750
+//fire tank by randomguy (https://steamcommunity.com/profiles/76561198056380662/)
+//pretty sure dratbil helped with this too. (https://steamcommunity.com/id/4929400915890901)
 //Advanced Skill
 //Requires sigsegv extensions
 
@@ -33,6 +35,8 @@ WaveSchedule
 	NoHolidayPickups 1					[$SIGSEGV]
 	RemoveGrapplingHooks 1.5			[$SIGSEGV]
 	DisplayRobotDeathNotice 1 			[$SIGSEGV]
+	BodyPartScaleSpeed 10 				[$SIGSEGV]
+	NoRomevisionCosmetics 1 			[$SIGSEGV]
 
 	//Custom Shop
 	CustomUpgradesFile "mvm_upgrades_hellmet.txt" [$SIGSEGV]
@@ -48,6 +52,7 @@ WaveSchedule
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl" 		[$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl"	[$SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl" 		[$SIGSEGV]
+	PrecacheModel "models\bots\boss_bot\boss_tank_color.mdl"			[$SIGSEGV]
 
 
 	//Disable Sounds
@@ -107,6 +112,19 @@ WaveSchedule
 		"MVM.GiantHeavyExplodes"				"npc\env_headcrabcanister\explosion.wav"
 		"MVM.GiantCommonExplodes"				"npc\env_headcrabcanister\explosion.wav"
 	}
+
+	PointTemplates
+    {
+        ColorTank
+        {
+            OnSpawnOutput
+            {
+                Target "!activator"
+                Action "color"
+                Param  "255 160 0"
+            }
+        }
+    }
 	
 	ExtraTankPath [$SIGSEGV]
 	{
@@ -253,16 +271,6 @@ WaveSchedule
         Y	"-382"                  
         Z	"68"        
     }
-
-	ExtraSpawnPoint [$SIGSEGV]
-	//Anti Gaben Cheese
-    {
-        Name "spawnbot_barn"
-        TeamNum 3
-        X	"1416"                     
-        Y	"-3088"                  
-        Z	"68"        
-    }
 	
 	ItemBlacklist [$SIGSEGV] // no canteens
 	{
@@ -381,6 +389,17 @@ WaveSchedule
 		ItemName "The Equalizer"
 		"damage bonus HIDDEN" 1.15
 	}
+
+	ItemAttributes [$SIGSEGV] // new stats - phase through enemies + high class dmg + new downside
+	{
+		ItemName "The Pain Train"
+		"increase player capture value" 0
+		"dmg taken from bullets increased" 0
+
+		"not solid to players" 1
+		"mult dmg vs same class" 3
+		"fire rate penalty" 2	
+	}
 		
 	ItemAttributes [$SIGSEGV] // self explanatory
 	{
@@ -462,6 +481,27 @@ WaveSchedule
 		"weapon burn dmg increased" 5
 	}
 
+	ItemAttributes [$SIGSEGV] // pyro jumper
+	{
+		ItemName "The Scorch Shot"
+		"Set DamageType Ignite" 1
+		"Projectile speed decreased" 0.5
+		"faster reload rate" 2
+		"maxammo secondary reduced"  0.25
+		"self dmg push force decreased" 4
+		"blast dmg to self increased" 4
+		"mod flaregun fires pellets with knockback" 0
+		"override projectile type" 2
+		"mini rockets" 1
+	}
+
+	ItemAttributes [$SIGSEGV] // reliable crit + new downside
+	{
+		ItemName "The Third Degree"
+		"crit from behind" 1
+		"fire rate penalty" 1.4
+	}
+
 	ItemAttributes [$SIGSEGV] // increased speed boost time to 5 seconds
 	{
 		ItemName "The Hot Hand"
@@ -525,7 +565,7 @@ WaveSchedule
 		"damage bonus vs burning" 1
 		"damage bonus HIDDEN" 1.5
 		"crit mod disabled" 0
-		"maxammo primary reduced" 0.5
+		"maxammo primary reduced" 0.25
 	}
 	
 	ItemAttributes [$SIGSEGV] // regular spin-up, no resis, no rev walk at all, +5% more dmg
@@ -602,15 +642,22 @@ WaveSchedule
 		"charge meter on hit" 0
 	}
 
+	ItemAttributes [$SIGSEGV] // no slow, more damage, can random crit
+	{
+		ItemName "The Ullapool Caber"
+		"fire rate penalty" 1
+		"single wep deploy time increased" 1
+		"crit mod disabled" 1
+		"damage bonus HIDDEN" 1.15
+	}
+
 	ItemAttributes [$SIGSEGV] // giant shotgun
 	{
 		ItemName "TF_WEAPON_SHOTGUN_HWG"
-		"max health additive penalty" -175
+		"max health additive penalty" -100
 		"fire rate penalty"       	 2.5
 		"bullets per shot bonus"	 10
 		"damage penalty"         	 0.5
-		"mod no reload DISPLAY ONLY" 1
-		"faster reload rate" 		 0
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
 	}
@@ -652,12 +699,12 @@ WaveSchedule
 		"damage bonus bullet vs sentry target" 1
 	}
 	
-	//ItemAttributes [$SIGSEGV] // ranged sapper removal (no enemy sapper in mobocracy because of mounted sentry problem)
-	//{
-	//	ItemName "The Pomson 6000"
-	//	"damage applies to sappers" 1
-	//	"energy weapon no hurt building" 0
-	//}
+	ItemAttributes [$SIGSEGV] // ranged sapper removal (no enemy sapper in mobocracy because of mounted sentry problem)
+	{
+		ItemName "The Pomson 6000"
+		"damage applies to sappers" 1
+		"energy weapon no hurt building" 0
+	}
 	
 	ItemAttributes [$SIGSEGV] // health penalty, removed self mark to compensate
 	{
@@ -710,6 +757,7 @@ WaveSchedule
 		"engy sentry fire rate increased" 5
 		//"engy sentry radius increased" 1.5
 		"rocket jump damage reduction" 0
+		"building color rgb" 16711730
 	}
 		
 	ItemAttributes [$SIGSEGV] // shotgun needler
@@ -760,14 +808,14 @@ WaveSchedule
 		"crit mod disabled" 0
 	}
 
-	ItemAttributes [$SIGSEGV] // 50% chance of save
+	ItemAttributes [$SIGSEGV] // 25% chance of save
 	{
 		ItemName "The Solemn Vow"
 		"mod see enemy health" 0
 		"fire rate penalty" 1
 		"crit mod disabled" 0
 		"damage penalty" 0
-		"teleport instead of die" 50
+		"teleport instead of die" 25
 	}
 	
 	ItemAttributes [$SIGSEGV] // cleared old stats, mimics railgun from Open Fortress
@@ -870,20 +918,32 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // massive health bonus to offset deadringer in mvm
 	{
 		Itemname "TF_WEAPON_INVIS"
-		"max health additive bonus" 75
+		"max health additive bonus" 50
+	}
+
+	ItemAttributes [$SIGSEGV] // massive health bonus to offset deadringer in mvm
+	{
+		Itemname "The Quackenbirdt"
+		"max health additive bonus" 50
+	}
+
+	ItemAttributes [$SIGSEGV] // massive health bonus to offset deadringer in mvm
+	{
+		Itemname "TTG Watch"
+		"max health additive bonus" 50
 	}
 	
 	ItemAttributes [$SIGSEGV] // massive health bonus to offset deadringer in mvm
 	{
 		Itemname "The Cloak and Dagger"
-		"max health additive bonus" 75
+		"max health additive bonus" 50
 	}
 	
-	//ItemAttributes [$SIGSEGV] // fix to straight upgrade (no enemy sentry in mobocracy)
-	//{
-	//	ItemName "The Red-Tape Recorder"
-	//	"sapper health penalty" 0.5
-	//}
+	ItemAttributes [$SIGSEGV] // fix to straight upgrade (no enemy sentry in mobocracy)
+	{
+		ItemName "The Red-Tape Recorder"
+		"sapper health penalty" 0.5
+	}
 
 	ItemAttributes [$SIGSEGV] // easter egg
 	{
@@ -1446,6 +1506,74 @@ WaveSchedule
 				"origin" "0 0 0"
 			}
 		}
+
+		TankFire
+		{
+			NoFixup 1
+            logic_relay
+            {
+                "targetname" "tankfire_start_relay"
+                "OnTrigger" "fire_ring,SetParent,burntank,0.05,-1"
+                "OnTrigger" "fire_hurt,SetParent,burntank,0.05,-1"
+                "OnTrigger" "fire_timer,SetParent,burntank,0.05,-1"
+                "OnTrigger" "fire_timer,Enable,,0,-1"
+                "OnTrigger" "fire_hurt,Enable,,0,-1"
+            }
+            logic_timer
+            {
+                "targetname" "fire_timer"
+                "RefireTime" "0.5"
+                "spawnflags" "0"
+                "UseRandomTime" "0"
+                "StartDisabled" "1"
+                "OnTimer" "fire_ring,Start,,0,-1"
+                "OnTimer" "fire_ring,Stop,,0.1,-1"
+                "OnTimer" "fire_hurt,Enable,,0,-1"
+                "OnTimer" "fire_hurt,Disable,,0.1,-1"
+            }
+            info_particle_system
+            {
+                "targetname" "fire_ring"
+                "effect_name" "heavy_ring_of_fire"
+                "flag_as_weather" "0"
+                "start_active" "0"
+                "origin" "-128 2588 -96"
+            }
+			info_particle_system
+            {
+                "targetname" "fire_ring"
+                "effect_name" "heavy_ring_of_fire"
+                "flag_as_weather" "0"
+                "start_active" "0"
+                "origin" "-128 2688 -96"
+            }
+			info_particle_system
+            {
+                "targetname" "fire_ring"
+                "effect_name" "heavy_ring_of_fire"
+                "flag_as_weather" "0"
+                "start_active" "0"
+                "origin" "-128 2788 -96"
+            }
+            trigger_ignite
+            {
+                "targetname" "fire_hurt"
+                "filtername" "tankfire_filter"
+                "burn_duration" "8"
+                "damage_percent_per_second" "72"
+                "origin" "-128 2688 -96"
+                "spawnflags" "1"
+                "StartDisabled" "1"
+                "mins" "-155 -155 -24"
+                "maxs" "155 155 48"
+            }
+            filter_activator_tfteam
+            {
+                "targetname" "tankfire_filter"
+                "TeamNum" "2"
+                "Negated" "0"
+            }
+		}
 	
 	}
 	
@@ -1584,7 +1712,7 @@ WaveSchedule
 		Origin "110 -2197 85"
 		Angles "0 -55 0"
 	}
-	
+
 	Templates
 	{
 		
@@ -1845,6 +1973,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_MEDIGUN"
+					"provide on active" 1
 					"uber duration bonus" 100
 					"damage force increase hidden" 20
 				}
@@ -1974,6 +2103,18 @@ WaveSchedule
 			{
 				"deploy time decreased" 0.001
 			}
+
+			//SIG
+				FireWeapon [$SIGSEGV]
+				{
+					Delay 5
+					Cooldown 5
+					Repeats 0
+					IfSeeTarget 1
+					Duration 0
+					Type "Primary"
+				}
+			//SIG
 			
 		}
 	}
@@ -2842,6 +2983,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_FAN
+				Health 1500
 				
 				//SIG
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
@@ -3019,7 +3161,12 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_RocketShotgun
+				Tag nav_prefer_flank_right
 				Health 4000
+
+				//SIG
+				//UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				//SIG
 			}
 			
 		}
@@ -3038,7 +3185,12 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_RocketShotgun
+				Tag nav_prefer_flank_left
 				Health 4000
+
+				//SIG
+				//UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				//SIG
 			}
 			
 		}
@@ -3615,7 +3767,6 @@ WaveSchedule
 				Attributes MiniBoss
 				CharacterAttributes
 				{
-					"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -3959,11 +4110,17 @@ WaveSchedule
 			TFBot
 			{
 				Class Sniper
-				Skill Expert
+				Skill Normal
 				Item "The Huntsman"
+				Item "Brick"
 				Classicon sniper_bow
+				ItemAttributes
+				{
+					ItemName "Brick"
+					"always crit" 1
+				}
 			}
-						
+			
 			TFBot
 			{
 				Template T_TFBot_Sniper_Huntsman_Spammer
@@ -4222,7 +4379,7 @@ WaveSchedule
 				CustomWeaponModel [$SIGSEGV]
 				{
 					Slot 0
-					Model models\weapons\w_models\w_syringegun.mdl
+					Model models/workshop/weapons/c_models/c_invasion_sniperrifle/c_invasion_sniperrifle.mdl
 				}
 				DamageAppliesCond [$SIGSEGV]
 				{
@@ -5333,6 +5490,12 @@ WaveSchedule
 			Origin "-125 -2250 13"
 			Angles "0 90 0"
 		}
+
+		SpawnTemplate [$SIGSEGV]
+		{
+			Name "TankFire"
+			Origin "5 5 5"
+		}
 		
 		SentryGun [$SIGSEGV]
 		{
@@ -6141,6 +6304,52 @@ WaveSchedule
 		}
 		
 		}
+
+		WaveSpawn
+		{		
+			Name "part04"
+			TotalCount 1
+			WaitForAllDead "part03"
+			WaitBeforeStarting 12
+			TotalCurrency 0
+
+			FirstSpawnOutput
+            {
+                Target tankfire_start_relay			
+                Action Trigger                
+            }
+
+			DoneOutput
+			{
+				Target fire_ring
+				Action kill
+			}
+			
+			Tank
+			{
+				Health 22222
+				Classicon tank_vac_fire_lite
+				Speed 75
+				Skin 0
+				Model "models/bots/boss_bot/boss_tank_color.mdl" [$SIGSEGV]
+				Name "burntank"
+				SpawnTemplate ColorTank
+				StartingPathTrackNode "tank_path_a"
+
+				OnKilledOutput
+				{
+					Target boss_dead_relay
+					Action Trigger
+				}
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+
+			}			
+		}
 		
 		WaveSpawn
 		{
@@ -6151,6 +6360,7 @@ WaveSchedule
 			SpawnCount 3
 			WaitForAllDead "part03"
 			WaitBetweenSpawns 3
+			WaitBeforeStarting 0
 			TotalCurrency 0
 			
 			RandomChoice
@@ -7152,7 +7362,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7200,7 +7410,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7240,7 +7450,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7280,7 +7490,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7322,7 +7532,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7379,7 +7589,7 @@ WaveSchedule
 					"ammo regen" 1
 					"health from packs increased" 0.15
 					"move speed bonus"	0.5
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"airblast vulnerability multiplier" 0.4
 					"override footstep sound set" 3
 				}
@@ -7430,7 +7640,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7479,7 +7689,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					"damage force reduction" 0
+					//"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7542,8 +7752,8 @@ WaveSchedule
 				Item "The Triad Trinket"
 				CharacterAttributes
 				{
-					"voice pitch scale" 1.5
-					"damage force increase hidden" 3
+					"voice pitch scale" 1.4
+					"cannot be teleported" 1
 					"gesture speed increase" 1.5
 					"effect bar recharge rate increased" 0.0025
 				}
@@ -7564,14 +7774,14 @@ WaveSchedule
 				VoiceCommand [$SIGSEGV]
                 {
                     Delay 0
-                    Cooldown 5
+                    Cooldown 0
 					IfHealthBelow 100
                     Type "Medic"
                 }
 				VoiceCommand [$SIGSEGV]
                 {
                     Delay 0
-                    Cooldown 0
+                    Cooldown 3
 					IfSeeTarget 1
                     Type "Help"
                 }
@@ -9797,7 +10007,6 @@ WaveSchedule
 				Attributes MiniBoss
 				CharacterAttributes
 				{
-					"damage force reduction" 0
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -10200,6 +10409,9 @@ WaveSchedule
 				Item "The Gunboats"
 				Item "Batter's Bracers"
 				Item "Blast Blocker"
+				FastUpdate 1
+				//AimTrackingInterval 0
+				ExtAttr IgnoreBuildings
 				Attributes HoldFireUntilFullReload
 				Attributes UseBossHealthBar
 				Attributes MiniBoss
@@ -10235,6 +10447,7 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "TF_WEAPON_ROCKETLAUNCHER"
+					"custom kill icon" "firedeath"
 					"mini rockets" 1
 					"hand scale" 0
 					"gesture speed increase" 0.25
@@ -10247,6 +10460,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
+					"not solid to players" 1
 					"no_jump" 1
 					"no_duck" 1
 					"damage force reduction" 0
@@ -10299,25 +10513,26 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					"increased air control" 10
+					"increased air control" 100
 					"head scale" 3.3
 					"increased jump height" 1.9
 					"torso scale" -0.15
-					"move speed bonus" 2
+					"move speed bonus" 1.75
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"mult stun resistance" 0
 					"override footstep sound set" 7
+					"air dash count" 7
 					"rage giving scale" 0
 					"cancel falling damage" 1
 				}
 				FireWeapon [$SIGSEGV]
 				{
-					Delay 1
-					Cooldown 1.5
+					Delay 0
+					Cooldown 3
 					Repeats 0
-					IfSeeTarget 1
+					IfSeeTarget 0
 					Duration 0
 					IfHealthBelow 6665
 					Type "Jump"
