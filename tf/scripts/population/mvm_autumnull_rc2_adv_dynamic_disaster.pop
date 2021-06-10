@@ -144,8 +144,10 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 				"origin" "-630 -232 34"
 				"targetname" "break"
 				"OnTrigger" "pop_interface,PauseBotSpawning,,0,1"
+				"OnTrigger" "pop_interface,ChangeBotAttributes,Attr2,0,1"
 				"OnTrigger" "upgradeopen,Trigger,,0,1"
 				"OnTrigger" "pop_interface,UnPauseBotSpawning,,37,1"
+				"OnTrigger" "pop_interface,ChangeBotAttributes,Attr1,37,1"
 				"OnTrigger" "upgradeclose,Trigger,,37,1"
 			}
 			func_forcefield
@@ -261,11 +263,34 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			Scale 0.5
 			AddCond [$SIGSEGV] { Name TF_COND_STEALTHED_USER_BUFF_FADING }
 			
-			CharacterAttributes {
-				"move speed bonus" 0.0001
-				"airblast pushback scale" 0
-				"health drain" -2
+			ChangeAttributes [$SIGSEGV] {
+				Delay 0
+				Cooldown 9999
+				Name "Attr1"
 			}
+			ChangeAttributes [$SIGSEGV] {
+				Delay 9999
+				Cooldown 9999
+				Name "Attr2"
+			}
+					EventChangeAttributes
+					{
+						Attr1
+						{
+							CharacterAttributes {
+								"move speed bonus" 0.0001
+								"no_jump" 1
+								"health drain" -2
+							}
+						}
+						Attr2
+						{
+							CharacterAttributes {
+								"move speed bonus" 0.0001
+								"no_jump" 1
+							}
+						}
+					}
 		}	
 		Buster { 
 			Template T_TFBot_SentryBuster
@@ -1230,7 +1255,7 @@ braindawg_is_a_big_idiot_with_a_tiny_wiener_who_will_never_see_this_unless_washy
 			SpawnCount 1
 			WaitBetweenSpawns 1
             WaitBeforeStarting 2
-			DoneOutput {
+			LastSpawnOutput {
 				Target killteles
 				Action Trigger
 			}

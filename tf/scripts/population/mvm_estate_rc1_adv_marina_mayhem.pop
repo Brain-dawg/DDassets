@@ -4,13 +4,13 @@
 #base robot_standard.pop
 population
 {
-	StartingCurrency	850
+	StartingCurrency	1100
 	RespawnWaveTime	2
 	CanBotsAttackWhileInSpawnRoom	no
 	FixedRespawnWaveTime	Yes
 	Advanced	1
 	StandableHeads	1 [$SIGSEGV]	// sig's - allows players to stand on bots' heads without being pushed
-	SniperHideLasers	1 [$SIGSEGV]	// sig's - disables robot sniper lasers
+	// SniperHideLasers	1 [$SIGSEGV]	// sig's - disables robot sniper lasers
 	// ClassLimit [$SIGSEGV]	// sig's - limits how many of each class red can use
 	// {
 		// Soldier 1
@@ -32,8 +32,33 @@ population
 	}
 	ItemAttributes [$SIGSEGV]
 	{
-		ItemName	"The Shortstop"	// readded previously removed heal rate increase
+		ItemName	"The Shortstop"	// re-added previously removed heal rate increase
 		"healing received bonus"	1.25
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Baby Face's Blaster"	// no longer lose boost when damaged
+		"lose hype on take damage"	0
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Back Scatter"	// removed accuracy penalty
+		"spread penalty"	1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Boston Basher"	// removed hit self on miss
+		"hit self on miss"	0
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Three-Rune Blade"	// removed hit self on miss
+		"hit self on miss"	0
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Sun-on-a-Stick"	// added afterburn immunity
+		"afterburn immunity"	1
 	}
 	ItemAttributes [$SIGSEGV]
 	{
@@ -45,20 +70,32 @@ population
 	}
 	ItemAttributes [$SIGSEGV]
 	{
-		ItemName	"The Original"	// player variant of giant charged soldier's weapon: no reload, no ammo from dispensers, slower rockets, increased damage that stacks with upgrades, smaller blast radius
-		"mod max primary clip override"					-1
-		"no primary ammo from dispensers while active"	1
-		"Projectile speed decreased"					0.65
-		"dmg penalty vs players"						1.25
-		"Blast radius decreased"						0.75
-		"faster reload rate"							0.4	// disable reload speed upgrade
-		"fire rate penalty"								5	// counteract reload speed boost
-		"clip size upgrade atomic"						8	// disable clip size upgrade
+		ItemName	"The Original"	// player variant of giant charged soldier's weapon: no reload, slower rockets, increased damage that stacks with upgrades, smaller blast radius
+		"mod max primary clip override"	-1
+		"Projectile speed decreased"	0.65
+		"dmg penalty vs players"		1.25
+		"Blast radius decreased"		0.75
+		"faster reload rate"			0.4	// disable reload speed upgrade
+		"fire rate penalty"				5	// counteract reload speed boost
+		"clip size upgrade atomic"		8	// disable clip size upgrade
+		"rocket jump damage reduction"	0.8	// counteract self damage from damage bonus
 	}
 	ItemAttributes [$SIGSEGV]
 	{
-		ItemName	"The Phlogistinator"	// necessary nerf to the strongest pyro primary
-		"damage penalty"	0.8
+		ItemName	"The Righteous Bison"	// increased damage but lowered projectile speed for increased damage on larger or slower targets
+		"damage bonus"					1.5
+		"Projectile speed decreased"	0.65
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Battalion's Backup"	// increased health bonus to 50
+		"max health additive bonus"	50
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Degreaser"	// player version of the infamous atomic pyro's weapon: increased blast radius and rocket specialist applied to reflected rockets
+		"rocket specialist"			2
+		"blast radius increased"	1.35
 	}
 	ItemAttributes [$SIGSEGV]
 	{
@@ -77,8 +114,45 @@ population
 	}
 	ItemAttributes [$SIGSEGV]
 	{
+		ItemName	"The Manmelter"	// increased damage and added minicrits vs burning targets
+		"damage bonus"					1.7
+		"minicrit vs burning player"	1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Sharpened Volcano Fragment"	// increased afterburn damage and damage penalty
+		"weapon burn dmg increased"	3
+		"damage penalty"			0.25
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Neon Annihilator"	// added 5 seconds of crits on kill
+		"critboost on kill"	5
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Loch-n-Load"	// replaced damage bonus vs buildings with flat damage bonus that stacks with damage upgrades, lowered blast radius and lowered base clip size to 2, as it should be
+		"dmg bonus vs buildings"	1
+		"dmg penalty vs players"	1.15
+		"Blast radius decreased"	0.5
+		"clip size penalty"			0.5
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Loose Cannon"	// increased blast radius for easier donkage
+		"Blast radius increased"	1.2
+	}
+	ItemAttributes [$SIGSEGV]
+	{
 		ItemName	"Festive Eyelander"	// chill day
 		"set turn to ice"	1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Claidheamohmor"	// remake with the original attributes
+		"provide on active"				0
+		"dmg taken increased"			1
+		"max health additive penalty"	-15
 	}
 	ItemAttributes [$SIGSEGV]
 	{
@@ -87,6 +161,29 @@ population
 		"projectile penetration heavy"	1
 		"weapon spread bonus"			1.2
 		"fire rate penalty"				1.25
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Gloves of Running Urgently"	// removed shitty health drain, added mark self for death
+		"mod_maxhealth_drain_rate"	0
+		"self mark for death"		1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"Festive Gloves of Running Urgently"	// gru reskin
+		"mod_maxhealth_drain_rate"	0
+		"self mark for death"		1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Bread Bite"	// gru reskin
+		"mod_maxhealth_drain_rate"	0
+		"self mark for death"		1
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Eviction Notice"	// removed shitty health drain
+		"mod_maxhealth_drain_rate"	0
 	}
 	ItemAttributes [$SIGSEGV]
 	{
@@ -105,13 +202,8 @@ population
 	}
 	ItemAttributes [$SIGSEGV]
 	{
-		ItemName	"The Ubersaw"	// necessary nerf to the strongest medic melee
-		"add uber charge on hit"	0.17
-	}
-	ItemAttributes [$SIGSEGV]
-	{
-		ItemName	"Festive Ubersaw"	// necessary nerf to the strongest medic melee
-		"add uber charge on hit"	0.17
+		ItemName	"The Amputator"	// health regen is now passive
+		"provide on active"	0
 	}
 	ItemAttributes [$SIGSEGV]
 	{
@@ -142,6 +234,12 @@ population
 		ItemName	"The Enforcer"	// changed damage bonus to be always active
 		"damage bonus while disguised"	1
 		"damage bonus"					1.2
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName	"The Pain Train"	// replaced faster capture rate with move speed bonus
+		"increase player capture value"	0
+		"move speed bonus"				1.1
 	}
 	ExtraSpawnPoint [$SIGSEGV]	// sig's - adds a spawn point at the specified location
     {
@@ -245,7 +343,6 @@ population
 			Health 200
 			WeaponRestrictions PrimaryOnly
 			Attributes HoldFireUntilFullReload
-			Attributes AlwaysCrit
 			Item "The Direct Hit"
 			Item "Defiant Spartan"
 		}
@@ -488,8 +585,8 @@ population
 			Health 3300
 			WeaponRestrictions PrimaryOnly
 			Attributes MiniBoss
-			Attributes AlwaysCrit
 			Attributes AlwaysFireWeapon
+			Attributes AlwaysCrit
 			Item "Upgradeable TF_WEAPON_FLAMETHROWER"
 			ItemAttributes
 			{
@@ -503,6 +600,7 @@ population
 				"airblast vulnerability multiplier"	0.5
 				"override footstep sound set"		6
 			}
+			UseMeleeThreatPrioritization 1 [$SIGSEGV]	// sig's - targets nearest threat
 		}
 		T_TFBot_Tind_Pyro_Giant_AirBlast // w4
 		{
@@ -718,7 +816,6 @@ population
 			WeaponRestrictions PrimaryOnly
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
-			Attributes AlwaysCrit
 			Item "Upgradeable TF_WEAPON_GRENADELAUNCHER"
 			Item "Scotch Bonnet"
 			Item "The Juggernaut Jacket"
@@ -1168,31 +1265,6 @@ population
 				Model		"models/workshop/player/items/demo/tw_sentrybuster/tw_sentrybuster.mdl"
 			}
 		}
-		T_TFBot_Tind_SentryBuster_Mini // w6
-		{
-			Class Demoman
-			Name "Mini Buster"
-			ClassIcon demo_caber_nys
-			Skill Hard
-			Health 175
-			Scale 1.01
-			WeaponRestrictions MeleeOnly
-			Attributes DisableDodge
-			Item "The Ullapool Caber"
-			ItemAttributes
-			{
-				ItemName "The Ullapool Caber"
-				"damage bonus"					1.5
-				"dmg pierces resists absorbs"	1
-				"blast dmg to self increased"	10
-			}
-			CharacterAttributes
-			{
-				"cannot pick up intelligence"	1
-			}
-			Action Mobber [$SIGSEGV]	// sig's - seeks out enemies
-			UseBusterModel 1 [$SIGSEGV]	// sig's - forces sentry buster model
-		}
 		T_TFBot_Tind_Scout_Giant_Melee_Ally // w2
 		{
 			Class Scout
@@ -1244,6 +1316,15 @@ population
 			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
 			Item "The Battalion's Backup"
 			Item "Stainless Pot"
+			ItemAttributes
+			{
+				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"	// Dougal can now take his revenge with maximum efficiency
+				"damage bonus"					1.5
+				"faster reload rate"			0.4
+				"fire rate bonus"				0.2
+				"clip size upgrade atomic"		6
+				"Projectile speed decreased"	0.75
+			}
 			ItemAttributes
 			{
 				ItemName "The Battalion's Backup"
@@ -1336,8 +1417,8 @@ population
 		Where	spawnbot_lowerflank
 		BeginAtWave	4
 		RunForThisManyWaves	1
-		InitialCooldown	45
-		CooldownTime	45
+		InitialCooldown	60
+		CooldownTime	99999
 		DesiredCount	1
 		TFBot
 		{
@@ -1400,20 +1481,6 @@ population
 			Template	T_TFBot_Tind_Spy
 		}
 	}
-	Mission // Wave 6 Mini Busters
-	{
-		Objective	Spy
-		Where	Behind
-		BeginAtWave	6
-		RunForThisManyWaves	1
-		InitialCooldown	30
-		CooldownTime	30
-		DesiredCount	3
-		TFBot
-		{
-			Template	T_TFBot_Tind_SentryBuster_Mini
-		}
-	}
 	Mission // Wave 2 Engineers
 	{
 		Objective	Engineer
@@ -1448,15 +1515,15 @@ population
 	}
 //WAVE 1  /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// A - 2 Squads; 1 Giant Stun Soldier, 3 Big Heal Medics, (160)
-// A - 40 Bowmen, (120)
+// A - 3 Squads; 1 Giant Stun Soldier, 3 Big Heal Medics, (240)
+// A - 50 Bowmen, (200)
 // A - 12 Crit Steel Gauntlets, (120)
-// B - 12 Crit Direct Hit Soldiers, (120)
+// B - 16 Direct Hit Soldiers, (160)
 // C - 3 Squads; 1 Giant Crit Pyro, 2 Big Heal Medics, (180)
 // C - 40 Random Spawned Blast Soldiers, Demos, (200)
 // C Support - Spies, (0)
 // Sniper mission active
-// Total cash in this wave is $900 + $100
+// Total cash in this wave is $1100 + $100
 ///////////////////////////////////////////////////////////////////////////
 	Wave
 	{
@@ -1472,22 +1539,22 @@ population
 		}
 		Explanation [$SIGSEGV]	// sig's - prints to chat when wave is initialized
 		{
-			Line "{CC66FF}Some weapons have been changed for this mission."
-			Line "{CC66FF}The following weapons have been reworked:"
-			Line "{FFBB33}Liberty Launcher, Original, Rainblower, Nostromo Napalmer, Iron Curtain, Pomson 6000, Classic"
-			Line "{CC66FF}The following weapons have had minor changes:"
-			Line "{FFBB33}Shortstop, Phlogistinator, Ubersaw, Huntsman + reskins, Ambassador, Enforcer"
+			Line "{CC66FF}Many weapons have been improved or reworked for this mission."
+			Line "{CC66FF}The following weapons are affected:"
+			Line "{FFBB33}Shortstop, Baby Face's Blaster, Back Scatter, Boston Basher, Sun on a Stick, Liberty Launcher, Original, Battalion's Backup, Righteous Bison,"
+			Line "{FFBB33}Degreaser, Rainblower, Nostromo Napalmer,Manmelter, Sharpened Volcano Fragment, Neon Annhilator, Loch-n-Load, Loose Cannon, Claidheamh Mor,"
+			Line "{FFBB33}Iron Curtain, Gloves of Running Urgently, Eviction Notice, Pomson 6000, Amputator, Huntsman, Classic, Ambassador, Enforcer, Pain Train"
 		}
-		WaveSpawn // A - 2 Squads; 1 Giant Stun Soldier, 3 Big Heal Medics
+		WaveSpawn // A - 3 Squads; 1 Giant Stun Soldier, 3 Big Heal Medics
 		{
 			Name	Wave1a
 			Where	spawnbot_side
-			TotalCurrency	160
-			TotalCount	8
+			TotalCurrency	240
+			TotalCount	12
 			MaxActive	5
 			SpawnCount	4
 			WaitBeforeStarting	0
-			WaitBetweenSpawns	80
+			WaitBetweenSpawns	40
 			Squad
 			{
 				TFBot
@@ -1508,12 +1575,12 @@ population
 				}
 			}
 		}
-		WaveSpawn // A - 40 Bowmen
+		WaveSpawn // A - 50 Bowmen
 		{
 			Name	Wave1a
 			Where	spawnbot
-			TotalCurrency	120
-			TotalCount	40
+			TotalCurrency	200
+			TotalCount	50
 			MaxActive	10
 			SpawnCount	5
 			WaitBeforeStarting	20
@@ -1538,17 +1605,17 @@ population
 				Template	T_TFBot_Tind_Heavy_SteelFist
 			}
 		}
-		WaveSpawn // B - 12 Crit Direct Hit Soldiers
+		WaveSpawn // B - 16 Direct Hit Soldiers
 		{
 			Name	Wave1b
 			WaitForAllSpawned	Wave1a
 			Where	spawnbot_side
-			TotalCurrency	120
-			TotalCount	12
-			MaxActive	12
-			SpawnCount	12
+			TotalCurrency	160
+			TotalCount	16
+			MaxActive	16
+			SpawnCount	8
 			WaitBeforeStarting	20
-			WaitBetweenSpawns	0
+			WaitBetweenSpawns	15
 			TFBot
 			{
 				Template	T_TFBot_Tind_Soldier_DirectHit
@@ -1623,14 +1690,14 @@ population
 	}
 //WAVE 2  /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// A - 3 Squads; 1 Giant Heater Heavy, 3 Heavies, 1 Backup Soldier, (225)
-// A - 3 Squads; 1 Giant Rapid Fire Demo, 3 Heavies, 1 Backup Soldier, (225)
+// A - 3 Squads; 1 Giant Heater Heavy, 3 Heavies, 1 Backup Soldier, (300)
+// A - 3 Squads; 1 Giant Rapid Fire Demo, 3 Heavies, 1 Backup Soldier, (300)
 // B - 1 Squad; 1 Giant Nuke Soldier, 1 Giant Quick Fix Medic, (100)
 // Support - Soldiers, (200)
 // B Support - bat, (0)
 // Spy mission active
 // Engineer mission active
-// Total cash in this wave is $750 + $100
+// Total cash in this wave is $900 + $100
 ///////////////////////////////////////////////////////////////////////////
 	Wave
 	{
@@ -1652,7 +1719,7 @@ population
 		{
 			Name	Wave2a
 			Where	spawnbot
-			TotalCurrency	225
+			TotalCurrency	300
 			TotalCount	15
 			MaxActive	5
 			SpawnCount	5
@@ -1686,7 +1753,7 @@ population
 		{
 			Name	Wave2a
 			Where	spawnbot_sidebuilding
-			TotalCurrency	225
+			TotalCurrency	300
 			TotalCount	15
 			MaxActive	5
 			SpawnCount	5
@@ -1781,7 +1848,7 @@ population
 // A - 12 Squads; 1 Flare Pyro, 1 Quick Uber Medic, (120)
 // A - 6 Squads; 1 Pyro, 2 Flare Pyros, (90)
 // B - 1 Tank, (150)
-// B - 4 Squads; 1 Giant Crit Burst Fire Demo, 3 Quick Uber Medics, (240)
+// B - 4 Squads; 1 Giant Burst Fire Demo, 3 Quick Uber Medics, (240)
 // B - 24 Pyros, (70)
 // B - 20 Stickybomb Demos, (80)
 // B Support - 10 Battle Engineers, (50)
@@ -1917,7 +1984,7 @@ population
 				}
 			}
 		}
-		WaveSpawn // B - 4 Squads; 1 Giant Crit Burst Fire Demo, 3 Quick Uber Medics
+		WaveSpawn // B - 4 Squads; 1 Giant Burst Fire Demo, 3 Quick Uber Medics
 		{
 			Name	Wave3b
 			WaitForAllSpawned	Wave3a
@@ -2005,16 +2072,16 @@ population
 //WAVE 4  /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // A1 - 4 Squads; 1 Giant Burst Fire Soldier, 3 Quick Uber Medics, (240)
-// A2 - 24 Burst Fire Demos, (70)
-// A2 - 8 Burst Fire Demos, (25)
-// B - 12 Squads; 1 Conch Soldier, 1 Quick Uber Medic, (120)
-// C - 32 Crit Bowmen, (95)
+// A2 - 24 Burst Fire Demos, (95)
+// A2 - 8 Burst Fire Demos, (35)
+// B - 12 Squads; 1 Conch Soldier, 1 Quick Uber Medic, (240)
+// C - 32 Crit Bowmen, (130)
 // D - 2 Squads; 1 Giant Burst Fire Soldier, 1 Giant Kritzkrieg Medic, (100)
 // D - 20 Heavies, (100)
-// B Support - Sandman Scouts, (50)
+// B Support - Sandman Scouts, (60)
 // Giant Airblast Pyro mission active
 // Spy mission active
-// Total cash in this wave is $800 + $100
+// Total cash in this wave is $1000 + $100
 ///////////////////////////////////////////////////////////////////////////
 	Wave
 	{
@@ -2062,7 +2129,7 @@ population
 		{
 			Name	Wave4a2
 			Where	spawnbot_side
-			TotalCurrency	70
+			TotalCurrency	95
 			TotalCount	24
 			MaxActive	12
 			SpawnCount	2
@@ -2077,7 +2144,7 @@ population
 		{
 			Name	Wave4a2
 			Where	spawnbot_sidebuilding
-			TotalCurrency	25
+			TotalCurrency	35
 			TotalCount	8
 			MaxActive	4
 			SpawnCount	2
@@ -2093,7 +2160,7 @@ population
 			Name	Wave4b
 			WaitForAllDead	Wave4a2
 			Where	spawnbot
-			TotalCurrency	120
+			TotalCurrency	240
 			TotalCount	24
 			MaxActive	12
 			SpawnCount	4
@@ -2116,7 +2183,7 @@ population
 			Name	Wave4c
 			WaitForAllSpawned	Wave4b
 			Where	spawnbot_lowerflank
-			TotalCurrency	95
+			TotalCurrency	130
 			TotalCount	32
 			MaxActive	12
 			SpawnCount	4
@@ -2172,8 +2239,8 @@ population
 		{
 			WaitForAllDead	Wave4a
 			Where	spawnbot_sidebuilding
-			TotalCurrency	50
-			TotalCount	50
+			TotalCurrency	60
+			TotalCount	60
 			MaxActive	4
 			SpawnCount	2
 			WaitBeforeStarting	60
@@ -2187,19 +2254,19 @@ population
 	}
 //WAVE 5  /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-// 7 Super Scouts, (35)
-// A - 36 Crit Soldiers, (110)
-// B - 32 Natascha Heavies, (100)
-// B - 4 Giant Crit Dragon's Fury Pyros, (40)
-// B - 15 Crit Pyros, (45)
-// C - 18 Samurai Demoknights, (90)
-// D1 - 6 Giant Deflector Heavies, (60)
-// D2 - 10 Squads; 1 Crit Pyro, 2 Crit Bowmen, (90)
-// E - 10 Crit Soldiers, (30)
-// D Support - Backup Soldiers, (0)
+// 7 Super Scouts, (70)
+// A - 36 Crit Soldiers, (180)
+// B - 32 Natascha Heavies, (95)
+// B - 4 Giant Crit Dragon's Fury Pyros, (80)
+// B - 15 Crit Pyros, (75)
+// C - 18 Samurai Demoknights, (180)
+// D1 - 6 Giant Deflector Heavies, (120)
+// D2 - 10 Squads; 1 Crit Pyro, 2 Crit Bowmen, (150)
+// E - 10 Crit Soldiers, (50)
+// D Support - Backup Soldiers, (100)
 // Razorback Sniper mission active
 // Spy mission active
-// Total cash in this wave is $600 + $100
+// Total cash in this wave is $1100 + $100
 ///////////////////////////////////////////////////////////////////////////
 	Wave
 	{
@@ -2216,7 +2283,7 @@ population
 		WaveSpawn // 7 Super Scouts
 		{
 			Where	spawnbot
-			TotalCurrency	35
+			TotalCurrency	70
 			TotalCount	7
 			MaxActive	2
 			SpawnCount	1
@@ -2231,7 +2298,7 @@ population
 		{
 			Name	Wave5a
 			Where	spawnbot_side
-			TotalCurrency	110
+			TotalCurrency	180
 			TotalCount	36
 			MaxActive	12
 			SpawnCount	6
@@ -2247,7 +2314,7 @@ population
 			Name	Wave5b
 			WaitForAllDead	Wave5a
 			Where	spawnbot
-			TotalCurrency	100
+			TotalCurrency	95
 			TotalCount	32
 			MaxActive	10
 			SpawnCount	2
@@ -2263,7 +2330,7 @@ population
 			Name	Wave5b
 			WaitForAllDead	Wave5a
 			Where	spawnbot_sidebuilding
-			TotalCurrency	40
+			TotalCurrency	80
 			TotalCount	4
 			MaxActive	4
 			SpawnCount	1
@@ -2279,7 +2346,7 @@ population
 			Name	Wave5b
 			WaitForAllDead	Wave5a
 			Where	spawnbot_lowerflank
-			TotalCurrency	45
+			TotalCurrency	75
 			TotalCount	15
 			MaxActive	10
 			SpawnCount	5
@@ -2295,7 +2362,7 @@ population
 			Name	Wave5c
 			WaitForAllDead	Wave5b
 			Where	spawnbot
-			TotalCurrency	90
+			TotalCurrency	180
 			TotalCount	18
 			MaxActive	18
 			SpawnCount	9
@@ -2311,7 +2378,7 @@ population
 			Name	Wave5d1
 			WaitForAllSpawned	Wave5c
 			Where	spawnbot_side
-			TotalCurrency	60
+			TotalCurrency	120
 			TotalCount	6
 			MaxActive	3
 			SpawnCount	1
@@ -2327,7 +2394,7 @@ population
 			Name	Wave5d2
 			WaitForAllSpawned	Wave5c
 			Where	spawnbot
-			TotalCurrency	90
+			TotalCurrency	150
 			TotalCount	30
 			MaxActive	9
 			SpawnCount	3
@@ -2357,7 +2424,7 @@ population
 			Name	Wave5e
 			WaitForAllSpawned	Wave5d2
 			Where	spawnbot_sidebuilding
-			TotalCurrency	30
+			TotalCurrency	50
 			TotalCount	10
 			MaxActive	10
 			SpawnCount	5
@@ -2372,12 +2439,12 @@ population
 		{
 			WaitForAllDead	Wave5c
 			Where	spawnbot_lowerflank
-			TotalCurrency	0
-			TotalCount	10
+			TotalCurrency	100
+			TotalCount	32
 			MaxActive	4
 			SpawnCount	2
 			WaitBeforeStarting	10
-			WaitBetweenSpawns	1
+			WaitBetweenSpawns	10
 			Support	1
 			TFBot
 			{
@@ -2388,17 +2455,16 @@ population
 //WAVE 6  /////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // A - 1 Tank, (100)
-// A - 35 Crit Scouts, (70)
+// A - 35 Crit Scouts, (105)
 // B - 4 Giant Blast Soldiers, (60)
 // B - 42 Demo Chargers, (125)
 // C - 1 Tank, (100)
-// C - 38 Conch Soldiers, (115)
-// C - 8 Crit Heavies, (25)
-// D - Final Tank, (100)
+// C - 38 Conch Soldiers, (150)
+// C - 8 Crit Heavies, (40)
+// D - Final Tank, (150)
 // D - 2 Squads; 1 Giant Brass Beast Heavy, 1 Giant Quick Fix Medic, (80)
-// D Support - Phlogistinator Pyros, (25)
+// D Support - Phlogistinator Pyros, (90)
 // D Support - Dougal, (0)
-// Mini Buster mission active
 // Engineer mission active
 // Total cash in this wave is $800
 ///////////////////////////////////////////////////////////////////////////
@@ -2449,7 +2515,7 @@ population
 		{
 			Name	Wave6a
 			Where	spawnbot_side
-			TotalCurrency	70
+			TotalCurrency	105
 			TotalCount	35
 			MaxActive	15
 			SpawnCount	5
@@ -2525,7 +2591,7 @@ population
 			Name	Wave6c
 			WaitForAllSpawned	Wave6b
 			Where	spawnbot
-			TotalCurrency	115
+			TotalCurrency	150
 			TotalCount	38
 			MaxActive	16
 			SpawnCount	1
@@ -2541,7 +2607,7 @@ population
 			Name	Wave6c
 			WaitForAllSpawned	Wave6b
 			Where	spawnbot_side
-			TotalCurrency	25
+			TotalCurrency	40
 			TotalCount	8
 			MaxActive	4
 			SpawnCount	1
@@ -2556,7 +2622,7 @@ population
 		{
 			Name	Wave6d
 			WaitForAllSpawned	Wave6c
-			TotalCurrency	100
+			TotalCurrency	150
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
@@ -2610,10 +2676,10 @@ population
 		{
 			WaitForAllDead	Wave6c
 			Where	spawnbot_lowerflank
-			TotalCurrency	25
-			TotalCount	24
-			MaxActive	12
-			SpawnCount	4
+			TotalCurrency	90
+			TotalCount	30
+			MaxActive	9
+			SpawnCount	3
 			WaitBeforeStarting	10
 			WaitBetweenSpawns	10
 			Support	1

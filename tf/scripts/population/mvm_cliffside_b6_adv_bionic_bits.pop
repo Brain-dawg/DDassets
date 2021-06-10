@@ -53,18 +53,18 @@ WaveSchedule
 	NoReanimators 1					[$SIGSEGV]
 	NoMvMDeathTune 1 				[$SIGSEGV]
 	//SniperHideLasers 1 			[$SIGSEGV]
-	//MaxSpeedLimit 800				[$SIGSEGV]
+	//BonusRatioHalf 2				[$SIGSEGV]
+	//BonusRatioFull 2				[$SIGSEGV]
+	//ImprovedAirblast 1			[$SIGSEGV]
 	SniperAllowHeadshots 1			[$SIGSEGV]
-	BonusRatioHalf 2				[$SIGSEGV]
-	BonusRatioFull 2				[$SIGSEGV]
 	SentryBusterFriendlyFire 0 		[$SIGSEGV]
 	StandableHeads 1 				[$SIGSEGV]
 	RedPlayersAreRobots 1 			[$SIGSEGV]
-	ImprovedAirblast 1				[$SIGSEGV]
 	RobotLimit 26 					[$SIGSEGV]
 	NoHolidayPickups 1				[$SIGSEGV]
 	TextPrintTime 0 				[$SIGSEGV]
 	DisplayRobotDeathNotice 1 		[$SIGSEGV]
+	BodyPartScaleSpeed 10 			[$SIGSEGV]
 	FlagEscortCountOffset -4 		[$SIGSEGV]
 
 	//Precache
@@ -91,6 +91,7 @@ WaveSchedule
 				"model"      "models/props_gameplay/resupply_locker.mdl"
 				"solid"      "6"
 				"angles"     "0 0 0"
+				"disableshadows" "1"
 			}
 			filter_tf_bot_has_tag
 			{
@@ -163,7 +164,7 @@ WaveSchedule
 	PlayerAttributes [$SIGSEGV]
 	{
 		"increased air control" 4
-		"ammo regen" 0.5
+		"ammo regen" 0.25
 		"damage applies to sappers" 1
 		"deploy time decreased" 0.5
 		"always allow taunt" 1
@@ -174,14 +175,14 @@ WaveSchedule
 		"cannot upgrade" 1
 		//"crit mod disabled" 0
 		"damage bonus" 2
-
+		"patient overheal penalty" 0
 		"voice pitch scale" 0.7
 		"damage force reduction" 0
-		"airblast vulnerability multiplier" 0
-		"airblast vertical vulnerability multiplier" 0
+		"airblast vulnerability multiplier" 0.5
 		"max health additive bonus" 1475
 		"not solid to players" 1
 		"boots falling stomp" 1
+		"health from packs increased" 0.5
 		}
 		Soldier
 		{
@@ -216,14 +217,16 @@ WaveSchedule
 		{
 		"grenade no spin" 1
 		"melee cleave attack" 1
+		"Attack not cancel charge" 1
 		"charge time increased" 3
-		"charge impact damage increased" 3
+		"charge impact damage increased" 5
 		"cancel falling damage" 1
 		}
 		Medic
 		{
 		"health regen" 40
-		"overheal penalty" -1
+		"overheal penalty" 0
+		"overheal expert" -4
 		"medic machinery beam" 4
 		"cancel falling damage" 1
 		}
@@ -303,17 +306,23 @@ WaveSchedule
 		"thermal_thruster_air_launch" 1
 		"item_meter_charge_rate" 0.01
 	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Hot Hand"
+		"damage bonus" 2.5
+	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "TF_WEAPON_FISTS"
-		"damage bonus" 2
+		"damage bonus" 2.5
 	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
 		ItemName "The Gunslinger"
-		"damage bonus" 2
+		"damage bonus" 2.5
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -342,6 +351,20 @@ WaveSchedule
 		"damage penalty"         	 0.5
 		"crit mod disabled"      	 0
 		"maxammo secondary reduced"  0.37
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Ali Baba's Wee Booties"
+		"air dash count" 1
+		"bot custom jump particle"	1
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Bootlegger"
+		"air dash count" 1
+		"bot custom jump particle"	1
 	}
 	
 	ItemAttributes [$SIGSEGV]
@@ -373,6 +396,13 @@ WaveSchedule
 		ItemName "Festive Eyelander"
 		"set turn to ice" 1
 	}
+
+	ItemAttributes [$SIGSEGV] // easter egg
+	{
+		ItemName "Basic Spellbook"
+		"voice pitch scale" 1.4
+		"gesture speed increase" 1.75
+	}
 	
 	Templates
 	{
@@ -395,6 +425,8 @@ WaveSchedule
 			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
+			ExtAttr IgnorePlayers
+			ExtAttr IgnoreBuildings
 			ExtAttr JumpStomp [$SIGSEGV]
 			AimTrackingInterval 0 [$SIGSEGV]
 			FireWeapon [$SIGSEGV]
@@ -415,16 +447,16 @@ WaveSchedule
 				IfSeeTarget 0
 				Type Secondary
             }
-			ExtAttr IgnoreBuildings
 			ItemAttributes
 			{
 					ItemName "Nessie's Nine Iron"
 					"fire rate bonus" 5
-					"damage bonus" 0
+					"damage bonus" 0.0025
+					"dmg bonus vs buildings" 5000
 					"gesture speed increase" 0.1
 					"max health additive penalty" 0
-					"melee range multiplier" 0.001
-					"melee bounds multiplier" 0.001
+					"melee range multiplier" 2.5
+					"melee bounds multiplier" 2.5
 			}
 			ItemAttributes
 				{
@@ -433,26 +465,45 @@ WaveSchedule
 					"dmg taken from fire reduced" 1
 					"dmg taken from blast reduced" 1
 					"full charge turn control" 50
-					"charge impact damage increased" 5
+					"charge impact damage increased" 125
 					"charge time increased" 10
-					"charge recharge rate increased" 100
+					"charge recharge rate increased" 125
 				}
 			CharacterAttributes
 			{
 					"move speed bonus"	0.5
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
+					"damage force reduction" 0
+					"airblast vulnerability multiplier" 0
+					"airblast vertical vulnerability multiplier" 0
 					"override footstep sound set" 4
 					"increased jump height" 1.75
 					"damage all connected" 1
+					"mult stun resistance" 0
+					"wet immunity" 1
 			}
 			
+		}
+
+		Hell_Lesser2
+		{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_fast
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			//Attributes IgnoreEnemies
+			CharacterAttributes
+			{
+				"move speed bonus"	3
+			}
 		}
 		
 		Hell_Lesser
 		{
 			Template T_TFBot_Giant_Scout_Fast
-			Attributes IgnoreEnemies
+			//Attributes IgnoreEnemies
 		}
 		
 		Hell_Circuit
@@ -467,17 +518,17 @@ WaveSchedule
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_SAPPED
-				Duration 2.5
+				Duration 2
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_STUNNED
-				Duration 2.5
+				Duration 2
 			}
 			DamageAppliesCond [$SIGSEGV]
 			{
 				Name TF_COND_FREEZE_INPUT
-				Duration 2.5
+				Duration 2
 			}
 			FireWeapon [$SIGSEGV]
 			{
@@ -524,7 +575,7 @@ WaveSchedule
 			ItemModel [$SIGSEGV]
 			{
 				ItemName "War Head"
-				Model "models/workshop/player/items\heavy/tw_heavybot_armor/tw_heavybot_armor.mdl"
+				Model "models/workshop/player/items/heavy/tw_heavybot_armor/tw_heavybot_armor.mdl"
 			}
 			ItemAttributes
 			{
@@ -545,24 +596,31 @@ WaveSchedule
                 Repeats 1
 				IfSeeTarget 0
 				Type "Melee"
-				IfHealthBelow 151
+				IfHealthBelow 201
 			}
 		}
 		
 		Hell_Gold
 		{
 			Class Scout
-			ClassIcon scout_killerbee_nys
+			ClassIcon scout_rng
 			Name "Annoying"
 			Skill Easy
 			DropWeapon 1
-			Item "The Weather Master"
+			UseHumanModel 1
 			WeaponRestrictions MeleeOnly
+			Item "Poolside Polo"
+			Item "Towering Pillar of Beanies"
 			Item "Gold Frying Pan"
 			ItemAttributes
 			{
 				ItemName "Gold Frying Pan"
 				"item style override" 0
+			}
+			ItemAttributes
+			{
+				ItemName "Towering Pillar of Beanies"
+				"SPELL: set item tint RGB" 5
 			}
 		}
 		
@@ -589,9 +647,7 @@ WaveSchedule
 			{
 				"move speed bonus"	0.4
 				"damage force reduction" 0.3
-				"airblast vulnerability multiplier" 0.4
-				"airblast vertical vulnerability multiplier" 0.1
-				"rage giving scale"	0.9
+				"airblast vulnerability multiplier" 0.3
 				"override footstep sound set" 2
 			}
 		}
@@ -629,7 +685,7 @@ WaveSchedule
 			Name "Robot Buster"
 			Skill Easy
 			Scale 1.001
-			Health 450
+			Health 250
 			WeaponRestrictions PrimaryOnly
 			ClassIcon sentry_buster
 			UseCustomModel models\bots\demo\bot_sentry_buster.mdl [$SIGSEGV]
@@ -746,6 +802,30 @@ WaveSchedule
 		
 		RandomChoice
 		{
+
+			TFBot
+			{
+			Template T_TFBot_SentryBuster
+			Skill Easy
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			}
+
+			TFBot
+			{
+			Template T_TFBot_SentryBuster
+			Skill Easy
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			}
+
+			TFBot
+			{
+			Template T_TFBot_SentryBuster
+			Skill Easy
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			}
 		
 			TFBot
 			{
@@ -781,7 +861,75 @@ WaveSchedule
 					"fire rate bonus" 100
 				}
 			}
+
+			TFBot
+			{
+				Class Spy
+				Name "Sentry Hacker"
+				Skill Easy
+				Health 2000
+				Item "EOTL_demopants"
+				Item "Graybanns"
+				ExtAttr IgnorePlayers
+				WeaponRestrictions SecondaryOnly
+				ClassIcon sentry_buster
+				Attributes MiniBoss
+				Attributes DisableDodge
+				Attributes AlwaysFireWeapon
+				CharacterAttributes
+				{
+					"move speed bonus" 1.3
+					"cannot disguise" 1
+					"head scale" 2.2
+					"torso scale" 0.3
+					"voice pitch scale" 0
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"cannot be backstabbed" 1
+				}
+				Itemattributes
+				{
+					Itemname "TF_WEAPON_KNIFE"
+					"is_passive_weapon" 1
+					"damage bonus" 0
+					"fire rate bonus" 100
+				}
+			}
 			
+			TFBot
+			{
+				Class Demoman
+				Name "Sentry Runner"
+				Skill Expert
+				Health 2000
+				WeaponRestrictions PrimaryOnly
+				ClassIcon sentry_buster
+				Item "EOTL_winter_pants"
+				Item "The Tide Turner"
+				Attributes DisableDodge
+				Attributes Miniboss
+				CharacterAttributes
+				{
+					"gesture speed increase" 100
+					"move speed bonus" 2
+					"voice pitch scale" 0
+					"damage force reduction" 0.5
+					"airblast vulnerability multiplier" 0.5
+					"override footstep sound set" 7
+					"cannot be backstabbed" 1
+				}
+				ItemAttributes
+				{
+					ItemName "The Tide Turner"
+					"charge time increased" 7
+					"charge recharge rate increased" 7
+					"Attack not cancel charge" 1
+					"charge impact damage increased" 0
+					"dmg taken from fire reduced" 1
+					"dmg taken from blast reduced" 1
+				}
+			}
 			
 		}		
 	}
@@ -877,7 +1025,7 @@ WaveSchedule
 			{
 				"sapper degenerates buildings" 0.5
 				"sapper damage penalty" 0
-				"armor piercing" 50
+				"armor piercing" 75
 			}	
 		}
 		
@@ -913,6 +1061,7 @@ WaveSchedule
 			Health 600
 			Item "The Wrangler"
 			AimTrackingInterval 0.05
+			ForceRomeVision 1 [$SIGSEGV]
 		}
 		
 	}
@@ -927,10 +1076,11 @@ WaveSchedule
 		TFBot
 		{
 			Class Engineer
+			Name "Mini-Sentry has spawned!"
 			Classicon mini_sentry
 			Scale 1.001
 			Health 10
-			Item "Aim Assistant"
+			UseCustomModel "models\empty.mdl" [$SIGSEGV]
 			Attributes AlwaysFireWeapon
 			ItemAttributes
 			{
@@ -950,6 +1100,7 @@ WaveSchedule
 				"health regen" -10
 				"dmg from ranged reduced" 0
 				"dmg from melee increased" 0
+				"custom kill icon" "obj_minisentry"
 			}
 		}
 	
@@ -990,12 +1141,12 @@ WaveSchedule
 			SpawnCount 1
 			TotalCurrency 0
 			WaitForAllDead "part01"
-			WaitBetweenSpawnsAfterDeath 30
+			//WaitBetweenSpawnsAfterDeath 30
 			Support 1
 		
 			TFBot
 			{
-				Template Hell_Lesser
+				Template Hell_Lesser2
 			}
 				
 		}	
@@ -1099,7 +1250,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -1114,8 +1265,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -1283,6 +1432,7 @@ WaveSchedule
 					Class Medic
 					ClassIcon medic_uber
 					Attributes SpawnWithFullCharge
+					Item "The Crusader's Crossbow"
 				}
 				
 			}
@@ -1323,7 +1473,8 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Soldier_RocketShotgun
-					UseMeleeThreatPrioritization 1 [$SIGSEGV]
+					Health 4000
+					//UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				}
 				
 		}
@@ -1338,7 +1489,7 @@ WaveSchedule
 
             Tank
 			{
-				Health 4200
+				Health 5000
 				Speed 75
 				Classicon blimp2_lite
 				Skin 4 [$SIGSEGV]
@@ -1389,7 +1540,7 @@ WaveSchedule
 				ClassIcon hellmet_nail_giant
 				Skill Expert
 				Health 10000
-				Attributes AlwaysCrit
+				//Attributes AlwaysCrit
 				Attributes MiniBoss
 				Attributes AlwaysFireWeapon
 				Attributes UseBossHealthBar
@@ -1427,10 +1578,10 @@ WaveSchedule
 					"attach particle effect" 3009
 					"hand scale" 0
 					"move speed bonus"	0.4
+					"override footstep sound set" 5
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
-					"override footstep sound set" 5
 					"wet immunity" 1
 					"mult stun resistance" 0
 				}
@@ -1448,7 +1599,7 @@ WaveSchedule
 			SpawnCount 1
 			WaitForAllDead "part05"
 			WaitBeforeStarting 6
-			WaitBetweenSpawns 3
+			WaitBetweenSpawns 2
 			TotalCurrency 0
 			Support 1
 		
@@ -1463,7 +1614,6 @@ WaveSchedule
 				Class Heavyweapons
 				ClassIcon heavy_crit
 				Name "Black Heavyweight Champ"
-				Health 250
 				Skill Expert
 				WeaponRestrictions MeleeOnly
 				Action Mobber [$SIGSEGV]
@@ -1639,7 +1789,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -1654,8 +1804,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 1
@@ -1789,9 +1937,9 @@ WaveSchedule
 				Class Heavyweapons
 				Name "Giant Thumper Heavy"
 				ClassIcon thumper_lite
-				Skill Expert
-				Health 4500
-				MaxVisionRange 450
+				Skill Normal
+				Health 5000
+				MaxVisionRange 500
 				WeaponRestrictions SecondaryOnly
 				Attributes MiniBoss
 				Item "Pugilist's Protector"
@@ -1837,6 +1985,7 @@ WaveSchedule
 				Class Medic
 				ClassIcon medic_uber
 				Attributes SpawnWithFullCharge
+				Item "The Crusader's Crossbow"
 			}	
 				
 		}
@@ -1862,7 +2011,7 @@ WaveSchedule
 				Name "Dragon"
 				Skill Expert
 				MaxVisionRange 1000
-				Attributes AlwaysCrit
+				//Attributes AlwaysCrit
 				Health 650
 				Scale 1.3
 				Item "The Dragon's Fury"
@@ -1921,6 +2070,8 @@ WaveSchedule
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
+					"wet immunity" 1
+					"mult stun resistance" 0
 					"rage giving scale"	1337
 					"override footstep sound set" 2
 				}			
@@ -1980,6 +2131,8 @@ WaveSchedule
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
+					"wet immunity" 1
+					"mult stun resistance" 0
 					"rage giving scale"	1337
 					"override footstep sound set" 2
 				}			
@@ -2021,6 +2174,10 @@ WaveSchedule
 			TFBot
 			{
 				Template Hell_Lesser
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_OFFENSEBUFF
+				}
 			}
 				
 		}	
@@ -2124,7 +2281,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -2139,8 +2296,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 1
@@ -2275,16 +2430,16 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					"wet immunity" 1
 					"move speed bonus" 1.3
 					"increased air control" 100
 					"gesture speed increase" 1.75
 					"backstab shield" 1
 					"increased jump height" 0.1
 					"cancel falling damage" 1
-					"rage giving scale" 0.1
+					"rage giving scale" 0
 					"charge time increased" -0.25
 					"charge recharge rate increased" 100
+					"wet immunity" 1
 					"mult stun resistance" 0
 				}
 			}
@@ -2296,23 +2451,43 @@ WaveSchedule
 			Name "part02"
 			Where spawnbot_flank_right
 			Where spawnbot_flank_left
-			TotalCount 24
+			TotalCount 32
 			MaxActive 12
 			SpawnCount 1
 			WaitForAllDead "part01"
 			WaitBeforeStarting 24
 			WaitBetweenSpawns 1
-			TotalCurrency 24
+			TotalCurrency 32
 
 			TFBot
 			{
 				Class Sniper
 				Skill Normal
+				Name "Canadian Huntsman"
+				Item "The Mislaid Sweater"
+				Item "EOTL_winter_pants"
+				Item "The Chill Chullo"
 				Item "The Huntsman"
 				Item "Brick"
-				AimTrackingInterval 0.05 [$SIGSEGV]
 				Attributes AlwaysCrit
 				Classicon sniper_brick_lite
+				ItemAttributes
+				{
+					ItemName "Brick"
+					"provide on active" 1
+					"dmg penalty vs players" 5
+					"custom kill icon" "vehicle"
+				}
+				ItemAttributes
+				{
+					ItemName "The Huntsman"
+					"damage bonus" 1.5
+				}
+				ItemAttributes
+				{
+					ItemName "The Chill Chullo"
+					"set item tint rgb" 12073019
+				}
 			}
 
 		}
@@ -2323,7 +2498,7 @@ WaveSchedule
 			TotalCount 1
 			WaitForAllDead "part02"
 			WaitBeforeStarting 4
-			TotalCurrency 903
+			TotalCurrency 895
 			
 			FirstSpawnOutput                                                                                                                                                            
 			{
@@ -2431,6 +2606,10 @@ WaveSchedule
 			TFBot
 			{
 				Template Hell_Lesser
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_OFFENSEBUFF
+				}
 			}
 				
 		}	
@@ -2534,7 +2713,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -2549,8 +2728,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 1
@@ -2644,8 +2821,8 @@ WaveSchedule
 				Name "Power Soldier"
 				ClassIcon soldier_buff
 				Item "The Beggar's Bazooka"
-				Attributes SpawnWithFullCharge
-				Item "The Buff Banner"
+				//Attributes SpawnWithFullCharge
+				//Item "The Buff Banner"
 				ForceRomeVision 1 [$SIGSEGV]
 				ItemAttributes
 				{
@@ -2658,6 +2835,10 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"increase buff duration"	9.0
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_OFFENSEBUFF
 				}
 			}
 				
@@ -2681,15 +2862,17 @@ WaveSchedule
 				Name "Power Pyro"
 				Item "The Phlogistinator"
 				Item "The Scorch Shot"
+				Attributes SpawnWithFullCharge
 				UseBestWeapon 1	[$SIGSEGV]
 				ForceRomeVision 1 [$SIGSEGV]
-				Attributes AlwaysCrit
+				//Attributes AlwaysCrit
 				ItemAttributes
 				{
 					ItemName "The Phlogistinator"
 					"damage bonus" 2
 					"move speed bonus" 1.3
-				}	
+					"airblast disabled" 0
+				}
 			}
 			
 		}
@@ -2730,6 +2913,14 @@ WaveSchedule
 					"faster reload rate" 0.4
 					"damage bonus" 1.8
 				}
+				Item "Battery Canteens"
+				ItemAttributes
+                {
+                    ItemName "Battery Canteens"
+                    "critboost" 1
+                    "powerup duration" 5
+                    "powerup charges" 1
+                }
 			}
 			
 		}
@@ -2805,6 +2996,7 @@ WaveSchedule
                     "use large smoke explosion" 1
 					"gesture speed increase" 1337
 					"dmg bonus vs buildings" 1337
+					"custom kill icon" "ullapool_caber_explosion"
 				}
 				Itemattributes
 				{
@@ -2871,6 +3063,10 @@ WaveSchedule
 			TFBot
 			{
 				Template Hell_Lesser
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_CRITBOOSTED_ON_KILL
+				}
 			}
 				
 		}	
@@ -2974,7 +3170,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -2989,8 +3185,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 5
 			MaxActive 5
 			SpawnCount 1
@@ -3086,7 +3280,7 @@ WaveSchedule
 				Item "The Cow Mangler 5000"
 				ClassIcon hellmet_zap
 				Skill Expert
-				Health 4200
+				Health 4000
 				Attributes DisableDodge
 				Attributes MiniBoss
 				Attributes AlwaysCrit
@@ -3190,6 +3384,7 @@ WaveSchedule
 				Class Medic
 				ClassIcon medic_uber
 				Attributes SpawnWithFullCharge
+				Item "The Crusader's Crossbow"
 			}
 			
 			TFBot
@@ -3197,6 +3392,7 @@ WaveSchedule
 				Class Medic
 				ClassIcon medic_uber
 				Attributes SpawnWithFullCharge
+				Item "The Crusader's Crossbow"
 			}
 			
 		}
@@ -3223,7 +3419,7 @@ WaveSchedule
 				Class Soldier
 				Name "Giant Homing Barrage"
 				ClassIcon soldier_barrage_homing_nys
-				Health 4200
+				Health 4000
 				Item "Public Speaker"
 				Item "Bobby Bonnet"
 				Skill Expert
@@ -3238,7 +3434,7 @@ WaveSchedule
 					Enable               1
 					IgnoreDisguisedSpies 1
 					IgnoreStealthedSpies 1
-					TurnPower   999
+					TurnPower   100
 					MaxAimError 999
 					RocketSpeed 0.35
 				}
@@ -3301,6 +3497,8 @@ WaveSchedule
 				Health 20000
 				Scale 1
 				Skill Expert
+				Item "L'Etranger"
+				Item "The Dead Ringer"
 				Item "The Black Rose"
 				Item "The Texas Half-Pants"
 				Item "Starduster"
@@ -3327,22 +3525,14 @@ WaveSchedule
 					"gesture speed increase" 3
 					"dmg pierces resists absorbs" 1
 					"cannot disguise" 1
-					"reveal disguised victim on hit" 1
+					"custom kill icon" "revolver"
+					
 				}
 				ItemAttributes 
 				{
 					ItemName "Texas Ten Gallon"
 					"set item tint rgb" 8154199
 				}
-				FireWeapon [$SIGSEGV]
-                {
-                    Delay 0
-                    Cooldown 15           
-                    Duration 0
-					IfSeeTarget 0
-					IfHealthBelow 2501
-					Type Secondary
-                }
 				CharacterAttributes
 				{
 					"move speed bonus" 0.75
@@ -3350,7 +3540,11 @@ WaveSchedule
 					"damage force reduction" 0.5
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
+					//"wet immunity" 1
+					"rage giving scale" 0
+					"mult stun resistance" 0
 					"cancel falling damage" 1
+					"mult cloak meter consume rate" 1000
 				}
 			}
 			
@@ -3419,6 +3613,10 @@ WaveSchedule
 			TFBot
 			{
 				Template Hell_Lesser
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_CRITBOOSTED_ON_KILL
+				}
 			}
 				
 		}	
@@ -3522,7 +3720,7 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 0.1
-			WaitBetweenSpawnsAfterDeath 25
+			WaitBetweenSpawnsAfterDeath 30
 			TotalCurrency 0	
 			Support 1
 		
@@ -3537,8 +3735,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 6
 			MaxActive 6
 			SpawnCount 1
@@ -3858,7 +4054,7 @@ WaveSchedule
 					"bullets per shot bonus" 10
 					"damage penalty" 0.5
 					"faster reload rate" 0.1
-					"crit vs burning players" 1
+					//"always crit" 1
 				}
 				ItemAttributes 
 				{
@@ -3869,12 +4065,12 @@ WaveSchedule
 				{
 					"move speed bonus"	0.5
 					"override footstep sound set" 2
+					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
-					"damage force reduction" 0
-					"rage giving scale" 0.1
-					"deploy time decreased" 0.001
+					//"wet immunity" 1
 					"mult stun resistance" 0
+					"deploy time decreased" 0.001
 				}
 			}		
 		}
@@ -3906,8 +4102,6 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
-			Where spawnbot_flank_right
-			Where spawnbot_flank_left
 			TotalCount 7
 			MaxActive 7
 			SpawnCount 1
@@ -3929,10 +4123,15 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitForAllDead "part01"
-			WaitBeforeStarting 60
-			WaitBetweenSpawns 60
+			WaitBeforeStarting 30
+			WaitBetweenSpawns 30
 			Support 1
 			TotalCurrency 0
+
+		RandomChoice
+		{
+		RandomChoice
+		{
 			
 			TFBot
 			{
@@ -3980,6 +4179,9 @@ WaveSchedule
 				}
 				//SIG
 			}
+
+		}
+		}
 		
 		}
 		
@@ -4022,9 +4224,9 @@ WaveSchedule
 				}
 				FireWeapon [$SIGSEGV]
                 {
-                    Delay 0.1
-                    Cooldown 2.5           
-                    Duration 0.1
+                    Delay 0
+                    Cooldown 3           
+                    Duration 3
 					IfSeeTarget 1
 					Type Primary
                 }
@@ -4051,6 +4253,7 @@ WaveSchedule
 					"apply z velocity on damage" 520
 					//"fire rate bonus" 0.5
 					"dmg bonus vs buildings" 1337
+					"custom kill icon" "short_circuit"
 				}
 				Itemattributes
 				{
@@ -4072,10 +4275,10 @@ WaveSchedule
 					"hand scale" 1.25
 					"move speed bonus" 0.5
 					"override footstep sound set" 7
+					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
-					"damage force reduction" 0
-					"rage giving scale" 0.1
+					//"wet immunity" 1
 					"mult stun resistance" 0
 				}
 			}					

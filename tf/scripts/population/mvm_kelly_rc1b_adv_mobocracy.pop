@@ -37,6 +37,7 @@ WaveSchedule
 	DisplayRobotDeathNotice 1 			[$SIGSEGV]
 	BodyPartScaleSpeed 10 				[$SIGSEGV]
 	NoRomevisionCosmetics 1 			[$SIGSEGV]
+	FlagEscortCountOffset -4 			[$SIGSEGV]
 
 	//Custom Shop
 	CustomUpgradesFile "mvm_upgrades_hellmet.txt" [$SIGSEGV]
@@ -354,7 +355,6 @@ WaveSchedule
 		ItemName "The Direct Hit"
 		"ragdolls become ash" 1
 		"damage bonus HIDDEN" 1.15
-		//"Projectile speed increased" 1
 	}
 	
 	ItemAttributes [$SIGSEGV] // infinite clip, more health, degreaser switch
@@ -452,19 +452,18 @@ WaveSchedule
 	ItemAttributes [$SIGSEGV] // less ammo/airblast to make stock more valuable
 	{
 		ItemName "The Backburner"
-		"maxammo primary reduced" 0.75
+		"maxammo primary reduced" 0.5
 	}
 
 	ItemAttributes [$SIGSEGV] // less ammo/airblast to make stock more valuable
 	{
 		ItemName "Festive Backburner 2014"
-		"maxammo primary reduced" 0.75
+		"maxammo primary reduced" 0.5
 	}
 	
 	ItemAttributes [$SIGSEGV] // added unique stats to napalmer, airblast jumps
 	{
 		ItemName "The Nostromo Napalmer"
-		//"damage penalty" 0.75
 		"airblast dashes" 1
 		"increased air control" 4
 	}
@@ -485,7 +484,6 @@ WaveSchedule
 	{
 		ItemName "The Scorch Shot"
 		"Set DamageType Ignite" 1
-		"Projectile speed decreased" 0.5
 		"faster reload rate" 2
 		"maxammo secondary reduced"  0.25
 		"self dmg push force decreased" 4
@@ -502,6 +500,32 @@ WaveSchedule
 		"fire rate penalty" 1.4
 	}
 
+	ItemAttributes [$SIGSEGV] // hard hits, homing reflects
+	{
+		ItemName "The Homewrecker"
+		"dmg bonus vs buildings" 1
+		"dmg penalty vs players" 1
+		"damage applies to sappers" 0
+
+		"damage causes airblast" 1
+		"apply z velocity on damage" -10000
+		"crit mod disabled" 0
+		"fire rate penalty" 1.4
+	}
+
+	ItemAttributes [$SIGSEGV] // hard hits, homing reflects
+	{
+		ItemName "The Maul"
+		"dmg bonus vs buildings" 1
+		"dmg penalty vs players" 1
+		"damage applies to sappers" 0
+
+		"damage causes airblast" 1
+		"apply z velocity on damage" -10000
+		"crit mod disabled" 0
+		"fire rate penalty" 1.4
+	}
+
 	ItemAttributes [$SIGSEGV] // increased speed boost time to 5 seconds
 	{
 		ItemName "The Hot Hand"
@@ -512,7 +536,7 @@ WaveSchedule
 	{
 		ItemName "The Loose Cannon" // disabled problematic cannonball push, added reskinned pipes, -20% damage +50% explosion radius
 		"override projectile type" 3
-		"damage penalty" 0.8
+		"damage penalty" 0.75
 		"Blast radius increased" 2
 		"custom projectile model" "models\weapons\w_models\w_cannonball.mdl"
 	}
@@ -642,7 +666,7 @@ WaveSchedule
 		"charge meter on hit" 0
 	}
 
-	ItemAttributes [$SIGSEGV] // no slow, more damage, can random crit
+	ItemAttributes [$SIGSEGV] // no slow, more damage, 5 sec minicrit on kill
 	{
 		ItemName "The Ullapool Caber"
 		"fire rate penalty" 1
@@ -807,6 +831,19 @@ WaveSchedule
 		"fire rate penalty" 1.4
 		"crit mod disabled" 0
 	}
+	
+	ItemAttributes [$SIGSEGV] // crit vs crit-boosted
+	{
+		ItemName "The Amputator"
+		"provide on active" 0
+		"damage penalty" 1
+		"enables aoe heal" 0
+		"health regen" 0
+		"special taunt" 0
+	
+		"crit vs burning players" 128
+		"fire rate penalty" 1.2
+	}
 
 	ItemAttributes [$SIGSEGV] // 25% chance of save
 	{
@@ -817,7 +854,7 @@ WaveSchedule
 		"damage penalty" 0
 		"teleport instead of die" 25
 	}
-	
+
 	ItemAttributes [$SIGSEGV] // cleared old stats, mimics railgun from Open Fortress
 	{
 		ItemName "The Classic"
@@ -827,7 +864,14 @@ WaveSchedule
 		"lunchbox adds minicrits" 2
 		"aiming movespeed decreased" 4
 		"sniper charge per sec" 0
-		//"damage bonus" 1.6
+	}
+	
+	ItemAttributes [$SIGSEGV] // explosive bullet
+	{
+		ItemName "The AWPer Hand"
+		"damage bonus HIDDEN" 1.25
+		"sniper charge per sec" 0
+		"explosive bullets" 147
 	}
 
 	ItemAttributes [$SIGSEGV] // hook bow - DAMAGE UPGRADE DOES NOT WORK
@@ -841,6 +885,8 @@ WaveSchedule
 		"afterburn duration penalty" 0
 		"weapon burn dmg reduced" 0
 		"deploy time decreased" 0.35
+		"cannot be teleported" 1
+		"cannot taunt" 1
 	}
 	
 	ItemAttributes [$SIGSEGV] // reverted to v1, increased crit time from 3 to 5 seconds
@@ -874,10 +920,11 @@ WaveSchedule
 		"hit self on miss" 1
 	}
 	
-	ItemAttributes [$SIGSEGV] // undo much-detested valve nerf
+	ItemAttributes [$SIGSEGV] // undo much-detested valve nerf + eh 1
 	{
 		ItemName "The Ambassador"
-		"crit_dmg_falloff" 0	
+		"crit_dmg_falloff" 0
+		"explosive sniper shot" 1
 	}
 	
 	ItemAttributes [$SIGSEGV] // stronger downside
@@ -1019,6 +1066,7 @@ WaveSchedule
 				"model"      "models/props_gameplay/resupply_locker.mdl"
 				"solid"      "6"
 				"angles"     "0 0 0"
+				"disableshadows" "1"
 			}
 			filter_tf_bot_has_tag
 			{
@@ -1797,7 +1845,8 @@ WaveSchedule
 					"damage force reduction" 0.6
 					"airblast vulnerability multiplier" 0.6
 					"heal rate bonus" 200
-					//"mod weapon blocks healing" 1
+					"mod weapon blocks healing" 1
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -1835,6 +1884,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.6
 					"heal rate bonus" 200
 					"mod weapon blocks healing" 1
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -1870,6 +1920,7 @@ WaveSchedule
 					"heal rate bonus" 200
 					"bot medic uber deploy delay duration" 10000
 					"mod weapon blocks healing" 1
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -2011,10 +2062,15 @@ WaveSchedule
 			
 			//SIG
 			AimTrackingInterval 0.05
+			UseHumanAnimations 1 [$SIGSEGV]
 			ExtAttr AlwaysFireWeaponAlt [$SIGSEGV]
 			AddCond [$SIGSEGV]
 			{
 				Name TF_COND_CRITBOOSTED_ON_KILL
+			}
+			AddCond [$SIGSEGV]
+			{
+				Name TF_COND_TELEPORTED
 			}
 			//SIG
 		}
@@ -2028,7 +2084,7 @@ WaveSchedule
 			ClassIcon engineer_gazer_lite
 			Skill Expert
 			WeaponRestrictions SecondaryOnly
-			Item "The Hardium Helm"
+			//Item "The Hardium Helm"
 			Item "The Scorch Shot"	
 			ItemAttributes
 			{
@@ -2042,8 +2098,19 @@ WaveSchedule
 				"faster reload rate" 0.8
 				"hand scale" 1.5		
 			}
+			Item "Pyro Helm"
+			ItemModel [$SIGSEGV]
+			{
+				ItemName "Pyro Helm"
+				Model "models/workshop/player/items/soldier/hw2013_rocket_ranger/hw2013_rocket_ranger.mdl"
+			}
 				
 			//SIG
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 0
+				Model "models\empty.mdl"
+			}
 			CustomWeaponModel [$SIGSEGV]
 			{
 				Slot 1
@@ -2105,15 +2172,16 @@ WaveSchedule
 			}
 
 			//SIG
-				FireWeapon [$SIGSEGV]
-				{
-					Delay 5
-					Cooldown 5
-					Repeats 0
-					IfSeeTarget 1
-					Duration 0
-					Type "Primary"
-				}
+			AimAt Head [$SIGSEGV]
+			FireWeapon [$SIGSEGV]
+			{
+				Delay 5
+				Cooldown 5
+				Repeats 0
+				IfSeeTarget 1
+				Duration 0
+				Type "Primary"
+			}
 			//SIG
 			
 		}
@@ -2954,6 +3022,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.6
 					"override footstep sound set" 6
 					"deploy time decreased" 0.001
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -2984,6 +3053,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Scout_FAN
 				Health 1500
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
@@ -3116,6 +3189,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Soldier
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
@@ -3139,9 +3216,17 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Soldier_Crit
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
+				}
 				//SIG
 			}
 			
@@ -3163,6 +3248,10 @@ WaveSchedule
 				Template T_TFBot_Giant_Soldier_RocketShotgun
 				Tag nav_prefer_flank_right
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 
 				//SIG
 				//UseMeleeThreatPrioritization 1 [$SIGSEGV]
@@ -3187,6 +3276,10 @@ WaveSchedule
 				Template T_TFBot_Giant_Soldier_RocketShotgun
 				Tag nav_prefer_flank_left
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 
 				//SIG
 				//UseMeleeThreatPrioritization 1 [$SIGSEGV]
@@ -3239,6 +3332,7 @@ WaveSchedule
 					"damage force reduction" 0.3
 					"airblast vulnerability multiplier" 0.3
 					"override footstep sound set" 2
+					"cancel falling damage" 1
 				}
 			}
 			
@@ -3748,8 +3842,8 @@ WaveSchedule
 			TotalCount 1337
 			MaxActive 1
 			SpawnCount 1
-			WaitBeforeStarting 20
-			WaitBetweenSpawns 20
+			WaitBeforeStarting 30
+			WaitBetweenSpawns 30
 			Support 1
 			TotalCurrency 0
 			
@@ -3828,6 +3922,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Skill Expert
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				AimTrackingInterval 0.5 [$SIGSEGV]
@@ -3858,6 +3956,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Heavyweapons
 				Skill Expert
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				AimTrackingInterval 0.5 [$SIGSEGV]
@@ -4112,13 +4214,7 @@ WaveSchedule
 				Class Sniper
 				Skill Normal
 				Item "The Huntsman"
-				Item "Brick"
 				Classicon sniper_bow
-				ItemAttributes
-				{
-					ItemName "Brick"
-					"always crit" 1
-				}
 			}
 			
 			TFBot
@@ -4173,6 +4269,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.5
 					"override footstep sound set" 7
 					"cannot be backstabbed" 1
+					"cancel falling damage" 1
 				}	
 				
 				//SIG
@@ -4218,8 +4315,8 @@ WaveSchedule
 				Skill Expert
 				Item "The Gunboats"
 				Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
-				Item "The Eliminators Safeguard"
-				Health 4500
+				Item "Breach and Bomb"
+				Health 5000
 				Attributes MiniBoss
 				ItemAttributes
 				{
@@ -4231,11 +4328,12 @@ WaveSchedule
 					"fire rate bonus" 1.5
 					"clip size upgrade atomic" -3
 					"disable buildings on hit" 5
+					"custom kill icon" "blackbox"
 				}
 				ItemAttributes
 				{
-					ItemName "The Eliminators Safeguard"
-					"item style override" 1
+					ItemName "Breach and Bomb"
+					//"item style override" 1
 					"set item tint rgb" 1315860
 				}
 				CharacterAttributes
@@ -4245,6 +4343,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.4
 					"override footstep sound set" 3
 					"rocket jump damage reduction" 0
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -4368,6 +4467,7 @@ WaveSchedule
 					"damage force reduction" 0.5
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -4752,6 +4852,11 @@ WaveSchedule
 					"damage force reduction" 0.3
 					"airblast vulnerability multiplier" 0.3
 					"override footstep sound set" 2
+					"cancel falling damage" 1
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 			
 			}
@@ -4769,6 +4874,10 @@ WaveSchedule
 				"bot medic uber health threshold" 1337
 				"uber duration bonus" 1337
 				"health regen" 150
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 			}
 			
@@ -5103,6 +5212,14 @@ WaveSchedule
 				Template T_TFBot_Giant_Heavyweapons_Shotgun
 				Classicon shotgun_lite
 				Attributes AlwaysCrit
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
+				}
 			}
 			
 			TFBot
@@ -5129,6 +5246,14 @@ WaveSchedule
 				Template T_TFBot_Giant_Heavyweapons_Shotgun
 				Classicon shotgun_lite
 				Attributes AlwaysCrit
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
+				}
 			}
 			
 			TFBot
@@ -5163,6 +5288,10 @@ WaveSchedule
 					"attack projectiles" 1
 					"restore health on kill" 50
 					"critboost on kill" 3
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 			}
 
@@ -5354,6 +5483,10 @@ WaveSchedule
 				AddCond [$SIGSEGV]
 				{
 					Name TF_COND_CRITBOOSTED_ON_KILL
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 				UseMeleeThreatPrioritization 1 [$SIGSEGV]
 				//SIG
@@ -5954,15 +6087,32 @@ WaveSchedule
 				Attributes DisableDodge
 				Health 275
 				Item "The Pomson 6000"
+				Item "The Eureka Effect"
 				ItemAttributes
 				{
 					ItemName "The Pomson 6000"
 					"disable buildings on hit" 1.5
 					"faster reload rate" 0.01
 				}
+				ItemAttributes
+				{
+					ItemName "The Eureka Effect"
+					"disable buildings on hit" 1.5
+					"damage bonus" 1.5
+					"kill forces attacker to laugh" 1
+				}
 				
 				//SIG
 				Action FetchFlag [$SIGSEGV]
+				WeaponSwitch [$SIGSEGV]
+				{
+					Delay 0
+					Cooldown 0
+					Repeats 1
+					IfSeeTarget 0
+					Type "Melee"
+					IfHealthBelow 26
+				}
 				//SIG
 			}	
 			
@@ -5989,7 +6139,7 @@ WaveSchedule
 			Skill Expert
 			Attributes DisableDodge
 			WeaponRestrictions MeleeOnly
-			Item "The Lightning Lid"
+			//Item "The Lightning Lid"
 			Item "The Third Degree"
 			ItemAttributes
 			{
@@ -5997,6 +6147,12 @@ WaveSchedule
 				"crit from behind" 1
 				"disable buildings on hit" 1.5
 				"gesture speed increase" 1.5
+			}
+			Item "Pyro Helm"
+			ItemModel [$SIGSEGV]
+			{
+				ItemName "Pyro Helm"
+				Model "models/workshop/player/items/scout/spr17_the_lightning_lid/spr17_the_lightning_lid.mdl"
 			}
 			
 			//SIG
@@ -6028,6 +6184,14 @@ WaveSchedule
 				{
 					ItemName "Natascha"
 					"damage bonus" 1.25
+				}
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 			}
 			
@@ -6061,6 +6225,14 @@ WaveSchedule
 					ItemName "Natascha"
 					"damage bonus" 1.25
 				}
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
+				}
 			}
 			
 			TFBot
@@ -6089,6 +6261,7 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"grenade no spin" 1
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -6125,6 +6298,7 @@ WaveSchedule
 				CharacterAttributes
 				{
 					"grenade no spin" 1
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -6694,8 +6868,8 @@ WaveSchedule
 					"override footstep sound set" 7
 					"airblast vertical vulnerability multiplier" 0
 					"rage giving scale" 0
-					"voice pitch scale" 0.75
 					"attach particle effect" 56
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -7309,7 +7483,7 @@ WaveSchedule
 					"voice pitch scale" 0.95
 					"crit mod disabled" 0
 					"ammo regen" 1
-					"effect bar recharge rate increased" 3
+					"effect bar recharge rate increased" 5
 				}
 				
 				//SIG
@@ -7362,7 +7536,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7410,7 +7584,7 @@ WaveSchedule
 				}
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7450,7 +7624,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7490,7 +7664,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7532,7 +7706,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7589,7 +7763,7 @@ WaveSchedule
 					"ammo regen" 1
 					"health from packs increased" 0.15
 					"move speed bonus"	0.5
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"airblast vulnerability multiplier" 0.4
 					"override footstep sound set" 3
 				}
@@ -7640,7 +7814,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7689,7 +7863,7 @@ WaveSchedule
 				Classicon red2_lite
 				CharacterAttributes
 				{
-					//"damage force reduction" 0
+					"damage force reduction" 0.75
 					"voice pitch scale" 0.75
 					"crit mod disabled" 0
 					"ammo regen" 1
@@ -7745,17 +7919,37 @@ WaveSchedule
 				Tag bot_red
 				Classicon vip
 				Attributes IgnoreFlag
-				WeaponRestrictions SecondaryOnly
+				DropWeapon 1
+				//WeaponRestrictions SecondaryOnly
 				Attributes UseBossHealthBar
-				Item "The Sandvich"
+				Item "Secret Diary"
+				Item "The Robo-Sandvich"
 				Item "The Gabe Glasses"
 				Item "The Triad Trinket"
+				Item "Pyro Helm"
+				ItemModel [$SIGSEGV]
+				{
+					ItemName "Pyro Helm"
+					Model "models/workshop/player/items/heavy/cc_summer2015_white_russian/cc_summer2015_white_russian.mdl"
+				}
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FISTS"
+					"damage bonus" 334
+					"crit mod disabled" 0
+				}
+				ItemAttributes
+				{
+					ItemName "The Robo-Sandvich"
+					"torso scale" 0.85
+					"voice pitch scale" 1.4
+					"gesture speed increase" 1.5
+					"effect bar recharge rate increased" 0.25
+					"attach particle effect" 60
+				}
 				CharacterAttributes
 				{
-					"voice pitch scale" 1.4
 					"cannot be teleported" 1
-					"gesture speed increase" 1.5
-					"effect bar recharge rate increased" 0.0025
 				}
 				
 				//SIG
@@ -7911,6 +8105,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Soldier_BurstFire
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 			}
 
 		}
@@ -8209,6 +8407,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.3
 					"override footstep sound set" 2
 					"increase buff duration" 20
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -8279,6 +8478,7 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0.3
 					"override footstep sound set" 2
 					"increase buff duration" 20
+					"cancel falling damage" 1
 				}
 				
 				//SIG
@@ -8335,6 +8535,10 @@ WaveSchedule
 				
 				//SIG
 				Action Mobber [$SIGSEGV]
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
+				}
 				//SIG
 			}
 			
@@ -8362,6 +8566,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Soldier_Spammer
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				FireWeapon [$SIGSEGV]
@@ -8393,6 +8601,10 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Soldier_Spammer
 				Health 4000
+				CharacterAttributes
+				{
+					"cancel falling damage" 1
+				}
 				
 				//SIG
 				FireWeapon [$SIGSEGV]
@@ -10468,11 +10680,16 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0
 					"override footstep sound set" 7
 					"rage giving scale" 200
+					"cancel falling damage" 1
 				}
 				ItemAttributes
 				{
 					ItemName "Blast Blocker"
 					"set item tint rgb" 6535423
+				}
+				AddCond [$SIGSEGV]
+				{
+					Name TF_COND_TELEPORTED
 				}
 				SpawnTemplate "tankkiller" [$SIGSEGV]
 		}
@@ -10496,15 +10713,15 @@ WaveSchedule
 			{
 				Class Demoman
 				Name "Bomb Runner"
-				Health 6666
+				Health 4500
 				Scale 1.9
 				ClassIcon scout_bombrunner
 				Attributes IgnoreEnemies
-				Attributes MiniBoss
+				//Attributes MiniBoss
 				Skill Expert
 				WeaponRestrictions MeleeOnly
 				FastUpdate 1
-				ExtAttr JumpStomp [$SIGSEGV]
+				NoBombUpgrades 1 [$SIGSEGV]
 				UseBusterModel 1 [$SIGSEGV]
 				CustomWeaponModel [$SIGSEGV]
 				{
@@ -10517,25 +10734,19 @@ WaveSchedule
 					"head scale" 3.3
 					"increased jump height" 1.9
 					"torso scale" -0.15
-					"move speed bonus" 1.75
-					"damage force reduction" 0
+					"move speed bonus" 2
+					"damage force increase hidden" 1.5
+					//"damage force reduction" 0
+					"backstab shield" 1
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"mult stun resistance" 0
 					"override footstep sound set" 7
-					"air dash count" 7
+					"air dash count" 2
 					"rage giving scale" 0
 					"cancel falling damage" 1
-				}
-				FireWeapon [$SIGSEGV]
-				{
-					Delay 0
-					Cooldown 3
-					Repeats 0
-					IfSeeTarget 0
-					Duration 0
-					IfHealthBelow 6665
-					Type "Jump"
+					"not solid to players" 1
+					"voice pitch scale" 0
 				}
 			}
 		}

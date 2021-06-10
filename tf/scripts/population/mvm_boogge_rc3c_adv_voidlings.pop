@@ -218,144 +218,18 @@ gettysburg
         BeginAtWave 1
         RunForThisManyWaves 2
 
-        RandomChoice
+        TFBot
         {
-            TFBot
+            Template T_TFBot_SentryBuster
+            Skill Easy
+            Attributes IgnoreEnemies
+            Attributes DisableDodge
+
+            CharacterAttributes
             {
-                Template T_TFBot_SentryBuster
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    //"gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Template T_TFBot_SentryBuster
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    //"gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Template T_TFBot_SentryBuster
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    //"gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Name "Pow Buster"
-                Template T_TFBot_SentryBuster
-                Class Heavyweapons
-                Health 3000
-                Scale 1.8
-                Item "War Head"
-			    Item "Upgradeable TF_WEAPON_FISTS"
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0
-                    "airblast vulnerability multiplier" 0
-                    "airblast vertical vulnerability multiplier" 0
-                    "rage giving scale" 0.1
-                    "torso scale" 0
-                    "head scale" 2.45
-                }
-            }
-        }
-    }
-
-    Mission //Wave 3 Buster Mission
-    {
-        Objective DestroySentries
-        Where spawnbot_void4
-        CooldownTime 30
-        BeginAtWave 3
-        RunForThisManyWaves 1
-
-        RandomChoice
-        {
-            TFBot
-            {
-                Name "Void Buster"
-                Class Scout
-                Template T_TFBot_SentryBuster
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-                WeaponRestrictions MeleeOnly
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.2
-                }
-            }
-
-            TFBot
-            {
-                Name "Void Buster"
-                Class Scout
-                Template T_TFBot_SentryBuster
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-                WeaponRestrictions MeleeOnly
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.2
-                }
-            }
-
-            TFBot
-            {
-                Name "Void Buster"
-                Class Heavyweapons
-                Template T_TFBot_SentryBuster
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-                WeaponRestrictions MeleeOnly
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0
-                }
+                "damage force reduction" 0.1
+                "airblast vulnerability multiplier" 0.1
+                "rage giving scale" 0
             }
         }
     }
@@ -366,89 +240,20 @@ gettysburg
         Where spawnbot_flank
         CooldownTime 30
         BeginAtWave 4
-        RunForThisManyWaves 3
+        RunForThisManyWaves 2
 
-        RandomChoice
+        TFBot
         {
-            TFBot
+            Template T_TFBot_SentryBuster
+            Skill Easy
+            Attributes IgnoreEnemies
+            Attributes DisableDodge
+
+            CharacterAttributes
             {
-                Name "Quick Buster"
-                Template T_TFBot_SentryBuster
-                Class Scout
-                Health 1250
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    "gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Name "Quick Buster"
-                Template T_TFBot_SentryBuster
-                Class Scout
-                Health 1250
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    "gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Name "Quick Buster"
-                Template T_TFBot_SentryBuster
-                Class Scout
-                Health 1250
-                Scale 1.5
-                Skill Easy
-                Attributes IgnoreEnemies
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0.1
-                    "airblast vulnerability multiplier" 0.1
-                    "rage giving scale" 0.1
-                    "gesture speed increase" 2
-                }
-            }
-
-            TFBot
-            {
-                Name "Pow Buster"
-                Template T_TFBot_SentryBuster
-                Class Heavyweapons
-                Health 3000
-                Scale 1.8
-                Item "War Head"
-			    Item "Upgradeable TF_WEAPON_FISTS"
-
-                CharacterAttributes
-                {
-                    "damage force reduction" 0
-                    "airblast vulnerability multiplier" 0
-                    "airblast vertical vulnerability multiplier" 0
-                    "rage giving scale" 0.1
-                    "torso scale" 0
-                    "head scale" 2.45
-                }
+                "damage force reduction" 0.1
+                "airblast vulnerability multiplier" 0.1
+                "rage giving scale" 0
             }
         }
     }
@@ -537,7 +342,7 @@ gettysburg
     {
         Objective Spy
         Where spawnbot_mission_spy
-        DesiredCount 3
+        DesiredCount 2
         InitialCooldown 12
         CooldownTime 45
         BeginAtWave 2
@@ -562,23 +367,6 @@ gettysburg
         TFBot
         {
             Template G_Heavy_Void_Remnant_Giant
-        }
-    }
-
-    Mission //Wave 3 Spy Mission
-    {
-        Objective Spy
-        Where spawnbot_mission_spy
-        DesiredCount 2
-        InitialCooldown 20
-        CooldownTime 35
-        BeginAtWave 3
-        RunForThisManyWaves 1
-
-        TFBot
-        {
-            Name "Void Mimic"
-            Template G_Spy_YER
         }
     }
 
@@ -741,9 +529,6 @@ gettysburg
             Template G_Engineer_Teleporter
             ExtAttr BuildDispenserAsSentryGun [$SIGSEGV]
             Attributes TeleportToHint
-            TeleportWhere spawnbot_invasion
-            TeleportWhere spawnbot_side
-            TeleportWhere spawnbot_flank
 
             CharacterAttributes
             {
@@ -771,10 +556,6 @@ gettysburg
             Health 275
             Attributes TeleportToHint
             Attributes AlwaysCrit
-            //TeleportWhere spawnbot
-            TeleportWhere spawnbot_invasion
-            TeleportWhere spawnbot_side
-            TeleportWhere spawnbot_flank
 
             CharacterAttributes
             {
@@ -790,7 +571,7 @@ gettysburg
         Where behind
         Where ahead
         Where anywhere
-        DesiredCount 4
+        DesiredCount 3
         CooldownTime 15
         BeginAtWave 5
         RunForThisManyWaves 1
@@ -1193,7 +974,7 @@ gettysburg
         }
     }
 
-    Wave //Wave 2 - $700
+    Wave //Wave 2 - $900
     {
         StartWaveOutput
         {
@@ -1289,7 +1070,7 @@ gettysburg
             WaitBeforeStarting 2
             WaitBetweenSpawns 15
 
-            TotalCurrency 200
+            TotalCurrency 400
 
             Squad
             {
@@ -1316,9 +1097,9 @@ gettysburg
                         "grenade launcher mortar mode" -1
                         //"auto fires when full" 1
                         //"auto fires full clip" 1
-                        "clip size upgrade atomic" 10
+                        "clip size upgrade atomic" 6
                         "fire rate bonus" 0.1
-                        "reload time decreased" 0.25
+                        "reload time decreased" 0.4
                         "projectile speed increased" 1.6
                         "projectile spread angle penalty" 4
                     }
@@ -1476,8 +1257,8 @@ gettysburg
         {
             Name 2c
             Where spawnbot_flank
-            TotalCount 10
-            SpawnCount 10
+            TotalCount 2
+            SpawnCount 2
 
             WaitForAllSpawned 2b
             WaitBeforeStarting 8
@@ -1509,9 +1290,9 @@ gettysburg
                         "grenade launcher mortar mode" -1
                         //"auto fires when full" 1
                         //"auto fires full clip" 1
-                        "clip size upgrade atomic" 10
+                        "clip size upgrade atomic" 6
                         "fire rate bonus" 0.1
-                        "reload time decreased" 0.25
+                        "reload time decreased" 0.4
                         "projectile speed increased" 1.6
                         "projectile spread angle penalty" 4
                     }
@@ -1530,51 +1311,11 @@ gettysburg
                 {
                     Template G_Medic_Kritz_Giant
                 }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
-
-                TFBot
-                {
-                    Template G_Medic_BigHeal
-                }
             }
         }
     }
 
-    Wave //Wave 3 - $800
+    Wave //Wave 3 - $900
     {
         StartWaveOutput
         {
@@ -1586,6 +1327,22 @@ gettysburg
         {
             Target wave_finished_relay
             Action Trigger
+        }
+
+        PlayerAttributes
+        {
+            "maxammo primary increased" 10
+            "maxammo secondary increased" 10
+            "increased air control" 3
+
+            Engineer
+            {
+                "maxammo metal increased" 20
+                "metal regen" 100
+                "construction rate increased" 2
+                "engy sentry damage bonus" 1.25
+                "mult firerocket rate" 0.5
+            }
         }
 
         WaveSpawn
@@ -1903,7 +1660,7 @@ gettysburg
             WaitBeforeStarting 20
             WaitBetweenSpawns 14
 
-            TotalCurrency 250
+            TotalCurrency 350
 
             RandomChoice
             {
@@ -1927,7 +1684,6 @@ gettysburg
                         "cancel falling damage" 1
                         "airblast vulnerability multiplier" 0
                         "damage force reduction" 0
-                        "arrow mastery" 2
                     }
                 }
 
@@ -1951,7 +1707,6 @@ gettysburg
                         "cancel falling damage" 1
                         "airblast vulnerability multiplier" 0
                         "damage force reduction" 0
-                        "arrow mastery" 2
                     }
                 }
 
@@ -1975,7 +1730,6 @@ gettysburg
                         "cancel falling damage" 1
                         "airblast vulnerability multiplier" 0
                         "damage force reduction" 0
-                        "arrow mastery" 2
                     }
                 }
             }
@@ -1998,92 +1752,21 @@ gettysburg
 
             TotalCurrency 100
 
-            RandomChoice
+            TFBot
             {
-                TFBot
+                Name "Void Rusher"
+                Template G_Scout_Super_Giant
+                Item "The Haunted Hat"
+                Item "The Fan o'War"
+                Attributes DisableDodge
+
+                FastUpdate 1
+
+                CharacterAttributes
                 {
-                    Name "Void Rusher"
-                    Template G_Scout_Super_Giant
-                    Item "The Haunted Hat"
-                    Attributes DisableDodge
-
-                    FastUpdate 1
-
-                    CharacterAttributes
-                    {
-                        "cancel falling damage" 1
-                        "airblast vulnerability multiplier" 0
-                        "damage force reduction" 0
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Void Rusher"
-                    Template G_Scout_Super_Giant
-                    Item "The Haunted Hat"
-                    Attributes DisableDodge
-
-                    FastUpdate 1
-
-                    CharacterAttributes
-                    {
-                        "cancel falling damage" 1
-                        "airblast vulnerability multiplier" 0
-                        "damage force reduction" 0
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Void Rusher"
-                    Template G_Scout_Super_Giant
-                    Item "The Haunted Hat"
-                    Attributes DisableDodge
-
-                    FastUpdate 1
-
-                    CharacterAttributes
-                    {
-                        "cancel falling damage" 1
-                        "airblast vulnerability multiplier" 0
-                        "damage force reduction" 0
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Void Rusher"
-                    Template G_Scout_Super_Giant
-                    Item "The Haunted Hat"
-                    Attributes DisableDodge
-
-                    FastUpdate 1
-
-                    CharacterAttributes
-                    {
-                        "cancel falling damage" 1
-                        "airblast vulnerability multiplier" 0
-                        "damage force reduction" 0
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Void Rusher"
-                    Template G_Scout_Super_Giant
-                    Item "The Haunted Hat"
-                    Item "The Fan o'War"
-                    Attributes DisableDodge
-
-                    FastUpdate 1
-
-                    CharacterAttributes
-                    {
-                        "cancel falling damage" 1
-                        "airblast vulnerability multiplier" 0
-                        "damage force reduction" 0
-                    }
+                    "cancel falling damage" 1
+                    "airblast vulnerability multiplier" 0
+                    "damage force reduction" 0
                 }
             }
         }
@@ -2168,37 +1851,6 @@ gettysburg
 
         WaveSpawn
         {
-            Where spawnbot_void1
-            Where spawnbot_void2
-            Where spawnbot_void3
-            Where spawnbot_void4
-            TotalCount 5
-            SpawnCount 1
-            MaxActive 1
-
-            Support Limited
-
-            WaitBeforeStarting 5
-            WaitForAllDead 3b
-            WaitBetweenSpawnsAfterDeath 5
-
-            TFBot
-            {
-                Name "Void Boost"
-                Template G_Medic_Kritz
-                Attributes DisableDodge
-
-                CharacterAttributes
-                {
-                    "airblast vulnerability multiplier" 0.25
-                    "damage force reduction" 0.25
-                }
-            }
-            
-        }
-
-        WaveSpawn
-        {
             Name 3preface
             Where spawnbot_void1
             Where spawnbot_void3
@@ -2223,6 +1875,7 @@ gettysburg
                 Item "Liquidator's Lid"
                 WeaponRestrictions SecondaryOnly
                 Attributes DisableDodge
+                
                 UseMeleeThreatPrioritization 1 [$SIGSEGV]
 
                 CharacterAttributes
@@ -2256,6 +1909,8 @@ gettysburg
                     ClassIcon heavy_deflector_push
                     Attributes DisableDodge
                     Attributes SpawnWithFullCharge
+
+                    FastUpdate 1
 
                     ItemAttributes
                     {
@@ -2354,6 +2009,7 @@ gettysburg
             TFBot
             {
                 Template G_Demo_Spook
+                Health 20000
                 Attributes DisableDodge
                 UseMeleeThreatPrioritization 1 [$SIGSEGV]
                 FastUpdate 1
@@ -2367,7 +2023,7 @@ gettysburg
         }
     }
 
-    Wave //Wave 4 - $600
+    Wave //Wave 4 - $800
     {
         StartWaveOutput
         {
@@ -2393,56 +2049,18 @@ gettysburg
             WaitBeforeStarting 1
             WaitBetweenSpawns 10
 
-            TotalCurrency 60
+            TotalCurrency 260
 
-            RandomChoice
+            TFBot
             {
-                TFBot
-                {
-                    Class Heavy
-                    Skill Normal
-                    Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-                }
+                Class Heavy
+                Skill Normal
+                Tag bot_flank
 
-                TFBot
-                {
-                    Template G_Heavy_Natascha
-                    ClassIcon heavy
-                    Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-                }
+                UseMeleeThreatPrioritization 1
+                FastUpdate 1
 
-                TFBot
-                {
-                    Class Heavy
-                    Skill Normal
-                    Item Tomislav
-                    Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-                }
-
-                TFBot
-                {
-                    Template G_Heavy_Heater
-                    ClassIcon heavy
-                    Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-                }
-
-                TFBot
-                {
-                    Class Heavy
-                    Skill Expert
-                    Item "The Brass Beast"
-                    Item "Magnificent Mongolian"
-                    Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-                    FastUpdate 1
-                    AimTrackingInterval 0
-                    AimLeadProjectileSpeed 6000
-                    //i dont know why im making this guy retarded
-                }
+                Action Mobber
             }
         }
 
@@ -2555,9 +2173,14 @@ gettysburg
                 {
                     Template G_Heavy_Apocofist_Giant
                     Attributes AlwaysCrit
+
+                    MaxVisionRange 800
+
                     ExtAttr JumpStomp
                     FastUpdate 1
                     AimTrackingInterval 0
+
+                    ExtAttr IgnoreBuildings
 
                     CharacterAttributes
                     {
@@ -2571,7 +2194,7 @@ gettysburg
                     Taunt
                     {
                         Delay 3
-                        Cooldown 7
+                        Cooldown 8
                         IfSeeTarget 1
                     }
                 }
@@ -2676,7 +2299,7 @@ gettysburg
         }
     }
 
-    Wave //Wave 5 - $600
+    Wave //Wave 5 - $800
     {
         StartWaveOutput
         {
@@ -2700,76 +2323,76 @@ gettysburg
 
             WaitBetweenSpawnsAfterDeath 5
 
-            TotalCurrency 4
+            TotalCurrency 204
 
             TFBot
             {
                 Name "Giant Homing Soldier"
-                    Class Soldier
-                    ClassIcon soldier_rocketrain_homing_nys
-                    Skill Expert
-                    Health 4200
-                    Item gentlemanne_rocketlauncher_coffinnail
-                    Item "The Gunboats"
-                    Item "Merc's Pride Scarf"
-                    Item "Exquisite Rack"
-                    Attributes MiniBoss
-                    Attributes HoldFireUntilFullReload
-                    Attributes SuppressFire
-                    Tag bot_giant
-                    Scale 1.85
-                    StripItemSlot 2
+                Class Soldier
+                ClassIcon soldier_rocketrain_homing_nys
+                Skill Expert
+                Health 4200
+                Item gentlemanne_rocketlauncher_coffinnail
+                Item "The Gunboats"
+                Item "Merc's Pride Scarf"
+                Item "Exquisite Rack"
+                Attributes MiniBoss
+                Attributes HoldFireUntilFullReload
+                Attributes SuppressFire
+                Tag bot_giant
+                Scale 1.85
+                StripItemSlot 2
 
-                    AimOffset "0 0 2000"
+                AimOffset "0 0 2000"
 
-                    RocketCustomParticle eyeboss_projectile [$SIGSEGV]
+                RocketCustomParticle eyeboss_projectile [$SIGSEGV]
 
-                    AddCond
-                    {
-                        Index 36
-                    }
+                AddCond
+                {
+                    Index 36
+                }
 
-                    HomingRockets
-                    {
-                        IgnoreDisguisedSpies 1
-                        IgnoreStealthedSpies 0
-                        TurnPower 500
-                        MaxAimError 250
-                        RocketSpeed 0.5
-                        Acceleration 400
-                        AccelerationTime 4
-                    }
+                HomingRockets
+                {
+                    IgnoreDisguisedSpies 1
+                    IgnoreStealthedSpies 0
+                    TurnPower 500
+                    MaxAimError 250
+                    RocketSpeed 0.5
+                    //Acceleration 400
+                    //AccelerationTime 4
+                }
 
-                    FireWeapon
-                    {
-                        Delay 0
-                        Cooldown 2.5
-                        IfSeeTarget 1
-                    }
+                FireWeapon
+                {
+                    Delay 0
+                    Cooldown 3.5
+                    IfSeeTarget 1
+                }
                     
-                    ItemAttributes
-                    {
-                        ItemName gentlemanne_rocketlauncher_coffinnail
-                        "killstreak tier" 2
-                        "killstreak idleeffect" 1
-                        "set_item_texture_wear" 0
-                        "mult projectile count" 10
-                        "mini rockets" 1
-                        "reload time decreased" 0.05
-                        "projectile spread angle penalty" 75
-                        "damage penalty" 0.8
-                        "hand scale" 1.1
-                    }
+                ItemAttributes
+                {
+                    ItemName gentlemanne_rocketlauncher_coffinnail
+                    "killstreak tier" 2
+                    "killstreak idleeffect" 1
+                    "set_item_texture_wear" 0
+                    "mult projectile count" 10
+                    "mini rockets" 1
+                    "reload time decreased" 0.05
+                    "projectile spread angle penalty" 75
+                    "damage penalty" 0.8
+                    "hand scale" 1.1
+                }
                     
-                    CharacterAttributes
-                    {
-                        "move speed bonus" 0.5
-                        "damage force reduction" 0.2
-                        "airblast vulnerability multiplier" 0.2
-                        "airblast vertical vulnerability multiplier" 0.5
-                        "override footstep sound set" 3
-                        "gesture speed increase" 2
-                    }
+                CharacterAttributes
+                {
+                    "move speed bonus" 0.5
+                    "damage force reduction" 0.2
+                    "airblast vulnerability multiplier" 0.2
+                    "airblast vertical vulnerability multiplier" 0.5
+                    "override footstep sound set" 3
+                    "gesture speed increase" 2
+                }
             }
         }
 
@@ -2891,8 +2514,7 @@ gettysburg
             {
                 TFBot
                 {
-                    Name "Tomislav Heavy"
-                    Class Heavyweapons
+                    Class Heavy
                     Skill Normal
                     Item Tomislav
                 }
@@ -2928,7 +2550,9 @@ gettysburg
                     Item Tomislav
                     Item "The War Goggles"
                     Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+
+                    UseMeleeThreatPrioritization 1
+                    FastUpdate 1
 
                     ItemAttributes
                     {
@@ -2972,7 +2596,9 @@ gettysburg
                 {
                     Template G_Scout_Giant
                     Attributes AlwaysCrit
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    
+                    UseMeleeThreatPrioritization 1
+                    Action Mobber
                 }
 
                 TFBot
@@ -2980,7 +2606,9 @@ gettysburg
                     Template G_Scout_Giant
                     WeaponRestrictions SecondaryOnly
                     Attributes AlwaysCrit
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    
+                    UseMeleeThreatPrioritization 1
+                    Action Mobber
                 }
 
                 TFBot
@@ -2988,7 +2616,9 @@ gettysburg
                     Template G_Scout_Blaster_Giant
                     ClassIcon scout_giant
                     Attributes AlwaysCrit
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    
+                    UseMeleeThreatPrioritization 1
+                    Action Mobber
                 }
 
                 TFBot
@@ -2996,7 +2626,9 @@ gettysburg
                     Template G_Scout_Shortstop_Giant
                     ClassIcon scout_giant
                     Attributes AlwaysCrit
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    
+                    UseMeleeThreatPrioritization 1
+                    Action Mobber
                 }
 
                 TFBot
@@ -3005,7 +2637,8 @@ gettysburg
                     ClassIcon scout_giant
                     Attributes AlwaysCrit
                     Tag bot_flank
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+
+                    Action Mobber
                 }
             }
         }
@@ -3060,6 +2693,7 @@ gettysburg
             {
                 Template G_Medic_Hemorrhage
                 Action FetchFlag
+                
                 UseMeleeThreatPrioritization 1
                 AimAt Head
                 AimLeadProjectileSpeed 2000
