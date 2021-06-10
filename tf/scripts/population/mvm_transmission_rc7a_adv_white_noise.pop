@@ -45,8 +45,66 @@
 
 //wave_finished_relay //Resets everything, no need to manually disable relays you trigger
 
-//CHANGELOG LATEST EDITS 15-05
-//- Increased StartingCurrency to 750$ (from 600$)
+//TEST NOTES TODO
+//W2
+//- Use more top spawn? Add a bit of meat to the giants
+//- Make stuff spawn faster
+
+//W5
+//- Give KBQ WASP Launcher :>
+
+//CHANGELOG LATEST EDITS 4-06
+//- Fixed Giant Sniper model not being applied
+//- Added tweaks to the following items:
+//	- Baby Face's Blaster: immune to slow / stun, no loss of boost on taking damage.
+//	- Liberty Launcher: homing rockets; decreased damage penalty to -15%.
+//	- Bison: 50% damage bonus; 35% slower projectile speed.
+//	- Degreaser: 30% damage bonus (stacks with upgrades); slightly increased flame range, greatly decreased flame spread
+//	- Loch-n-Load: 50% damage bonus (stacks with upgrades), no reload; decreased projectile speed and fire rate.
+//	- Tomislav: 50% faster spinup, 50% less spread.
+
+//W1
+//- Comfy Heavies are now gatebots, and no longer have crits; increased SpawnCount to 4 (from 1)
+//- Replaced first subwave's Burst Fire Soldiers with Hyper League Scouts; increased SpawnCount to 3 (from 1)
+//- Increased first subwave's Soda Popper Scout TotalCount to 10 (from 12), and SpawnCount and MaxActive to 3 (from 2)
+//- Replaced Giant Shotgun's Uber Medics with Charged Quick-Fix Medics
+
+//W2
+//- FaN Scouts are now gatebots
+//- Gatebot Conch Soldiers replaced by a single Giant Gatebot Shortstop Scout
+//- Removed Giant Upgraded Conch Soldiers
+//- Added Giant Shortstop Scouts to second subwave
+//- Changed second subwave's Shotgun Heavies to Backburner Pyros
+//- Removed Uber Medics from Giant Brass Beast Heavies
+//- Final subwave's Demomen now spawn in groups of 5 with a MaxActive of 5 (from 3 and 6, respectively)
+
+//W3
+//- Increased payout to 750$ (from 700$)
+//- Increased Bison Soldier TotalCount
+//- Turned Heater Heavies into Burst Detonator Pyros
+//- Nerfed Giant Rapid Healing Soldier's health-on-hit to 100 (from 400), scaling with damage done
+
+//W4
+//- Increased payout to 800$ (from 650$)
+//- Replaced Giant Buff Soldiers with Colonel Barrages: decreased SpawnCount to 1, added an Ammo Canteen to their arsenal
+//- Removed Multi-Regen Heavies from the first subwave
+//- Rapid Fire Bowmen are now gatebots
+//- Removed Uber Medics from Giant Flare Rain Pyros; increased MaxActive to 4 at once (from 2)
+//- Replaced Steel Gauntlets and Black Box Soldiers with Rapid Fire Demos and crit Shortstop Scouts
+//- Replaced support Burst Blast Demos with Multi-Regen Heavies
+//- Multi-Regen Heavies have less health regen (10 -> 5) and heal less on hit (5 -> 2), and roll out from spawn faster
+
+//W5
+//- Increased payout to 800$ (from 750$)
+//- Reformatted subwaves' small bots significantly to be less spammy
+//- Split Giant Burst Stingers over two subwaves; the last two have crits
+//- Protective Honeycomb Medic's Shield is now level 1
+//- Removed Giant Beehemoth's increased melee range
+//- Reduced Killer Bee Queen's fire rate, and its rockets' angle to find players in to 90 (from 300)
+
+//W6
+//- Added one-time Ubercharge Canteen to Giant Multi-Regen Heavy; activated when it swaps weapons
+//- Changed Giant Rapid Piercing Bowmen's behavior to properly spam arrows
 
 WaveSchedule
 {
@@ -54,15 +112,65 @@ WaveSchedule
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom Yes //As per a "standard" of sorts
 	SentryBusterFriendlyFire 0 [$SIGSEGV]
+	TextPrintTime 0 [$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
 	
+	ItemAttributes [$SIGSEGV] //anti-unfun gun, because I put Slowing pyros in this mission
+	{
+		ItemName	"Baby Face's Blaster"
+		"mult stun resistance"		0
+		"lose hype on take damage"	0
+	}
 	ItemAttributes [$SIGSEGV]
 	{
+		ItemName "The Liberty Launcher" // homing launcher! more for funzies than practical use
+		"damage penalty"					0.85
+		"clip size bonus"					1
+		
+		"mod projectile heat seek power"	120
+		"mod projectile heat aim error"		45
+		"mod projectile heat aim time"		2
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Righteous Bison" // more Tindall borrowing :3
+		"damage bonus"					1.5
+		"projectile speed decreased"	0.65
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Degreaser" // Precision flamethrower: high damage, tiny spread
+		"flame_spread_degree"		0.05
+		"flame_up_speed"			25
+		"flame_drag"				7
+		"dmg penalty vs players"	1.3
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Loch-n-Load" // "nuke" launcher: bigger proj, more stackable damage, no reload, less fire rate
+		"mod max primary clip override"	-1
+		"Projectile speed decreased"	0.8
+		"dmg penalty vs players"		1.5
+		"mult projectile scale" 		1.25
+		
+		"faster reload rate"			0.4	// disable reload speed upgrade
+		"fire rate penalty"				3	// counter act reload speed upgrade
+		"clip size upgrade atomic"		8	// disable clip size upgrade
+	}
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "Tomislav" // jear junner
+		"weapon spread bonus"			0.5
+		"minigun spinup time decreased"	0.5
+	}
+	ItemAttributes [$SIGSEGV] //Support wrench: stronk dispenser, weaker sentry
+	{
 		ItemName	"The Southern Hospitality"
-		"mult dispenser rate" 2
-		"engy sentry damage bonus" 0.8
-		"bleeding duration" 0
-		"dmg taken from fire increased" 1
-		"crit mod disabled" 1
+		"mult dispenser rate"			2
+		"engy sentry damage bonus"		0.85
+		"bleeding duration"				0
+		"dmg taken from fire increased"	1
+		"crit mod disabled"				1
 	}
 	Templates
 	{
@@ -96,6 +204,7 @@ WaveSchedule
 			Item "Bumble Beenie"
 			ClassIcon scout_killerbee_nys
 			Attributes HoldFireUntilFullReload
+			MaxVisionRange 800
 			ItemAttributes
 			{
 				ItemName "warbird_scattergun_killerbee"
@@ -110,6 +219,7 @@ WaveSchedule
 			Class Soldier
 			Name "Explosive Stinger Bee"
 			Skill Hard
+			Attributes HoldFireUntilFullReload
 			Item "Bumble Beenie"
 			Item "harvest_rocketlauncher_autumn"
 			ItemAttributes
@@ -150,7 +260,7 @@ WaveSchedule
 		{
 			Class Heavyweapons
 			Name "Beehemoth"
-			Health 1200
+			Health 900
 			Scale 1.5
 			Skill Expert
 			WeaponRestrictions MeleeOnly
@@ -164,7 +274,7 @@ WaveSchedule
 				ItemName "Warrior's Spirit"
 				"dmg taken increased" 1
 				"heal on kill" 500
-				"health regen" 5
+				"health regen" 2
 			}
 		}
 		//Normal Uber Medic crossed with a QuickUber Medic!
@@ -204,14 +314,14 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "powerhouse_medigun_sparkoflife"
-				"ubercharge rate bonus" -1 //No uber for you
+				"ubercharge rate bonus" 999 //Full uber, closer to target
 				"heal rate bonus" 5
-				"generate rage on heal" 2 //thicc shield
+				"generate rage on heal" 1 //tiny hive shield
 			}
 			CharacterAttributes
 			{
 				"increase buff duration" 9 //looooooooooooong shield
-				"bot medic uber health threshold" 151
+				"bot medic uber deploy delay duration" 999 //no uber deploy
 			}
 		}
 		//Stronk BigHeal Medic
@@ -237,6 +347,19 @@ WaveSchedule
 				"damage penalty" 0.5
 			}
 		}
+		//Honey-coated Stinger Bee! Long-range assailants that can heal lots!
+		Beebot_Honeycoat
+		{
+			Class Medic
+			Name "Honey-coated Stinger Bee"
+			Skill Expert
+			Item "The Crusader's Crossbow"
+			Item "Bumble Beenie"
+			WeaponRestrictions PrimaryOnly
+			ClassIcon medic_crossbow
+			Action FetchFlag [$SIGSEGV]
+			AimAt Head [$SIGSEGV]
+		}
 		//Mini-giant: Syringe spamming bee that spreads honey (milk)
 		Beebot_StingerSpam
 		{
@@ -251,8 +374,8 @@ WaveSchedule
 			Scale 1.3
 			Health 500
 			Tag bot_giant
+			Action FetchFlag [$SIGSEGV]
 			AimAt Head [$SIGSEGV]
-			AimLeadProjectileSpeed 1000 [$SIGSEGV]
 			AimOffset "0 0 20" [$SIGSEGV]
 			ItemAttributes
 			{
@@ -303,15 +426,17 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
 			ClassIcon soldier_burstfire
 			Item "Bumble Beenie"
+			Item "W.A.S.P. Launcher"
 			Tag bot_giant
 			ItemAttributes
 			{
-				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				ItemName "W.A.S.P. Launcher"
 				"fire rate bonus" 0.1
 				"faster reload rate" 0.4
 				"clip size upgrade atomic" 5
-				"projectile speed decreased" 0.8
 				"mini rockets" 1
+				
+				"damage penalty" 1
 			}
 			CharacterAttributes
 			{
@@ -333,6 +458,8 @@ WaveSchedule
 				Default
 				{
 					Attributes IgnoreFlag
+					Attributes DisableDodge
+					Attributes HoldFireUntilFullReload
 					BehaviorModifiers Push
 					Tag bot_gatebot
 					Tag nav_prefer_gate1_upper
@@ -349,6 +476,7 @@ WaveSchedule
 				RevertGateBotsBehavior
 				{
 					Skill Hard
+					Attributes HoldFireUntilFullReload
 					Item "MvM GateBot Light Soldier"
 					Item "Bumble Beenie"
 					Item "harvest_rocketlauncher_autumn"
@@ -368,7 +496,7 @@ WaveSchedule
 		GateBeebot_MultStinger
 		{
 			ClassIcon heavy_champ
-			Health 1200
+			Health 900
 			Scale 1.5
 			Name "Beehemoth"
 			Class Heavyweapons
@@ -450,7 +578,6 @@ WaveSchedule
 						"dmg taken increased" 1
 						"melee attack rate bonus" 0.75
 						"heal on kill" 3000
-						"melee range multiplier" 1.5
 					}
 					CharacterAttributes
 					{
@@ -476,7 +603,6 @@ WaveSchedule
 						"dmg taken increased" 1
 						"melee attack rate bonus" 0.75
 						"heal on kill" 3000
-						"melee range multiplier" 1.5
 					}
 					CharacterAttributes
 					{
@@ -553,37 +679,117 @@ WaveSchedule
 				}
 			}
 		}
-		//Just a Heater Heavy.
-		GateBot_Heavy_Heater
+		//A Bison Soldier for gates.
+		GateBot_Soldier_Bison
 		{
-			ClassIcon	heavy_heater //_nys Fiiine, Herp
-			Health	300
-			Name	"Heater Heavy"
-			Class	HeavyWeapons
+			Class Soldier
+			Name "Rapid Bison Soldier"
+			ClassIcon soldier_bison
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Normal
+					Attributes DisableDodge
+					Attributes IgnoreFlag
 					BehaviorModifiers	Push
-					WeaponRestrictions	PrimaryOnly
 					Tag	"bot_gatebot"
 					Tag	"nav_prefer_gate1_flank"
-					Attributes	"IgnoreFlag"
-					Item "The Huo Long Heatmaker"
-					Item	"MvM GateBot Light Heavy"
+					
+					Skill	Normal
+					Item "MvM GateBot Light Soldier"
+					Item "The Righteous Bison"
+					WeaponRestrictions SecondaryOnly
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"faster reload rate" 0.01
+						"fire rate bonus" 0.75
+						"dmg bonus vs buildings" 5
+					}
 				}
 				RevertGateBotsBehavior
 				{
 					Skill	Normal
-					WeaponRestrictions	PrimaryOnly
-					Item "The Huo Long Heatmaker"
-					Item	"MvM GateBot Light Spy"
+					Item "MvM GateBot Light Soldier"
+					Item "The Righteous Bison"
+					WeaponRestrictions SecondaryOnly
 					ItemAttributes
 					{
-						ItemName	"MvM GateBot Light Spy"
+						ItemName "The Righteous Bison"
+						"faster reload rate" 0.01
+						"fire rate bonus" 0.75
+						"dmg bonus vs buildings" 5
+					}
+					ItemAttributes
+					{
+						ItemName	"MvM GateBot Light Soldier"
 						"item style override"	1
 					}
+				}
+			}
+		}
+		//Burst Det Pyros for gates!
+		GateBot_Pyro_Detonator_Burst
+		{
+			Name "Burst Detonator Pyro"
+			Class Pyro
+			Scale 1.2
+			Health 350
+			ClassIcon pyro_detonator
+			AimAt Head [$SIGSEGV]
+			FireWeapon [$SIGSEGV]
+			{
+				Delay 0
+				Type "Primary"
+				Duration 0.6
+				Cooldown 2.1
+				IfSeeTarget 1
+			}
+			EventChangeAttributes
+			{
+				Default
+				{
+					Attributes DisableDodge
+					Attributes IgnoreFlag
+					BehaviorModifiers	Push
+					Tag	"bot_gatebot"
+					Tag	"nav_prefer_gate1_flank"
+					
+					Item "MvM GateBot Light Pyro"
+					
+					MaxVisionRange 1000
+					Attributes SuppressFire
+					Skill Hard
+					WeaponRestrictions SecondaryOnly
+					Item "The Detonator"
+					ItemAttributes
+					{
+						ItemName "The Detonator"
+						"fire rate bonus" 0.1
+						"health regen" 2
+					}
+				}
+				RevertGateBotsBehavior
+				{
+					Item "MvM GateBot Light Pyro"
+					ItemAttributes
+					{
+						ItemName	"MvM GateBot Light Pyro"
+						"item style override"	1
+					}
+					
+					MaxVisionRange 1000
+					Attributes SuppressFire
+					Skill Hard
+					WeaponRestrictions SecondaryOnly
+					Item "The Detonator"
+					ItemAttributes
+					{
+						ItemName "The Detonator"
+						"fire rate bonus" 0.1
+						"health regen" 2
+					}
+
 				}
 			}
 		}
@@ -591,19 +797,20 @@ WaveSchedule
 		GateBot_Heavyweapons_Shotgun_SP
 		{
 			ClassIcon	heavy_shotgun
-			Health	300
 			Name	"Shotgun Heavy"
 			Class	HeavyWeapons
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Hard
+					Attributes DisableDodge
+					Attributes	IgnoreFlag
 					BehaviorModifiers	Push
-					WeaponRestrictions	SecondaryOnly
 					Tag	"nav_prefer_gate1_upper"
 					Tag	"bot_gatebot"
-					Attributes	"IgnoreFlag"
+					Attributes DisableDodge
+					Skill	Hard
+					WeaponRestrictions	SecondaryOnly
 					Item	"MvM GateBot Light Heavy"
 				}
 				RevertGateBotsBehavior
@@ -619,52 +826,59 @@ WaveSchedule
 				}
 			}
 		}
+		//A Comfy Gatebot Heavy.
 		
-		//A better hatty Deflector Gatebot.
-		GateBot_Heavy_Deflector_Hat
+		GateBot_Heavyweapons_Comfy
 		{
-			ClassIcon	heavy_deflector
-			Health	300
-			Name	"Deflector Heavy"
-			Class	HeavyWeapons
+			Class Heavyweapons
+			Name "Comfy Heavy"
+			ClassIcon heavy_bread
 			EventChangeAttributes
 			{
 				Default
 				{
-					Skill	Hard
-					MaxVisionRange	1200
-					BehaviorModifiers	Push
-					WeaponRestrictions	PrimaryOnly
+					Attributes DisableDodge
+					Attributes	IgnoreFlag
+					BehaviorModifiers Push
 					Tag	"bot_gatebot"
-					Tag	"nav_prefer_gate1_flank"
-					Attributes	"IgnoreFlag"
-					Item	"Deflector"
-					Item	"The U-clank-a"
-					Item	"MvM GateBot Light Spy" //Might look better?
+					Tag	"nav_prefer_gate1_upper"
+					
+					Skill Hard
+					Item "The Bread Bite"
+					Item "Bread Heads"
+					WeaponRestrictions	MeleeOnly
+					Attributes DisableDodge
+					Item	"MvM GateBot Light Spy"
 					ItemAttributes
 					{
-						ItemName	"Deflector"
-						"attack projectiles"	1
+						ItemName	"The Bread Bite"
+						"mod_maxhealth_drain_rate"	0
+						"speed_boost_on_kill" 5
+						"slow enemy on hit"	5
+						"move speed bonus"	0.7
 					}
 				}
 				RevertGateBotsBehavior
 				{
-					Skill	Hard
-					MaxVisionRange	1200
-					WeaponRestrictions	PrimaryOnly
-					Item	"Deflector"
-					Item	"The U-clank-a"
+					Skill Hard
+					Item "The Bread Bite"
+					Item "Bread Heads"
+					WeaponRestrictions	MeleeOnly
 					Item	"MvM GateBot Light Spy"
-					ItemAttributes
-					{
-						ItemName	"Deflector"
-						"attack projectiles"	1
-					}
 					ItemAttributes
 					{
 						ItemName	"MvM GateBot Light Spy"
 						"item style override"	1
 					}
+					ItemAttributes
+					{
+						ItemName	"The Bread Bite"
+						"mod_maxhealth_drain_rate"	0
+						"speed_boost_on_kill" 5
+						"slow enemy on hit"	5
+						"move speed bonus"	0.7
+					}
+
 				}
 			}
 		}
@@ -737,6 +951,25 @@ WaveSchedule
 				"increase buff duration" 19
 			}
 		}
+		
+		
+		//A Rapid Bison Soldier. Nofin special.
+		T_TFBot_Soldier_Bison
+		{
+			Class Soldier
+			Name "Rapid Bison Soldier"
+			Item "The Righteous Bison"
+			Skill Hard
+			ClassIcon soldier_bison
+			WeaponRestrictions SecondaryOnly
+			ItemAttributes
+			{
+				ItemName "The Righteous Bison"
+				"faster reload rate" 0.01
+				"fire rate bonus" 0.75
+				"dmg bonus vs buildings" 5
+			}
+		}
 		//Clover's mini-barrage template :3
 		T_TFBot_Soldier_Barrage
         {
@@ -765,6 +998,33 @@ WaveSchedule
             }
         }
 		
+		T_TFBot_Pyro_Detonator_Burst
+		{
+			Name "Burst Detonator Pyro"
+			Class Pyro
+			Scale 1.2
+			Health 350
+			Skill Normal
+			WeaponRestrictions SecondaryOnly
+			Attributes SuppressFire
+			ClassIcon pyro_detonator
+			Item "The Detonator"
+			AimAt Head [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName "The Detonator"
+				"fire rate bonus" 0.2
+				"health regen" 2
+			}
+			FireWeapon [$SIGSEGV]
+			{
+				Delay 0
+				Type "Primary"
+				Duration 0.6
+				Cooldown 2.1
+				IfSeeTarget 1
+			}
+		}
 		//A minigiant pyro that rains down flares!
 		T_TFBot_Pyro_Flare_Rain
 		{
@@ -790,32 +1050,12 @@ WaveSchedule
 			}
 		}
 		
-		//A Demo variant of the standard Blast Soldier.
-		T_TFBot_Demo_Blast_SP
-		{
-			Name "Burst Blast Demo"
-			Class Demoman
-			Skill Hard
-			Item "warbird_grenadelauncher_butcherbird"
-			ClassIcon demo_blast
-			Attributes HoldFireUntilFullReload
-			ItemAttributes
-			{
-				ItemName "warbird_grenadelauncher_butcherbird"
-				"fire rate bonus" 0.05
-				"projectile spread angle penalty" 2
-				"faster reload rate" 1.5
-				"clip size upgrade atomic" -1
-				"damage blast push" 6
-			}
-		}
-		
 		//Based on the Giant Regen Heavy.
 		//Lotsa health regen going on here
 		T_TFBot_Heavyweapons_Regen
 		{
 			Class Heavyweapons
-			Name "Regen Heavy"
+			Name "Multi-Regen Heavy"
 			Skill Hard
 			Item "Iron Curtain"
 			Item "The Tungsten Toque"
@@ -823,8 +1063,8 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "Iron Curtain"
-				"heal on hit for rapidfire" 5
-				"health regen" 10
+				"heal on hit for rapidfire" 2
+				"health regen" 5
 				"heal on kill" 150
 			}
 		}
@@ -991,8 +1231,18 @@ WaveSchedule
 			Health 3000
 			Skill Expert
 			Attributes MiniBoss
+			Attributes SuppressFire
 			ClassIcon sniper_bow_multi
 			Tag bot_giant
+			UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+			FireWeapon [$SIGSEGV] //makes them not do dumb aiming :>
+			{
+				Delay 0
+				Type "Primary"
+				IfSeeTarget 1
+				Duration 0.15
+				Cooldown 0.2
+			}
 			ItemAttributes
 			{
 				ItemName "The Huntsman"
@@ -1049,7 +1299,7 @@ WaveSchedule
 		Objective Spy
 		RunForThisManyWaves 1
 		BeginAtWave 6
-		CooldownTime 25
+		CooldownTime 35
 		InitialCooldown 12
 		DesiredCount 3
 		Where spawnbot_invasion0
@@ -1083,7 +1333,7 @@ WaveSchedule
 		BeginAtWave 4
 		CooldownTime 45
 		InitialCooldown 15
-		DesiredCount 3
+		DesiredCount 2
 		Where spawnbot_upper0
 		Where spawnbot_main1
 		RandomChoice
@@ -1196,13 +1446,17 @@ WaveSchedule
 	
 	Wave //Wave 1 - Payout: $750 + $100 bonus
 	{
-	
 		Explanation [$SIGSEGV]
 		{
-			Line "{blue}Be wary! Sentry Busters will not hurt their fellow robots!"
-			Line "{red}The Southern Hospitality will double your dispenser's heal rate, at the cost of 20% less sentry damage."
-			Line "{red}Additionally, bots can attack from their spawn!"
-			Line "{red}Keep a safe distance or be overwhelmed!"
+			Line "{white}==== TRANSMISSION RECEIVED"
+			Line "{blue}= Unexpected code mismatch of incoming bot attack"
+			Line "{blue}= BusterFriendlyFire == 0 | AttackFromSpawn == 1"
+			Line "{red}= Weapons modified: further information embedded"
+			Line "{yellow}= South_Hosp: +100% Dispenser healing | -15% Sentry damage"
+			Line "{yellow}= Baby_Face_Blaster: Stun / Slow immunity | No boost loss"
+			Line "{yellow}= Lib_Launcher: Homing rockets"
+			Line "{yellow}= Degreaser | Bison | Loch-n-Load | Tomislav: Inspect to see"
+			Line "{white}==== END OF TRANSMISSION"
 		}
 
 		StartWaveOutput
@@ -1228,13 +1482,14 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Giant_Demoman_Samurai
+				Attributes DisableDodge
 				Tag bot_giant
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave1a"
-			WaitBeforeStarting 6
+			WaitBeforeStarting 10
 			WaitBetweenSpawns 10
 			Where spawnbot_main0
 			Where spawnbot_upper1
@@ -1274,15 +1529,31 @@ WaveSchedule
 			Where spawnbot_flank0
 			Where spawnbot_main1
 			WaitBeforeStarting 7
-			WaitBetweenSpawns 1
+			WaitBetweenSpawns 6
 			TotalCount 12
 			MaxActive 4
-			SpawnCount 1
-			TotalCurrency 48
+			SpawnCount 4
+			TotalCurrency 72
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_Comfy
-				Attributes AlwaysCrit
+				Template GateBot_Heavyweapons_Comfy
+			}
+		}
+		WaveSpawn
+		{
+			Name "wave1a2"
+			Where spawnbot_main0
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			WaitBeforeStarting 1
+			WaitBetweenSpawns 2
+			TotalCount 12
+			MaxActive 3
+			SpawnCount 3
+			TotalCurrency 24
+			TFBot
+			{
+				Template T_TFBot_Scout_Sandman_FastCharge
 			}
 		}
 		WaveSpawn
@@ -1290,28 +1561,12 @@ WaveSchedule
 			Name "wave1a2"
 			Where spawnbot_main0
 			Where spawnbot_main1
-			WaitBeforeStarting 1
-			WaitBetweenSpawns 2
-			TotalCount 12
-			MaxActive 3
-			SpawnCount 1
-			TotalCurrency 72
-			TFBot
-			{
-				Template GateBot_Soldier_Burst
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave1a2"
-			Where spawnbot_upper0
-			Where spawnbot_main1
 			WaitBeforeStarting 2
 			WaitBetweenSpawns 3
-			TotalCount 10
-			MaxActive 2
-			SpawnCount 2
-			TotalCurrency 30
+			TotalCount 12
+			MaxActive 3
+			SpawnCount 3
+			TotalCurrency 24
 			TFBot
 			{
 				Template T_TFBot_Scout_Herp_Popper
@@ -1331,7 +1586,7 @@ WaveSchedule
 			{
 				TFBot
 				{
-					Template T_TFBot_Giant_Demo_Burst
+					Template GateBot_Giant_Demo_Burst
 					Tag bot_giant
 				}
 				TFBot
@@ -1362,7 +1617,7 @@ WaveSchedule
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 4
-			TotalCurrency 80
+			TotalCurrency 120
 			Squad
 			{
 				TFBot
@@ -1421,7 +1676,7 @@ WaveSchedule
 			Where spawnbot_main1
 			TotalCount 16
 			MaxActive 4
-			SpawnCount 2
+			SpawnCount 4
 			TotalCurrency 80
 			TFBot
 			{
@@ -1439,7 +1694,7 @@ WaveSchedule
 			TotalCount 9
 			MaxActive 6
 			SpawnCount 3
-			TotalCurrency 120
+			TotalCurrency 90
 			Squad
 			{
 				TFBot
@@ -1450,15 +1705,19 @@ WaveSchedule
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 				TFBot
 				{
-					Template T_TFBot_Medic_QuickUber
+					Template T_TFBot_Medic_QuickFix_Normal
 					Attributes IgnoreEnemies
 					Tag bot_squad_member
+					Item "Das Naggenvatcher"
+					Name "Charged Quick-Fix Medic"
 				}
 			}
 		}
@@ -1472,16 +1731,11 @@ WaveSchedule
 			TotalCount 10
 			MaxActive 2
 			SpawnCount 1
-			TotalCurrency 10
+			TotalCurrency 40
 			Support 1
 			TFBot
 			{
 				Template T_TFBot_Sniper_Huntsman
-				ItemAttributes
-				{
-					ItemName "The Huntsman"
-					"damage bonus" 1
-				}
 			}
 		}
 		WaveSpawn
@@ -1502,7 +1756,6 @@ WaveSchedule
 				ItemAttributes
 				{
 					ItemName "The Huntsman"
-					"damage bonus" 1
 					"killstreak tier" 1
 				}
 			}
@@ -1510,15 +1763,14 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "Support"
-			WaitForAllSpawned "wave1b2"
+			WaitForAllDead "wave1b2"
 			Where spawnbot_main0
-			Where spawnbot_upper0
-			Where spawnbot_main1
-			WaitBetweenSpawns 2
+			Where spawnbot_upper1
+			WaitBetweenSpawns 12
 			TotalCount 10
-			MaxActive 2
-			SpawnCount 1
-			TotalCurrency 10
+			MaxActive 4
+			SpawnCount 4
+			TotalCurrency 0
 			Support 1
 			TFBot
 			{
@@ -1571,13 +1823,13 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "wave2a2"
-			WaitBeforeStarting 1
+			WaitBeforeStarting 4
 			WaitBetweenSpawns 2
 			Where spawnbot_main0
 			Where spawnbot_main1
-			TotalCount 12
+			TotalCount 18
 			MaxActive 6
-			SpawnCount 2
+			SpawnCount 3
 			TotalCurrency 60
 			TFBot
 			{
@@ -1590,10 +1842,10 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name "wave2a2"
+			Name "wave2a3"
 			WaitBeforeStarting 3
 			WaitBetweenSpawns 3
-			Where spawnbot_main0
+			Where spawnbot_upper0
 			Where spawnbot_main1
 			TotalCount 16
 			MaxActive 4
@@ -1602,71 +1854,179 @@ WaveSchedule
 			TFBot
 			{
 				Class Scout
-				Skill Hard
-				Item "The Bolt Boy"
-				Item "The Force-a-Nature"
 				Name "Force-a-Nature Scout"
 				ClassIcon scout_fan
+
+				EventChangeAttributes
+				{
+					Default
+					{
+						BehaviorModifiers Push
+						Attributes IgnoreFlag
+						Attributes DisableDodge
+						Tag nav_prefer_gate1_flank
+						Tag bot_gatebot
+
+						Item "MvM GateBot Light Scout"
+						MaxVisionRange 750
+						Skill Hard
+						Item "The Force-a-Nature"
+						ItemAttributes
+						{
+							"scattergun has knockback" 0
+						}
+					}
+					RevertGateBotsBehavior
+					{
+						Item "MvM GateBot Light Scout"
+						ItemAttributes               // turn off light hat
+						{
+							ItemName "MvM GateBot Light Scout"
+							"item style override" 1
+						}
+						Skill Hard
+						MaxVisionRange 750
+						Item "The Force-a-Nature"
+						ItemAttributes
+						{
+							"scattergun has knockback" 0
+						}
+					}
+				}
 			}
 		}
 		WaveSpawn
 		{
-			Name "wave2a2"
+			Name "wave2a"
+			WaitForAllSpawned "wave2a3"
+			WaitBeforeStarting 3
 			Where spawnbot_main0
-			Where spawnbot_flank0
 			Where spawnbot_main1
-			WaitBeforeStarting 2
-			WaitBetweenSpawns 1
-			TotalCount 12
-			MaxActive 3
+			TotalCount 1
+			MaxActive 1
 			SpawnCount 1
 			TotalCurrency 60
 			TFBot
 			{
-				Template GateBot_Soldier_Extended_Concheror
+				Class Scout
+				Name "Giant Shortstop Scout"
+				ClassIcon scout_shortstop_giant
+				Health 1600
+
+				EventChangeAttributes
+				{
+					Default
+					{
+						BehaviorModifiers Push
+						Attributes IgnoreFlag
+						Attributes DisableDodge
+						Tag nav_prefer_gate1_flank
+						Tag bot_gatebot
+						Item "MvM GateBot Light Scout"
+
+						Tag bot_giant
+						MaxVisionRange 1200
+						Skill Expert
+						Attributes MiniBoss
+						Item "The Shortstop"
+						ItemAttributes
+						{
+							ItemName "The Shortstop"
+							"reload time increased hidden" 1
+						}
+						CharacterAttributes
+						{
+							"damage force reduction" 0.7
+							"airblast vulnerability multiplier" 0.7
+							"override footstep sound set" 5
+						}
+					}
+					RevertGateBotsBehavior
+					{	
+						Tag bot_giant
+						MaxVisionRange 1200
+						Skill Expert
+						Attributes MiniBoss
+						Item "The Shortstop"
+						Item "The Milkman"
+						ItemAttributes
+						{
+							ItemName "The Shortstop"
+							"reload time increased hidden" 1
+						}
+						CharacterAttributes
+						{
+							"damage force reduction" 0.7
+							"airblast vulnerability multiplier" 0.7
+							"override footstep sound set" 5
+						}
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name "wave2b1"
+			WaitForAllDead "wave2a"
+			WaitBetweenSpawnsAfterDeath 11
+			Where spawnbot_main0
+			Where spawnbot_main1
+			TotalCount 2
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 50
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout
+				Name "Giant Shortstop Scout"
+				ClassIcon scout_shortstop_giant
+				Tag bot_giant
+				Item "The Shortstop"
+				Item "The Milkman"
+				ItemAttributes
+				{
+					ItemName "The Shortstop"
+					"reload time increased hidden" 1
+				}
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave2b"
-			WaitForAllDead "wave2a"
-			WaitBetweenSpawns 11
+			WaitForAllDead "wave2b1"
+			WaitBetweenSpawnsAfterDeath 8
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 2
-			MaxActive 2
+			MaxActive 1
 			SpawnCount 1
 			TotalCurrency 50
 			TFBot
 			{
-				Template T_TFBot_Giant_Soldier_Extended_Concheror
-				Name "Giant Upgraded Conch Soldier"
+				Template T_TFBot_Giant_Scout
+				Name "Giant Shortstop Scout"
 				Tag bot_giant
-				ClassIcon soldier_conch_upgraded
-				Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				ClassIcon scout_shortstop_giant
+				Item "The Shortstop"
+				Item "The Milkman"
 				ItemAttributes
 				{
-					ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
-					"is australium item" 1
-					"item style override" 1
-					"fire rate bonus" 0.75
-					"faster reload rate" 0.75
-					"damage bonus" 1.25
-					"projectile speed decreased" 0.75
+					ItemName "The Shortstop"
+					"reload time increased hidden" 1
 				}
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave2b3"
-			WaitForAllSpawned "wave2b"
-			WaitBeforeStarting 12
-			Where spawnbot_upper0
+			WaitForAllSpawned "wave2b1"
+			WaitBetweenSpawnsAfterDeath 5
+			Where spawnbot_main0
 			Where spawnbot_main1
-			TotalCount 1
+			TotalCount 2
 			MaxActive 1
 			SpawnCount 1
-			TotalCurrency 20
+			TotalCurrency 40
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_Extended_Concheror
@@ -1687,35 +2047,38 @@ WaveSchedule
 			Name "wave2b2"
 			WaitForAllDead "wave2a2"
 			Where spawnbot_main0
-			Where spawnbot_main1
-			WaitBetweenSpawns 4
-			TotalCount 12
+			Where spawnbot_upper1
+			WaitBetweenSpawns 0.5
+			TotalCount 24
 			MaxActive 6
-			SpawnCount 2
-			TotalCurrency 60
+			SpawnCount 1
+			TotalCurrency 48
 			TFBot
 			{
-				Class Heavy
-				Name "Shotgun Heavy"
-				WeaponRestrictions SecondaryOnly
-				Skill Hard
-				ClassIcon heavy_shotgun
+				Class Pyro
+				Skill Normal
+				Name "Backburner Pyro"
+				Item "The Backburner"
+				Attributes AlwaysFireWeapon
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave2b2"
 			WaitForAllDead "wave2a2"
-			WaitBetweenSpawns 4
 			Where spawnbot_upper0
 			Where spawnbot_upper1
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 80
+			TotalCount 9
+			MaxActive 3
+			SpawnCount 3
+			TotalCurrency 27
 			TFBot
 			{
-				Template GateBot_Heavyweapons_Shotgun_SP
+				Class Pyro
+				Skill Normal
+				Name "Backburner Pyro"
+				Item "The Backburner"
+				Attributes AlwaysFireWeapon
 			}
 		}
 		WaveSpawn
@@ -1724,12 +2087,11 @@ WaveSchedule
 			WaitForAllDead "wave2a2"
 			Where spawnbot_main0
 			Where spawnbot_upper1
-			WaitBeforeStarting 2
 			WaitBetweenSpawns 4
-			TotalCount 14
+			TotalCount 17
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 70
+			TotalCurrency 85
 			Support 1
 			TFBot
 			{
@@ -1745,75 +2107,65 @@ WaveSchedule
 			Name "wave2c"
 			WaitForAllDead "wave2b3"
 			WaitBeforeStarting 9
-			WaitBetweenSpawns 15
+			WaitBetweenSpawns 25
 			Where spawnbot_main0
 			Where spawnbot_main1
-			TotalCount 6
-			MaxActive 6
-			SpawnCount 3
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 1
 			TotalCurrency 120
-			Squad
+			TFBot
 			{
-				TFBot
+				Template T_TFBot_Giant_Heavyweapons
+				Name "Giant Brass Beast Heavy"
+				ClassIcon heavy_brass_nys
+				Tag bot_giant
+				Item "The Brass Beast"
+				Item "The Team Captain"
+				ItemAttributes
 				{
-					Template T_TFBot_Giant_Heavyweapons
-					Name "Giant Brass Beast Heavy"
-					ClassIcon heavy_brass_nys
-					Tag bot_giant
-					Item "The Brass Beast"
-					Item "The Team Captain"
-					ItemAttributes
-					{
-						ItemName "The Brass Beast"
-						"damage bonus" 1.7
-					}
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic_QuickUber
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic_QuickUber
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
+					ItemName "The Brass Beast"
+					"damage bonus" 1.7
+					"spunup_damage_resistance" 1
 				}
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave2c2"
-			WaitForAllDead "wave2b2"
+			WaitForAllSpawned "wave2b2"
+			WaitBeforeStarting 5
 			Where spawnbot_main0
 			Where spawnbot_upper1
-			WaitBetweenSpawns 3
-			TotalCount 16
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 80
+			TotalCount 15
+			MaxActive 5
+			SpawnCount 1
+			TotalCurrency 90
 			TFBot
 			{
-				Class Pyro
+				Class Demoman
 				Skill Hard
 			}
 		}
 		WaveSpawn
 		{
-			Name "wave2c3"
-			WaitForAllDead "wave2b2"
+			Name "Support"
+			WaitForAllDead "wave2c2"
 			Where spawnbot_main0
 			Where spawnbot_upper1
 			WaitBetweenSpawns 4
-			TotalCount 15
+			TotalCount 14
 			MaxActive 6
 			SpawnCount 3
-			TotalCurrency 30
+			TotalCurrency 0
+			Support 1
 			TFBot
 			{
-				Class Demoman
-				Skill Hard
+				Class Scout
+				Skill Normal
+				Item "The Shortstop"
+				Name "Shortstop Scout"
+				ClassIcon scout_shortstop
 			}
 		}
 	}
@@ -1888,40 +2240,53 @@ WaveSchedule
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 12
-			MaxActive 4
-			SpawnCount 2
+			MaxActive 3
+			SpawnCount 3
 			TotalCurrency 60
 			TFBot
 			{
-				Template GateBot_Heavy_Heater
+				Template GateBot_Pyro_Detonator_Burst
 			}
 		}
 		WaveSpawn
 		{
-			Name "wave3ab"
+			Name "wave3all"
 			WaitBeforeStarting 1
 			WaitBetweenSpawns 3
 			Where spawnbot_main0
 			Where spawnbot_upper1
-			TotalCount 16
+			TotalCount 32
 			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 80
-			TFBot
+			SpawnCount 4
+			TotalCurrency 120
+			RandomChoice
 			{
-				Class Soldier
-				Name "Rapid Bison Soldier"
-				Item "The Righteous Bison"
-				Skill Hard
-				ClassIcon soldier_bison
-				WeaponRestrictions SecondaryOnly
-				ItemAttributes
+				TFBot
 				{
-					ItemName "The Righteous Bison"
-					"faster reload rate" 0.01
-					"fire rate bonus" 0.75
-					"dmg bonus vs buildings" 5
-					"set item tint rgb" 14204632 //pinkish
+					Template T_TFBot_Soldier_Bison
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"set item tint rgb" 14204632 //pinkish
+					}
+				}
+				TFBot
+				{
+					Template T_TFBot_Soldier_Bison
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"set item tint rgb" 8626083 //blueish
+					}
+				}
+				TFBot
+				{
+					Template T_TFBot_Soldier_Bison
+					ItemAttributes
+					{
+						ItemName "The Righteous Bison"
+						"set item tint rgb" 15132390 //whitish
+					}
 				}
 			}
 		}
@@ -2022,29 +2387,11 @@ WaveSchedule
 			Name "wave3cd"
 			WaitForAllDead "wave3ab"
 			Where spawnbot_main0
-			Where spawnbot_flank0
 			Where spawnbot_main1
-			WaitBetweenSpawns 2
 			TotalCount 12
 			MaxActive 3
-			SpawnCount 1
+			SpawnCount 3
 			TotalCurrency 60
-			TFBot
-			{
-				Template GateBot_Heavy_Deflector_Hat
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave3cd"
-			WaitForAllDead "wave3ab"
-			WaitBetweenSpawns 4
-			Where spawnbot_main0
-			Where spawnbot_main1
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 80
 			TFBot
 			{
 				Template T_TFBot_Soldier_Extended_Battalion
@@ -2056,7 +2403,7 @@ WaveSchedule
 			Name "wave3d"
 			WaitForAllSpawned "wave3c"
 			WaitForAllDead "wave3b"
-			WaitBeforeStarting 3
+			WaitBeforeStarting 5
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 3
@@ -2079,7 +2426,7 @@ WaveSchedule
 						ItemName "The Black Box"
 						"fire rate bonus" 0.5
 						"faster reload rate" 0.001
-						"heal on hit for rapidfire" 400
+						"health on radius damage" 100
 					}
 				}
 				TFBot
@@ -2101,7 +2448,7 @@ WaveSchedule
 			Name "wave3e"
 			WaitForAllSpawned "wave3d"
 			WaitForAllDead "wave3c"
-			WaitBeforeStarting 2
+			WaitBeforeStarting 12
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 3
@@ -2113,7 +2460,7 @@ WaveSchedule
 				TFBot
 				{
 					Template T_TFBot_Giant_Soldier_Spammer
-					Name "Giant Rapid Striker Soldier"
+					Name "Giant Rapid Panic Soldier"
 					//ClassIcon soldier_infinite_para
 					Tag bot_giant
 					Health 4000
@@ -2154,7 +2501,7 @@ WaveSchedule
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 120
+			TotalCurrency 150
 			Squad
 			{
 				TFBot
@@ -2189,8 +2536,8 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name "wave3ef"
-			WaitForAllDead "wave3cd"
+			Name "Support"
+			WaitForAllDead "wave3all"
 			Where spawnbot_main0
 			Where spawnbot_upper1
 			TotalCount 15
@@ -2201,6 +2548,10 @@ WaveSchedule
 			{
 				Class Heavyweapons
 				Skill Normal
+				Name "Heater Heavy"
+				MaxVisionRange 750
+				Item "The Huo Long Heatmaker"
+				ClassIcon heavy_heater
 			}
 		}
 		WaveSpawn
@@ -2215,6 +2566,7 @@ WaveSchedule
 			MaxActive 2
 			SpawnCount 1
 			Support 1
+			TotalCurrency 60
 			TFBot
 			{
 				Class Scout
@@ -2236,8 +2588,16 @@ WaveSchedule
 	
 	////////////////////////////////////////////////////////////////////////////////
 	
-	Wave //Wave 4 - Payout: $650 + $100 bonus
+	Wave //Wave 4 - Payout: $750 + $100 bonus
 	{
+		Explanation [$SIGSEGV]
+		{
+			Line "{white}==== TRANSMISSION RECEIVED"
+			Line "{blue}= Expected code mismatch of incoming bot type"
+			Line "{blue}= Bot type: Colonel_Barrage"
+			Line "{blue}= Traces of Canteen_Specialist found (type: Ammo)"
+			Line "{white}==== END OF TRANSMISSION"
+		}
 		StartWaveOutput
 		{
 			Target wave_start_relay
@@ -2255,60 +2615,27 @@ WaveSchedule
 			Where spawnbot_main0
 			Where spawnbot_main1
 			WaitBetweenSpawns 10
-			WaitBeforeStarting 8
 			TotalCount 4
 			MaxActive 2
-			SpawnCount 2
-			TotalCurrency 80
-			Squad
-			{
-				TFBot
-				{
-					Template GateBot_Giant_Soldier_Extended_Buff_Banner
-				}
-				TFBot
-				{
-					Template GateBot_Giant_Soldier_SlowBarrage
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave4a2"
-			Where spawnbot_main0
-			Where spawnbot_main1
-			WaitBeforeStarting 2
-			WaitBetweenSpawns 4
-			TotalCount 16
-			MaxActive 4
-			SpawnCount 2
+			SpawnCount 1
 			TotalCurrency 80
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_Regen
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave4a2"
-			WaitBeforeStarting 4
-			Where spawnbot_upper0
-			Where spawnbot_main1
-			TotalCount 15
-			MaxActive 3
-			SpawnCount 3
-			TotalCurrency 60
-			TFBot
-			{
-				Class Sniper
-				Skill Hard
-				Name "Rapid Fire Bowman"
-				Item "The Huntsman"
-				ClassIcon sniper_bow_multi
+				Template T_TFBot_Giant_Soldier_SlowBarrage
+				ExtAttr SuppressCanteenUse [$SIGSEGV]
+				Item "Battery Canteens"
+				FireWeapon [$SIGSEGV]  //Periodically fires weapon
+                {
+                    Delay 30 //Time before the first fire input starts (Default: 10)
+                    Repeats 1 //How many times should bot use the fire input in total (Default: 0 - Infinite)
+					IfSeeTarget 1
+					Type "Action"
+				}
 				ItemAttributes
 				{
-					ItemName "The Huntsman"
-					"faster reload rate" 0.4
+					ItemName "Battery Canteens"
+					"refill_ammo" 1
+					"powerup charges" 1
 				}
 			}
 		}
@@ -2316,6 +2643,7 @@ WaveSchedule
 		{
 			Name "wave4a2"
 			WaitBetweenSpawns 6
+			WaitBeforeStarting 2
 			Where spawnbot_main0
 			Where spawnbot_upper1
 			TotalCount 16
@@ -2353,49 +2681,73 @@ WaveSchedule
 				}
 			}
 		}
-		
 		WaveSpawn
 		{
-			Name "wave4b"
-			WaitForAllDead "wave4a"
-			Where spawnbot_main0
+			Name "wave4a3"
+			WaitBeforeStarting 4
+			WaitBetweenSpawns 10
+			Where spawnbot_upper0
 			Where spawnbot_main1
-			WaitBetweenSpawns 6
-			TotalCount 12
+			TotalCount 15
 			MaxActive 6
 			SpawnCount 3
 			TotalCurrency 60
-			Squad
+			TFBot
 			{
-				TFBot
+				Class Sniper
+				Skill Hard
+				Name "Rapid Fire Bowman"
+				ClassIcon sniper_bow_multi
+				EventChangeAttributes
 				{
-					Template T_TFBot_Giant_Pyro_Flare_Rain
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
-				}
-				TFBot
-				{
-					Template T_TFBot_Medic
-					Attributes IgnoreEnemies
-					Tag bot_squad_member
+					Default
+					{
+						Tag nav_prefer_gate1_flank
+						Tag bot_gatebot
+						BehaviorModifiers push
+						Attributes IgnoreFlag
+
+						Item "MvM GateBot Light Sniper"
+						Item "The Huntsman"
+						Skill Hard
+						Tag bot_giant
+						ItemAttributes
+						{
+							ItemName "The Huntsman"
+							"faster reload rate" 0.4
+						}
+					}
+					RevertGateBotsBehavior
+					{
+						Item "MvM GateBot Light Sniper"
+						ItemAttributes               // turn off light hat
+						{
+							ItemName "MvM GateBot Light Sniper"
+							"item style override" 1
+						}
+						Item "The Huntsman"
+						Skill Hard
+						ItemAttributes
+						{
+							ItemName "The Huntsman"
+							"faster reload rate" 0.4
+						}
+					}
 				}
 			}
 		}
+		
 		WaveSpawn
 		{
 			Name "wave4b3"
-			WaitForAllDead "wave4a"
+			WaitForAllSpawned "wave4a"
 			WaitBetweenSpawnsAfterDeath 8
 			Where spawnbot_flank0
 			Where spawnbot_upper1
 			TotalCount 4
 			MaxActive 1
 			SpawnCount 1
-			TotalCurrency 40
+			TotalCurrency 120
 			TFBot
 			{
 				Template T_TFBot_Giant_Scout_Jumping_Sandman_Improved
@@ -2403,57 +2755,69 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
+			Name "wave4b"
+			WaitForAllDead "wave4a"
+			Where spawnbot_main0
+			Where spawnbot_main1
+			WaitBetweenSpawns 6
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			TotalCurrency 160
+			TFBot
+			{
+				Template T_TFBot_Giant_Pyro_Flare_Rain
+			}
+		}
+		WaveSpawn
+		{
 			Name "wave4b2"
 			WaitForAllDead "wave4a2"
 			Where spawnbot_main0
 			Where spawnbot_main1
 			WaitBetweenSpawns 4
-			TotalCount 9
-			MaxActive 3
-			SpawnCount 3
-			TotalCurrency 36
+			TotalCount 16
+			MaxActive 4
+			SpawnCount 4
+			TotalCurrency 80
 			TFBot
 			{
-				Template GateBot_Soldier_RocketShotgun
+				Class Demoman
+				Skill Hard
+				Item "Upgradeable TF_WEAPON_GRENADELAUNCHER"
+				Item "The Broadband Bonnet"
+				ClassIcon demo_spammer
+				Name "Rapid Fire Demo"
+				ItemAttributes
+				{
+					ItemName "Upgradeable TF_WEAPON_GRENADELAUNCHER"
+					"fire rate bonus" 0.75
+					"faster reload rate" 0.001
+				}
 			}
 		}
 		WaveSpawn
 		{
-			Name "wave4b2"
-			WaitForAllDead "wave4a2"
-			Where spawnbot_upper0
-			Where spawnbot_main1
-			WaitBetweenSpawns 4
-			TotalCount 6
-			MaxActive 2
-			SpawnCount 2
-			TotalCurrency 24
-			TFBot
-			{
-				Template GateBot_Soldier_RocketShotgun_U
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave4b2"
+			Name "wave4b3"
 			WaitForAllDead "wave4a2"
 			WaitBeforeStarting 1
-			WaitBetweenSpawns 3
+			WaitBetweenSpawns 5
 			Where spawnbot_flank0
 			Where spawnbot_main0
 			Where spawnbot_main1
-			TotalCount 12
-			MaxActive 3
-			SpawnCount 1
-			TotalCurrency 60
+			TotalCount 20
+			MaxActive 5
+			SpawnCount 5
+			TotalCurrency 40
 			TFBot
 			{
-				Template T_TFBot_Heavyweapons_Fist
-				Tag bot_giant //prevent gate stun
-				CharacterAttributes
-				{
-					"health regen" 5
-				}
+				Class Scout
+				Skill Normal
+				MaxVisionRange 600
+				Item "The Shortstop"
+				Name "Shortstop Scout"
+				ClassIcon scout_shortstop
+				Attributes AlwaysCrit
 			}
 		}
 		
@@ -2467,7 +2831,7 @@ WaveSchedule
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			TotalCurrency 80
+			TotalCurrency 130
 			Squad
 			{
 				TFBot
@@ -2492,17 +2856,17 @@ WaveSchedule
 		
 		WaveSpawn
 		{
-			Name "wave4a3"
-			WaitForAllSpawned "wave4a"
+			Name "wave4b4"
+			WaitForAllDead "wave4a3"
 			FirstSpawnWarningSound "vo\announcer_mvm_engbot_arrive01.mp3"
 			DoneWarningSound "vo\announcer_mvm_engbots_dead_notele01.mp3"
 			Where spawnbot_upper0
 			Where spawnbot_main1
 			WaitBeforeStarting 5
-			WaitBetweenSpawns 30
-			TotalCount 6
-			MaxActive 2
-			SpawnCount 2
+			WaitBetweenSpawns 20
+			TotalCount 3
+			MaxActive 1
+			SpawnCount 1
 			Support Limited
 			FirstSpawnOutput
 			{
@@ -2528,49 +2892,22 @@ WaveSchedule
 			Support 1
 			TFBot
 			{
-				Template T_TFBot_Demo_Blast_SP
-			}
-		}
-		WaveSpawn
-		{
-			Name "Support"
-			WaitForAllDead "wave4b2"
-			Where spawnbot_main0
-			Where spawnbot_main1
-			Where spawnbot_upper1
-			TotalCount 10
-			MaxActive 2
-			SpawnCount 2
-			TotalCurrency 0
-			Support 1
-			TFBot
-			{
-				Template T_TFBot_Demo_Blast_SP
-			}
-		}
-		WaveSpawn
-		{
-			Name "Support"
-			WaitForAllDead "wave4b"
-			WaitBeforeStarting 9
-			WaitBetweenSpawns 9
-			Where spawnbot_main0
-			Where spawnbot_main1
-			TotalCount 10
-			MaxActive 3
-			SpawnCount 3
-			Support 1
-			TFBot
-			{
-				Class Sniper
-				Name "Rapid Fire Bowman"
-				Item "The Huntsman"
-				ClassIcon sniper_bow_multi
-				ItemAttributes
+				Template T_TFBot_Heavyweapons_Regen
+				Item "Gloves of Running Urgently MvM"
+				WeaponSwitch [$SIGSEGV]
 				{
-					ItemName "The Huntsman"
-					"faster reload rate" 0.4
-					"killstreak tier" 1
+					Delay 0
+					Cooldown 1
+					Repeats 1
+					Type "Melee"
+				}
+				WeaponSwitch [$SIGSEGV]
+				{
+					Delay 1
+					Cooldown 1
+					Repeats 1
+					Type "Primary"
+					IfSeeTarget 1
 				}
 			}
 		}
@@ -2601,13 +2938,34 @@ WaveSchedule
 	//- Giant Burst Stinger Bee (Giant Burst Solly w "mini rockets")
 	//- Giant Beehemoth (Warrior's Spirit Heavy w crit on kill+bleed)
 	/////////////////////////////////////////////
+	//Subwave 1
+	//- Beekeeper + Healy Honey bees
+	//- Fast Killer Bees
+	//- Giant Beehemoth (gate)
 	
-	//Wave 5 - Payout: $750 + $100 bonus
+	//Subwave 2
+	//- Giant Burst Stinger Bees + Protective Honeycomb (2 uber / 2 shield)
+	//- Super Stinger Bees
+	//- Beehemoths (gate)
+	
+	//Subwave 3
+	//- Giant Burst Stinger Bees + Protective Honeycomb (2 shield / 4 uber)
+	//- Honeybomb Bees
+	//- Stinger Spammer Bees
+	
+	//Subwave 4
+	//- Killer Bee Queen + medic bees (2 of each)
+	
+	//SUPPORT: Fast Killer Bees (when Honeybombs/Stinger Spammers die)
+	
+	//Wave 5 - Payout: $800 + $100 bonus
 	Wave
 	{
 		Explanation [$SIGSEGV]
 		{
-			Line "{yellow}bees."
+			Line "{white}==== TRANSMISSION RECEIVED"
+			Line "{yellow}= bees."
+			Line "{white}==== END OF TRANSMISSION"
 		}
 		
 		StartWaveOutput
@@ -2624,8 +2982,8 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "wave5a"
+			WaitBeforeStarting 4
 			WaitBetweenSpawns 12
-			WaitBeforeStarting 2
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 9
@@ -2652,13 +3010,12 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name "wave5a"
+			Name "wave5a2"
 			Where spawnbot_main0
 			Where spawnbot_upper1
-			WaitBetweenSpawns 12
-			WaitBeforeStarting 2
-			TotalCount 4
-			MaxActive 2
+			WaitBetweenSpawnsAfterDeath 6
+			TotalCount 3
+			MaxActive 1
 			SpawnCount 1
 			TotalCurrency 60
 			TFBot
@@ -2668,39 +3025,23 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name "wave5a2"
+			Name "wave5a3"
 			Where spawnbot_main0
 			Where spawnbot_main1
 			WaitBetweenSpawns 4
-			TotalCount 12
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 24
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 4
+			TotalCurrency 48
 			TFBot
 			{
-				Template GateBeebot_ExploStinger
+				Template Beebot_Honeycoat
 			}
 		}
+		
 		WaveSpawn
 		{
-			Name "wave5a2"
-			Where spawnbot_main0
-			Where spawnbot_upper0
-			Where spawnbot_main1
-			WaitBeforeStarting 2
-			WaitBetweenSpawns 4
-			TotalCount 12
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 24
-			TFBot
-			{
-				Template Beebot_Honeybomb
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave5b1"
+			Name "wave5b"
 			WaitForAllDead "wave5a"
 			Where spawnbot_main0
 			Where spawnbot_main1
@@ -2721,50 +3062,23 @@ WaveSchedule
 				TFBot
 				{
 					Template Beebot_Protcomb_Uber
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave5b1"
-			WaitForAllDead "wave5a"
-			WaitBeforeStarting 12
-			Where spawnbot_main0
-			Where spawnbot_upper1
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 3
-			TotalCurrency 60
-			Squad
-			{
-				TFBot
-				{
-					Template Beebot_Giant_BurstStinger
-				}
-				TFBot
-				{
-					Template Beebot_Protcomb_Shield
-				}
-				TFBot
-				{
-					Template Beebot_Protcomb_Shield
 				}
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave5b"
-			WaitForAllSpawned "wave5b1"
-			WaitBeforeStarting 10
-			WaitBetweenSpawns 12
+			WaitForAllDead "wave5a"
+			WaitBeforeStarting 16
 			Where spawnbot_main0
-			Where spawnbot_main1
-			TotalCount 5
-			MaxActive 5
-			SpawnCount 5
+			Where spawnbot_upper1
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 3
 			TotalCurrency 60
 			Squad
 			{
+				FormationSize 55
 				TFBot
 				{
 					Template Beebot_Giant_BurstStinger
@@ -2777,23 +3091,16 @@ WaveSchedule
 				{
 					Template Beebot_Protcomb_Shield
 				}
-				TFBot
-				{
-					Template Beebot_Protcomb_Uber
-				}
-				TFBot
-				{
-					Template Beebot_Protcomb_Uber
-				}
 			}
 		}
+		
 		WaveSpawn
 		{
-			Name "wave5b3"
-			WaitForAllDead "wave5a2"
+			Name "wave5b1"
+			WaitForAllDead "wave5a"
 			Where spawnbot_flank0
 			Where spawnbot_upper1
-			WaitBetweenSpawnsAfterDeath 12
+			WaitBetweenSpawnsAfterDeath 10
 			TotalCount 4
 			MaxActive 1
 			SpawnCount 1
@@ -2806,48 +3113,125 @@ WaveSchedule
 		WaveSpawn
 		{
 			Name "wave5b2"
-			WaitForAllDead "wave5a2"
-			WaitBeforeStarting 4
+			WaitForAllSpawned "wave5a2"
+			WaitForAllDead "wave5a3"
+			Where spawnbot_upper0
+			Where spawnbot_main1
+			WaitBeforeStarting 6
+			WaitBetweenSpawns 6
+			TotalCount 12
+			MaxActive 3
+			SpawnCount 3
+			TotalCurrency 60
+			TFBot
+			{
+				Template GateBeebot_MultStinger
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "wave5c"
+			WaitForAllDead "wave5b"
 			Where spawnbot_main0
 			Where spawnbot_main1
-			WaitBetweenSpawns 8
-			TotalCount 16
-			MaxActive 8
-			SpawnCount 4
-			TotalCurrency 80
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 3
+			TotalCurrency 60
 			Squad
 			{
 				TFBot
 				{
-					Template GateBeebot_MultStinger
+					Template Beebot_Giant_BurstStinger
+					Attributes AlwaysCrit
+					ClassIcon soldier_burstfire_crit
 				}
 				TFBot
 				{
-					Template Beebot_Protcomb_Uber
-					Tag bot_squad_member
+					Template Beebot_Protcomb_Shield
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave5b2"
-			WaitForAllDead "wave5a2"
-			Where spawnbot_upper0
-			Where spawnbot_main0
-			Where spawnbot_main1
-			TotalCount 20
-			MaxActive 5
-			SpawnCount 5
-			TotalCurrency 20
-			TFBot
-			{
-				Template Beebot_KillerBee
+				TFBot
+				{
+					Template Beebot_Protcomb_Shield
+				}
 			}
 		}
 		WaveSpawn
 		{
 			Name "wave5c"
 			WaitForAllDead "wave5b"
+			WaitBeforeStarting 18
+			Where spawnbot_main0
+			Where spawnbot_main1
+			TotalCount 5
+			MaxActive 5
+			SpawnCount 5
+			TotalCurrency 120
+			Squad
+			{
+				TFBot
+				{
+					Template Beebot_Giant_BurstStinger
+					Attributes AlwaysCrit
+					ClassIcon soldier_burstfire_crit
+				}
+				TFBot
+				{
+					Template Beebot_Protcomb_Uber
+				}
+				TFBot
+				{
+					Template Beebot_Protcomb_Uber
+				}
+				TFBot
+				{
+					Template Beebot_Protcomb_Uber
+				}
+				TFBot
+				{
+					Template Beebot_Protcomb_Uber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name "wave5c2"
+			WaitForAllDead "wave5b"
+			Where spawnbot_main0
+			Where spawnbot_main1
+			WaitBetweenSpawns 0.5
+			TotalCount 12
+			MaxActive 4
+			SpawnCount 2
+			TotalCurrency 60
+			TFBot
+			{
+				Template Beebot_StingerSpam
+			}
+		}
+		WaveSpawn
+		{
+			Name "wave5c3"
+			WaitForAllDead "wave5b2"
+			WaitBeforeStarting 2
+			Where spawnbot_main0
+			Where spawnbot_main1
+			WaitBetweenSpawns 3
+			TotalCount 18
+			MaxActive 6
+			SpawnCount 3
+			TotalCurrency 72
+			TFBot
+			{
+				Template Beebot_Honeybomb
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "wave5d"
+			WaitForAllDead "wave5c"
 			Where spawnbot_main0
 			Where spawnbot_main1
 			TotalCount 7
@@ -2856,6 +3240,7 @@ WaveSchedule
 			TotalCurrency 70
 			Squad
 			{
+				FormationSize 55
 				TFBot
 				{
 					Name "Killer Bee Queen"
@@ -2868,15 +3253,19 @@ WaveSchedule
 					//Attributes AlwaysCrit
 					Attributes UseBossHealthBar
 					Attributes HoldFireUntilFullReload
-					Item "harvest_rocketlauncher_autumn"
+					Item "W.A.S.P. Launcher"
 					Item "Bumble Beenie"
 					ItemAttributes
 					{
-						ItemName "harvest_rocketlauncher_autumn"
+						ItemName "W.A.S.P. Launcher"
 						"dmg bonus vs buildings" 1.5
 						"dmg penalty vs players" 1.5 //6 dmg bleed
 						"bleeding duration" 3 //36 bonus damage
-						"faster reload rate" 0.4
+						"fire rate penalty" 1.5
+						"faster reload rate" 0.3
+						
+						"projectile speed decreased" 1
+						"damage penalty" 1
 					}
 					ItemAttributes
 					{
@@ -2885,9 +3274,9 @@ WaveSchedule
 					}
 					CharacterAttributes
 					{
-						"health regen" 80
+						"health regen" 40
 						"rage giving scale" 0.1
-						"move speed bonus" 0.45
+						"move speed bonus" 0.5
 						"damage force reduction" 0.1
 						"airblast vulnerability multiplier" 0.1
 						"airblast vertical vulnerability multiplier" 0.1
@@ -2899,7 +3288,7 @@ WaveSchedule
 						IgnoreStealthedSpies 1
 						RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
 						TurnPower 120 //How fast should the rocket rotate to face the target
-						MaxAimError 300 //Max angle between rocket and the target
+						MaxAimError 90 //Max angle between rocket and the target
 						AimTime 3
 					}
 				}
@@ -2931,104 +3320,58 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name "wave5c2"
-			WaitForAllDead "wave5b2"
-			Where spawnbot_flank0
-			Where spawnbot_upper1
-			WaitBetweenSpawns 5
-			TotalCount 18
-			MaxActive 6
-			SpawnCount 3
-			TotalCurrency 90
-			Squad
-			{
-				TFBot
-				{
-					Template Beebot_StingerSpam
-					CharacterAttributes
-					{
-						"cancel falling damage" 1
-					}
-				}
-				TFBot
-				{
-					Template Beebot_KillerBee
-				}
-				TFBot
-				{
-					Template Beebot_KillerBee
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Name "wave5c2"
-			WaitForAllDead "wave5b2"
-			WaitBeforeStarting 2
-			Where spawnbot_main0
-			Where spawnbot_main1
-			WaitBetweenSpawns 4
-			TotalCount 8
-			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 72
-			Squad
-			{
-				TFBot
-				{
-					Template Beebot_StingerSpam
-				}
-				TFBot
-				{
-					Template Beebot_ExploStinger
-				}
-			}
-		}
-		WaveSpawn
-		{
 			Name "Support beeeeeees!"
-			WaitForAllDead "wave5b2"
-			Where spawnbot_main0
-			Where spawnbot_flank0
+			Where spawnbot_upper0
 			Where spawnbot_main1
-			Where spawnbot_upper1
-			WaitBeforeStarting 5
-			WaitBetweenSpawns 5
+			WaitBeforeStarting 6
+			WaitBetweenSpawnsAfterDeath 18
 			TotalCount 10
-			MaxActive 2
+			MaxActive 1
 			SpawnCount 1
 			Support 1
 			TFBot
 			{
 				Template Beebot_KillerBee
-				ClassIcon scout_killerbee_nys_supp
 			}
 		}
 		WaveSpawn
 		{
 			Name "Support beeeeeees!"
-			WaitForAllSpawned "wave5c2"
+			WaitForAllSpawned "wave5d"
+			WaitForAllDead "wave5c2"
 			Where spawnbot_main0
 			Where spawnbot_flank0
 			Where spawnbot_main1
 			Where spawnbot_upper1
 			WaitBeforeStarting 5
-			WaitBetweenSpawns 5
+			WaitBetweenSpawns 12
 			TotalCount 10
-			MaxActive 4
-			SpawnCount 1
+			MaxActive 3
+			SpawnCount 3
 			Support 1
-			RandomChoice
+			TFBot
 			{
-				TFBot
-				{
-					Template Beebot_KillerBee
-					ClassIcon scout_killerbee_nys_supp
-				}
-				TFBot
-				{
-					Template Beebot_Honeybomb
-				}
+				Template Beebot_KillerBee
+			}
+		}
+		WaveSpawn
+		{
+			Name "Support beeeeeees!"
+			WaitForAllSpawned "wave5d"
+			WaitForAllDead "wave5c3"
+			Where spawnbot_main0
+			Where spawnbot_flank0
+			Where spawnbot_main1
+			Where spawnbot_upper1
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 10
+			TotalCount 10
+			MaxActive 3
+			SpawnCount 3
+			Support 1
+			TFBot
+			{
+				Template Beebot_KillerBee
 			}
 		}
 	}
@@ -3046,7 +3389,6 @@ WaveSchedule
 	//- Giant Heavy
 	//- Giant Rapid Fire Soldier variants (could re-use one specifically?)
 	//- Giant Barrage Soldier (Colonel Barrage)
-	//- Giant Buff Banner Soldier
 	//- Giant Flare Rain Pyro
 	//- Monarch League Scout
 	//- Super Stinger Bee (Super Scout)
@@ -3078,8 +3420,12 @@ WaveSchedule
 	{
 		Explanation [$SIGSEGV]
 		{
-			Line "{blue}Stay cautious! These Giant Regen Heavies will target the closest player."
-			Line "{blue}On top of that, they have additional functionality when desperate!"
+			Line "{white}==== TRANSMISSION RECEIVED"
+			Line "{blue}= Expected code mismatch of incoming bot type"
+			Line "{blue}= Bot type: Heavy_MultiRegen"
+			Line "{blue}= Traces of Canteen_Specialist found (type: Ubercharge)"
+			Line "{blue}= Unknown parameter 'WeaponSwitch' found"
+			Line "{white}==== END OF TRANSMISSION"
 		}
 		
 		StartWaveOutput
@@ -3133,6 +3479,22 @@ WaveSchedule
 						Repeats 1 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 						Type "Primary"
 						IfHealthBelow 4200
+					}
+					ExtAttr SuppressCanteenUse [$SIGSEGV]
+					Item "Battery Canteens"
+					FireWeapon [$SIGSEGV]  //Periodically fires weapon
+					{
+						Delay 0
+						Repeats 1
+						IfSeeTarget 1
+						Type "Action"
+						IfHealthBelow 4200
+					}
+					ItemAttributes
+					{
+						ItemName "Battery Canteens"
+						"ubercharge" 1
+						"powerup charges" 1
 					}
 					CharacterAttributes
 					{
@@ -3190,20 +3552,7 @@ WaveSchedule
 			TotalCurrency 60
 			TFBot
 			{
-				Template T_TFBot_Soldier_Extended_Concheror
-				Name "Upgraded Conch Soldier"
-				ClassIcon soldier_conch_upgraded
-				Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
-				ItemAttributes
-				{
-					ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
-					"is australium item" 1
-					"item style override" 1
-					"fire rate bonus" 0.75
-					"faster reload rate" 0.75
-					"damage bonus" 1.25
-					"projectile speed decreased" 0.75
-				}
+				Template T_TFBot_Soldier_Spammer_Conch
 			}
 		}
 		WaveSpawn
@@ -3273,7 +3622,7 @@ WaveSchedule
 			WaitBetweenSpawns 5
 			TotalCount 12
 			MaxActive 4
-			SpawnCount 2
+			SpawnCount 4
 			TotalCurrency 60
 			TFBot
 			{
@@ -3306,9 +3655,9 @@ WaveSchedule
 			Where spawnbot_main1
 			WaitBetweenSpawns 18
 			TotalCount 3
-			MaxActive 2
+			MaxActive 3
 			SpawnCount 1
-			TotalCurrency 60
+			TotalCurrency 120
 			TFBot
 			{
 				Template T_TFBot_Giant_Heavyweapons
@@ -3357,10 +3706,10 @@ WaveSchedule
 			Where spawnbot_main1
 			WaitBeforeStarting 2
 			WaitBetweenSpawns 4
-			TotalCount 16
+			TotalCount 12
 			MaxActive 4
-			SpawnCount 2
-			TotalCurrency 80
+			SpawnCount 4
+			TotalCurrency 60
 			TFBot
 			{
 				Class Soldier
@@ -3404,9 +3753,9 @@ WaveSchedule
 			Where spawnbot_main1
 			WaitForAllDead "wave6c"
 			WaitBeforeStarting 6
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 3
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 2
 			TotalCurrency 1
 			Squad
 			{
@@ -3439,6 +3788,22 @@ WaveSchedule
 						Repeats 1 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 						Type "Primary"
 						IfHealthBelow 4200
+					}
+					ExtAttr SuppressCanteenUse [$SIGSEGV]
+					Item "Battery Canteens"
+					FireWeapon [$SIGSEGV]  //Periodically fires weapon
+					{
+						Delay 0
+						Repeats 1
+						IfSeeTarget 1
+						Type "Action"
+						IfHealthBelow 4200
+					}
+					ItemAttributes
+					{
+						ItemName "Battery Canteens"
+						"ubercharge" 1
+						"powerup charges" 1
 					}
 					CharacterAttributes
 					{
@@ -3473,27 +3838,6 @@ WaveSchedule
 				{
 					Template T_TFBot_Giant_Medic_Uber
 				}
-				TFBot
-				{
-					Template T_TFBot_Giant_Medic_Uber
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Name "Support"
-			WaitForAllSpawned "wave6d"
-			Where spawnbot_main0
-			Where spawnbot_main1
-			WaitBetweenSpawns 4
-			TotalCount 4
-			MaxActive 4
-			SpawnCount 1
-			TotalCurrency 40
-			Support 1
-			TFBot
-			{
-				Template T_TFBot_Soldier_Spammer_Conch
 			}
 		}
 		WaveSpawn
@@ -3535,6 +3879,27 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Scout_Jumping_Sandman_Marker
+			}
+		}
+		WaveSpawn
+		{
+			Name "Support"
+			WaitForAllSpawned "wave6d"
+			Where spawnbot_main0
+			Where spawnbot_main1
+			WaitBetweenSpawns 4
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			Support 1
+			TFBot
+			{
+				Template T_TFBot_Demoman_Knight
+				Attributes AlwaysCrit
+				CharacterAttributes
+				{
+					"attack not cancel charge" 1
+				}
 			}
 		}
 	}

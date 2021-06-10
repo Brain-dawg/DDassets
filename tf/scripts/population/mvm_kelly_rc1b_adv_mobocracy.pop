@@ -872,6 +872,7 @@ WaveSchedule
 		"damage bonus HIDDEN" 1.25
 		"sniper charge per sec" 0
 		"explosive bullets" 147
+		"boots falling stomp" 1
 	}
 
 	ItemAttributes [$SIGSEGV] // hook bow - DAMAGE UPGRADE DOES NOT WORK
@@ -886,7 +887,8 @@ WaveSchedule
 		"weapon burn dmg reduced" 0
 		"deploy time decreased" 0.35
 		"cannot be teleported" 1
-		"cannot taunt" 1
+		"gesture speed increase" 1.75
+		//"cannot taunt" 1
 	}
 	
 	ItemAttributes [$SIGSEGV] // reverted to v1, increased crit time from 3 to 5 seconds
@@ -5941,6 +5943,7 @@ WaveSchedule
 					"cancel falling damage" 1
 					"damage force reduction" 0
 					"receive friendly fire" 1
+					"mod weapon blocks healing" 0
 				}
 				
 				//CRASHFIX
@@ -5988,6 +5991,7 @@ WaveSchedule
 					"cancel falling damage" 1
 					"damage force reduction" 0
 					"receive friendly fire" 1
+					"mod weapon blocks healing" 0
 				}
 				
 				//CRASHFIX
@@ -6037,6 +6041,7 @@ WaveSchedule
 					"uber duration bonus" -8
 					"damage force reduction" 0
 					"receive friendly fire" 1
+					"mod weapon blocks healing" 0
 				}
 				
 				//CRASHFIX

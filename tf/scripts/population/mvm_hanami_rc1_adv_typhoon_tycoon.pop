@@ -1,6 +1,6 @@
 // ADVANCED MISSION FOR MVM_HANAMI_RC1
 // MADE BY PEALOVER
-// V8 (post-launch)
+// V9 (post-launch)
 
 #base robot_giant.pop
 #base robot_standard.pop
@@ -221,7 +221,7 @@ WaveSchedule
 			{
 				ItemName "The Flying Guillotine"
 				"effect bar recharge rate increased" 0.05
-				"fire rate penalty" 1.5
+				"fire rate penalty" 2
 			}
 		}
 		T_TFBot_Heavyweapons_Deflector
@@ -385,7 +385,7 @@ WaveSchedule
 			}
 		}
 	}
-	StartingCurrency 800
+	StartingCurrency 1000
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom no
 	SendBotsToSpectatorImmediately 1 [$SIGSEGV]

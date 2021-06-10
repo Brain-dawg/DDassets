@@ -29,7 +29,7 @@ gettysburg
     //ForceHoldiay 2
     EventPopFile Halloween
     //BotPushaway 0                       [$SIGSEGV]
-    NoReanimators 1                     [$SIGSEGV]
+    //NoReanimators 1                     [$SIGSEGV]
     NoRomevisionCosmetics 1             [$SIGSEGV]
     MedigunShieldDamage 1               [$SIGSEGV]
     FixSetCustomModelInput 1            [$SIGSEGV]
@@ -37,7 +37,7 @@ gettysburg
     SniperHideLasers 1                  [$SIGSEGV]
     SniperAllowHeadshots 1              [$SIGSEGV]
     NoMvMDeathTune 1                    [$SIGSEGV]
-    BuybacksPerWave 1                   [$SIGSEGV]
+    //BuybacksPerWave 1                   [$SIGSEGV]
     EnableDominations 1                 [$SIGSEGV]
     ImprovedAirblast 1                  [$SIGSEGV]
     TextPrintTime 0                     [$SIGSEGV]
@@ -55,6 +55,7 @@ gettysburg
     ClassLimit [$SIGSEGV]
     {
         Heavyweapons 1
+        Engineer 2
     }
 
     PlayerAttributes
@@ -80,12 +81,6 @@ gettysburg
         "construction rate increased" 2
         "engy disposable sentries" 1
         "mult teleporter recharge rate" 0.5
-    }
-
-    ItemAttributes
-    {
-        ClassName tf_weapon_minigun
-        "dont count damage towards crit rate" 1
     }
 
     ItemAttributes //sniper blood splatter
@@ -122,19 +117,22 @@ gettysburg
     {
         ItemName "The Market Gardener"
         "damage bonus" 2
+        "melee cleave attack" 1
+        "melee range multiplier" 1.5
+        "melee bounds multiplier" 1.5
     }
 
-    ItemAttributes //reflect homing support whatever flamethrower
+    ItemAttributes //reflect support whatever flamethrower
     {
         ItemName "The Degreaser"
-        //"mult airblast refire time" 1.25
         "airblast_give_teammate_speed_boost" 1
-        "mod projectile heat follow crosshair" 1
-        "airblast cost increased" 2
-        "mult reflect velocity" 2
+        "airblast cost increased" 1.75
+        "mult reflect velocity" 3
+        "rocket specialist" 4
+        "rocket jump damage reduction" -0.4
     }
 
-    ItemAttributes //for those psychos who wanna play caberknight
+    ItemAttributes //for psychos who wanna play caberknight
     {
         ItemName "The Ullapool Caber"
         "regenerate stickbomb" 1
@@ -142,6 +140,7 @@ gettysburg
         "fire rate penalty" 1
         "crit on hard hit" 1
         "self dmg push force increased" 0.25
+        "dmg bonus while half dead" 1.5
     }
 
     ItemAttributes
@@ -150,7 +149,25 @@ gettysburg
         "arrow mastery" 1
         "headshot damage increase" 1.2
 		"projectile penetration" 1
-		"projectile penetration" -1 //Disallows buying pene. Does not break middle arrow.
+		"projectile penetration" -1
+    }
+
+    ItemAttributes
+    {
+        ItemName "The Huntsman"
+        "arrow mastery" 1
+        "headshot damage increase" 1.2
+		"projectile penetration" 1
+		"projectile penetration" -1
+    }
+
+    ItemAttributes
+    {
+        ItemName "Festive Huntsman"
+        "arrow mastery" 1
+        "headshot damage increase" 1.2
+		"projectile penetration" 1
+		"projectile penetration" -1
     }
 
     ItemAttributes //big iron
@@ -166,7 +183,6 @@ gettysburg
         crit_dmg_falloff 0
         "last shot crits" 1
         "clip size penalty" 0.2
-        //"mod max primary clip override" 1
         "item style override" 1
         "is australium item" 1
         "explosive sniper shot" 3
@@ -186,28 +202,12 @@ gettysburg
         "last shot crits" 1
         "clip size penalty" 0.2
         "explosive sniper shot" 3
-        //"mod max primary clip override" 1
-    }
-
-    ItemAttributes
-    {
-        ItemName "The Phlogistinator"
-        "mod flamethrower spinup time" 0.33
-        //"damage penalty" 0.85
     }
 
     ItemAttributes
     {
         ItemName "The Gas Passer"
-        "weapon burn dmg increased" 6
-    }
-
-    ItemAttributes
-    {
-        ItemName "The Beggar's Bazooka"
-        //"fire rate bonus hidden" 0.5
-        "reload time increased hidden" 1.5
-        //"blast radius decreased" 0.9
+        "weapon burn dmg increased" 11
     }
 
     Mission //Wave 1-2 Buster Mission
@@ -556,11 +556,14 @@ gettysburg
             Health 275
             Attributes TeleportToHint
             Attributes AlwaysCrit
+            TeleportWhere spawnbot
+
+            ExtAttr BuildDispenserAsTeleporter
 
             CharacterAttributes
             {
                 "engineer sentry build rate multiplier" 2
-                "engineer teleporter build rate multiplier" 2
+                "engy dispenser radius increased" 5
             }
         }
     }
@@ -613,7 +616,7 @@ gettysburg
                 {
                     ItemName "The Cow Mangler 5000"
                     "damage penalty" 0.05
-                    "weapon burn dmg increased" 10
+                    "weapon burn dmg increased" 11
                     "reload time decreased" 0
                     "fire retardant" 1
                     "no self blast dmg" 2
@@ -1820,7 +1823,7 @@ gettysburg
                 TFBot   
                 {
                     Name "Void Fury"
-                    Skill Easy
+                    Skill Normal
                     Template G_Pyro_Fury
                     Attributes DisableDodge
 
@@ -1835,7 +1838,7 @@ gettysburg
                 TFBot
                 {
                     Name "Void Fury"
-                    Skill Easy
+                    Skill Normal
                     Template G_Pyro_Fury
                     Attributes DisableDodge
 
@@ -2359,8 +2362,6 @@ gettysburg
                     TurnPower 500
                     MaxAimError 250
                     RocketSpeed 0.5
-                    //Acceleration 400
-                    //AccelerationTime 4
                 }
 
                 FireWeapon
@@ -2899,7 +2900,6 @@ gettysburg
 				"damage force reduction" 0.15
 				"airblast vulnerability multiplier" 0.15
 				"override footstep sound set" 2
-                "rage giving scale" 0.25
 			}
         }
 

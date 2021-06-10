@@ -217,7 +217,7 @@ WaveSchedule
 		{
 		"grenade no spin" 1
 		"melee cleave attack" 1
-		"Attack not cancel charge" 1
+		//"Attack not cancel charge" 1
 		"charge time increased" 3
 		"charge impact damage increased" 5
 		"cancel falling damage" 1
@@ -336,6 +336,45 @@ WaveSchedule
 		"heal on hit for rapidfire" 60
 		"crit mod disabled" 0
 	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Iron Bomber"
+		"Blast radius decreased" 1
+		"grenade no bounce" 0
+		"fuse bonus" 1
+
+		"fire rate bonus HIDDEN" 0.3
+		"auto fires full clip" 1
+		"can overload" 1
+		//"reload time increased hidden" 1.3
+		"clip size penalty HIDDEN" 0.75
+		"projectile spread angle penalty" 3
+		"no primary ammo from dispensers while active" 1
+		"blast radius decreased" 0.8
+	}
+
+	ItemAttributes [$SIGSEGV]
+	{
+		ItemName "The Scottish Resistance"
+		"fire rate bonus" 1
+		"sticky detonate mode" 0
+		"stickies detonate stickies" 0
+		"maxammo secondary increased" 1
+		"max pipebombs increased" 0
+		"sticky arm time penalty" 0
+
+		"stickybomb charge rate" 0.001
+		"Projectile range increased" 0.35
+		"fire rate bonus HIDDEN" 0.15
+		"auto fires full clip" 1
+		"can overload" 1
+		//"reload time increased hidden" 1.3
+		"clip size penalty HIDDEN" 0.4
+		"projectile spread angle penalty" 3
+		"no primary ammo from dispensers while active" 1
+		"blast radius decreased" 0.8
+	}
 	
 	ItemAttributes [$SIGSEGV]
 	{
@@ -410,6 +449,7 @@ WaveSchedule
 		Hell_Express
 		{
 			Class Demoman
+			Scale 1.5
 			Classicon demoknight_nineiron
 			Name "Giant Charger Demo"
 			Item "The Splendid Screen"
@@ -421,7 +461,7 @@ WaveSchedule
 				"set item tint rgb" 8154199
 			}
 			Skill Expert
-			Health 2500
+			Health 2000
 			Attributes MiniBoss
 			WeaponRestrictions MeleeOnly
 			FastUpdate 1
@@ -455,8 +495,8 @@ WaveSchedule
 					"dmg bonus vs buildings" 5000
 					"gesture speed increase" 0.1
 					"max health additive penalty" 0
-					"melee range multiplier" 2.5
-					"melee bounds multiplier" 2.5
+					"melee range multiplier" 3
+					"melee bounds multiplier" 3
 			}
 			ItemAttributes
 				{
@@ -465,8 +505,8 @@ WaveSchedule
 					"dmg taken from fire reduced" 1
 					"dmg taken from blast reduced" 1
 					"full charge turn control" 50
-					"charge impact damage increased" 125
-					"charge time increased" 10
+					"charge impact damage increased" 4
+					"charge time increased" 2
 					"charge recharge rate increased" 125
 				}
 			CharacterAttributes
@@ -476,12 +516,15 @@ WaveSchedule
 					"airblast vulnerability multiplier" 0
 					"airblast vertical vulnerability multiplier" 0
 					"override footstep sound set" 4
-					"increased jump height" 1.75
-					"damage all connected" 1
+					"increased jump height" 1.5
 					"mult stun resistance" 0
 					"wet immunity" 1
 			}
-			
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 0
+				Model "models\empty.mdl"
+			}
 		}
 
 		Hell_Lesser2
@@ -504,6 +547,54 @@ WaveSchedule
 		{
 			Template T_TFBot_Giant_Scout_Fast
 			//Attributes IgnoreEnemies
+		}
+
+		Hell_redbuster
+		{
+			Class Demoman
+			Name "Friendly Sentry Buster"
+			Skill Expert
+			Health 2500
+			Item "The Ullapool Caber"
+			WeaponRestrictions MeleeOnly
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			ClassIcon engineer
+			Attributes MiniBoss
+			CharacterAttributes
+			{
+				"move speed bonus" 2
+				"damage force reduction" 0.5
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"voice pitch scale" 0.7
+				"cannot be backstabbed" 1
+			}
+				
+			//SIG
+			UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
+			Action SuicideBomber [$SIGSEGV]
+			UseBusterModel 1 [$SIGSEGV]
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 0
+				Model "models\empty.mdl"
+			}
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 1
+				Model "models\empty.mdl"
+			}
+			CustomWeaponModel [$SIGSEGV]
+			{
+				Slot 2
+				Model "models\empty.mdl"
+			}
+			AddCond [$SIGSEGV]
+			{
+				Name TF_COND_REPROGRAMMED
+			}
+			//SIG
 		}
 		
 		Hell_Circuit
@@ -581,8 +672,9 @@ WaveSchedule
 			{
 				ItemName "The Killing Gloves of Boxing"
 				"provide on active" 1
-				"move speed bonus" 2
-				"always crit" 1
+				"move speed bonus" 3
+				"damage bonus" 1.5
+				//"always crit" 1
 			}
 			ItemAttributes
 			{
@@ -609,8 +701,8 @@ WaveSchedule
 			DropWeapon 1
 			UseHumanModel 1
 			WeaponRestrictions MeleeOnly
-			Item "Poolside Polo"
-			Item "Towering Pillar of Beanies"
+			Item "dec2014 Truands Tunic"
+			Item "Scout Beanie"
 			Item "Gold Frying Pan"
 			ItemAttributes
 			{
@@ -619,9 +711,16 @@ WaveSchedule
 			}
 			ItemAttributes
 			{
-				ItemName "Towering Pillar of Beanies"
+				ItemName "Scout Beanie"
 				"SPELL: set item tint RGB" 5
 			}
+			VoiceCommand [$SIGSEGV]
+            {
+                Delay 5
+                Cooldown 5
+				IfSeeTarget 0
+                Type "Thanks"
+            }
 		}
 		
 		Hell_HoK
@@ -1265,6 +1364,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -1292,49 +1393,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -1804,6 +1863,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 1
@@ -1832,49 +1893,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -2296,6 +2315,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 3
 			MaxActive 3
 			SpawnCount 1
@@ -2324,49 +2345,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -2728,6 +2707,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 4
 			MaxActive 4
 			SpawnCount 1
@@ -2756,49 +2737,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -3185,6 +3124,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 5
 			MaxActive 5
 			SpawnCount 1
@@ -3213,49 +3154,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -3735,6 +3634,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 6
 			MaxActive 6
 			SpawnCount 1
@@ -3763,49 +3664,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 		
 		}
@@ -4102,6 +3961,8 @@ WaveSchedule
 		{
 			Name "part01"
 			Where spawnbot_giant
+			Where spawnbot_flank_right
+			Where spawnbot_flank_left
 			TotalCount 7
 			MaxActive 7
 			SpawnCount 1
@@ -4123,8 +3984,8 @@ WaveSchedule
 			MaxActive 1
 			SpawnCount 1
 			WaitForAllDead "part01"
-			WaitBeforeStarting 30
-			WaitBetweenSpawns 30
+			WaitBeforeStarting 20
+			WaitBetweenSpawns 20
 			Support 1
 			TotalCurrency 0
 
@@ -4135,49 +3996,7 @@ WaveSchedule
 			
 			TFBot
 			{
-				Class Demoman
-				Name "Friendly Sentry Buster"
-				Skill Expert
-				Health 2500
-				Item "The Ullapool Caber"
-				WeaponRestrictions MeleeOnly
-				Attributes DisableDodge
-				Attributes IgnoreEnemies
-				ClassIcon engineer
-				Attributes MiniBoss
-				CharacterAttributes
-				{
-					"move speed bonus" 2
-					"damage force reduction" 0.5
-					"airblast vulnerability multiplier" 0.5
-					"override footstep sound set" 7
-					"voice pitch scale" 0.7
-				}
-				
-				//SIG
-				UseCustomModel models/bots/demo/red_sentry_buster.mdl [$SIGSEGV]
-				Action SuicideBomber [$SIGSEGV]
-				UseBusterModel 1 [$SIGSEGV]
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 0
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 1
-					Model "models\empty.mdl"
-				}
-				CustomWeaponModel [$SIGSEGV]
-				{
-					Slot 2
-					Model "models\empty.mdl"
-				}
-				AddCond [$SIGSEGV]
-				{
-					Name TF_COND_REPROGRAMMED
-				}
-				//SIG
+				Template Hell_redbuster
 			}
 
 		}

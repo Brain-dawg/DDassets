@@ -4,55 +4,48 @@
 
 //made by gettysburg
 
-//
-// Starting Currency: 800
-//
-// +----------+----------+----------+
-// | Wave     | Currency | A+       |
-// +----------+----------+----------+
-// | Wave 1   | 800      | 900      |
-// | Wave 2   | 700      | 800      |
-// | Wave 3   | 700      | 800      |
-// | Wave 4   | 800      | 900      |
-// | Wave 5   | 600      | 700      |
-// +----------+----------+----------+
-// | Total    | 3600     | 4100     |
-// +----------+----------+----------+
-//
-
 gettysburg
 {
-    StartingCurrency 800
+    StartingCurrency 1000
     CanBotsAttackWhileInSpawnRoom No
     FixedRespawnWaveTime Yes
     RespawnWaveTime 4
     Advanced 1
 
-    //BotPushaway 0                   [$SIGSEGV]
-    NoReanimators 1                 [$SIGSEGV]
-    //NoRomevisionCosmetics 1         [$SIGSEGV]
-    MedigunShieldDamage 1           [$SIGSEGV]
-    FixSetCustomModelInput 1        [$SIGSEGV]
-    SentryBusterFriendlyFire 0      [$SIGSEGV]
-    //SniperHideLasers 1              [$SIGSEGV]
-    SniperAllowHeadshots 1          [$SIGSEGV]
-    NoMvMDeathTune 1                [$SIGSEGV]
-    BuybacksPerWave 1               [$SIGSEGV]
-    EnableDominations 1             [$SIGSEGV]
-    ImprovedAirblast 1              [$SIGSEGV]
-    //FixedBuybacks 1                 [$SIGSEGV]
+    //BotPushaway 0                    
+    //NoReanimators 1                  
+    //NoRomevisionCosmetics 1          
+    MedigunShieldDamage 1            
+    FixSetCustomModelInput 1         
+    SentryBusterFriendlyFire 0       
+    //SniperHideLasers 1               
+    SniperAllowHeadshots 1           
+    NoMvMDeathTune 1                 
+    //BuybacksPerWave 1                
+    EnableDominations 1              
+    ImprovedAirblast 1               
     TextPrintTime 0
-	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
-    CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                  [$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl"  
+    CustomUpgradesFile "mvm_upgrades_gettysburg_final_fix.txt"                   
 
-    ClassLimit [$SIGSEGV]
+    OverrideSounds  
+	{
+        //"Announcer.MVM_Get_To_Upgrade" "ambient/atmosphere/cave_hit3.wav"
+		"MVM.BombWarning"			"ambient/alarms/doomsday_lift_alarm.wav"
+        "MVM.GiantHeavyExplodes"	"npc/env_headcrabcanister/explosion.wav"
+		"MVM.GiantCommonExplodes"	"npc/env_headcrabcanister/explosion.wav"
+	}
+
+    ClassLimit  
     {
         Heavyweapons 1
+        Engineer 2
     }
 
     PlayerAttributes
     {
-		"cannot pick up intelligence" 1
+        "cannot pick up intelligence" 1
+
         Medic
         {
             "medic machinery beam" 2.5
@@ -93,13 +86,13 @@ gettysburg
         //"reload time increased" 2
     }
 
-    ItemAttributes
+    ItemAttributes //cold
     {
         ItemName "Festive Eyelander"
         "set turn to ice" 1
     }
 
-    ItemAttributes
+    ItemAttributes //slow
     {
         ClassName tf_weapon_laser_pointer
         "always allow taunt" 1
@@ -110,19 +103,22 @@ gettysburg
     {
         ItemName "The Market Gardener"
         "damage bonus" 2
+        "melee cleave attack" 1
+        "melee range multiplier" 1.5
+        "melee bounds multiplier" 1.5
     }
 
-    ItemAttributes //reflect homing support whatever flamethrower
+    ItemAttributes //reflect support whatever flamethrower
     {
         ItemName "The Degreaser"
-        //"mult airblast refire time" 1.25
         "airblast_give_teammate_speed_boost" 1
-        "mod projectile heat follow crosshair" 1
-        "airblast cost increased" 2
-        "mult reflect velocity" 2
+        "airblast cost increased" 1.75
+        "mult reflect velocity" 3
+        "rocket specialist" 4
+        "rocket jump damage reduction" -0.4
     }
 
-    ItemAttributes //for those psychos who wanna play caberknight
+    ItemAttributes //for psychos who wanna play caberknight
     {
         ItemName "The Ullapool Caber"
         "regenerate stickbomb" 1
@@ -130,6 +126,7 @@ gettysburg
         "fire rate penalty" 1
         "crit on hard hit" 1
         "self dmg push force increased" 0.25
+        "dmg bonus while half dead" 1.5
     }
 
     ItemAttributes
@@ -138,7 +135,25 @@ gettysburg
         "arrow mastery" 1
         "headshot damage increase" 1.2
 		"projectile penetration" 1
-		"projectile penetration" -1 //Disallows buying pene. Does not break middle arrow.
+		"projectile penetration" -1
+    }
+
+    ItemAttributes
+    {
+        ItemName "The Huntsman"
+        "arrow mastery" 1
+        "headshot damage increase" 1.2
+		"projectile penetration" 1
+		"projectile penetration" -1
+    }
+
+    ItemAttributes
+    {
+        ItemName "Festive Huntsman"
+        "arrow mastery" 1
+        "headshot damage increase" 1.2
+		"projectile penetration" 1
+		"projectile penetration" -1
     }
 
     ItemAttributes //big iron
@@ -154,7 +169,6 @@ gettysburg
         crit_dmg_falloff 0
         "last shot crits" 1
         "clip size penalty" 0.2
-        //"mod max primary clip override" 1
         "item style override" 1
         "is australium item" 1
         "explosive sniper shot" 3
@@ -174,30 +188,15 @@ gettysburg
         "last shot crits" 1
         "clip size penalty" 0.2
         "explosive sniper shot" 3
-        //"mod max primary clip override" 1
-    }
-
-    ItemAttributes
-    {
-        ItemName "The Phlogistinator"
-        "mod flamethrower spinup time" 0.33
-        //"damage penalty" 0.85
     }
 
     ItemAttributes
     {
         ItemName "The Gas Passer"
-        "weapon burn dmg increased" 6
+        "weapon burn dmg increased" 11
     }
 
-    ItemAttributes
-    {
-        ItemName "The Beggar's Bazooka"
-        //"fire rate bonus hidden" 0.5
-        "reload time increased hidden" 1.5
-        //"blast radius decreased" 0.9
-    }
-	PointTemplates [$SIGSEGV]
+	PointTemplates  
 	{
 		bombfix //switch flag teams to show up on HUD
 		{
@@ -214,7 +213,8 @@ gettysburg
 		}
 	}
 	
-	SpawnTemplate "bombfix" [$SIGSEGV]
+	SpawnTemplate "bombfix"  
+
     Mission //Buster
     {
         Objective DestroySentries
@@ -255,11 +255,11 @@ gettysburg
         {
             Name "Backburner Pyro"
             Class Pyro
-            Skill Expert
+            Skill Easy
             ClassIcon pyro_support
             Item "The Backburner"
             //Item "The Back Scratcher"
-            //Action Spy [$SIGSEGV]
+            //Action Spy  
 
             ItemAttributes
             {
@@ -270,7 +270,7 @@ gettysburg
         }
     }
 
-    Mission //Engi Tele W3
+    Mission //Engi Tele-in W3
     {
         Objective Engineer
         Where spawnbot
@@ -284,9 +284,13 @@ gettysburg
         {
             Template G_Engineer_Tele_In
             TeleportWhere spawnbot
-            TeleportWhere spawnbot_main
-            TeleportWhere spawnbot_secondary
-            TeleportWhere spawnbot_titan
+
+            ExtAttr BuildDispenserAsTeleporter
+
+            CharacterAttributes
+            {
+                "engy dispenser radius increased" 10
+            }
         }
     }
 
@@ -314,14 +318,15 @@ gettysburg
             Attributes MiniBoss
             Attributes SpawnWithFullCharge
 
-            AlwaysGlow 1 [$SIGSEGV]
-            UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+            AlwaysGlow 1  
+            UseCustomModel "models/bots/sniper_boss/bot_sniper_boss.mdl"  
                 
             ItemAttributes
             {
                 ItemName "The Hitman's Heatmaker"
                 "killstreak tier" 1
                 "increase buff duration" 51
+                "reload time increased" 2
             }
 
             ItemAttributes
@@ -338,7 +343,7 @@ gettysburg
                 "airblast vertical vulnerability multiplier" 0.35
                 "override footstep sound set" 7
                 //"head scale" 0.7
-                "rage giving scale" 0.5
+                 
             }
 
             FireWeapon
@@ -358,7 +363,7 @@ gettysburg
         }
     }
 
-    Mission //W4 Support Engineer
+    Mission //w4 support engineer
     {
         Objective Engineer
         Where spawnbot_secondary
@@ -373,12 +378,12 @@ gettysburg
             {
                 Name "Support Engineer"
                 Template G_Engineer_Teleporter
-                ExtAttr BuildDispenserAsSentryGun [$SIGSEGV]
+                ExtAttr BuildDispenserAsSentryGun
+                //ExtAttr BuildDispenserAsTeleporter
                 Attributes TeleportToHint
                 TeleportWhere spawnbot
                 TeleportWhere spawnbot_secondary
                 TeleportWhere spawnbot_titan
-                TeleportWhere spawnbot_main
 
                 CharacterAttributes
                 {
@@ -406,18 +411,18 @@ gettysburg
             {
                 TFBot
                 {
-                    Name "Backup Engineer"
+                    Name "Conch Engineer"
                     Template G_Engineer_Tele_In
                     Attributes SpawnWithFullCharge
-                    Item "The Battalion's Backup"
+                    Item "The Concheror"
                     TeleportWhere spawnbot
-                    //TeleportWhere spawnbot_secondary
-                    TeleportWhere spawnbot_titan
-                    TeleportWhere spawnbot_main
+
+                    ExtAttr BuildDispenserAsTeleporter
 
                     CharacterAttributes
                     {
                         "increase buff duration" 901
+                        "engy dispenser radius increased" 10
                     }
                 }
             }
@@ -436,16 +441,18 @@ gettysburg
 
         TFBot
         {
+            Name "Sydney Sniper"
             Class Sniper
+            ClassIcon sniper_sydneysleeper
             Skill Expert
-            Item "The Machina"
+            Item "The Sydney Sleeper"
             Item "The Cozy Camper"
             Item "The Tribalman's Shiv"
 
             ItemAttributes
             {
-                ItemName "The Machina"
-                "projectile penetration" 1
+                ItemName "The Sydney Sleeper"
+                "radius sleeper" 1
             }
         }
     }
@@ -464,7 +471,7 @@ gettysburg
             Action Trigger
         }
 
-        Explanation [$SIGSEGV]
+        Explanation  
         {
             Line "{green}---------------------------------------------------------------"
             Line "{blue}Reanimators are disabled."
@@ -484,7 +491,7 @@ gettysburg
             WaitBetweenSpawns 6
             WaitBeforeStarting 1
 
-            TotalCurrency 90
+            TotalCurrency 290
 
             TFBot
             {
@@ -558,7 +565,7 @@ gettysburg
                         "override footstep sound set" 7
                         //"head scale" 0.7
                         "deploy time decreased" 0.25
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -644,7 +651,7 @@ gettysburg
                         "damage force reduction" 0.25
                         "airblast vulnerability multiplier" 0.25
                         "override footstep sound set" 6
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -670,30 +677,21 @@ gettysburg
             
             TFBot
             {
-                Name "Charging Demo"
+                Name Demoknight
                 Class Demoman
-                ClassIcon demo_targe_nys
+                ClassIcon demoknight
+                Health 150
                 Skill Hard
-                Item "The Hurt Locher"
-                Item "The Frag Proof Fragger"
-                Item "The Loch-n-Load"
-                Item "The Splendid Screen"
-                ExtAttr IgnoreBuildings
-                
-                ItemAttributes
-                {
-                    ItemName "The Loch-n-Load"
-                    "fire rate penalty" 2001
-                    "attack not cancel charge" 1
-                    "override projectile type" 27
-                    "charge recharge rate increased" 4
-                    "charge impact damage increased" 1.4
-                }
+                Item "Ali Baba's Wee Booties"
+                Item "The Chargin' Targe"
+                Item "The Eyelander"
+                Item "The King of Scotland Cape"
 
                 ItemAttributes
                 {
-                    ItemName "The Splendid Screen"
-                    "item style override" 2
+                    ItemName "The Eyelander"
+                    "critboost on kill" 3
+                    "max health additive penalty" 0
                 }
             }
         }
@@ -746,6 +744,12 @@ gettysburg
             {
                 Template G_Soldier_Tank
                 Health 20000
+
+                ItemAttributes
+                {
+                    ItemName concealedkiller_rocketlauncher_woodlandwarrior
+                    "damage bonus" 1.5
+                }
             }
         }
 
@@ -803,7 +807,7 @@ gettysburg
         WaveSpawn
         {
             Where spawnbot_secondary
-            TotalCount 30
+            TotalCount 20
             SpawnCount 1
             MaxActive 5
             Support 1
@@ -811,7 +815,7 @@ gettysburg
             WaitBeforeStarting 2
             WaitBetweenSpawns 6
 
-            TotalCurrency 300
+            TotalCurrency 500
 
             RandomChoice
             {
@@ -824,7 +828,7 @@ gettysburg
                     WeaponRestrictions SecondaryOnly
                     Tag flank_front
                     Tag flank_back
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    UseMeleeThreatPrioritization 1  
 
                     ItemAttributes
                     {
@@ -887,34 +891,52 @@ gettysburg
 
             TFBot
             {
-                Name "Giant Blaster Scout"
+                Name "Giant Scout"
                 Class Scout
-                ClassIcon scout_blaster_nys_giant
+                ClassIcon scout_giant
                 Skill Expert
                 Health 1600
-                Item "Dillinger's Duffel"
-                Item "The Fed-Fightin' Fedora"
-                Item "Baby Face's Blaster"
+                Item "The Backwards Ballcap"
+                Item "pyroland_scattergun_shottohell"
+                Item "TTG Max Pistol"
                 Attributes MiniBoss
+                Attributes HoldFireUntilFullReload
                 MaxVisionRange 1200
                 Tag bot_giant
-                UseMeleeThreatPrioritization 1 [$SIGSEGV]
 
+                UseMeleeThreatPrioritization 1
+                UseBestWeapon 1
+                
                 ItemAttributes
                 {
-                    ItemName "Baby Face's Blaster"
-                    "lose hype on take damage" 0
+                    ItemName "pyroland_scattergun_shottohell"
+                    "damage bonus" 1.2
+                    "reload time decreased" 0.6
+                    "set_item_texture_wear" 0
                     "killstreak tier" 2
                     "killstreak idleeffect" 1
                 }
 
+                ItemAttributes
+                {
+                    ItemName "TTG Max Pistol"
+                    "weapon spread bonus" 0.5
+                    "killstreak tier" 2
+                    "killstreak idleeffect" 1
+                }
+
+                ItemAttributes
+                {
+                    ItemName "The Backwards Ballcap"
+                    "set item tint rgb" 2960676
+                }
+                
                 CharacterAttributes
                 {
                     "damage force reduction" 0.35
                     "airblast vulnerability multiplier" 0.35
-                    "airblast vertical vulnerability multiplier" 0.35
+                    "airblast vertical vulnerability multiplier" 0.5
                     "override footstep sound set" 5
-                    "rage giving scale" 0.5
                 }
             }
         }
@@ -943,7 +965,7 @@ gettysburg
                 Item "Batter's Helmet"
                 Item "The Sandman"
                 WeaponRestrictions MeleeOnly
-                ForceRomevision 1 [$SIGSEGV]
+                ForceRomevision 1  
                 Tag flank_front
                 Tag flank_back
 
@@ -983,41 +1005,34 @@ gettysburg
 
             TFBot
             {
-                Name "Giant Detonator Pyro"
+                Name "Giant Flare Pyro"
                 Class Pyro
-                ClassIcon pyro_flare_giant
+                ClassIcon pyro_flare
                 Skill Expert
                 Health 3300
-                Item "The Detonator"
-                Item "KF Pyro Mask"
+                Item "The Flare Gun"
+                Item "Pyro's Boron Beanie"
                 WeaponRestrictions SecondaryOnly
                 Attributes MiniBoss
                 Tag bot_giant
-                AimAt Head [$SIGSEGV]
 
+                AimAt Head
+                
                 ItemAttributes
                 {
-                    ItemName "The Detonator"
-                    "fire rate bonus" 0.5
-                    "weapon burn dmg increased" 2.5
+                    ItemName "The Flare Gun"
+                    "fire rate bonus" .7
                     "killstreak tier" 2
                     "killstreak idleeffect" 1
-                    "projectile speed increased" 1.5
                 }
-
-                ItemAttributes
-                {
-                    ItemName "KF Pyro Mask"
-                    "set item tint rgb" 2452877
-                }
-
+                
                 CharacterAttributes
                 {
-                    "move speed bonus" 0.5
+                    "move speed bonus" 0.6
                     "damage force reduction" 0.25
                     "airblast vulnerability multiplier" 0.25
+                    "airblast vertical vulnerability multiplier" 0.5
                     "override footstep sound set" 6
-                    "rage giving scale" 0.5
                 }
             }
         }
@@ -1046,6 +1061,78 @@ gettysburg
                     ClassIcon soldier_banner_trio
                     Item "The Battalion's Backup"
                     Action FetchFlag
+
+                    CharacterAttributes
+                    {
+                        "deploy time decreased" 0.33
+                        "increase buff duration" 900
+                        "cannot disguise" 1 
+                    }
+                }
+
+                TFBot
+                {
+                    Name "Buff Spy"
+                    Template G_Spy_YER
+                    Attributes SpawnWithFullCharge
+                    ClassIcon soldier_banner_trio
+                    Item "The Buff Banner"
+                    Action FetchFlag
+
+                    CharacterAttributes
+                    {
+                        "deploy time decreased" 0.33
+                        "increase buff duration" 900
+                        "cannot disguise" 1 
+                    }
+                }
+
+                TFBot
+                {
+                    Name "Conch Spy"
+                    Template G_Spy_YER
+                    Attributes SpawnWithFullCharge
+                    ClassIcon soldier_banner_trio
+                    Item "The Concheror"
+                    Action FetchFlag
+                    Tag flank_front
+                    Tag flank_back
+
+                    CharacterAttributes
+                    {
+                        "deploy time decreased" 0.33
+                        "increase buff duration" 900
+                        "cannot disguise" 1 
+                    }
+                }
+
+                TFBot
+                {
+                    Name "Buff Spy"
+                    Template G_Spy_YER
+                    Attributes SpawnWithFullCharge
+                    ClassIcon soldier_banner_trio
+                    Item "The Buff Banner"
+                    Action FetchFlag
+
+                    CharacterAttributes
+                    {
+                        "deploy time decreased" 0.33
+                        "increase buff duration" 900
+                        "cannot disguise" 1 
+                    }
+                }
+
+                TFBot
+                {
+                    Name "Conch Spy"
+                    Template G_Spy_YER
+                    Attributes SpawnWithFullCharge
+                    ClassIcon soldier_banner_trio
+                    Item "The Concheror"
+                    Action FetchFlag
+                    Tag flank_front
+                    Tag flank_back
 
                     CharacterAttributes
                     {
@@ -1140,7 +1227,7 @@ gettysburg
                         "damage force reduction" 0.2
                         "airblast vulnerability multiplier" 0.2
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1172,7 +1259,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
-                        "rage giving scale" 0.5
+                         
                     }
                 }
             }
@@ -1223,7 +1310,7 @@ gettysburg
                         "damage force reduction" 0.25
                         "airblast vulnerability multiplier" 0.25
                         "override footstep sound set" 4
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1255,7 +1342,7 @@ gettysburg
                         "damage force reduction" 0
                         "airblast vulnerability multiplier" 0
                         "airblast vertical vulnerability multiplier" 0
-                        "rage giving scale" 0.5
+                         
                     }
                 }
             }
@@ -1290,45 +1377,53 @@ gettysburg
         {
             Name 3a
             Where spawnbot_secondary
-            TotalCount 2
+            TotalCount 4
             SpawnCount 1
 
             WaitBeforeStarting 2
             WaitBetweenSpawns 0.5
 
-            TotalCurrency 152
+            TotalCurrency 352
 
             TFBot
             {
-                Name "Super Scout"
+                Name "Giant Scout"
                 Class Scout
-                ClassIcon scout_fast
-                Skill Hard
-                Health 1200
-                WeaponRestrictions MeleeOnly
-                Item "Bonk Boy"
-                Item "Unarmed Combat"
+                ClassIcon scout_giant
+                Skill Expert
+                Health 1600
+                Item "The Backwards Ballcap"
+                Item "Upgradeable TF_WEAPON_BAT"
                 Attributes MiniBoss
+                Attributes HoldFireUntilFullReload
                 Attributes AlwaysCrit
+                WeaponRestrictions MeleeOnly
                 Tag bot_giant
                 Tag flank_front
                 Tag flank_back
 
+                FastUpdate 1
+                AimTrackingInterval 0
+                
                 ItemAttributes
                 {
-                    ItemName "Unarmed Combat"
+                    ItemName "Upgradeable TF_WEAPON_BAT"
                     "killstreak tier" 2
                     "killstreak idleeffect" 1
                 }
 
+                ItemAttributes
+                {
+                    ItemName "The Backwards Ballcap"
+                    "set item tint rgb" 2960676
+                }
+                
                 CharacterAttributes
                 {
-                    "move speed bonus" 2
                     "damage force reduction" 0.35
                     "airblast vulnerability multiplier" 0.35
                     "airblast vertical vulnerability multiplier" 0.5
                     "override footstep sound set" 5
-                    "rage giving scale" 0.5
                 }
             }
         }
@@ -1360,8 +1455,8 @@ gettysburg
                     Attributes MiniBoss
                     Attributes HoldFireUntilFullReload
                     Tag bot_giant
-                    AimAt Feet [$SIGSEGV]
-                    AimLeadProjectileSpeed 1210 [$SIGSEGV]
+                    AimAt Feet  
+                    AimLeadProjectileSpeed 1210  
                     
                     ItemAttributes
                     {
@@ -1381,7 +1476,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.2
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1489,13 +1584,7 @@ gettysburg
                     Item "Field Practice"
                     Item "Upgradeable TF_WEAPON_MEDIGUN"
                     Item "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-                    AimAt Head [$SIGSEGV]
-
-                    ItemAttributes
-                    {
-                        ItemName "Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"
-                        "damage bonus" 1.5
-                    }
+                    AimAt Head  
 
                     ItemAttributes
                     {
@@ -1534,8 +1623,8 @@ gettysburg
                     Attributes MiniBoss
                     Attributes HoldFireUntilFullReload
                     Tag bot_giant
-                    AimAt Feet [$SIGSEGV]
-                    AimLeadProjectileSpeed 1210 [$SIGSEGV]
+                    AimAt Feet  
+                    AimLeadProjectileSpeed 1210  
                     
                     ItemAttributes
                     {
@@ -1555,7 +1644,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.2
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1649,8 +1738,8 @@ gettysburg
                     Attributes MiniBoss
                     Attributes HoldFireUntilFullReload
                     Tag bot_giant
-                    AimAt Feet [$SIGSEGV]
-                    AimLeadProjectileSpeed 1210 [$SIGSEGV]
+                    AimAt Feet  
+                    AimLeadProjectileSpeed 1210  
                     
                     ItemAttributes
                     {
@@ -1670,7 +1759,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.2
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1830,7 +1919,8 @@ gettysburg
                 Item "The Flare Gun"
                 WeaponRestrictions SecondaryOnly
                 Item "Pyro's Boron Beanie"
-                AimLeadProjectileSpeed 2000 [$SIGSEGV]
+                
+                AimLeadProjectileSpeed 2000  
             }
         }
 
@@ -1863,18 +1953,25 @@ gettysburg
                     Item warbird_flamethrower_warhawk
                     Tag bot_giant
                     Item "Thumper"
-                    UseBestWeapon 1                 [$SIGSEGV]
-                    UseMeleeThreatPrioritization 1  [$SIGSEGV]
+                    UseBestWeapon 1                  
+                    UseMeleeThreatPrioritization 1   
                     
                     ItemAttributes
                     {
                         ItemName warbird_flamethrower_warhawk
                         "damage bonus" 1.5
                         "flame_drag" 4
-                        "set_item_texture_wear" 0.2
+                        "set_item_texture_wear" 0
                         "lunchbox adds minicrits" 2
                         "killstreak tier" 2
                         "killstreak idleeffect" 1
+                    }
+
+                    ItemAttributes
+                    {
+                        ItemName Thumper
+                        "reload time decreased" 0.5
+                        "fire rate bonus" 0.8
                     }
                     
                     CharacterAttributes
@@ -1884,14 +1981,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.3
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 6
-                        "rage giving scale" 0.5
-                    }
-
-                    ItemAttributes
-                    {
-                        ItemName Thumper
-                        "reload time decreased" 0.5
-                        "fire rate bonus" 0.8
+                        "deploy time decreased" 0.5
                     }
                 }
 
@@ -1908,7 +1998,7 @@ gettysburg
                     Attributes MiniBoss
                     Attributes AlwaysFireWeapon
                     Tag bot_giant
-                    UseMeleeThreatPrioritization 1  [$SIGSEGV]
+                    UseMeleeThreatPrioritization 1   
                     Tag flank_front
                     Tag flank_back
 
@@ -1928,7 +2018,7 @@ gettysburg
                         "airblast vulnerability multiplier" 0.3
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 6
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -1944,8 +2034,8 @@ gettysburg
                     Item "The Phlogistinator"
                     Attributes SpawnWithFullCharge
                     Item "The Manmelter"
-					UseBestWeapon 1                 [$SIGSEGV]
-					UseMeleeThreatPrioritization 1  [$SIGSEGV]
+					UseBestWeapon 1                  
+					UseMeleeThreatPrioritization 1   
 					Action Mobber
                     Tag bot_giant
 
@@ -1969,89 +2059,46 @@ gettysburg
                         "override footstep sound set" 6
                         "gesture speed increase" 1.5
                         "mult airblast refire time" 0.5
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
                 TFBot
                 {
-                    Name "Giant Phlog Pyro"
+                    Name "Furious Giant Pyro"
                     Class Pyro
-                    ClassIcon pyro_giant
                     Skill Expert
+                    ClassIcon pyro_giant
+                    MaxVisionRange 1600
                     Attributes MiniBoss
                     Health 3300
-                    Item "The Mk 50"
-                    Item "The Phlogistinator"
-                    Attributes SpawnWithFullCharge
-                    Item "The Manmelter"
-					UseBestWeapon 1                 [$SIGSEGV]
-					UseMeleeThreatPrioritization 1  [$SIGSEGV]
-					Action Mobber
+                    Item "The Dragon's Fury"
+                    Item "The Gas Passer"
+                    Item "The Sengoku Scorcher"
+                    Item "The Combustible Kabuto"
                     Tag bot_giant
-
+                    
                     ItemAttributes
                     {
-                        ItemName "The Phlogistinator"
-                        "flame_drag" 4
-                        //"increase buff duration" 2.5
-                        "mod rage on hit bonus" 100
-                        "airblast disabled" 0
+                        ItemName "The Dragon's Fury"
+                        item_meter_charge_rate 0.5
                         "killstreak tier" 2
                         "killstreak idleeffect" 1
                     }
 
-                    CharacterAttributes
-                    {
-                        "move speed bonus"	0.5
-                        "damage force reduction" 0.3
-                        "airblast vulnerability multiplier" 0.3
-                        "airblast vertical vulnerability multiplier" 0.5
-                        "override footstep sound set" 6
-                        "gesture speed increase" 1.5
-                        "mult airblast refire time" 0.5
-                        "rage giving scale" 0.5
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Giant Phlog Pyro"
-                    Class Pyro
-                    ClassIcon pyro_giant
-                    Skill Expert
-                    Attributes MiniBoss
-                    Health 3300
-                    Item "The Mk 50"
-                    Item "The Phlogistinator"
-                    Attributes SpawnWithFullCharge
-                    Item "The Manmelter"
-					UseBestWeapon 1                 [$SIGSEGV]
-					UseMeleeThreatPrioritization 1  [$SIGSEGV]
-					Action Mobber
-                    Tag bot_giant
-
                     ItemAttributes
                     {
-                        ItemName "The Phlogistinator"
-                        "flame_drag" 4
-                        //"increase buff duration" 2.5
-                        "mod rage on hit bonus" 100
-                        "airblast disabled" 0
-                        "killstreak tier" 2
-                        "killstreak idleeffect" 1
+                        ItemName "The Gas Passer"
+                        "weapon burn dmg increased" 3
                     }
-
+                    
                     CharacterAttributes
                     {
-                        "move speed bonus"	0.5
-                        "damage force reduction" 0.3
-                        "airblast vulnerability multiplier" 0.3
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.25
+                        "airblast vulnerability multiplier" 0.25
                         "airblast vertical vulnerability multiplier" 0.5
                         "override footstep sound set" 6
-                        "gesture speed increase" 1.5
-                        "mult airblast refire time" 0.5
-                        "rage giving scale" 0.5
                     }
                 }
             }
@@ -2080,7 +2127,7 @@ gettysburg
             SpawnCount 2
             MaxActive 2
 
-            TotalCurrency 3
+            TotalCurrency 203
 
             Squad
             {
@@ -2092,7 +2139,6 @@ gettysburg
 
                     CharacterAttributes
                     {
-                        "rage giving scale" 0.5
                         "damage penalty" 0.75
                     }
                 }
@@ -2100,11 +2146,6 @@ gettysburg
                 TFBot
                 {
                     Template G_Medic_Uber_Giant
-
-                    CharacterAttributes
-                    {
-                        "rage giving scale" 0.5
-                    }
                 }
             }
         }
@@ -2129,7 +2170,7 @@ gettysburg
                 Skill Normal
                 Item "The Delinquent's Down Vest"
                 Item "The Shortstop"
-                MaxVisionRange 1600
+                MaxVisionRange 1200
                 Tag flank_front
                 Tag flank_back
             }
@@ -2154,12 +2195,7 @@ gettysburg
                 TFBot
                 {
                     Template G_Heavy_Enrage_Giant
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-
-                    CharacterAttributes
-                    {
-                        "rage giving scale" 0.5
-                    }
+                    UseMeleeThreatPrioritization 1  
                 }
 
                 TFBot
@@ -2193,12 +2229,7 @@ gettysburg
                 TFBot
                 {
                     Template G_Heavy_Chocolate_Giant
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
-
-                    CharacterAttributes
-                    {
-                        "rage giving scale" 0.5
-                    }
+                    UseMeleeThreatPrioritization 1  
                 }
 
                 TFBot
@@ -2229,22 +2260,25 @@ gettysburg
 
             TFBot
             {
-                Name "Man of Honor"
-                Class Spy
-                ClassIcon spy_enforcer_nys
-                Skill Easy
-                Item "The Enforcer"
-                Item "Cosa Nostra Cap"
-                Item "The Made Man"
-                Item "The Rogue's Brogues"
+                Name "Blutsauger Medic"
+                Class Medic
+                ClassIcon medic_syringe
+                Skill Expert
+                Item "The Blutsauger"
+                Item "Practitioner's Processing Mask"
+                Item "The Virus Doctor"
                 Action FetchFlag
                 Tag flank_front
                 Tag flank_back
+                WeaponRestrictions PrimaryOnly
+
+                AimLeadProjectileSpeed 1000
+                AimAt Head
 
                 ItemAttributes
                 {
-                    ItemName "The Enforcer"
-                    "cannot disguise" 1
+                    ItemName "The Blutsauger"
+                    "mad milk syringes" 1
                 }
             }
         }
@@ -2279,7 +2313,7 @@ gettysburg
 
             WaitForAllDead 4b
             //WaitBeforeStarting 2
-            WaitBetweenSpawnsAfterDeath 1
+            WaitBetweenSpawnsAfterDeath 5
 
             TotalCurrency 25
 
@@ -2295,6 +2329,9 @@ gettysburg
                 Item "The Atomizer"
                 WeaponRestrictions MeleeOnly
                 Attributes MiniBoss
+                Attributes AutoJump
+                    AutoJumpMin 0.5
+                    AutoJumpMax 3
                 Tag bot_giant
 
                 Action Mobber
@@ -2410,7 +2447,6 @@ gettysburg
                     "dmg bonus vs buildings" 1.33
                     "melee range multiplier" 1.1
                     "melee bounds multiplier" 1.1
-                    "rage giving scale" 0.25
                     "move speed bonus" 1.2
                 }
             }
@@ -2434,11 +2470,6 @@ gettysburg
                 Template G_Scout_Super_Giant
                 Attributes FireImmune
                 Attributes AlwaysCrit
-
-                CharacterAttributes
-                {
-                    "rage giving scale" 0.5
-                }
             }
         }
 
@@ -2461,11 +2492,6 @@ gettysburg
                 Template G_Scout_Super_Giant
                 Attributes BlastImmune
                 Attributes AlwaysCrit
-
-                CharacterAttributes
-                {
-                    "rage giving scale" 0.5
-                }
             }
         }
 
@@ -2488,11 +2514,6 @@ gettysburg
                 Template G_Scout_Super_Giant
                 Attributes BulletImmune
                 Attributes AlwaysCrit
-
-                CharacterAttributes
-                {
-                    "rage giving scale" 0.5
-                }
             }
         }
 
@@ -2507,30 +2528,65 @@ gettysburg
             WaitForAllDead 5ac
             WaitBetweenSpawns 18
 
-            TotalCurrency 194
+            TotalCurrency 394
 
             Squad
             {
                 TFBot
                 {
-                    Template G_Demo_Charge_Giant
+                    Name "Giant Demoknight"
+                    Class Demoman
+                    ClassIcon demoknight
+                    Skill Expert
+                    Health 3325
+                    Item "Prince Tavish's Crown"
+                    Item "The Chargin' Targe"
+                    Item "Festive Eyelander"
+                    Item "Ali Baba's Wee Booties"
+                    Item "The King of Scotland Cape"
+                    WeaponRestrictions MeleeOnly
+                    Attributes MiniBoss
+                    Attributes AlwaysCrit
+
                     Action Mobber
-                    ExtAttr IgnoreBuildings
+
+                    ItemAttributes
+                    {
+                        ItemName "Festive Eyelander"
+                        "melee cleave attack" 1
+                        "projectile penetration" 1
+                        "melee range multiplier" 1.2
+                        "set turn to ice" 1
+                    }
+
+                    ItemAttributes
+                    {
+                        ItemName "Ali Baba's Wee Booties"
+                        "max health additive bonus" 0
+                    }
+
+                    ItemAttributes
+                    {
+                        ItemName "The Chargin' Targe"
+                        "attack not cancel charge" 1
+                        "charge recharge rate increased" 1.5
+                    }
 
                     CharacterAttributes
                     {
-                        "rage giving scale" 0.5
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.25
+                        "airblast vulnerability multiplier" 0.25
+                        "airblast vertical vulnerability multiplier" 0.5
+                        "override footstep sound set" 4
+                        "dmg bonus vs buildings" 1.5
+                        "wet immunity" 1
                     }
                 }
 
                 TFBot
                 {
                     Template G_Medic_Shield_Giant
-
-                    CharacterAttributes
-                    {
-                        "rage giving scale" 0.5
-                    }
                 }
             }
         }
@@ -2555,7 +2611,7 @@ gettysburg
                     Class Heavy
                     Skill Normal
                     Item Tomislav
-                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
+                    UseMeleeThreatPrioritization 1  
                     Tag flank_back
                 }
 
@@ -2585,9 +2641,9 @@ gettysburg
         {
             Name 5c
             Where spawnbot_secondary
-            TotalCount 12
-            SpawnCount 4
-            MaxActive 5
+            TotalCount 14
+            SpawnCount 7
+            MaxActive 8
 
             WaitForAllDead 5b
             WaitBeforeStarting 2
@@ -2636,7 +2692,7 @@ gettysburg
                         "damage force reduction" 0.2
                         "airblast vulnerability multiplier" 0.2
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -2657,62 +2713,41 @@ gettysburg
 
                 TFBot
                 {
-                    Name "Deflector Pyro"
-                    Class Pyro
-                    ClassIcon pyro_reflect_daan
-                    Skill Expert
-                    Health 500
-                    Scale 1.3
-                    Item "The U-clank-a"
-                    Item "The Degreaser"
-                    Attributes AlwaysCrit
+                    Name "Direct Hit Soldier"
+                    Class Soldier
+                    Skill Hard
+                    Item "The Direct Hit"
+                    Item "Defiant Spartan"
+                    Attributes HoldFireUntilFullReload
 
-                    ItemAttributes
-                    {
-                        ItemName "The Degreaser"
-                        "mult airblast refire time" 0.75
-                        "airblast_destroy_projectile" 1
-                        "airblast pushback scale" 2
-                        "airblast_give_teammate_speed_boost" 1
-						//"deflection size multiplier" 1.33
-                    }
-
-                    CharacterAttributes
-                    {
-                        "damage force reduction" 0.5
-                        "airblast vulnerability multiplier" 0.5
-                        "rage giving scale" 0.5
-                    }
+                    AimAt Feet
+                    AimLeadProjectileSpeed 1980
                 }
 
                 TFBot
                 {
-                    Name "Deflector Pyro"
-                    Class Pyro
-                    ClassIcon pyro_reflect_daan
-                    Skill Expert
-                    Health 500
-                    Scale 1.3
-                    Item "The U-clank-a"
-                    Item "The Degreaser"
-                    Attributes AlwaysCrit
+                    Name "Direct Hit Soldier"
+                    Class Soldier
+                    Skill Hard
+                    Item "The Direct Hit"
+                    Item "Defiant Spartan"
+                    Attributes HoldFireUntilFullReload
 
-                    ItemAttributes
-                    {
-                        ItemName "The Degreaser"
-                        "mult airblast refire time" 0.75
-                        "airblast_destroy_projectile" 1
-                        "airblast pushback scale" 2
-                        "airblast_give_teammate_speed_boost" 1
-						//"deflection size multiplier" 1.33
-                    }
+                    AimAt Feet
+                    AimLeadProjectileSpeed 1980
+                }
 
-                    CharacterAttributes
-                    {
-                        "damage force reduction" 0.5
-                        "airblast vulnerability multiplier" 0.5
-                        "rage giving scale" 0.5
-                    }
+                TFBot
+                {
+                    Name "Direct Hit Soldier"
+                    Class Soldier
+                    Skill Hard
+                    Item "The Direct Hit"
+                    Item "Defiant Spartan"
+                    Attributes HoldFireUntilFullReload
+
+                    AimAt Feet
+                    AimLeadProjectileSpeed 1980
                 }
             }
         }
@@ -2735,35 +2770,13 @@ gettysburg
             {
                 TFBot
                 {
-                    Name "Burst Cannonknight"
+                    Name "Quickiebomb Demo"
                     Class Demoman
-                    //ClassIcon demo_loosecannon
-                    Skill Hard
-                    Item "The Bomber Knight"
+                    ClassIcon demo_sticky_daan
+                    Skill Expert
+                    Item "The Bolgan"
                     Item "The Hurt Locher"
-                    Item "The Loose Cannon"
-                    Item "The Tide Turner"
-                    Attributes HoldFireUntilFullReload //this should work since holdfire was fixed
-
-                    ItemAttributes
-                    {
-                        ItemName "The Loose Cannon"
-                        "grenade launcher mortar mode" -1
-                        "fire rate bonus" 0.2
-                        //"reload time increased" 1.5
-                        "clip size upgrade atomic" -1
-                        "projectile spread angle penalty" 2
-                    }
-                }
-
-                TFBot
-                {
-                    Name "Stickybomb Demo"
-                    Class Demoman
-                    Skill Hard
-                    Item "The Strontium Stove Pipe"
-                    Item "The Hurt Locher"
-                    Item "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
+                    Item "The Quickiebomb Launcher"
                     WeaponRestrictions SecondaryOnly
                     Attributes HoldFireUntilFullReload
 
@@ -2774,15 +2787,35 @@ gettysburg
                         "override projectile type" 27
                         "fire rate penalty" 2000
                     }
-
+                    
                     ItemAttributes
                     {
-                        ItemName "Upgradeable TF_WEAPON_PIPEBOMBLAUNCHER"
+                        ItemName "The Quickiebomb Launcher"
                         "self dmg push force decreased" 0.5
-                        "stickybomb charge rate" 0.1
+                        "stickybomb charge rate" 0.01
                         "projectile range decreased" 0.45
                         "no self blast dmg" 2
                         "max pipebombs decreased" -6
+                    }
+                }
+
+                TFBot
+                {
+                    Name "Charged Soldier"
+                    Class Soldier
+                    Skill Expert
+                    ClassIcon soldier_crit
+                    Item "The Original"
+                    Item "Exquisite Rack"
+                    Item "The Gunboats"
+                    Attributes AlwaysCrit
+                    
+                    ItemAttributes
+                    {
+                        ItemName "The Original"
+                        "projectile speed decreased" 0.5
+                        "fire rate penalty" 2
+                        "reload time decreased" 0.05
                     }
                 }
             }
@@ -2859,7 +2892,7 @@ gettysburg
                         "damage force reduction" 0.2
                         "airblast vulnerability multiplier" 0.2
                         "override footstep sound set" 3
-                        "rage giving scale" 0.5
+                         
                     }
                 }
 
@@ -3040,8 +3073,7 @@ gettysburg
 
 				CharacterAttributes
 				{
-					"move speed bonus" 2
-					"kill forces attacker to laugh" 1
+                    "move speed bonus" 2
                     "effect bar recharge rate increased" 0.75
 				}
             }
