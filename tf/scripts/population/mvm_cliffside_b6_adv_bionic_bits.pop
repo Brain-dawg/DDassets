@@ -505,7 +505,7 @@ WaveSchedule
 					"dmg taken from fire reduced" 1
 					"dmg taken from blast reduced" 1
 					"full charge turn control" 50
-					"charge impact damage increased" 4
+					"charge impact damage increased" 125
 					"charge time increased" 2
 					"charge recharge rate increased" 125
 				}
@@ -2441,7 +2441,7 @@ WaveSchedule
 			TFBot
 			{
 				Class Sniper
-				Skill Normal
+				Skill Expert
 				Name "Canadian Huntsman"
 				Item "The Mislaid Sweater"
 				Item "EOTL_winter_pants"
@@ -2935,7 +2935,7 @@ WaveSchedule
                     "use large smoke explosion" 1
 					"gesture speed increase" 1337
 					"dmg bonus vs buildings" 1337
-					"custom kill icon" "ullapool_caber_explosion"
+					"custom kill icon" "ullapool_caber"
 				}
 				Itemattributes
 				{
