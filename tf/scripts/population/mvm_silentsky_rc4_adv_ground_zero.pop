@@ -5,6 +5,7 @@
 
 #base robot_giant.pop
 #base robot_standard.pop
+#base robot_custom_weapons.pop
 
 Why_yes,_I_infact_DO_give_my_WaveSchedules_a_custom_name._How_could_you_tell?
 {

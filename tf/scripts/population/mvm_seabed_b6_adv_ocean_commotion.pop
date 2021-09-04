@@ -1,6 +1,7 @@
 //This mission was made by Herple Nerp
 #base robot_giant.pop
 #base robot_standard.pop
+#base robot_custom_weapons.pop
 #base robot_herp_main_new.pop
 #base robot_herp_giant_new.pop
 #base robot_gatebot_improved.pop

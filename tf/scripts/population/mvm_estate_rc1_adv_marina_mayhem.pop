@@ -2,6 +2,7 @@
 // Estate Advanced
 #base robot_giant.pop
 #base robot_standard.pop
+#base robot_custom_weapons.pop
 population
 {
 	StartingCurrency	1100
